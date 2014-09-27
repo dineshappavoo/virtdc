@@ -53,3 +53,7 @@ Statically place and schedule and dynamically scale and migrate Vitual Machines 
 ##Project Contributor
 
 * Dinesh Appavoo ([@DineshAppavoo](https://twitter.com/DineshAppavoo))
+* Ryan Wang
+* Rahul Nair
+* Qinghao Dai
+* Haan Mo Johng
