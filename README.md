@@ -50,7 +50,7 @@ Statically place and schedule and dynamically scale and migrate Vitual Machines 
 * Need to workout the specific parameters for each API
 * All interactions should be standardized so that they can interoperate
 
-##Project Contributor
+##Project Contributors
 
 * Dinesh Appavoo ([@DineshAppavoo](https://twitter.com/DineshAppavoo))
 * Ryan Wang
