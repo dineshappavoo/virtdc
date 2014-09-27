@@ -5,7 +5,7 @@ Statically place and schedule and dynamically scale and migrate Vitual Machines 
 
 ##Install
 
-Build the VM framework
+###Build the VM framework
 ♦ Set up the KVM environment, explore VM creation
 ♦ Explore libvirt to achieve VM scaling and VM migration
 ♦ Activate a monitoring system, can be Ganglia or just collect data from logs, to report    VM workload information
@@ -21,7 +21,7 @@ Build the VM framework
 ♦ Implement an API for VM termination notification (VM_terminationList)
 ♦ Keep good logs to record the job execution characteristics, the placement decisions and changes, 
 etc. for performance analysis of the VM placement algorithm
- Build the VM placement manager
+###Build the VM placement manager
 ♦ Design and develop a VM placement, scaling, and migration decision algorithm 
 ♦ Implement the placement manager based on the algorithm
 ♦ Placement manager for dynamic VM placement changes
