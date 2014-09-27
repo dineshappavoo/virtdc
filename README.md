@@ -20,19 +20,20 @@ Statically place and schedule and dynamically scale and migrate Vitual Machines 
 * Implement an API for VM workload data provisioning (VM_workload)
 * Implement an API for VM termination notification (VM_terminationList)
 * Keep good logs to record the job execution characteristics, the placement decisions and changes,etc. for performance analysis of the VM placement algorithm
+
 ###Build the VM placement manager
 * Design and develop a VM placement, scaling, and migration decision algorithm 
 * Implement the placement manager based on the algorithm
 * Placement manager for dynamic VM placement changes
 * Invoke (VM_workload) periodically to obtain VM workload data for all VMs 
 * Invoke (VM_terminationList) periodically to obtain the list of terminated jobs
-* Decide whether there should be VM scaling or VM migration
-* If so, make the decision 
+* Decide whether there should be VM scaling or VM migration. If so, make the decision 
 * Invoke (VM_change_placement) to give the decision and activate changes
 * Placement manager for new job placement
 * Implement an API to give placement decision for a new job (place_newJob)
 * Analyze and decide where to place the VMs
 * Return the placement decision to VM framework
+
 ### Build the simulation framework
 * Take Google cloud traces, extract the workload information
 * Explore various application programs for benchmarking
@@ -43,9 +44,7 @@ Statically place and schedule and dynamically scale and migrate Vitual Machines 
 * Issue the job when time is right
 * Invoke (VM_submitJob) to submit the job
 * Activate an event listener to listen to the (job_termination_event)
-
-* When the event is triggered, invoke (VM_jobReport) to get the execution information and 
-output of the job
+* When the event is triggered, invoke (VM_jobReport) to get the execution information and output of the job
 * Let the system run, obtain the performance results and analyze them
 * If possible, try to alter the VM placement algorithm and see how system behavior changes
 * Need to workout the specific parameters for each API
