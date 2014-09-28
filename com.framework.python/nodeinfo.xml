@@ -1,0 +1,40 @@
+<data>
+	<nodes>
+		<node>
+		<hostname>node1</hostname>
+		<ipv4address>192.168.1.11</ipv4address>
+		<capacity>
+			<cpu_core>8</cpu_core>
+			<memory unit="GiB">32</memory>
+			<io unit="TB">1</io>
+		</capacity>
+	</node>
+	<node>
+		<hostname>node2</hostname>
+		<ipv4address>192.168.1.12</ipv4address>
+		<capacity>
+			<cpu_core>8</cpu_core>
+			<memory unit="GiB">32</memory>
+			<io unit="TB">1</io>
+		</capacity>
+	</node>
+	<node>
+		<hostname>node3</hostname>
+		<ipv4address>192.168.1.13</ipv4address>
+		<capacity>
+			<cpu_core>8</cpu_core>
+			<memory unit="GiB">32</memory>
+			<io unit="TB">1</io>
+		</capacity>
+	</node>
+	<node>
+		<hostname>node4</hostname>
+		<ipv4address>192.168.1.14</ipv4address>
+		<capacity>
+			<cpu_core>8</cpu_core>
+			<memory unit="GiB">32</memory>
+			<io unit="TB">1</io>
+		</capacity>
+	</node>        
+    </nodes>
+</data>
