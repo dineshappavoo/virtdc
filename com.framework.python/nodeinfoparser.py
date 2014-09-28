@@ -4,7 +4,7 @@ import xml.dom.minidom
 
 from xml.dom import minidom
 
-doc = minidom.parse('/Users/Dany/Documents/VMPlacementAndScaling/VMPlacementAndScaling/com.framework.python/nodeinfo.xml')
+doc = minidom.parse('nodeinfo.xml')
 def getNodeText(node):
     
     nodelist = node.childNodes
