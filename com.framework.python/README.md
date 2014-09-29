@@ -22,7 +22,7 @@ Statically place and schedule and dynamically scale and migrate Vitual Machines 
 * Keep good logs to record the job execution characteristics, the placement decisions and changes,etc. for performance analysis of the VM placement algorithm
 
 ###Impacted Files and Information
-* Host_machine_info_tracker.py - Tracks available hardware on the host machine and maintains in memory
+* #Host_machine_info_tracker.py - Tracks available hardware on the host machine and maintains in memory
 * VM_submitJob.py - Accept a new job and create new VM with the job configuration based on the availability of hardware
 * VM_decisionMaker.py - makes the decision to find the right place for the new VM for the first time
 * nodeinfo.xml - Maintains the host hardware information in the XML format
