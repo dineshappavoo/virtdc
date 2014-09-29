@@ -23,6 +23,7 @@ Statically place and schedule and dynamically scale and migrate Vitual Machines 
 
 ###Impacted Files and Information
 File Name | Usage
+------------ | -------------
 * __Host_machine_info_tracker.py__ | Tracks available hardware on the host machine and maintains in memory
 * __VM_submitJob.py__ | Accept a new job and create new VM with the job configuration based on the availability of hardware
 * __VM_decisionMaker.py__ | makes the decision to find the right place for the new VM for the first time
