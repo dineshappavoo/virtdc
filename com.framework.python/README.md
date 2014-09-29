@@ -1,9 +1,3 @@
-VM Placement and Scaling
-=======================
-
-Statically place and schedule and dynamically scale and migrate Vitual Machines (VMs) to optimize resource utilization by using efficient VM algorithms while meeting the SLAs of users in cloud
-
-##Install
 
 ###Build the VM framework - com.framework.python
 * Set up the KVM environment, explore VM creation
