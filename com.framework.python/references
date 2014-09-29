@@ -2,3 +2,18 @@ Referrences:
 SSH passwordless
 
 http://www.firedaemon.com/blog/passwordless-root-ssh-public-key-authentication-on-centos-6
+
+Unix Commands:
+
+ssh-keygen
+cd ~/.ssh
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/*
+ls -ld ~/.ssh & ls -l ~/.ssh
+ssh-add
+ssh root@node1 'mkdir -p /root/.ssh'
+scp /root/.ssh/id_rsa.pub root@node1:/root/.ssh/authorized_keys
+ssh root@node1 'chmod  700 /root/.ssh'
+ssh root@node1 'chmod  600 /root/.ssh/*'
+
+
