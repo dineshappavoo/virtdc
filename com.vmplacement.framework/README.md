@@ -1,5 +1,5 @@
 
-###Build the VM framework - com.framework.python
+###Build the VM framework - com.vmps.framework
 * Set up the KVM environment, explore VM creation
 * Explore libvirt to achieve VM scaling and VM migration
 * Activate a monitoring system, can be Ganglia or just collect data from logs, to report    VM workload information
@@ -20,7 +20,7 @@ File Name | Usage
 ------------ | -------------
 __Host_machine_info_tracker.py__ | Tracks available hardware on the host machine and maintains in memory
 __VM_submitJob.py__ | Accept a new job and create new VM with the job configuration based on the availability of hardware
-__VM_decisionMaker.py__ | makes the decision to find the right place for the new VM for the first time
+__VM_decisionMaker.py__ | Makes the decision to find the right place for the new VM for the first time
 __nodeinfo.xml__ | Maintains the host hardware information in the XML format
 __guestconfig.xml__ | dump XML (with replaceable keywords for future new VM’s) of the base VM which will be used to clone new VM’s
 __references.txt__ | Maintains the referrences
