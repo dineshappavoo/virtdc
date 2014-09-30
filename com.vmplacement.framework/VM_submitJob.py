@@ -1,5 +1,36 @@
 #!/usr/bin/python
+
+#The file accepts new job and create new VM with the job configuration based on the availability of hardware
+#This is the part of VM placement and scaling
+#This takes the VM guest configuration file from the local disk and create a new VM in current node or in a different one
+
 import sys, getopt, subprocess
+
+
+#==============================================================================
+# Variables
+#==============================================================================
+
+# Some descriptive variables
+# This will eventually be passed to the setup function, but we already need them
+# for doing some other stuff so we have to declare them here.
+name                = "vmplacementandscaling"
+version             = "0.1"
+long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud user efficiently."""
+author              = "Dinesh Appavoo"
+author_email        = "dinesha.cit@gmail.com"
+url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
+license             = ""
+
+#==============================================================================
+# Paths
+#==============================================================================
+
+guest_image = "/var/lib/libvirt/images/"
+guest_config_path = "/root/Desktop/PYTHON/guestconfig.xml"
+
+#===============================================================================
+
 def main(argv):
 	cpu= ''
 	memory = ''
@@ -29,13 +60,13 @@ def main(argv):
 	#p = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
 
 	#command to get the xml into python string for further updates. guestconfig.xml needs to be copied(physically present) int the same folder of this script
-	nodeInfo="cat /root/Desktop/PYTHON/guestconfig.xml"
+	nodeInfo="cat "+guest_config_path
 	xmlstring = subprocess.check_output(nodeInfo, shell=True, stderr=subprocess.PIPE)
 
 	#command to copy the iso image to the destination. Every VM will have an individual iso image. (I think this copy can be cleared later on). Make the nodes passwordless
-	image_path="/var/lib/libvirt/images/"+vmid+".img"
-	image_dest="node3:/var/lib/libvirt/images/"+vmid+".img"
-	cp_cmd = "scp /var/lib/libvirt/images/Test.img "+image_dest
+	image_path=guest_image+vmid+".img"
+	image_dest="node3:"+guest_image"+vmid+".img"
+	cp_cmd = "scp "+guest_image+"Test.img "+image_dest
 	copy_image = subprocess.Popen(cp_cmd, shell=True, stderr=subprocess.PIPE)
 
 	
