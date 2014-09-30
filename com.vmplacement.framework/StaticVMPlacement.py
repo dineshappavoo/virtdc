@@ -11,7 +11,7 @@ from Host_machine_info_tracker import Node
 # for doing some other stuff so we have to declare them here.
 #name                = "vmplacementandscaling"
 #version             = "0.1"
-#long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud user efficiently."""
+#long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
 #author              = "Dinesh Appavoo"
 #author_email        = "dinesha.cit@gmail.com"
 #url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
