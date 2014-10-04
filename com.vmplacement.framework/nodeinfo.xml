@@ -5,12 +5,12 @@
 		<ipv4address>192.168.1.11</ipv4address>
 		<max_capacity>
 			<cpu_core>8</cpu_core>
-			<memory unit="GiB">32</memory>
+			<memory unit="KiB">32689796</memory>
 			<io unit="TB">1</io>
 		</max_capacity>
         <available_capacity>
 			<cpu_core>8</cpu_core>
-			<memory unit="GiB">32</memory>
+			<memory unit="KiB">32689796</memory>
 			<io unit="TB">1</io>
 		</available_capacity>
 	</node>
@@ -19,12 +19,12 @@
 		<ipv4address>192.168.1.12</ipv4address>
 		<max_capacity>
 			<cpu_core>8</cpu_core>
-			<memory unit="GiB">32</memory>
+			<memory unit="KiB">32689796</memory>
 			<io unit="TB">1</io>
 		</max_capacity>
         <available_capacity>
 			<cpu_core>8</cpu_core>
-			<memory unit="GiB">32</memory>
+			<memory unit="KiB">32689796</memory>
 			<io unit="TB">1</io>
 		</available_capacity>
 	</node>
@@ -33,12 +33,12 @@
 		<ipv4address>192.168.1.13</ipv4address>
 		<max_capacity>
 			<cpu_core>8</cpu_core>
-			<memory unit="GiB">32</memory>
+			<memory unit="KiB">32689796</memory>
 			<io unit="TB">1</io>
 		</max_capacity>
         <available_capacity>
 			<cpu_core>8</cpu_core>
-			<memory unit="GiB">32</memory>
+			<memory unit="KiB">32689796</memory>
 			<io unit="TB">1</io>
 		</available_capacity>
 	</node>
@@ -47,12 +47,12 @@
 		<ipv4address>192.168.1.14</ipv4address>
 		<max_capacity>
 			<cpu_core>8</cpu_core>
-			<memory unit="GiB">32</memory>
+			<memory unit="KiB">32689796</memory>
 			<io unit="TB">1</io>
 		</max_capacity>
         <available_capacity>
 			<cpu_core>8</cpu_core>
-			<memory unit="GiB">32</memory>
+			<memory unit="KiB">32689796</memory>
 			<io unit="TB">1</io>
 		</available_capacity>
 	</node>        
