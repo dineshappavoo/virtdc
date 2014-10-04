@@ -4,7 +4,6 @@ import xml.dom.minidom
 import pickle
 from xml.dom import minidom
 
-
 node_dict={}
 
 #Node object/class to maintain the hardware information
@@ -56,6 +55,7 @@ def pickleDictionary(dictionary) :
 
 parsenodeInfoAndMakeDict('nodeinfo.xml')
 pickleDictionary(node_dict)
+
 
 #code to print the dictionary elements
 print len(node_dict)

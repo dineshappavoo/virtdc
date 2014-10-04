@@ -2,46 +2,57 @@
 #from Host_machine_info_tracker import node_dict
 
 import pickle
-from Host_machine_info_tracker import Node
+#from Host_machine_info_tracker import Node
 
-#Function to load the dictionary from the pickle
-def loadPickleDictionary() :
-	with open('node_dict.pkl', 'r') as pickle_in:
-    		node_dictionary = pickle.load(pickle_in)
-		return node_dictionary
+#==============================================================================
+# Variables
+#==============================================================================
 
+# Some descriptive variables
+# This will eventually be passed to the setup function, but we already need them
+# for doing some other stuff so we have to declare them here.
+#name                = "vmplacementandscaling"
+#version             = "0.1"
+#long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
+#url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
+#license             = ""
 
-#code to print the dictionary elements
-print "Decision Maker"
-node_dict={}
-node_dict=loadPickleDictionary()
-
-#code to print the dictionary elements
-print len(node_dict)
-for key, value in node_dict.iteritems() :
-    print key, value.max_cpu, value.max_memory, value.max_io, value.avail_cpu, value.avail_memory, value.avail_io
-
-
-
-#Function to place the job in the right node
-def place_job(cpu, mem, io) :
-	for key, value in node_dict.iteritems() :
-		if (cpu <= value.avail_cpu and mem <= value.avail_memory and io <= value.avail_io) :
-			value.avail_cpu=value.avail_cpu - cpu
-			value.avail_memory = value.avail_memory - mem
-			value.avail_io = value.avail_io - io			
-			return key
-	return None;
+#==============================================================================
+class NodeFinder:
+	#Function to load the dictionary from the pickle
+	#@staticmethod
+	def loadPickleDictionary(self) :
+		with open('node_dict.pkl', 'r') as pickle_in:
+    			dictionary = pickle.load(pickle_in)
+			return dictionary
 
 
-host=place_job(3,5,1)
+	#Function to place the job in the right node
+	#@staticmethod
+	def place_job(self, cpu, mem, io) :
+		node_dict={}
+		node_dict=self.loadPickleDictionary()	
+		for key, value in node_dict.iteritems() :
+			if ( int(cpu) <= int(value.avail_cpu) and int(mem) <= int(value.avail_memory) and int(io) <= int(value.avail_io)) :
+				print value.hostname				
+				value.avail_cpu= int(value.avail_cpu) - int(cpu)
+				value.avail_memory = int(value.avail_memory) - int(mem)
+				value.avail_io = int(value.avail_io) -  int(io)
+
+				#Code to update the dictionary again
+				with open('node_dict.pkl','w') as node_pickle_out:
+    					pickle.dump(node_dict,node_pickle_out)
+				return value.hostname
+		return None
+
+#host=place_job(1,4194304,1)
 
 #Code to check whether the VM can be placed
-if (host is not None) :
-	print host
-else :
-	print "Cant create new VM"
+#if (host is not None) :
+#	print host
+#else :
+#	print "Cant create new VM"
 
 #code to print the dictionary elements again
-for key, value in node_dict.iteritems() :
-    print key, value.max_cpu, value.max_memory, value.max_io, value.avail_cpu, value.avail_memory, value.avail_io
+#for key, value in node_dict.iteritems() :
+#    print key, value.max_cpu, value.max_memory, value.max_io, value.avail_cpu, value.avail_memory, value.avail_io
