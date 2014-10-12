@@ -2,7 +2,8 @@
 #from Host_machine_info_tracker import node_dict
 
 import pickle
-#from Host_machine_info_tracker import Node
+from Node import Node
+from Host_machine_info_tracker import Node
 
 #==============================================================================
 # Variables
@@ -22,9 +23,13 @@ class NodeFinder:
 	#Function to load the dictionary from the pickle
 	#@staticmethod
 	def loadPickleDictionary(self) :
-		with open('node_dict.pkl', 'r') as pickle_in:
-    			dictionary = pickle.load(pickle_in)
-			return dictionary
+		try :
+			with open('node_dict.pkl', 'r') as pickle_in:
+    				dictionary = pickle.load(pickle_in)
+				return dictionary
+		except:
+			print 'Cannot open node_dict.pkl file'
+			sys.exit(1)
 
 
 	#Function to place the job in the right node

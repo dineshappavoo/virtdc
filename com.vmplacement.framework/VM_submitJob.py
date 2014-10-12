@@ -26,7 +26,7 @@ from VM_decisionMaker import NodeFinder
 # Paths and Variables
 #==============================================================================
 
-guest_image = "/var/lib/libvirt/images/"
+guest_image = "/home/vm_img/"
 guest_config_path = "/root/Desktop/PYTHON/guestconfig.xml"
 
 _master="node1"
