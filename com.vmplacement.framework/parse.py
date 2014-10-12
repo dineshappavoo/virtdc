@@ -49,8 +49,13 @@ with open(options.task, 'rb') as csvfile:
 if(options.task_index and options.task_index in all_tasks):
 	with open(options.task_index + '.csv', 'wb') as csvfile:
 		writer = csv.writer(csvfile, delimiter=' ')
+		max_cpu = 1.0
 		for n in all_tasks[task_index]:
+			curr_load = n[1]
+			if(math.ceil(curr_load) > max_cpu):
+				max_cpu = math.ceil(curr_load)
 			writer.writerow(n)
+		writer.writerow([max_cpu])
 
 
 

@@ -24,11 +24,11 @@ uptime | cut -d':' -f5 | cut -d',' -f1
 '''
 
 stop_command = '''
-for n in `ps -A | grep stress | cut -f1 -d' '`; do kill -STOP $n; done
+for n in `cat ~/cpu.pid`; do kill -STOP $n; done
 '''
 
 cont_command = '''
-for n in `ps -A | grep stress | cut -f1 -d' '`; do kill -CONT $n; done
+for n in `cat ~/cpu.pid`; do kill -CONT $n; done
 '''
 
 def getUptime(uptime_output):
@@ -44,10 +44,10 @@ def wrapTimeOut(target, time):
 		while(True):
 			up = getUptime(run(uptime_command))
 			if(up < target):
-				print "The uptime now is %s, stress will be running." % up
+				print "The uptime now is %s, square.py will be running." % up
 				go = run(cont_command)
 			elif(up > target):
-				print "The uptime now is %s, stress will be stopped." % up
+				print "The uptime now is %s, square.py will not be running." % up
 				go = run(stop_command)
 			sleep(2)
 	return func
@@ -56,11 +56,15 @@ def wrapTimeOut(target, time):
 all_tasks = []
 try:
         with open(options.task, 'r') as f:
-                all_tasks = all_tasks + [(int(line.split(' ')[0]), float(line.split(' ')[1])) for line in f]
-except:
-	print 'Cannot open task.dat file.'
-	sys.exit(1)
+		for line in f:
+			lines = line[:-2].split(' ')
+			if(len(lines) == 2):
+                		all_tasks = all_tasks + [(int(lines[0]), float(lines[1])) for line in f]
+except Exception as e:
+	print e
 for l in all_tasks:
+	if(len(l) != 2):
+		continue
 	target = l[1]
 	time = l[0]
 	try:
