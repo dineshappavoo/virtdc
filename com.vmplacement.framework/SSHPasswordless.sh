@@ -1,5 +1,6 @@
 #!/bin/bash
-targetHostname=$2
+SSHpasswordless <hostname> <user> <password>
+targetHostname=$1
 ssh-keygen
 "id_rsa): "
  if condtion - "Overwrite (y/n)? "
@@ -17,10 +18,16 @@ ls -ld ~/.ssh & ls -l ~/.ssh
 "h]#"
 ssh-add
 "h]#"
+
+#Below two condition verify the system
 check if target dir exists
+cat id_rsa.pub | ssh root@node2 "cat >> /root/.ssh/authorized_keys"
+
 ssh root@$targetHostname 'mkdir -p /root/.ssh'
 "sword: "
 "h]#"
+
+
 scp /root/.ssh/id_rsa.pub root@$targetHostname:/root/.ssh/authorized_keys
 "assword: "
 give password
