@@ -3,6 +3,8 @@
 This script has the utility functions for the VM framework
 '''
 import pexpect
+import sys
+import pickle
 
 
 #==============================================================================
@@ -25,7 +27,7 @@ def loadPickleHostVMDictionary() :
 			dictionary = pickle.load(pickle_in)
 			return dictionary
 	except:
-		print 'Cannot open node_dict.pkl file'
+		print 'Cannot open host_vm_dict.pkl file'
 		sys.exit(1)
 
 def getGuestIP(vmid, username, password) : 
@@ -46,7 +48,7 @@ def getGuestIP(vmid, username, password) :
 	ip = child.match.group()
 
 	child.sendline('logout')
-	print ip
+	#print ip
 	return ip
 
 def UpdatePickleForHostVMDict(host_vm_dict):

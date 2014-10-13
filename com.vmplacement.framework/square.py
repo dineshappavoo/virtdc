@@ -8,5 +8,8 @@ def newton(x, guess):
         guess = (guess + (x/guess)) / 2.0
     return guess
 
-while(True):
-	r = newton(sys.maxint, 1)
+def stressCPU():
+	while(True):
+		r = newton(sys.maxint, 1)
+
+stressCPU()
