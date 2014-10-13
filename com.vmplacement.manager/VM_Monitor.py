@@ -78,7 +78,6 @@ def getMemUsage(vmIp):
 
 
 def monitorAndLogAndReportHotSpot():
-        #f=file(iplist)
         usageInfo=""
         file= open('vmusage.log', 'a+')
         for node, vm_dict in host_vm_dict.iteritems():
