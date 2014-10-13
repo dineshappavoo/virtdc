@@ -3,8 +3,6 @@
 import subprocess
 import pickle
 import sys
-sys.path.append('~/manager')
-import VM_PlacementManager
 #==============================================================================
 # Variables
 #==============================================================================
@@ -25,10 +23,10 @@ def loadPickleDictionary() :
     try :
         with open('~/framework/host_vm_dict.pkl', 'r') as pickle_in:
             dictionary = pickle.load(pickle_in)
-                return dictionary
-        except:
-            print 'Cannot open node_dict.pkl file'
-                sys.exit(1)
+            return dictionary
+    except:
+        print 'Cannot open node_dict.pkl file'
+        sys.exit(1)
 
 def slicingIP(data, key):
         dataLen = len(data)
@@ -77,18 +75,22 @@ def getMemUsage(vmIp):
 def monitorLogAndReportHotSpot():
         #f=file(iplist)
         usageInfo=""
+        file= open('vmusage.log', 'w+')
         for node, vm_dict in host_vm_dict.iteritems():
             for vmId,value in vm_dict:
                 vmIp=slicingIP(value.vmip, '\n')
                 cpuUsage = getCpuUsage(vmIp)
                 memUsage = getMemUsage(vmIp)
-                usageInfo+= vmId+'\t\t'+vmIp + '\t\t' + 'cpu: ' + cpuUsage + '\tmemory: ' + memUsage +"\n"
-
+                usage= vmId+'\t\t'+vmIp + '\t\t' + 'cpu: ' + cpuUsage + '\tmemory: ' + memUsage +"\n"
+                usageInfo+=usage
+                file.write(usage)
                 if (float(cpuUsage)>float(value.cpu) or float(memUsage)>float(value.memory)):
                     #report to VM Placement manager
+                    a=0
                 #print usageInfo
+        file.close()
         return usageInfo
 
 print "Test"
-usage=monitor()
+usage=monitorLogAndReportHotSpot()
 print usage
