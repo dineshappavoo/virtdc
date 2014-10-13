@@ -27,6 +27,20 @@ def loadPickleDictionary() :
 		print 'Cannot open node_dict.pkl file'
 		sys.exit(1)
 
+def loadPickleHostVMDictionary() :
+	try :
+		with open('host_vm_dict.pkl', 'r') as pickle_in:
+			dictionary = pickle.load(pickle_in)
+			return dictionary
+	except:
+		print 'Cannot open host_vm_dict.pkl file'
+		return None
+
+def getHostVMDict() :
+	vm_dict=loadPickleHostVMDictionary()
+	if vm_dict is not None :
+		host_vm_dict=vm_dict
+
 def addEmptyDictionaryOfVM() :
 	#code to add the dictionary elements
 	node_dict=loadPickleDictionary()
@@ -40,6 +54,8 @@ def pickleNodeVMDictionary(dictionary) :
 		#host_vm_pickle_out.close()
 
 #Function calls
+getHostVMDict()
 addEmptyDictionaryOfVM()
 pickleNodeVMDictionary(host_vm_dict)
+
 print host_vm_dict

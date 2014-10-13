@@ -1,7 +1,7 @@
 (dp0
 Vnode1
 p1
-(iHost_machine_info_tracker
+(iNode
 Node
 p2
 (dp3
@@ -13,7 +13,7 @@ p5
 g1
 sS'max_memory'
 p6
-I32
+I32689796
 sS'avail_cpu'
 p7
 I7
@@ -25,10 +25,10 @@ p9
 I1
 sS'avail_memory'
 p10
-I32
+I32689796
 sbsVnode3
 p11
-(iHost_machine_info_tracker
+(iNode
 Node
 p12
 (dp13
@@ -37,7 +37,7 @@ I8
 sg5
 g11
 sg6
-I32
+I32689796
 sg7
 I7
 sg8
@@ -45,10 +45,10 @@ I1
 sg9
 I1
 sg10
-I32
+I32689796
 sbsVnode2
 p14
-(iHost_machine_info_tracker
+(iNode
 Node
 p15
 (dp16
@@ -57,7 +57,7 @@ I8
 sg5
 g14
 sg6
-I32
+I32689796
 sg7
 I7
 sg8
@@ -65,10 +65,10 @@ I1
 sg9
 I1
 sg10
-I32
+I32689796
 sbsVnode4
 p17
-(iHost_machine_info_tracker
+(iNode
 Node
 p18
 (dp19
@@ -77,7 +77,7 @@ I8
 sg5
 g17
 sg6
-I32
+I32689796
 sg7
 I7
 sg8
@@ -85,5 +85,5 @@ I1
 sg9
 I1
 sg10
-I32
+I32689796
 sbs.
