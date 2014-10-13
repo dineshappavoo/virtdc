@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import pickle
 import sys
+from Guest import Guest
 
 #==============================================================================
 # Variables
@@ -47,7 +48,8 @@ def addEmptyDictionaryOfVM() :
 	node_dict=loadPickleDictionary()
 	for key, value in node_dict.iteritems() :
 		if key not in host_vm_dict :
-			host_vm_dict[key]={}
+            #For Testing
+			host_vm_dict[key]={"vm1":Guest("192.168.1.14","vm1", float(3),float(424242),float(1))}
 
 def pickleNodeVMDictionary(dictionary) :
 	with open('host_vm_dict.pkl','w') as host_vm_pickle_out:

@@ -1,0 +1,840 @@
+HOST NAME : node1                TIME : 2014-10-13 04:50:37.557153
+HOST NAME : node3                TIME : 2014-10-13 04:50:37.559006
+HOST NAME : node2                TIME : 2014-10-13 04:50:37.559032
+HOST NAME : node4                TIME : 2014-10-13 04:50:37.559042
+HOST NAME : node1                TIME : 2014-10-13 04:50:37.559196
+HOST NAME : node3                TIME : 2014-10-13 04:50:37.559215
+HOST NAME : node2                TIME : 2014-10-13 04:50:37.559224
+HOST NAME : node4                TIME : 2014-10-13 04:50:37.559231
+HOST NAME : node1                TIME : 2014-10-13 04:50:52.560928
+HOST NAME : node3                TIME : 2014-10-13 04:50:52.561023
+HOST NAME : node2                TIME : 2014-10-13 04:50:52.561041
+HOST NAME : node4                TIME : 2014-10-13 04:50:52.561054
+HOST NAME : node1                TIME : 2014-10-13 04:51:07.570677
+HOST NAME : node3                TIME : 2014-10-13 04:51:07.570768
+HOST NAME : node2                TIME : 2014-10-13 04:51:07.570787
+HOST NAME : node4                TIME : 2014-10-13 04:51:07.570799
+HOST NAME : node1                TIME : 2014-10-13 04:51:22.581212
+HOST NAME : node3                TIME : 2014-10-13 04:51:22.581303
+HOST NAME : node2                TIME : 2014-10-13 04:51:22.581321
+HOST NAME : node4                TIME : 2014-10-13 04:51:22.581333
+HOST NAME : node1                TIME : 2014-10-13 04:51:37.591027
+HOST NAME : node3                TIME : 2014-10-13 04:51:37.591076
+HOST NAME : node2                TIME : 2014-10-13 04:51:37.591089
+HOST NAME : node4                TIME : 2014-10-13 04:51:37.591098
+HOST NAME : node1                TIME : 2014-10-13 04:51:52.601163
+HOST NAME : node3                TIME : 2014-10-13 04:51:52.601219
+HOST NAME : node2                TIME : 2014-10-13 04:51:52.601238
+HOST NAME : node4                TIME : 2014-10-13 04:51:52.601250
+HOST NAME : node1                TIME : 2014-10-13 04:52:07.602141
+HOST NAME : node3                TIME : 2014-10-13 04:52:07.602233
+HOST NAME : node2                TIME : 2014-10-13 04:52:07.602247
+HOST NAME : node4                TIME : 2014-10-13 04:52:07.602257
+HOST NAME : node1                TIME : 2014-10-13 04:52:22.603977
+HOST NAME : node3                TIME : 2014-10-13 04:52:22.604069
+HOST NAME : node2                TIME : 2014-10-13 04:52:22.604082
+HOST NAME : node4                TIME : 2014-10-13 04:52:22.604092
+HOST NAME : node1                TIME : 2014-10-13 04:52:37.604673
+HOST NAME : node3                TIME : 2014-10-13 04:52:37.604754
+HOST NAME : node2                TIME : 2014-10-13 04:52:37.604768
+HOST NAME : node4                TIME : 2014-10-13 04:52:37.604778
+HOST NAME : node1                TIME : 2014-10-13 04:52:52.606493
+HOST NAME : node3                TIME : 2014-10-13 04:52:52.606585
+HOST NAME : node2                TIME : 2014-10-13 04:52:52.606602
+HOST NAME : node4                TIME : 2014-10-13 04:52:52.606612
+HOST NAME : node1                TIME : 2014-10-13 04:53:07.607662
+HOST NAME : node3                TIME : 2014-10-13 04:53:07.607754
+HOST NAME : node2                TIME : 2014-10-13 04:53:07.607768
+HOST NAME : node4                TIME : 2014-10-13 04:53:07.607778
+HOST NAME : node1                TIME : 2014-10-13 04:53:22.609470
+HOST NAME : node3                TIME : 2014-10-13 04:53:22.609557
+HOST NAME : node2                TIME : 2014-10-13 04:53:22.609570
+HOST NAME : node4                TIME : 2014-10-13 04:53:22.609580
+HOST NAME : node1                TIME : 2014-10-13 04:53:37.610364
+HOST NAME : node3                TIME : 2014-10-13 04:53:37.610431
+HOST NAME : node2                TIME : 2014-10-13 04:53:37.610445
+HOST NAME : node4                TIME : 2014-10-13 04:53:37.610455
+HOST NAME : node1                TIME : 2014-10-13 04:53:52.612177
+HOST NAME : node3                TIME : 2014-10-13 04:53:52.612269
+HOST NAME : node2                TIME : 2014-10-13 04:53:52.612283
+HOST NAME : node4                TIME : 2014-10-13 04:53:52.612293
+HOST NAME : node1                TIME : 2014-10-13 04:54:07.613797
+HOST NAME : node3                TIME : 2014-10-13 04:54:07.613891
+HOST NAME : node2                TIME : 2014-10-13 04:54:07.613910
+HOST NAME : node4                TIME : 2014-10-13 04:54:07.613923
+HOST NAME : node1                TIME : 2014-10-13 04:54:22.615206
+HOST NAME : node3                TIME : 2014-10-13 04:54:22.615294
+HOST NAME : node2                TIME : 2014-10-13 04:54:22.615307
+HOST NAME : node4                TIME : 2014-10-13 04:54:22.615317
+HOST NAME : node1                TIME : 2014-10-13 04:54:37.616784
+HOST NAME : node3                TIME : 2014-10-13 04:54:37.616839
+HOST NAME : node2                TIME : 2014-10-13 04:54:37.616856
+HOST NAME : node4                TIME : 2014-10-13 04:54:37.616866
+HOST NAME : node1                TIME : 2014-10-13 04:54:52.617609
+HOST NAME : node3                TIME : 2014-10-13 04:54:52.617657
+HOST NAME : node2                TIME : 2014-10-13 04:54:52.617670
+HOST NAME : node4                TIME : 2014-10-13 04:54:52.617680
+HOST NAME : node1                TIME : 2014-10-13 04:55:07.619106
+HOST NAME : node3                TIME : 2014-10-13 04:55:07.619168
+HOST NAME : node2                TIME : 2014-10-13 04:55:07.619182
+HOST NAME : node4                TIME : 2014-10-13 04:55:07.619192
+HOST NAME : node1                TIME : 2014-10-13 04:55:22.620894
+HOST NAME : node3                TIME : 2014-10-13 04:55:22.620986
+HOST NAME : node2                TIME : 2014-10-13 04:55:22.621006
+HOST NAME : node4                TIME : 2014-10-13 04:55:22.621019
+HOST NAME : node1                TIME : 2014-10-13 04:55:37.621468
+HOST NAME : node3                TIME : 2014-10-13 04:55:37.621556
+HOST NAME : node2                TIME : 2014-10-13 04:55:37.621586
+HOST NAME : node4                TIME : 2014-10-13 04:55:37.621596
+HOST NAME : node1                TIME : 2014-10-13 04:55:52.623148
+HOST NAME : node3                TIME : 2014-10-13 04:55:52.623230
+HOST NAME : node2                TIME : 2014-10-13 04:55:52.623244
+HOST NAME : node4                TIME : 2014-10-13 04:55:52.623254
+HOST NAME : node1                TIME : 2014-10-13 04:56:07.624018
+HOST NAME : node3                TIME : 2014-10-13 04:56:07.624109
+HOST NAME : node2                TIME : 2014-10-13 04:56:07.624124
+HOST NAME : node4                TIME : 2014-10-13 04:56:07.624134
+HOST NAME : node1                TIME : 2014-10-13 04:56:22.625852
+HOST NAME : node3                TIME : 2014-10-13 04:56:22.625946
+HOST NAME : node2                TIME : 2014-10-13 04:56:22.625960
+HOST NAME : node4                TIME : 2014-10-13 04:56:22.625970
+HOST NAME : node1                TIME : 2014-10-13 04:56:37.627452
+HOST NAME : node3                TIME : 2014-10-13 04:56:37.627508
+HOST NAME : node2                TIME : 2014-10-13 04:56:37.627523
+HOST NAME : node4                TIME : 2014-10-13 04:56:37.627533
+HOST NAME : node1                TIME : 2014-10-13 04:56:52.629006
+HOST NAME : node3                TIME : 2014-10-13 04:56:52.629062
+HOST NAME : node2                TIME : 2014-10-13 04:56:52.629079
+HOST NAME : node4                TIME : 2014-10-13 04:56:52.629092
+HOST NAME : node1                TIME : 2014-10-13 04:57:07.629570
+HOST NAME : node3                TIME : 2014-10-13 04:57:07.629668
+HOST NAME : node2                TIME : 2014-10-13 04:57:07.629687
+HOST NAME : node4                TIME : 2014-10-13 04:57:07.629697
+HOST NAME : node1                TIME : 2014-10-13 04:57:22.631427
+HOST NAME : node3                TIME : 2014-10-13 04:57:22.631520
+HOST NAME : node2                TIME : 2014-10-13 04:57:22.631542
+HOST NAME : node4                TIME : 2014-10-13 04:57:22.631555
+HOST NAME : node1                TIME : 2014-10-13 04:57:37.632079
+HOST NAME : node3                TIME : 2014-10-13 04:57:37.632127
+HOST NAME : node2                TIME : 2014-10-13 04:57:37.632140
+HOST NAME : node4                TIME : 2014-10-13 04:57:37.632149
+HOST NAME : node1                TIME : 2014-10-13 04:57:52.633615
+HOST NAME : node3                TIME : 2014-10-13 04:57:52.633677
+HOST NAME : node2                TIME : 2014-10-13 04:57:52.633693
+HOST NAME : node4                TIME : 2014-10-13 04:57:52.633703
+HOST NAME : node1                TIME : 2014-10-13 04:58:07.634376
+HOST NAME : node3                TIME : 2014-10-13 04:58:07.634465
+HOST NAME : node2                TIME : 2014-10-13 04:58:07.634479
+HOST NAME : node4                TIME : 2014-10-13 04:58:07.634489
+HOST NAME : node1                TIME : 2014-10-13 04:58:22.636176
+HOST NAME : node3                TIME : 2014-10-13 04:58:22.636292
+HOST NAME : node2                TIME : 2014-10-13 04:58:22.636309
+HOST NAME : node4                TIME : 2014-10-13 04:58:22.636319
+HOST NAME : node1                TIME : 2014-10-13 04:58:37.636957
+HOST NAME : node3                TIME : 2014-10-13 04:58:37.637021
+HOST NAME : node2                TIME : 2014-10-13 04:58:37.637049
+HOST NAME : node4                TIME : 2014-10-13 04:58:37.637068
+HOST NAME : node1                TIME : 2014-10-13 04:58:52.638454
+HOST NAME : node3                TIME : 2014-10-13 04:58:52.638539
+HOST NAME : node2                TIME : 2014-10-13 04:58:52.638553
+HOST NAME : node4                TIME : 2014-10-13 04:58:52.638563
+HOST NAME : node1                TIME : 2014-10-13 04:59:07.640055
+HOST NAME : node3                TIME : 2014-10-13 04:59:07.640149
+HOST NAME : node2                TIME : 2014-10-13 04:59:07.640169
+HOST NAME : node4                TIME : 2014-10-13 04:59:07.640182
+HOST NAME : node1                TIME : 2014-10-13 04:59:22.641885
+HOST NAME : node3                TIME : 2014-10-13 04:59:22.641978
+HOST NAME : node2                TIME : 2014-10-13 04:59:22.641997
+HOST NAME : node4                TIME : 2014-10-13 04:59:22.642010
+HOST NAME : node1                TIME : 2014-10-13 04:59:37.643530
+HOST NAME : node3                TIME : 2014-10-13 04:59:37.643621
+HOST NAME : node2                TIME : 2014-10-13 04:59:37.643639
+HOST NAME : node4                TIME : 2014-10-13 04:59:37.643652
+HOST NAME : node1                TIME : 2014-10-13 04:59:52.645188
+HOST NAME : node3                TIME : 2014-10-13 04:59:52.645274
+HOST NAME : node2                TIME : 2014-10-13 04:59:52.645287
+HOST NAME : node4                TIME : 2014-10-13 04:59:52.645296
+HOST NAME : node1                TIME : 2014-10-13 05:00:07.646990
+HOST NAME : node3                TIME : 2014-10-13 05:00:07.647083
+HOST NAME : node2                TIME : 2014-10-13 05:00:07.647102
+HOST NAME : node4                TIME : 2014-10-13 05:00:07.647116
+HOST NAME : node1                TIME : 2014-10-13 05:00:22.648822
+HOST NAME : node3                TIME : 2014-10-13 05:00:22.648913
+HOST NAME : node2                TIME : 2014-10-13 05:00:22.648928
+HOST NAME : node4                TIME : 2014-10-13 05:00:22.648938
+HOST NAME : node1                TIME : 2014-10-13 05:00:37.649804
+HOST NAME : node3                TIME : 2014-10-13 05:00:37.649892
+HOST NAME : node2                TIME : 2014-10-13 05:00:37.649905
+HOST NAME : node4                TIME : 2014-10-13 05:00:37.649915
+HOST NAME : node1                TIME : 2014-10-13 05:00:52.651607
+HOST NAME : node3                TIME : 2014-10-13 05:00:52.651700
+HOST NAME : node2                TIME : 2014-10-13 05:00:52.651719
+HOST NAME : node4                TIME : 2014-10-13 05:00:52.651733
+HOST NAME : node1                TIME : 2014-10-13 05:01:07.653240
+HOST NAME : node3                TIME : 2014-10-13 05:01:07.653334
+HOST NAME : node2                TIME : 2014-10-13 05:01:07.653353
+HOST NAME : node4                TIME : 2014-10-13 05:01:07.653366
+HOST NAME : node1                TIME : 2014-10-13 05:01:22.654252
+HOST NAME : node3                TIME : 2014-10-13 05:01:22.654346
+HOST NAME : node2                TIME : 2014-10-13 05:01:22.654369
+HOST NAME : node4                TIME : 2014-10-13 05:01:22.654388
+HOST NAME : node1                TIME : 2014-10-13 05:01:37.655954
+HOST NAME : node3                TIME : 2014-10-13 05:01:37.656026
+HOST NAME : node2                TIME : 2014-10-13 05:01:37.656038
+HOST NAME : node4                TIME : 2014-10-13 05:01:37.656048
+HOST NAME : node1                TIME : 2014-10-13 05:03:19.462096
+HOST NAME : node3                TIME : 2014-10-13 05:03:19.464223
+HOST NAME : node2                TIME : 2014-10-13 05:03:19.464255
+HOST NAME : node4                TIME : 2014-10-13 05:03:19.464266
+HOST NAME : node1                TIME : 2014-10-13 05:03:19.464357
+HOST NAME : node3                TIME : 2014-10-13 05:03:19.464376
+HOST NAME : node2                TIME : 2014-10-13 05:03:19.464385
+HOST NAME : node4                TIME : 2014-10-13 05:03:19.464394
+HOST NAME : node1                TIME : 2014-10-13 05:03:34.465908
+HOST NAME : node3                TIME : 2014-10-13 05:03:34.465989
+HOST NAME : node2                TIME : 2014-10-13 05:03:34.466004
+HOST NAME : node4                TIME : 2014-10-13 05:03:34.466014
+HOST NAME : node1                TIME : 2014-10-13 05:03:49.467613
+HOST NAME : node3                TIME : 2014-10-13 05:03:49.467667
+HOST NAME : node2                TIME : 2014-10-13 05:03:49.467680
+HOST NAME : node4                TIME : 2014-10-13 05:03:49.467690
+HOST NAME : node1                TIME : 2014-10-13 05:04:04.469208
+HOST NAME : node3                TIME : 2014-10-13 05:04:04.469301
+HOST NAME : node2                TIME : 2014-10-13 05:04:04.469320
+HOST NAME : node4                TIME : 2014-10-13 05:04:04.469333
+HOST NAME : node1                TIME : 2014-10-13 05:04:19.470713
+HOST NAME : node3                TIME : 2014-10-13 05:04:19.470753
+HOST NAME : node2                TIME : 2014-10-13 05:04:19.470764
+HOST NAME : node4                TIME : 2014-10-13 05:04:19.470772
+HOST NAME : node1                TIME : 2014-10-13 05:04:34.472476
+HOST NAME : node3                TIME : 2014-10-13 05:04:34.472566
+HOST NAME : node2                TIME : 2014-10-13 05:04:34.472586
+HOST NAME : node4                TIME : 2014-10-13 05:04:34.472599
+HOST NAME : node1                TIME : 2014-10-13 05:04:49.473292
+HOST NAME : node3                TIME : 2014-10-13 05:04:49.473388
+HOST NAME : node2                TIME : 2014-10-13 05:04:49.473411
+HOST NAME : node4                TIME : 2014-10-13 05:04:49.473422
+HOST NAME : node1                TIME : 2014-10-13 05:05:04.474928
+HOST NAME : node3                TIME : 2014-10-13 05:05:04.475020
+HOST NAME : node2                TIME : 2014-10-13 05:05:04.475037
+HOST NAME : node4                TIME : 2014-10-13 05:05:04.475047
+HOST NAME : node1                TIME : 2014-10-13 05:05:19.476741
+HOST NAME : node3                TIME : 2014-10-13 05:05:19.476832
+HOST NAME : node2                TIME : 2014-10-13 05:05:19.476851
+HOST NAME : node4                TIME : 2014-10-13 05:05:19.476865
+HOST NAME : node1                TIME : 2014-10-13 05:16:55.968997
+HOST NAME : node1                TIME : 2014-10-13 05:26:57.796982
+HOST NAME : node1                TIME : 2014-10-13 05:27:56.705862
+HOST NAME : node1                TIME : 2014-10-13 05:28:49.886717
+HOST NAME : node1                TIME : 2014-10-13 05:29:26.787412
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:29:26.787648
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:29:26.787665
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:29:26.787677
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:29:26.787738
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:29:26.787757
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:29:26.787769
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:29:26.787780
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:29:41.788792
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:29:41.788916
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:29:41.788948
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:29:41.788971
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:29:56.789903
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:29:56.789983
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:29:56.790012
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:29:56.790035
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:30:11.791358
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:30:11.791443
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:30:11.791471
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:30:11.791496
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:30:26.792766
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:30:26.792876
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:30:26.792904
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:30:26.792927
+vm1		192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:30:36.167280
+VM ID: vm1	192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:30:36.167516
+VM ID: vm1	192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:30:36.167534
+VM ID: vm1	192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:30:36.167546
+VM ID: vm1	192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:30:36.167606
+VM ID: vm1	192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:30:36.167625
+VM ID: vm1	192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:30:36.167637
+VM ID: vm1	192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:30:36.167653
+VM ID: vm1	192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:30:51.168520
+VM ID: vm1	192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:30:51.168628
+VM ID: vm1	192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:30:51.168659
+VM ID: vm1	192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:30:51.168683
+VM ID: vm1	192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:31:06.170223
+VM ID: vm1	192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:31:06.170353
+VM ID: vm1	192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:31:06.170385
+VM ID: vm1	192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:31:06.170409
+VM ID: vm1	192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:31:21.172110
+VM ID: vm1	192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:31:21.172240
+VM ID: vm1	192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:31:21.172274
+VM ID: vm1	192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:31:21.172298
+VM ID: vm1	192.168.1.14		alloted cpu: 3.0cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:31:36.498030
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:31:36.498273
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:31:36.498291
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:31:36.498303
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:31:36.498364
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:31:36.498383
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:31:36.498395
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:31:36.498407
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:31:51.499481
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:31:51.499579
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:31:51.499609
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:31:51.499633
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:32:06.501313
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:32:06.501409
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:32:06.501441
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:32:06.501464
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:32:21.502974
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:32:21.503068
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:32:21.503099
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:32:21.503123
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:32:36.504859
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:32:36.504978
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:32:36.505009
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:32:36.505032
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:32:51.506539
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:32:51.506672
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:32:51.506705
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:32:51.506728
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:33:06.508458
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:33:06.508576
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:33:06.508606
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:33:06.508630
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:33:21.510139
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:33:21.510272
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:33:21.510305
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:33:21.510329
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:33:36.512048
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:33:36.512195
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:33:36.512226
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:33:36.512249
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:33:51.512933
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:33:51.513055
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:33:51.513084
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:33:51.513108
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:34:06.513987
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:34:06.514113
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:34:06.514181
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:34:06.514198
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:34:21.514935
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:34:21.515062
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:34:21.515092
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:34:21.515116
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:34:36.516670
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:34:36.516788
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:34:36.516817
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:34:36.516841
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:34:51.517502
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:34:51.517631
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:34:51.517661
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:34:51.517685
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:35:06.518720
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:35:06.518803
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:35:06.518830
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:35:06.518850
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:35:21.520351
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:35:21.520485
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:35:21.520520
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:35:21.520544
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:35:36.522267
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:35:36.522395
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:35:36.522427
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:35:36.522452
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:35:51.524151
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:35:51.524230
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:35:51.524259
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:35:51.524282
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:36:06.525791
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:36:06.525873
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:36:06.525901
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:36:06.525925
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:36:21.526657
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:36:21.526834
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:36:21.526945
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:36:21.526994
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:36:36.528565
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:36:36.528693
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:36:36.528724
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:36:36.528748
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:36:51.530300
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:36:51.530420
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:36:51.530449
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:36:51.530473
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:37:06.531985
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:37:06.532116
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:37:06.532148
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:37:06.532172
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:37:21.533573
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:37:21.533701
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:37:21.533731
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:37:21.533754
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:37:36.534955
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:37:36.535042
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:37:36.535071
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:37:36.535095
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:37:51.536059
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:37:51.536181
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:37:51.536223
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:37:51.536249
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:38:06.537832
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:38:06.537917
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:38:06.537946
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:38:06.537969
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:38:21.538955
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:38:21.539079
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:38:21.539108
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:38:21.539131
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:38:36.540850
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:38:36.540976
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:38:36.541008
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:38:36.541032
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:38:51.542351
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:38:51.542481
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:38:51.542517
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:38:51.542541
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:39:06.543340
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:39:06.543459
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:39:06.543490
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:39:06.543514
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:39:21.545026
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:39:21.545178
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:39:21.545211
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:39:21.545234
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 05:39:36.546914
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 05:39:36.547004
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 05:39:36.547034
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 05:39:36.547058
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 08:39:50.539995
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 08:39:50.540117
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 08:39:50.540146
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 08:39:50.540170
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 13:04:31.814072
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 13:04:31.939110
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 13:04:31.939197
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 13:04:31.939242
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 13:04:46.951072
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 13:04:46.951257
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 13:04:46.951319
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 13:04:46.951376
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 13:05:01.953000
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 13:05:01.953135
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 13:05:01.953166
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 13:05:01.953206
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 13:05:16.954883
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 13:05:16.955046
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 13:05:16.955104
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 13:05:16.955194
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node1                TIME : 2014-10-13 13:05:31.964886
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node3                TIME : 2014-10-13 13:05:31.965024
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node2                TIME : 2014-10-13 13:05:31.965056
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+
+HOST NAME : node4                TIME : 2014-10-13 13:05:31.965079
+VM ID: vm1	VM IP: 192.168.1.14		alloted cpu: 3.0	cpu usage: 0	alotted memory: 424242.0	memory usage: 0
+

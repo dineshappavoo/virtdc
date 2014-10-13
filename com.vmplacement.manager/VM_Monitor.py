@@ -3,6 +3,11 @@
 import subprocess
 import pickle
 import sys
+from datetime import datetime
+import sys
+sys.path.append('/Users/Dany/Documents/VMPlacementAndScaling/VMPlacementAndScaling/com.vmplacement.framework')
+import Guest
+import time
 #==============================================================================
 # Variables
 #==============================================================================
@@ -19,13 +24,13 @@ import sys
 #==============================================================================
 host_vm_dict={}
 
-def loadPickleDictionary() :
+def loadPickleVMDictionary() :
     try :
-        with open('~/framework/host_vm_dict.pkl', 'r') as pickle_in:
+        with open('/Users/Dany/Documents/VMPlacementAndScaling/VMPlacementAndScaling/com.vmplacement.framework/host_vm_dict.pkl', 'r') as pickle_in:
             dictionary = pickle.load(pickle_in)
             return dictionary
     except:
-        print 'Cannot open node_dict.pkl file'
+        print 'Cannot open host_vm_dict.pkl file'
         sys.exit(1)
 
 def slicingIP(data, key):
@@ -72,18 +77,19 @@ def getMemUsage(vmIp):
         return memUsage
 
 
-def monitorLogAndReportHotSpot():
+def monitorAndLogAndReportHotSpot():
         #f=file(iplist)
         usageInfo=""
-        file= open('vmusage.log', 'w+')
+        file= open('vmusage.log', 'a+')
         for node, vm_dict in host_vm_dict.iteritems():
-            for vmId,value in vm_dict:
+            file.write("HOST NAME : "+node+"                TIME : "+str(datetime.now())+'\n')
+            for vmId,value in vm_dict.iteritems():
                 vmIp=slicingIP(value.vmip, '\n')
-                cpuUsage = getCpuUsage(vmIp)
-                memUsage = getMemUsage(vmIp)
-                usage= vmId+'\t\t'+vmIp + '\t\t' + 'cpu: ' + cpuUsage + '\tmemory: ' + memUsage +"\n"
+                cpuUsage = 0#getCpuUsage(vmIp)
+                memUsage = 0#getMemUsage(vmIp)
+                usage= 'VM ID: '+vmId+'\tVM IP: '+vmIp + '\t\talloted cpu: '+str(value.cpu)+'\tcpu usage: ' + str(cpuUsage) + '\talotted memory: '+str(value.memory)+'\tmemory usage: ' + str(memUsage) +"\n"
                 usageInfo+=usage
-                file.write(usage)
+                file.write(usage+'\n')
                 if (float(cpuUsage)>float(value.cpu) or float(memUsage)>float(value.memory)):
                     #report to VM Placement manager
                     a=0
@@ -91,6 +97,15 @@ def monitorLogAndReportHotSpot():
         file.close()
         return usageInfo
 
+def monitorVMFrequently():
+    while(1):
+        monitorAndLogAndReportHotSpot()
+        time.sleep(15)
+
+
 print "Test"
-usage=monitorLogAndReportHotSpot()
+host_vm_dict=loadPickleVMDictionary()
+usage=monitorAndLogAndReportHotSpot()
+monitorVMFrequently()
+print host_vm_dict
 print usage
