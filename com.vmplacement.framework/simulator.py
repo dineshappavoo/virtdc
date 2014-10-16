@@ -20,7 +20,7 @@ stress -t 1h -c 3 --vm-bytes 64m &
 '''
 
 uptime_command = '''
-uptime | cut -d':' -f5 | cut -d',' -f1
+/usr/bin/uptime | cut -d':' -f5 | cut -d',' -f1
 '''
 
 stop_command = '''
