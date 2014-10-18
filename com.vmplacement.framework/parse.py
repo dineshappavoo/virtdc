@@ -40,7 +40,9 @@ with open(options.task, 'rb') as csvfile:
 		start_time = row[0]
 		end_time = row[1]
 		cpu_rate = row[5]
-		data = ((int(end_time) - int(start_time)) / 1000000, round(float(cpu_rate), 2))
+		memory = round(float(row[6]), 2) * 500000   # in Kb
+		io_usage = round(float(row[11]), 2)
+		data = ((int(end_time) - int(start_time)) / 1000000, round(float(cpu_rate), 2), memory, io_usage)
 		if(task_index not in all_tasks):
 			all_tasks[task_index] = [data]
 		else:
@@ -50,12 +52,17 @@ if(options.task_index and options.task_index in all_tasks):
 	with open(options.task_index + '.csv', 'wb') as csvfile:
 		writer = csv.writer(csvfile, delimiter=' ')
 		max_cpu = 1.0
+		max_memory = 0.0
 		for n in all_tasks[task_index]:
 			curr_load = n[1]
+			curr_memory = n[2]
 			if(math.ceil(curr_load) > max_cpu):
 				max_cpu = math.ceil(curr_load)
+			if(math.ceil(curr_memory) > max_memory):
+				max_memory = int(math.ceil(curr_memory))
 			writer.writerow(n)
 		writer.writerow([max_cpu])
+		writer.writerow([max_memory])
 
 
 

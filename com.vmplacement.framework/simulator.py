@@ -58,7 +58,7 @@ try:
         with open(options.task, 'r') as f:
 		for line in f:
 			lines = line[:-2].split(' ')
-			if(len(lines) == 2):
+			if(len(lines) >= 2):
                 		all_tasks = all_tasks + [(int(lines[0]), float(lines[1])) for line in f]
 except Exception as e:
 	print e
