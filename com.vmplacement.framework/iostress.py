@@ -62,13 +62,13 @@ try:
     with open(options.task, 'r') as f:
         for line in f:
             lines = line[:-2].split(' ')
-            if(len(lines) == 2):
-                all_tasks.append([(int(lines[0]), float(lines[1])) for line in f])
+            if(len(lines) >= 2):
+                all_tasks.append([(int(lines[0]), float(lines[2])) for line in f])
 except Exception as e:
     print e
 
 for l in all_tasks:
-    if(len(l) != 2):
+    if(len(l) < 2):
         continue
     target = l[1]
     time = l[0]
