@@ -1,0 +1,7 @@
+TYPE="Ethernet"
+BRIDGE="br0"
+NAME="em1"
+UUID="uuid_value"
+ONBOOT="yes"
+HWADDR="hardware_address"
+
