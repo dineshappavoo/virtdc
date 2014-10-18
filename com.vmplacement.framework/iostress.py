@@ -25,7 +25,7 @@ util_last_min = [0] * 30
 def populateUtilList():
     i = 0
     while(True):
-        command = "/usr/bin/iostat -d -x 1 2 | grep sda | tail -1 | awk '{print $12}'"
+        command = "/usr/bin/iostat -d -x 1 2 | grep sda | tail -1 | awk '{print $14}'"
         util_value = float(subprocess.check_output(command, shell=True))/100  # percentage to value
         util_last_min[i % 30] = util_value
         i += 1
@@ -62,13 +62,13 @@ try:
     with open(options.task, 'r') as f:
         for line in f:
             lines = line[:-2].split(' ')
-            if(len(lines) == 2):
-                all_tasks.append([(int(lines[0]), float(lines[1])) for line in f])
+            if(len(lines) >= 2):
+                all_tasks.append([(int(lines[0]), float(lines[2])) for line in f])
 except Exception as e:
     print e
 
 for l in all_tasks:
-    if(len(l) != 2):
+    if(len(l) < 2):
         continue
     target = l[1]
     time = l[0]
