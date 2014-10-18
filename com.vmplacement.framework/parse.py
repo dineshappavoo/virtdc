@@ -49,7 +49,7 @@ with open(options.task, 'rb') as csvfile:
 			all_tasks[task_index].append(data)
 			
 if(options.task_index and options.task_index in all_tasks):
-	with open(options.task_index + '.csv', 'wb') as csvfile:
+	with open("VM_Task_" + options.task_index + '.csv', 'wb') as csvfile:
 		writer = csv.writer(csvfile, delimiter=' ')
 		max_cpu = 1
 		max_memory = 0
