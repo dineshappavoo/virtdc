@@ -12,11 +12,11 @@ parser.add_option("-T", "--task-set", dest="task", help="task input file", actio
 (options, args) = parser.parse_args()
 
 stop_command = '''
-for n in `cat /root/io.pid`; do kill -STOP $n; done
+for n in `cat /root/io.pid`; do kill -STOP $n || true; done
 '''
 
 cont_command = '''
-for n in `cat /root/io.pid`; do kill -CONT $n; done
+for n in `cat /root/io.pid`; do kill -CONT $n || true; done
 '''
 
 # a 30-element list.
