@@ -59,14 +59,15 @@ try:
 		for line in f:
 			lines = line[:-2].split(' ')
 			if(len(lines) >= 2):
-                		all_tasks = all_tasks + [(int(lines[0]), float(lines[1])) for line in f]
+                		all_tasks = all_tasks + [(int(lines[0]), float(lines[1]), float(lines[2]))]
 except Exception as e:
 	print e
 for l in all_tasks:
-	if(len(l) != 2):
+	if(len(l) < 2):
 		continue
 	target = l[1]
 	time = l[0]
+	memory = l[2]
 	try:
 		curr_func = wrapTimeOut(target, time)
 		curr_func(target)
