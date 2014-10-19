@@ -27,7 +27,7 @@ from VM_decisionMaker import NodeFinder
 #==============================================================================
 
 guest_image = "/home/vm_img/"
-guest_config_path = "/root/Desktop/PYTHON/guestconfig.xml"
+guest_config_path = "/root/Desktop/VMPlacementAndScaling/com.vmplacement.framework/guestconfig.xml"
 
 _master="node1"
 _imageCopyCmd="scp"
@@ -35,40 +35,10 @@ _cloneCmd="virsh --connect qemu+ssh://"
 
 #===============================================================================
 
-
-def main(argv):
-	cpu= ''
-	memory = ''
-	io=''
-	vmid = ''
-	time = ''
-	max_memory=4194304
-	try:
-		opts, args = getopt.getopt(argv,"vmid:cpu:mem:io:time:",["vmid=","cpu=","mem=","io=","time="])
-	except getopt.GetoptError:
-		print 'VM_submitjob.py --vmid <VMID> --cpu <CPU> --mem <MEMORY> --io <IO> --time <TIME>'
-		sys.exit(2)
-	for opt, arg in opts:
-		if opt == '--h':
-			print 'VM_submitjob.py --vmid <VMID> --cpu <CPU> --mem <MEMORY> --io <IO> --time <TIME>'
-			sys.exit()
-		elif opt in ("--cpu", "-cpu"):
-			cpu = arg
-		elif opt in ("--mem", "-mem"):
-			memory = arg
-		elif opt in ("--io", "-io"):
-			io = arg
-		elif opt in ("--vmid", "-vmid"):
-			vmid = arg
-		elif opt in ("--time", "-time"):
-			time = arg
+def vm_submitjob(vmid,cpu,memory,io):
 	obj=NodeFinder()
 	host = obj.place_job (cpu,memory,io)
 	print host
-	
-	
-
-
 	#Code to check whether the VM can be placed
 	if (host is not None) :
 		if(host==_master):
@@ -124,7 +94,33 @@ def main(argv):
 	print 'CPU "', cpu
 	print 'memory"', memory
 	print 'io"', io
-	print 'time"', time
 
+
+def main(argv):
+	cpu= ''
+	memory = ''
+	io=''
+	vmid = ''
+	max_memory=4194304
+	try:
+		opts, args = getopt.getopt(argv,"vmid:cpu:mem:io:",["vmid=","cpu=","mem=","io="])
+	except getopt.GetoptError:
+		print 'VM_submitjob.py --vmid <VMID> --cpu <CPU> --mem <MEMORY> --io <IO>'
+		sys.exit(2)
+	for opt, arg in opts:
+		if opt == '--h':
+			print 'VM_submitjob.py --vmid <VMID> --cpu <CPU> --mem <MEMORY> --io <IO>'
+			sys.exit()
+		elif opt in ("--cpu", "-cpu"):
+			cpu = arg
+		elif opt in ("--mem", "-mem"):
+			memory = arg
+		elif opt in ("--io", "-io"):
+			io = arg
+		elif opt in ("--vmid", "-vmid"):
+			vmid = arg
+		
+	vm_submitjob(vmid,cpu,memory,io)
+	
 if __name__ == "__main__":
 	main(sys.argv[1:])
