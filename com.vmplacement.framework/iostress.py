@@ -4,6 +4,7 @@ import optparse
 import threading
 import subprocess
 from timeout import timeout
+from time import sleep
 
 parser = optparse.OptionParser()
 parser.add_option("-T", "--task-set", dest="task", help="task input file", action="store", default="./task.dat")
@@ -11,11 +12,11 @@ parser.add_option("-T", "--task-set", dest="task", help="task input file", actio
 (options, args) = parser.parse_args()
 
 stop_command = '''
-for n in `cat ~/io.pid`; do kill -STOP $n; done
+for n in `cat /root/io.pid`; do kill -STOP $n; done
 '''
 
 cont_command = '''
-for n in `cat ~/io.pid`; do kill -CONT $n; done
+for n in `cat /root/io.pid`; do kill -CONT $n; done
 '''
 
 # a 30-element list.
@@ -54,7 +55,7 @@ def wrapTimeOut(target, time):
     
 # start a thread to maintain the last minute disk util list
 t = threading.Thread(target=populateUtilList, args = ())
-t.daemon = True
+t.daemon = False
 t.start()
 
 all_tasks = []
@@ -63,7 +64,7 @@ try:
         for line in f:
             lines = line[:-2].split(' ')
             if(len(lines) >= 2):
-                all_tasks.append([(int(lines[0]), float(lines[2])) for line in f])
+                all_tasks.append((int(lines[0]), float(lines[3])))
 except Exception as e:
     print e
 
@@ -75,5 +76,7 @@ for l in all_tasks:
     try:
         curr_func = wrapTimeOut(target, time)
         curr_func(target)
-    except:
+    except Exception as e:
         continue
+
+

@@ -59,6 +59,22 @@ VM SCALING :
 
 http://www.linuxsysadmintutorials.com/configuring-guest-domain-memory-usage-with-virsh/
 
+=======
+CPU SCALING : 
+
+
+    The following command will disable a CPU:
+
+# echo 0 > /sys/devices/system/cpu/cpuX/online
+
+where X is the ID of the CPU as determined from /proc/cpuinfo.
+
+    To re-enable the CPU, run:
+
+# echo 1 > /sys/devices/system/cpu/cpuX/online
+
+
+REF: http://www.netfibre.com/?p=619
 
 GIT:
 

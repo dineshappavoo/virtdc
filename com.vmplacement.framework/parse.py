@@ -41,7 +41,7 @@ with open(options.task, 'rb') as csvfile:
 		end_time = row[1]
 		cpu_rate = row[5]
 		memory = round(float(row[6]), 2) * 500000   # in Kb
-		io_usage = round(float(row[11]), 2)
+		io_usage = round(float(row[11]), 4)
 		data = ((int(end_time) - int(start_time)) / 1000000, round(float(cpu_rate), 2), memory, io_usage)
 		if(task_index not in all_tasks):
 			all_tasks[task_index] = [data]
