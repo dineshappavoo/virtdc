@@ -53,6 +53,23 @@ EOF
 
 Beware, that naive solution of exporting a local directory from one host using NFS and mounting it at the same path on the other host would not work. The directory used for storing disk images has to be mounted from shared storage on both hosts. Otherwise, the domain may lose access to its disk images during migration because source libvirtd may change the owner, permissions, and SELinux labels on the disk images once it successfully migrates the domain to its destination. Libvirt avoids doing such things if it detects that the disk images are mounted from a shared storage. 
 
+
+CPU SCALING : 
+
+
+    The following command will disable a CPU:
+
+# echo 0 > /sys/devices/system/cpu/cpuX/online
+
+where X is the ID of the CPU as determined from /proc/cpuinfo.
+
+    To re-enable the CPU, run:
+
+# echo 1 > /sys/devices/system/cpu/cpuX/online
+
+
+REF: http://www.netfibre.com/?p=619
+
 GIT:
 
 To update local repo and remove the files which is not in sync with remote master
