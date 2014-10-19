@@ -9,10 +9,10 @@ sleep 10
 done
 
 # compile the two files
-gcc -fopenmp /root/StressCPU.c -o /root/cpu
-gcc /root/StressMemory.c -o /root/memory
+gcc -fopenmp /root/StressCPU.c -o /root/StressCPU
+gcc /root/StressMemory.c -o /root/StressMemory
 
-/root/cpu &
+/root/StressCPU &
 echo $! > /root/cpu.pid
 
 python /root/simulator.py -T /root/task.dat >> /root/simulator.log &
