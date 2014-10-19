@@ -76,6 +76,16 @@ def getMemUsage(vmIp):
 
         return memUsage
 
+def getIoUsage(vmIp):
+
+	cmd='ssh root@' +vmIp+ ' iostat -d -x 1 2 | grep sda | tail -1 | awk \'{print $14}\''
+	#cmd='ssh root@' +vmIp+ ' free -m | grep \'+\' | awk \'{print $3}\''
+	ioUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+	#memUsage = slicingUsage(ioUsage , '\n') #not working. future work
+	iolen = len(ioUsage )
+	ioUsage = ioUsage[:iolen - 1]
+
+	return ioUsage 
 
 def monitorAndLogAndReportHotSpot():
         usageInfo=""
@@ -86,7 +96,8 @@ def monitorAndLogAndReportHotSpot():
                 vmIp=slicingIP(value.vmip, '\n')
                 cpuUsage = 0#getCpuUsage(vmIp)
                 memUsage = 0#getMemUsage(vmIp)
-                usage= 'VM ID: '+vmId+'\tVM IP: '+vmIp + '\t\talloted cpu: '+str(value.cpu)+'\tcpu usage: ' + str(cpuUsage) + '\talotted memory: '+str(value.memory)+'\tmemory usage: ' + str(memUsage) +"\n"
+		ioUsage =  0#getIoUsage(vmIp)
+                usage= 'VM ID: '+vmId+'\tVM IP: '+vmIp + '\t\talloted cpu: '+str(value.cpu)+'\tcpu usage: ' + str(cpuUsage) + '\talotted memory: '+str(value.memory)+'\tmemory usage: ' + str(memUsage) + '\talotted io: '+str(value.io)+'\tio usage: ' + str(ioUsage) +"\n"
                 usageInfo+=usage
                 file.write(usage+'\n')
                 if (float(cpuUsage)>float(value.cpu) or float(memUsage)>float(value.memory)):
