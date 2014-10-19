@@ -3,7 +3,6 @@
 
 import pickle
 from Node import Node
-from Host_machine_info_tracker import Node
 
 #==============================================================================
 # Variables
