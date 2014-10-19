@@ -53,6 +53,13 @@ EOF
 
 Beware, that naive solution of exporting a local directory from one host using NFS and mounting it at the same path on the other host would not work. The directory used for storing disk images has to be mounted from shared storage on both hosts. Otherwise, the domain may lose access to its disk images during migration because source libvirtd may change the owner, permissions, and SELinux labels on the disk images once it successfully migrates the domain to its destination. Libvirt avoids doing such things if it detects that the disk images are mounted from a shared storage. 
 
+
+
+VM SCALING : 
+
+http://www.linuxsysadmintutorials.com/configuring-guest-domain-memory-usage-with-virsh/
+
+
 GIT:
 
 To update local repo and remove the files which is not in sync with remote master

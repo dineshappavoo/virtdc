@@ -5,8 +5,8 @@ import pickle
 import sys
 from datetime import datetime
 import sys
-sys.path.append('/Users/Dany/Documents/VMPlacementAndScaling/VMPlacementAndScaling/com.vmplacement.framework')
-import Guest
+sys.path.append('/root/Desktop/VMPlacementAndScaling/com.vmplacement.framework')
+from Guest import Guest
 import time
 #==============================================================================
 # Variables
@@ -26,7 +26,7 @@ host_vm_dict={}
 
 def loadPickleVMDictionary() :
     try :
-        with open('/Users/Dany/Documents/VMPlacementAndScaling/VMPlacementAndScaling/com.vmplacement.framework/host_vm_dict.pkl', 'r') as pickle_in:
+        with open('/root/Desktop/VMPlacementAndScaling/com.vmplacement.framework/host_vm_dict.pkl', 'r') as pickle_in:
             dictionary = pickle.load(pickle_in)
             return dictionary
     except:

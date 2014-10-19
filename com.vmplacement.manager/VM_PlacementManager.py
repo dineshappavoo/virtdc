@@ -22,12 +22,15 @@ import VM_Info_Updater
 def initiateLiveMigration(vmid,sourcenode,destnode):
     #Initiate the module for live migration
 	#migration_cmd = '''virsh migrate --live hm1 qemu+ssh://node3/system'''
+
 	migration_cmd = "ssh root@sourcenode \"virsh migrate vm_id qemu+ssh://dest_node/system\""
 	migration_cmd=migration_cmd.replace("vm_id", vmid);
 	migration_cmd=migration_cmd.replace("dest_node", destnode);
 	migrate_vm = subprocess.check_output(migration_cmd, shell=True, stderr=subprocess.PIPE)		
 def initiateVMScaleUp(vmid):
 	scalup_cmd='''ssh root@sourcenode \"virsh migrate vm_id qemu+ssh://dest_node/system\"'''
+
+def initiate
 def initiateNodeLoadBalacing():
     #Initiate the module to do the node load balancing
     b=0
