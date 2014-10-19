@@ -29,7 +29,7 @@ free -k -t | grep Total | awk '{print $3}'
 '''
 
 memory_init_command = '''
-/root/memory %s &
+/root/StressMemory %s &
 echo $! > /root/memory.pid
 '''
 memory_clear_command = '''

@@ -5,6 +5,7 @@ import threading
 import subprocess
 from timeout import timeout
 from time import sleep
+import os
 
 parser = optparse.OptionParser()
 parser.add_option("-T", "--task-set", dest="task", help="task input file", action="store", default="./task.dat")
@@ -57,6 +58,11 @@ def wrapTimeOut(target, time):
 t = threading.Thread(target=populateUtilList, args = ())
 t.daemon = False
 t.start()
+
+# collect disk util for the first minute before iostress starts
+sleep(60)
+
+os.system("/root/iostress.sh > /dev/null &")
 
 all_tasks = []
 try:
