@@ -57,6 +57,8 @@ Beware, that naive solution of exporting a local directory from one host using N
 
 VM SCALING : 
 
+MEMORY SCALING:
+
 http://www.linuxsysadmintutorials.com/configuring-guest-domain-memory-usage-with-virsh/
 
 =======

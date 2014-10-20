@@ -19,10 +19,11 @@ class Guest:
     'Common base class for all guest'
     guestcount = 0
     
-    def __init__(self,vmip, vmid, cpu, memory, currentMemory, io):
+    def __init__(self,vmip, vmid, current_cpu, max_cpu, current_memory, max_memory, io):
         self.vmip = vmip
         self.vmid = vmid
-        self.cpu = cpu
-        self.memory = memory
-	self.currentMemory = currentMemory
+        self.current_cpu = current_cpu
+	self.max_cpu = max_cpu
+	self.current_memory = current_memory
+        self.max_memory = max_memory
         self.io = io

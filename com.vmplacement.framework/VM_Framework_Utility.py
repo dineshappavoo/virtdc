@@ -19,16 +19,6 @@ import pickle
 #license             = ""
 
 #==============================================================================
-host_vm_dict={}
-
-def loadPickleHostVMDictionary() :
-	try :
-		with open('host_vm_dict.pkl', 'r') as pickle_in:
-			dictionary = pickle.load(pickle_in)
-			return dictionary
-	except:
-		print 'Cannot open host_vm_dict.pkl file'
-		sys.exit(1)
 
 def getGuestIP(vmid, username, password) : 
 	#vmid = "Test_node1"
@@ -48,23 +38,10 @@ def getGuestIP(vmid, username, password) :
 	ip = child.match.group()
 
 	child.sendline('logout')
-	#print ip
+	print ip
 	return ip
 
-def UpdatePickleForHostVMDict(host_vm_dict):
-	with open('host_vm_dict.pkl','w') as host_vm_pickle_out:
-    		pickle.dump(host_vm_dict,host_vm_pickle_out)
-
-def GetIPAndUpdateVMDictionary(hostname, vmid):
-	host_vm_dict=loadPickleHostVMDictionary()
-	ip=getGuestIP(vmid, "root", "Teamb@123")
-	host_vm_dict[hostname][vmid]=ip
-	UpdatePickleForHostVMDict(host_vm_dict)
-
-#Function calls for Testing
-GetIPAndUpdateVMDictionary("node1", "Test_node1")
-print host_vm_dict
-	
+getGuestIP('Test', 'root', 'Teamb@123')
 
 	
 	

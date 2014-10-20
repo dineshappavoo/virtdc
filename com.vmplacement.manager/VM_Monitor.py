@@ -54,13 +54,13 @@ def slicingUsage(data, key):
 def getCpuUsage(vmIp):
 
         #check type of return
-        cmd='ssh root@'+vmIp+' uptime | awk \'{print $4}\''
+        cmd='ssh -q -o StrictHostKeyChecking=no root@'+vmIp+' uptime | awk \'{print $4}\''
         check=subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 
         if check == 'min,\n':
-                cmd='ssh root@'+vmIp+' uptime | awk \'{print $9}\''
+                cmd='ssh -q -o StrictHostKeyChecking=no root@'+vmIp+' uptime | awk \'{print $9}\''
         else:
-                cmd='ssh root@'+vmIp+' uptime | awk \'{print $8}\''
+                cmd='ssh -q -o StrictHostKeyChecking=no root@'+vmIp+' uptime | awk \'{print $8}\''
         cpuUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
         cpuUsage = slicingUsage(cpuUsage, ',')
 
@@ -68,7 +68,7 @@ def getCpuUsage(vmIp):
 
 
 def getMemUsage(vmIp):
-        cmd='ssh root@' +vmIp+ ' free -m | grep \'+\' | awk \'{print $3}\''
+        cmd='ssh -q -o StrictHostKeyChecking=no root@' +vmIp+ ' free -m | grep \'+\' | awk \'{print $3}\''
         memUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
         #memUsage = slicingUsage(memUsage , '\n') #not working. future work
         memlen = len(memUsage )
@@ -78,7 +78,7 @@ def getMemUsage(vmIp):
 
 def getIoUsage(vmIp):
 
-	cmd='ssh root@' +vmIp+ ' iostat -d -x 1 2 | grep sda | tail -1 | awk \'{print $14}\''
+	cmd='ssh -q -o StrictHostKeyChecking=no root@' +vmIp+ ' iostat -d -x 1 2 | grep sda | tail -1 | awk \'{print $14}\''
 	#cmd='ssh root@' +vmIp+ ' free -m | grep \'+\' | awk \'{print $3}\''
 	ioUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 	#memUsage = slicingUsage(ioUsage , '\n') #not working. future work
@@ -97,10 +97,10 @@ def monitorAndLogAndReportHotSpot():
                 cpuUsage = 0#getCpuUsage(vmIp)
                 memUsage = 0#getMemUsage(vmIp)
 		ioUsage =  0#getIoUsage(vmIp)
-                usage= 'VM ID: '+vmId+'\tVM IP: '+vmIp + '\t\talloted cpu: '+str(value.cpu)+'\tcpu usage: ' + str(cpuUsage) + '\talotted memory: '+str(value.memory)+'\tmemory usage: ' + str(memUsage) + '\talotted io: '+str(value.io)+'\tio usage: ' + str(ioUsage) +"\n"
+                usage= 'VM ID: '+vmId+'\tVM IP: '+vmIp + '\t\talloted cpu: '+str(value.current_cpu)+'\tcpu usage: ' + str(cpuUsage) + '\talotted memory: '+str(value.current_memory)+'\tmemory usage: ' + str(memUsage) + '\talotted io: '+str(value.io)+'\tio usage: ' + str(ioUsage) +"\n"
                 usageInfo+=usage
                 file.write(usage+'\n')
-                if (float(cpuUsage)>float(value.cpu) or float(memUsage)>float(value.memory)):
+                if (float(cpuUsage)>float(value.current_cpu) or float(memUsage)>float(value.current_memory)):
                     #report to VM Placement manager
                     a=0
                 #print usageInfo
