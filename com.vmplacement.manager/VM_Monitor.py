@@ -110,7 +110,7 @@ def monitorAndLogAndReportHotSpot():
 def monitorVMFrequently():
     while(1):
         monitorAndLogAndReportHotSpot()
-        time.sleep(15)
+        time.sleep(20)
 
 
 print "Test"
