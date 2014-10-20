@@ -23,7 +23,7 @@ class NodeFinder:
 	#@staticmethod
 	def loadPickleDictionary(self) :
 		try :
-			with open('node_dict.pkl', 'r') as pickle_in:
+			with open('../com.vmplacement.framework/node_dict.pkl', 'r') as pickle_in:
     				dictionary = pickle.load(pickle_in)
 				return dictionary
 		except:

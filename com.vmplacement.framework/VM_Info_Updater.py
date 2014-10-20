@@ -23,7 +23,7 @@ from VM_Framework_Utility import getGuestIP
 
 def loadPickleDictionary() :
 	try :
-		with open('node_dict.pkl', 'r') as pickle_in:
+		with open('../com.vmplacement.framework/node_dict.pkl', 'r') as pickle_in:
 			dictionary = pickle.load(pickle_in)
 			return dictionary
 	except:
@@ -32,7 +32,7 @@ def loadPickleDictionary() :
 
 def loadPickleHostVMDictionary() :
 	try :
-		with open('host_vm_dict.pkl', 'r') as pickle_in:
+		with open('../com.vmplacement.framework/host_vm_dict.pkl', 'r') as pickle_in:
 			dictionary = pickle.load(pickle_in)
 			return dictionary
 	except:

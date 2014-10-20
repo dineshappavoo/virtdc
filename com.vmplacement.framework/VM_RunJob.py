@@ -26,7 +26,7 @@ host_vm_dict={}
 
 def loadPickleDictionary() :
 	try :
-		with open('host_vm_dict.pkl', 'r') as pickle_in:
+		with open('../com.vmplacement.framework/host_vm_dict.pkl', 'r') as pickle_in:
 			dictionary = pickle.load(pickle_in)
 			return dictionary
 	except:

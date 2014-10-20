@@ -2,7 +2,7 @@
 
 import subprocess
 import pickle
-import sys
+import sys,os
 from datetime import datetime
 import sys
 sys.path.append('/root/Desktop/VMPlacementAndScaling/com.vmplacement.framework')
@@ -26,7 +26,7 @@ host_vm_dict={}
 
 def loadPickleVMDictionary() :
     try :
-        with open('/root/Desktop/VMPlacementAndScaling/com.vmplacement.framework/host_vm_dict.pkl', 'r') as pickle_in:
+        with open('../com.vmplacement.framework/host_vm_dict.pkl', 'r') as pickle_in:
             dictionary = pickle.load(pickle_in)
             return dictionary
     except:
@@ -89,7 +89,7 @@ def getIoUsage(vmIp):
 
 def monitorAndLogAndReportHotSpot():
         usageInfo=""
-        file= open('~/com.vmplacement.logs/vmusage.log', 'a+')
+        file= open('../com.vmplacement.logs/monitor_logs/vmusage.log', 'a+')
         for node, vm_dict in host_vm_dict.iteritems():
             file.write("HOST NAME : "+node+"                TIME : "+str(datetime.now())+'\n')
             for vmId,value in vm_dict.iteritems():

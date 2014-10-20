@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import sys
-sys.path.append('~/com.vmplacement.framework')
+sys.path.append('../com.vmplacement.framework')
 import VM_Info_Updater
 from Guest import Guest
 
@@ -19,6 +19,7 @@ from Guest import Guest
 #license             = ""
 
 #==============================================================================
+#Global variables
 
 #Memory threshold values
 memScaleUpThreshold = '10240'		# 10 MB
@@ -26,7 +27,7 @@ memScaledownThreshold = '102400' 	# 100 MB
 timeThreshold = '300' 			# 5 minutes
 
 #Log activity
-manager_activity_log = open('~/com.vmplacement.logs/manager_activity.log', 'a+')
+manager_activity_log = open('../com.vmplacement.logs/manager_activity.log', 'a+')
 
 def initiateLiveMigration(vmid,sourcenode,destnode):
     	#Initiate the module for live migration
@@ -52,8 +53,7 @@ def initiateMemScaleUpOrDown(hostName, vmID, memorySize):
 		manager_activity_log.write('Memory Scaling :: cannot be scaled up/down to '+memorySize+'for '+hostName+'-'+vmID)
 	
 def makeMemSaclingDecision(hostName,guest,memoryUsage,time):
-
-	memoryAlloted=guest.
+	memoryAlloted=guest.current_memory
 	maxMemory=''
 	if(memoryUsage>memoryAlloted):
 		if(memoryUsage<maxMemory):
@@ -62,7 +62,7 @@ def makeMemSaclingDecision(hostName,guest,memoryUsage,time):
 			requiredExtraMemory=float(memoryUsage)-float(maxMemory)
 			if(requiredExtraMemory>memScaleUpThreshold):
 				#report user through email
-				#if needed do a memory scale up and charge more
+				#if needed do a memory scale up and charge more based on SLA
 			else:
 				initiateMemScaleUpOrDown(hostName, guest.vmid, memoryUsage)
 

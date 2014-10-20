@@ -26,7 +26,7 @@ from VM_Framework_Utility import getGuestIP
 #==============================================================================
 
 guest_image = "/home/vm_img/"
-guest_config_path = "/root/Desktop/VMPlacementAndScaling/com.vmplacement.framework/guestconfig.xml"
+guest_config_path = "../com.vmplacement.framework/guestconfig.xml"
 
 _master="node1"
 _imageCopyCmd="scp"
@@ -36,7 +36,7 @@ _cloneCmd="virsh --connect qemu+ssh://"
 
 
 #Activity Log
-vmsubmission_log = open('/root/Desktop/VMPlacementAndScaling/com.vmplacement.logs/vmsubmissionlog.log', 'a+')
+vmsubmission_log = open('../com.vmplacement.logs/activity_logs/vmsubmissionlog.log', 'a+')
 
 def vm_submitjob(vmid,cpu,memory,io):
 	obj=NodeFinder()
@@ -67,7 +67,7 @@ def vm_submitjob(vmid,cpu,memory,io):
 		image_dest=host+guest_image+vmid+".img"
 		cp_cmd =_imageCopyCmd+guest_image+"Test.img "+image_dest
 		copy_image = subprocess.check_output(cp_cmd, shell=True, stderr=subprocess.PIPE)
-		vmsubmission_log.write('Copy Image ::'+host+' :: '+vmid+' :: Successfully copied the image')		
+		vmsubmission_log.write('Copy Image ::'+host+' :: '+vmid+' :: Successfully copied the image\n')		
 	
 		uuid = subprocess.check_output("uuidgen", shell=True, stderr=subprocess.PIPE)
 	
@@ -89,15 +89,15 @@ def vm_submitjob(vmid,cpu,memory,io):
 		#command to clone the image
 		clone=_cloneCmd+guest_info_file
 		clone_out = subprocess.check_output(clone, shell=True, stderr=subprocess.PIPE)
-		vmsubmission_log.write('Create VM ::'+host+' :: '+vmid+' :: Successfully created the VM')
+		vmsubmission_log.write('Create VM ::'+host+' :: '+vmid+' :: Successfully created the VM\n')
 		
 		#Get the IP address of Virtual Machine and update in VM_Info_Updater
 		guest_ip=getGuestIP(vmid, "root", "Teamb@123")
 		addOrUpdateDictionaryOfVM(host, vmid, Guest(guest_ip, vmid, '1', float(cpu),float(memory),float(memory),float(1)))
-		vmsubmission_log.write('Update IP ::'+host+' :: '+vmid+' :: Successfully updated the IP')
+		vmsubmission_log.write('Update IP::'+host+' :: '+vmid+' :: Successfully updated the IP\n')
 		#Run Job in Guest
 		runJobOnVM(host, vmid)
-		vmsubmission_log.write('Run Job ::'+host+' :: '+vmid+' :: Successfully ran the job')
+		vmsubmission_log.write('Run Job::'+host+' :: '+vmid+' :: Successfully ran the job\n')
 
 	else :
 		print "Cant create new"
