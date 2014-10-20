@@ -4,7 +4,7 @@
 #This is the part of VM placement and scaling
 #This takes the VM guest configuration file from the local disk and create a new VM in current node or in a different one
 
-import sys, getopt, subprocess
+import sys, getopt, subprocess, time
 from VM_decisionMaker import NodeFinder
 from VM_Framework_Utility import getGuestIP
 
@@ -91,8 +91,10 @@ def vm_submitjob(vmid,cpu,memory,io):
 		clone_out = subprocess.check_output(clone, shell=True, stderr=subprocess.PIPE)
 		vmsubmission_log.write('Create VM ::'+host+' :: '+vmid+' :: Successfully created the VM\n')
 		
+	        time.sleep(30)
+
 		#Get the IP address of Virtual Machine and update in VM_Info_Updater
-		guest_ip=getGuestIP(vmid, "root", "Teamb@123")
+		guest_ip=getGuestIP(host, vmid, "root", "Teamb@123")
 		addOrUpdateDictionaryOfVM(host, vmid, Guest(guest_ip, vmid, '1', float(cpu),float(memory),float(memory),float(1)))
 		vmsubmission_log.write('Update IP::'+host+' :: '+vmid+' :: Successfully updated the IP\n')
 		#Run Job in Guest

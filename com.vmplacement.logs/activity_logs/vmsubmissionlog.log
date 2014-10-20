@@ -2,3 +2,12 @@ Copy Image ::node2: :: Dany1 :: Successfully copied the image
 Create VM ::node2: :: Dany1 :: Successfully created the VM
 Copy Image :: :: Dany1 :: Successfully copied the image
 Create VM :: :: Dany1 :: Successfully created the VM
+Copy Image ::node2: :: Dany1 :: Successfully copied the image
+Copy Image :: :: Dinesh_Test :: Successfully copied the image
+Create VM :: :: Dinesh_Test :: Successfully created the VM
+Copy Image ::node2: :: DineshTest1 :: Successfully copied the image
+Create VM ::node2: :: DineshTest1 :: Successfully created the VM
+Copy Image :: :: Dinesh_Test :: Successfully copied the image
+Create VM :: :: Dinesh_Test :: Successfully created the VM
+Copy Image ::node2: :: Dinesh_Test :: Successfully copied the image
+Create VM ::node2: :: Dinesh_Test :: Successfully created the VM
