@@ -41,7 +41,7 @@ def getGuestIP(vmid, username, password) :
 	print ip
 	return ip
 
-getGuestIP('Test', 'root', 'Teamb@123')
+#getGuestIP('Test', 'root', 'Teamb@123')
 
 	
 	
