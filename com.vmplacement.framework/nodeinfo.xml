@@ -6,12 +6,12 @@
 		<max_capacity>
 			<cpu_core>8</cpu_core>
 			<memory unit="KiB">32689796</memory>
-			<io unit="TB">1</io>
+			<io unit="KiB">1073741824</io>
 		</max_capacity>
         <available_capacity>
 			<cpu_core>8</cpu_core>
 			<memory unit="KiB">32689796</memory>
-			<io unit="TB">1</io>
+			<io unit="KiB">1073741824</io>
 		</available_capacity>
 	</node>
 	<node>
@@ -20,12 +20,12 @@
 		<max_capacity>
 			<cpu_core>8</cpu_core>
 			<memory unit="KiB">32689796</memory>
-			<io unit="TB">1</io>
+			<io unit="KiB">1073741824</io>
 		</max_capacity>
         <available_capacity>
 			<cpu_core>8</cpu_core>
 			<memory unit="KiB">32689796</memory>
-			<io unit="TB">1</io>
+			<io unit="KiB">1073741824</io>
 		</available_capacity>
 	</node>
 	<node>
@@ -34,12 +34,12 @@
 		<max_capacity>
 			<cpu_core>8</cpu_core>
 			<memory unit="KiB">32689796</memory>
-			<io unit="TB">1</io>
+			<io unit="KiB">1073741824</io>
 		</max_capacity>
         <available_capacity>
 			<cpu_core>8</cpu_core>
 			<memory unit="KiB">32689796</memory>
-			<io unit="TB">1</io>
+			<io unit="KiB">1073741824</io>
 		</available_capacity>
 	</node>
 	<node>
@@ -48,12 +48,12 @@
 		<max_capacity>
 			<cpu_core>8</cpu_core>
 			<memory unit="KiB">32689796</memory>
-			<io unit="TB">1</io>
+			<io unit="KiB">1073741824</io>
 		</max_capacity>
         <available_capacity>
 			<cpu_core>8</cpu_core>
 			<memory unit="KiB">32689796</memory>
-			<io unit="TB">1</io>
+			<io unit="KiB">1073741824</io>
 		</available_capacity>
 	</node>        
     </nodes>
