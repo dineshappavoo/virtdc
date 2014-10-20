@@ -89,7 +89,7 @@ def getIoUsage(vmIp):
 
 def monitorAndLogAndReportHotSpot():
         usageInfo=""
-        file= open('vmusage.log', 'a+')
+        file= open('~/com.vmplacement.logs/vmusage.log', 'a+')
         for node, vm_dict in host_vm_dict.iteritems():
             file.write("HOST NAME : "+node+"                TIME : "+str(datetime.now())+'\n')
             for vmId,value in vm_dict.iteritems():

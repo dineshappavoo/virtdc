@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import sys
-sys.path.append('/Users/Dany/Documents/VMPlacementAndScaling/VMPlacementAndScaling/com.vmplacement.framework')
+sys.path.append('~/com.vmplacement.framework')
 import VM_Info_Updater
 from Guest import Guest
 
@@ -20,6 +20,11 @@ from Guest import Guest
 
 #==============================================================================
 
+#Memory threshold values
+memScaleUpThreshold = '10240'		# 10 MB
+memScaledownThreshold = '102400' 	# 100 MB
+timeThreshold = '300' 			# 5 minutes
+
 def initiateLiveMigration(vmid,sourcenode,destnode):
     	#Initiate the module for live migration
 	#migration_cmd = '''virsh migrate --live hm1 qemu+ssh://node3/system'''
@@ -36,12 +41,24 @@ def initiateVMCPUScaleDown():
 	
 def makeCPUScalingDecision():
 
-def initiateMemScaleUp():
+def initiateMemScaleUp(memorySize):
 
 def initiateMemScaleDown():
 
-def makeMemSaclingDecision(guest):
-	
+def makeMemSaclingDecision(host,guest,memoryUsage,time):
+
+	memoryAlloted=guest.
+	maxMemory=''
+	if(memoryUsage>memoryAlloted):
+		if(memoryUsage<maxMemory):
+			initiateMemScaleUp(memoryUsage)
+		else:
+			requiredExtraMemory=float(memoryUsage)-float(maxMemory)
+			if(requiredExtraMemory>memScaleUpThreshold):
+				#report user through email
+				#if needed do a memory scale up and charge more
+			else:
+				initiateMemScaleUp(memoryUsage)
 
 def initiateNodeLoadBalacing():
     #Initiate the module to do the node load balancing
