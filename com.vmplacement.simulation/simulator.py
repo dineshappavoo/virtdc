@@ -16,16 +16,16 @@ parser.add_option("-T", "--task-set", dest="task", help="task input file", actio
 
 (options, args) = parser.parse_args()
 
-stress_command = '''150000
-stress -t 1h -c 3 --vm-bytes 64m &
-'''
+#stress_command = '''150000
+#stress -t 1h -c 3 --vm-bytes 64m &
+#'''
 
 uptime_command = '''
 /usr/bin/uptime | cut -d':' -f5 | cut -d',' -f1
 '''
 
 memory_command = '''
-free -k -t | grep Total | awk '{print $3}'
+cat /proc/`cat /root/memory.pid`/status | grep VmSize | awk '{print $2}'
 '''
 
 memory_init_command = '''
