@@ -3,6 +3,7 @@
 
 import pickle
 from Node import Node
+from Host_Info_Tracker import pickleAddOrUpdateDictionary, GetNodeDict
 
 #==============================================================================
 # Variables
@@ -23,7 +24,7 @@ class NodeFinder:
 	#@staticmethod
 	def loadPickleDictionary(self) :
 		try :
-			with open('../com.vmplacement.framework/node_dict.pkl', 'r') as pickle_in:
+			with open('node_dict.pkl', 'r') as pickle_in:
     				dictionary = pickle.load(pickle_in)
 				return dictionary
 		except:
@@ -35,21 +36,32 @@ class NodeFinder:
 	#@staticmethod
 	def place_job(self, cpu, mem, io) :
 		node_dict={}
-		node_dict=self.loadPickleDictionary()	
+		node_dict=GetNodeDict()	
 		for key, value in node_dict.iteritems() :
-			if ( int(cpu) <= int(value.avail_cpu) and int(mem) <= int(value.avail_memory) and int(io) <= int(value.avail_io)) :
-				print value.hostname				
-				value.avail_cpu= int(value.avail_cpu) - int(cpu)
-				value.avail_memory = int(value.avail_memory) - int(mem)
-				value.avail_io = int(value.avail_io) -  int(io)
+			if ( float(cpu) <= float(value.avail_cpu) and float(	mem) <= float(value.avail_memory) and float(io) <= float(value.avail_io)) :
+				print "Test Host"+str(value.hostname)
+				print value
+				print str(value.ip)
+				pickleAddOrUpdateDictionary(value.hostname, str(value.ip), float(value.max_cpu), float(value.max_memory), float(value.max_io), float(value.avail_cpu) - float(cpu), float(value.avail_memory) - float(mem), float(value.avail_io) -  float(io))			
+				#value.avail_cpu= int(value.avail_cpu) - int(cpu)
+				#value.avail_memory = int(value.avail_memory) - int(mem)
+				#value.avail_io = int(value.avail_io) -  int(io)
 
 				#Code to update the dictionary again
-				with open('node_dict.pkl','w') as node_pickle_out:
-    					pickle.dump(node_dict,node_pickle_out)
+				#with open('node_dict.pkl','w') as node_pickle_out:
+    				#	pickle.dump(node_dict,node_pickle_out)
 				return value.hostname
 		return None
 
+
+
+#======================================================================
+#			FOR TESTING
+#======================================================================
+#obj=NodeFinder()
+#host = obj.place_job (1,4194304,15353)
 #host=place_job(1,4194304,1)
+#print host
 
 #Code to check whether the VM can be placed
 #if (host is not None) :

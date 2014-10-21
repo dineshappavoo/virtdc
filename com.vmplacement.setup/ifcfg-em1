@@ -1,7 +1,6 @@
 TYPE="Ethernet"
 BRIDGE="br0"
 NAME="em1"
-UUID="uuid_value"
+UUID="58b1812e-4d00-41f9-85b1-19ba204347eb"
 ONBOOT="yes"
-HWADDR="hardware_address"
-
+HWADDR="f8:b1:56:c5:5e:bb"

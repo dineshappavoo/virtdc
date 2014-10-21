@@ -20,7 +20,7 @@ from xml.dom import minidom
 
 #==============================================================================
 
-node_dict={}
+#node_dict={}
 
 def loadPickleDictionary() :
 	try :
@@ -35,9 +35,10 @@ def loadPickleDictionary() :
 def GetNodeDict():
 	dictionary=loadPickleDictionary()
 	if dictionary is not None :
-		node_dict=dictionary
+		return dictionary
 	else : 
 		node_dict={}
+		return node_dict
 
 def getNodeText(node):
     
@@ -51,6 +52,7 @@ def getNodeText(node):
 def parsenodeInfoAndMakeDict(filename) :
 	doc = minidom.parse(filename)
 	nodes = doc.getElementsByTagName("node")
+	node_dict=GetNodeDict()
 	for node in nodes :
     		hostName = getNodeText(node.getElementsByTagName("hostname")[0])
     		ipaddress = getNodeText(node.getElementsByTagName("ipv4address")[0])
@@ -62,28 +64,32 @@ def parsenodeInfoAndMakeDict(filename) :
         		io = getNodeText(capacity.getElementsByTagName("io")[0])
 			
 			if hostName not in node_dict :
-        			node_dict[hostName]=Node(hostName, int(cpu_core), int(memory), int(io), int(cpu_core)-1, int(memory), int(io))
+				pickleAddOrUpdateDictionary(hostName, str(ipaddress), float(cpu_core), float(memory), float(io), float(cpu_core)-1, float(memory), float(io))
+        			#node_dict[hostName]=Node(hostName, ipaddress, int(cpu_core), int(memory), int(io), int(cpu_core)-1, int(memory), int(io))
 
-def pickleDictionary(dictionary) :
+def pickleAddOrUpdateDictionary(hostName, ip, cpu, mem, disk, avail_cpu, avail_mem, avail_disk) :
+	node_dict=GetNodeDict()
+	print "Pkl Update cpu"+str(avail_cpu)
+	print "Pkl Update mem"+str(avail_mem)
+	node_dict[hostName]=Node(str(hostName), str(ip), float(cpu), float(mem), float(disk), float(avail_cpu), float(avail_mem), float(avail_disk))
 	with open('node_dict.pkl','w') as node_pickle_out:
-    		pickle.dump(dictionary,node_pickle_out)
+    		pickle.dump(node_dict,node_pickle_out)
 		#node_pickle_out.close()
 
+	#Testing
+	#code to print the dictionary elements
+	print len(node_dict)
+	for key, value in node_dict.iteritems() :
+	    print key, value.hostname, value.ip, value.max_cpu, value.max_memory, value.max_io, value.avail_cpu, value.avail_memory, value.avail_io
 
 
+#======================================================================
+#			FOR TESTING
+#======================================================================
 #Function calls - follow the same order to call
-GetNodeDict()
-parsenodeInfoAndMakeDict('nodeinfo.xml')
-pickleDictionary(node_dict)
-
-
-
-
-#Testing
-#code to print the dictionary elements
-print len(node_dict)
-for key, value in node_dict.iteritems() :
-    print key, value.max_cpu, value.max_memory, value.max_io, value.avail_cpu, value.avail_memory, value.avail_io
+#GetNodeDict()
+#parsenodeInfoAndMakeDict('nodeinfo.xml')
+#pickleAddOrUpdateDictionary(node_dict)
 
 
 

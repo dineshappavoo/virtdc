@@ -18,8 +18,9 @@ class Node:
     'Common base class for all nodes'
     nodecount = 0
     
-    def __init__(self, hostname, max_cpu, max_memory, max_io, avail_cpu, avail_memory, avail_io):
+    def __init__(self, hostname, ip, max_cpu, max_memory, max_io, avail_cpu, avail_memory, avail_io):
         self.hostname = hostname
+        self.ip = ip
         self.max_cpu = max_cpu
         self.max_memory = max_memory
         self.max_io = max_io

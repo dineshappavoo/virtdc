@@ -3,6 +3,7 @@ import pickle
 import sys
 from Guest import Guest
 from VM_Framework_Utility import getGuestIP
+from Host_Info_Tracker import GetNodeDict
 
 #==============================================================================
 # Variables
@@ -43,11 +44,13 @@ def getHostVMDict() :
 	vm_dict=loadPickleHostVMDictionary()
 	if vm_dict is not None :
 		return vm_dict
+	else:
+		return {}
 
 def addOrUpdateDictionaryOfVM(hostName,vmid, guest) :
 	#code to add the dictionary elements
-	host_vm_dict=loadPickleHostVMDictionary()
-	node_dict=loadPickleDictionary()
+	host_vm_dict=getHostVMDict()
+	node_dict=GetNodeDict()
 	for key, value in node_dict.iteritems() :
 		if key not in host_vm_dict :
 			host_vm_dict[key]={}

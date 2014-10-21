@@ -1,7 +1,9 @@
 #!/usr/bin/python
 
+
 import os, sys, subprocess
 sys.path.append('../VMPlacementAndScaling/com.vmplacement.framework')
+#from . import virtds
 
 #==============================================================================
 # Variables
@@ -17,6 +19,9 @@ sys.path.append('../VMPlacementAndScaling/com.vmplacement.framework')
 data_folder_path='../com.vmplacement.data/vms'
 
 def simulate_google_data():
+    cmd = "pyhton /root/Desktop/VMPlacementAndScaling/com.vmplacement.manager/VM_Monitor.py &"
+    os.system(cmd)
+    #monitor_process = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
     for file_name in os.listdir(data_folder_path):
         if file_name.endswith(".csv"):
             #print file_name
@@ -34,9 +39,9 @@ def execute_task(file_name):
     mem_val = mem_val.strip()
     disk = '5242880'
     vmid=file_name[:-4]
-    create_vm_cmd='./virtds.py --vmid '+vmid+' --cpu '+cpu_val+' --mem '+mem_val+' --io 5242880'
+    create_vm_cmd='python /root/Desktop/VMPlacementAndScaling/com.vmplacement.framework/virtds.py --vmid '+vmid+' --cpu '+cpu_val+' --mem '+mem_val+' --io 5242880'
     print create_vm_cmd+'\n'
-    #os.system(create_vm_cmd) #5 GB disk by default
+    os.system(create_vm_cmd) #5 GB disk by default
                       
 
 simulate_google_data()
