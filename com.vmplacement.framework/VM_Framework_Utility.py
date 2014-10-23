@@ -27,6 +27,7 @@ def getGuestIP(host, vmid, username, password) :
 	#password = "Teamb@123"
 	
 	# Ensure ssh to target host is passwordless
+	print "Host" +host
 	child = pexpect.spawn('/usr/bin/ssh ' + host)
 	child.expect('\~\]\#')
 	child.sendline('/usr/bin/virsh console ' + vmid)
@@ -51,10 +52,12 @@ def getGuestIP(host, vmid, username, password) :
 	child.sendline('logout')
 	#sleep(2)
 	child.sendline('\n\n')
-	print ip
+	print "IP Address "+str(ip)
 	return ip
 
-#getGuestIP('Test', 'root', 'Teamb@123')
+if __name__ == "__main__":
+   # stuff only to run when not called via 'import' here
+   getGuestIP('node1', 'Test', 'root', 'Teamb@123')
 
 	
 	

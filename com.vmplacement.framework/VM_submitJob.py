@@ -7,6 +7,9 @@
 import sys, getopt, subprocess, time
 from VM_decisionMaker import NodeFinder
 from VM_Framework_Utility import getGuestIP
+from VM_Info_Updater import addOrUpdateDictionaryOfVM
+from Guest import Guest
+from VM_RunJob import runJobOnVM
 
 #==============================================================================
 # Variables
@@ -32,6 +35,8 @@ _master="node1"
 _imageCopyCmd="scp"
 _cloneCmd="virsh --connect qemu+ssh://"
 
+_base_memory_size=1048576
+
 #===============================================================================
 
 
@@ -40,17 +45,20 @@ vmsubmission_log = open('../com.vmplacement.logs/activity_logs/vmsubmissionlog.l
 
 def vm_submitjob(vmid,cpu,memory,io):
 	obj=NodeFinder()
+	memory=float(_base_memory_size) + float(memory)
+	#print "Memory "+str(memory)
 	host = obj.place_job (cpu,memory,io)
+	prefix_host=host
 	print host
 	#Code to check whether the VM can be placed
 	if (host is not None) :
 		if(host==_master):
-			host=''
+			prefix_host=''
 			_imageCopyCmd="cp "
 			_cloneCmd="virsh create "
 		else:
 			_cloneCmd="virsh --connect qemu+ssh://"+host+"/system create "
-			host=host+":"
+			prefix_host=host+":"
 			_imageCopyCmd="scp "
 
 		#print "The node is %s",host
@@ -64,7 +72,7 @@ def vm_submitjob(vmid,cpu,memory,io):
 	
 		#command to copy the iso image to the destination. Every VM will have an individual iso image. (I think this copy can be cleared later on). Make the nodes passwordless
 		image_path=guest_image+vmid+".img"
-		image_dest=host+guest_image+vmid+".img"
+		image_dest=prefix_host+guest_image+vmid+".img"
 		cp_cmd =_imageCopyCmd+guest_image+"Test.img "+image_dest
 		copy_image = subprocess.check_output(cp_cmd, shell=True, stderr=subprocess.PIPE)
 		vmsubmission_log.write('Copy Image ::'+host+' :: '+vmid+' :: Successfully copied the image\n')		
@@ -74,8 +82,8 @@ def vm_submitjob(vmid,cpu,memory,io):
 		#config update based on the new VM requiement  	#image_path	max_memory	current_memory	current_cpu	max_cpu
 		xmlstring=xmlstring.replace("vm_name", vmid);
 		xmlstring=xmlstring.replace("vm_uuid", uuid);
-		xmlstring=xmlstring.replace("max_memory", memory);
-		xmlstring=xmlstring.replace("current_memory", memory);
+		xmlstring=xmlstring.replace("max_memory", str(int(memory)));
+		xmlstring=xmlstring.replace("current_memory", str(int(memory)));
 		xmlstring=xmlstring.replace("current_cpu", "1");
 		xmlstring=xmlstring.replace("max_cpu", cpu);
 		xmlstring=xmlstring.replace("image_path", image_path);	
@@ -95,7 +103,7 @@ def vm_submitjob(vmid,cpu,memory,io):
 
 		#Get the IP address of Virtual Machine and update in VM_Info_Updater
 		guest_ip=getGuestIP(host, vmid, "root", "Teamb@123")
-		addOrUpdateDictionaryOfVM(host, vmid, Guest(guest_ip, vmid, '1', float(cpu),float(memory),float(memory),float(1)))
+		addOrUpdateDictionaryOfVM(host, vmid, Guest(guest_ip, vmid, float(1), float(cpu),float(memory),float(memory),float(1)))
 		vmsubmission_log.write('Update IP::'+host+' :: '+vmid+' :: Successfully updated the IP\n')
 		#Run Job in Guest
 		runJobOnVM(host, vmid)

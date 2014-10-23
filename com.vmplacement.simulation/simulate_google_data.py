@@ -19,8 +19,8 @@ sys.path.append('../VMPlacementAndScaling/com.vmplacement.framework')
 data_folder_path='../com.vmplacement.data/vms'
 
 def simulate_google_data():
-    cmd = "pyhton /root/Desktop/VMPlacementAndScaling/com.vmplacement.manager/VM_Monitor.py &"
-    os.system(cmd)
+    #cmd = "python /root/Desktop/VMPlacementAndScaling/com.vmplacement.manager/VM_Monitor.py &"
+    #os.system(cmd)
     #monitor_process = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
     for file_name in os.listdir(data_folder_path):
         if file_name.endswith(".csv"):

@@ -2,7 +2,11 @@
 #from Host_machine_info_tracker import node_dict
 
 import pickle
+import imp
+#from Node 
 from Node import Node
+#newNode=
+# imp.reload(Node)
 from Host_Info_Tracker import pickleAddOrUpdateDictionary, GetNodeDict
 
 #==============================================================================
@@ -24,7 +28,7 @@ class NodeFinder:
 	#@staticmethod
 	def loadPickleDictionary(self) :
 		try :
-			with open('node_dict.pkl', 'r') as pickle_in:
+			with open('../com.vmplacement.framework/node_dict.pkl', 'r') as pickle_in:
     				dictionary = pickle.load(pickle_in)
 				return dictionary
 		except:
@@ -37,12 +41,17 @@ class NodeFinder:
 	def place_job(self, cpu, mem, io) :
 		node_dict={}
 		node_dict=GetNodeDict()	
+		print " DECISION MAKER "
+		for key, value in node_dict.iteritems() :
+    			print key, value.max_cpu, value.max_memory, value.max_io, value.avail_cpu, value.avail_memory, value.avail_io
+		print " DECISION MAKER END "
 		for key, value in node_dict.iteritems() :
 			if ( float(cpu) <= float(value.avail_cpu) and float(	mem) <= float(value.avail_memory) and float(io) <= float(value.avail_io)) :
 				print "Test Host"+str(value.hostname)
 				print value
-				print str(value.ip)
-				pickleAddOrUpdateDictionary(value.hostname, str(value.ip), float(value.max_cpu), float(value.max_memory), float(value.max_io), float(value.avail_cpu) - float(cpu), float(value.avail_memory) - float(mem), float(value.avail_io) -  float(io))			
+				print "avail CPU : "+str(value.avail_cpu)
+				print ''
+				pickleAddOrUpdateDictionary(value.hostname, str(value.ip_address), float(value.max_cpu), float(value.max_memory), float(value.max_io), float(value.avail_cpu) - float(cpu), float(value.avail_memory) - float(mem), float(value.avail_io) -  float(io))			
 				#value.avail_cpu= int(value.avail_cpu) - int(cpu)
 				#value.avail_memory = int(value.avail_memory) - int(mem)
 				#value.avail_io = int(value.avail_io) -  int(io)

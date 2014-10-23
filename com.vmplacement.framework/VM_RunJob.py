@@ -6,7 +6,7 @@
 import sys, subprocess
 import pickle
 from VM_Framework_Utility import getGuestIP
-from VM_Info_Updater import updateGuestIP
+#from VM_Info_Updater import updateGuestIP
 
 #==============================================================================
 # Variables
@@ -35,20 +35,23 @@ def loadPickleDictionary() :
 
 def runJobOnVM(hostName, vmid):
 	host_vm_dict=loadPickleDictionary()
-	ip=host_vm_dict[hostName][vmid]
-	print ip	
-	scpTask='scp ~/com.vmplacement.data/vms'vmid+'.csv root@'+ip':/root/task.dat'
+	ip=host_vm_dict[hostName][vmid].vmip
+	print "IP RUN "+str(ip)
+	scpTask='scp -q -o StrictHostKeyChecking=no /root/Desktop/VMPlacementAndScaling/com.vmplacement.data/vms/'+vmid+'.csv root@'+ip+':/root/task.dat'
 	scpdata = subprocess.check_output(scpTask, shell=True, stderr=subprocess.PIPE)
 	
-	rebootCmd='ssh -q -o StrictHostKeyChecking=no root@'+ip+' reboot'
-	rebootGuest = subprocess.check_output(rebootCmd, shell=True, stderr=subprocess.PIPE)
-	guestNewIP = getGuestIP(vmid, 'root', 'Teamb@123')
-	updateGuestIP(hostName, vmid, guestNewIP)	#Add this function in VM_info_Updater.py	
+	#rebootCmd='ssh -q -o StrictHostKeyChecking=no root@'+ip+' reboot'
+	#rebootGuest = subprocess.check_output(rebootCmd, shell=True, stderr=subprocess.PIPE)
+	#guestNewIP = getGuestIP(vmid, 'root', 'Teamb@123')
+	#updateGuestIP(hostName, vmid, guestNewIP)	#Add this function in VM_info_Updater.py	
 
-	jobPermCmd='ssh -q -o StrictHostKeyChecking=no root@'+ip+' chmod +x /root/task.dat'
-	jobPerm = subprocess.check_output(jobPermCmd, shell=True, stderr=subprocess.PIPE)	
+	#jobPermCmd='ssh -q -o StrictHostKeyChecking=no root@'+ip+' chmod +x /root/task.dat'
+	#jobPerm = subprocess.check_output(jobPermCmd, shell=True, stderr=subprocess.PIPE)	
 	
-runJobOnVM("node1","Test_node1")
+
+if __name__ == "__main__":
+   # stuff only to run when not called via 'import' here
+   runJobOnVM("node1","Test_node1")
 
 	
 	

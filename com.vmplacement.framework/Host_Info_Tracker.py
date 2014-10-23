@@ -3,6 +3,13 @@
 import xml.dom.minidom
 import pickle
 from Node import Node
+
+#import imp
+#from Node 
+#import Node
+#newNode=
+#imp.reload(Node)
+
 from xml.dom import minidom
 
 #==============================================================================
@@ -24,7 +31,7 @@ from xml.dom import minidom
 
 def loadPickleDictionary() :
 	try :
-		with open('node_dict.pkl', 'r') as pickle_in:
+		with open('../com.vmplacement.framework/node_dict.pkl', 'r') as pickle_in:
 			dictionary = pickle.load(pickle_in)
 			return dictionary
 	except:
@@ -67,12 +74,12 @@ def parsenodeInfoAndMakeDict(filename) :
 				pickleAddOrUpdateDictionary(hostName, str(ipaddress), float(cpu_core), float(memory), float(io), float(cpu_core)-1, float(memory), float(io))
         			#node_dict[hostName]=Node(hostName, ipaddress, int(cpu_core), int(memory), int(io), int(cpu_core)-1, int(memory), int(io))
 
-def pickleAddOrUpdateDictionary(hostName, ip, cpu, mem, disk, avail_cpu, avail_mem, avail_disk) :
+def pickleAddOrUpdateDictionary(hostName, ip_address, cpu, mem, disk, avail_cpu, avail_mem, avail_disk) :
 	node_dict=GetNodeDict()
 	print "Pkl Update cpu"+str(avail_cpu)
 	print "Pkl Update mem"+str(avail_mem)
-	node_dict[hostName]=Node(str(hostName), str(ip), float(cpu), float(mem), float(disk), float(avail_cpu), float(avail_mem), float(avail_disk))
-	with open('node_dict.pkl','w') as node_pickle_out:
+	node_dict[hostName]=Node(str(hostName), str(ip_address), float(cpu), float(mem), float(disk), float(avail_cpu), float(avail_mem), float(avail_disk))
+	with open('../com.vmplacement.framework/node_dict.pkl','w') as node_pickle_out:
     		pickle.dump(node_dict,node_pickle_out)
 		#node_pickle_out.close()
 
@@ -80,16 +87,18 @@ def pickleAddOrUpdateDictionary(hostName, ip, cpu, mem, disk, avail_cpu, avail_m
 	#code to print the dictionary elements
 	print len(node_dict)
 	for key, value in node_dict.iteritems() :
-	    print key, value.hostname, value.ip, value.max_cpu, value.max_memory, value.max_io, value.avail_cpu, value.avail_memory, value.avail_io
+	    print key, value.hostname, value.ip_address, value.max_cpu, value.max_memory, value.max_io, value.avail_cpu, value.avail_memory, value.avail_io
 
+if __name__ == "__main__":
+   # stuff only to run when not called via 'import' here
+   parsenodeInfoAndMakeDict('nodeinfo.xml')
 
 #======================================================================
 #			FOR TESTING
 #======================================================================
 #Function calls - follow the same order to call
 #GetNodeDict()
-#parsenodeInfoAndMakeDict('nodeinfo.xml')
-#pickleAddOrUpdateDictionary(node_dict)
+
 
 
 

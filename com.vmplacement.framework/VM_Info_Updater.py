@@ -18,10 +18,6 @@ from Host_Info_Tracker import GetNodeDict
 
 #==============================================================================
 
-#Global variables
-#host_vm_dict={}
-
-
 def loadPickleDictionary() :
 	try :
 		with open('../com.vmplacement.framework/node_dict.pkl', 'r') as pickle_in:
@@ -61,10 +57,14 @@ def addOrUpdateDictionaryOfVM(hostName,vmid, guest) :
 	print host_vm_dict
 
 def pickleNodeVMDictionary(dictionary) :
-	with open('host_vm_dict.pkl','w') as host_vm_pickle_out:
+	with open('../com.vmplacement.framework/host_vm_dict.pkl','w') as host_vm_pickle_out:
     		pickle.dump(dictionary,host_vm_pickle_out)
 		#host_vm_pickle_out.close()
 
-#Function calls
-addOrUpdateDictionaryOfVM('node1', 'Task1',Guest("192.168.1.14","Task1", float(1), float(3),float(42424),float(424242),float(1)))
-#print host_vm_dict
+#======================================================================
+#			Function calls 42424345353
+#======================================================================
+if __name__ == "__main__":
+   # stuff only to run when not called via 'import' here
+   addOrUpdateDictionaryOfVM('node1', 'Task1',Guest("192.168.1.14","Task1", float(1), float(3),float(42424345353),float(424242),float(1)))
+

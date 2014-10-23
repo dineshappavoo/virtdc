@@ -14,16 +14,13 @@
 #==============================================================================
 
 #Node object/class to maintain the hardware information
-class Node:
-    'Common base class for all nodes'
-    nodecount = 0
+class VMMemoryOverUsageInfo:
+    'Common base class for all Memory Over Usage'
     
-    def __init__(self, hostname, ip_address, max_cpu, max_memory, max_io, avail_cpu, avail_memory, avail_io):
-        self.hostname = hostname
-        self.ip_address = ip_address
-        self.max_cpu = max_cpu
-        self.max_memory = max_memory
-        self.max_io = max_io
-        self.avail_cpu = avail_cpu
-        self.avail_memory = avail_memory
-        self.avail_io = avail_io
+    def __init__(self, vmid, over_usage_flag, over_usage_occurance, total_extra_usage, start_time):
+        self.vmid = vmid
+        self.over_usage_flag = over_usage_flag
+        self.over_usage_occurance = over_usage_occurance
+        self.total_extra_usage = total_extra_usage
+        self.start_time = start_time      
+
