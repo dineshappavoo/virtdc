@@ -47,6 +47,8 @@ def getCpuUsage(vmIp):
                 cmd='ssh -q -o StrictHostKeyChecking=no root@'+vmIp+' uptime | awk \'{print $9}\''
         else:
                 cmd='ssh -q -o StrictHostKeyChecking=no root@'+vmIp+' uptime | awk \'{print $8}\''
+
+        cmd='uptime | grep -ohe \'load average[s:][: ].*\' | awk \'{ print $3 }\''
         cpuUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
         cpuUsage = slicingUsage(cpuUsage, ',')
 
