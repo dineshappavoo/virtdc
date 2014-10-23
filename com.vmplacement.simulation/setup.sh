@@ -9,11 +9,11 @@ sleep 10
 done
 
 # iostress needs to gather last min iostat data, let gathering process run first
-python /root/iostress.py -T /root/task.dat >> /root/io.log &
+/usr/bin/python /root/iostress.py -T /root/task.dat >> /root/io.log &
 
 # compile the two files
-gcc -fopenmp /root/StressCPU.c -o /root/StressCPU
-gcc /root/StressMemory.c -o /root/StressMemory
+/usr/bin/gcc -fopenmp /root/StressCPU.c -o /root/StressCPU
+/usr/bin/gcc /root/StressMemory.c -o /root/StressMemory
 
 # Sleep 1 min before start stressing
 # 1. to mitigate OS post-boot performance stats
@@ -23,7 +23,7 @@ sleep 60
 /root/StressCPU &
 echo $! > /root/cpu.pid
 
-python /root/simulator.py -T /root/task.dat >> /root/simulator.log &
+/usr/bin/python /root/simulator.py -T /root/task.dat >> /root/simulator.log &
 
 
 # echo '' > ~/cpu.pid
