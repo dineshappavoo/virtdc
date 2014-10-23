@@ -45,13 +45,13 @@ vmsubmission_log = open('../com.vmplacement.logs/activity_logs/vmsubmissionlog.l
 
 def vm_submitjob(vmid,cpu,memory,io):
 	obj=NodeFinder()
-	memory=float(_base_memory_size) + float(memory)
+	#memory=float(_base_memory_size) + float(memory)
 	#print "Memory "+str(memory)
     
-    #Identify is there a space for the VM
-    host = is_space_available_for_vm(cpu,memory,io)
-    if host is None:
-        return False
+    	#Identify is there a space for the VM
+    	host = obj.is_space_available_for_vm(cpu,memory,io)
+    	if host is None:
+        	return False
         
 	prefix_host=host
 	print host
@@ -104,15 +104,15 @@ def vm_submitjob(vmid,cpu,memory,io):
 		clone_out = subprocess.check_output(clone, shell=True, stderr=subprocess.PIPE)
 		vmsubmission_log.write('Create VM ::'+host+' :: '+vmid+' :: Successfully created the VM\n')
 		
-        #VM Successfully created. Update the node dictionary pickle
-        host = obj.place_job (cpu,memory,io)
+        	#VM Successfully created. Update the node dictionary pickle
+        	host = obj.place_job (host, cpu,memory,io)
         
-        if host is None:
-            print 'Issue in updating node dictionary'
-            vmsubmission_log.write('Update Node Dictionary ::'+host+' :: '+vmid+' :: Issue in updating node dictionary\n')
+       		if host is None:
+            		print 'Issue in updating node dictionary'
+            		vmsubmission_log.write('Update Node Dictionary ::'+host+' :: '+vmid+' :: Issue in updating node dictionary\n')
 
 
-        time.sleep(30)
+        	time.sleep(30)
 
 		#Get the IP address of Virtual Machine and update in VM_Info_Updater
 		guest_ip=getGuestIP(host, vmid, "root", "Teamb@123")
@@ -122,17 +122,18 @@ def vm_submitjob(vmid,cpu,memory,io):
 		runJobOnVM(host, vmid)
 		vmsubmission_log.write('Run Job::'+host+' :: '+vmid+' :: Successfully ran the job\n')
 
-        return True
+        	return True
 
-    else :
+    	else :
 		print "Cant create new"
-        return False
+        	return False
 
 	print subprocess.call("date")
 	print 'VMID "', vmid
 	print 'CPU "', cpu
 	print 'memory"', memory
 	print 'io"', io
+	return False
 
 
 def main(argv):
@@ -158,8 +159,7 @@ def main(argv):
 			io = arg
 		elif opt in ("--vmid", "-vmid"):
 			vmid = arg
-		
-	 value = vm_submitjob(vmid,cpu,memory,io)
+	value=vm_submitjob(vmid,cpu,memory,io)
 	
 if __name__ == "__main__":
 	main(sys.argv[1:])

@@ -258,3 +258,35 @@ Copy Image ::node2 :: VM_Task_26 :: Successfully copied the image
 Create VM ::node2 :: VM_Task_26 :: Successfully created the VM
 Update IP::node2 :: VM_Task_26 :: Successfully updated the IP
 Run Job::node2 :: VM_Task_26 :: Successfully ran the job
+Copy Image ::node1 :: VM_Task_1 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_1 :: Successfully created the VM
+Copy Image ::node1 :: VM_Task_1 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_1 :: Successfully created the VM
+Update IP::node1 :: VM_Task_1 :: Successfully updated the IP
+Run Job::node1 :: VM_Task_1 :: Successfully ran the job
+Copy Image ::node1 :: VM_Task_10 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_10 :: Successfully created the VM
+Update IP::node1 :: VM_Task_10 :: Successfully updated the IP
+Run Job::node1 :: VM_Task_10 :: Successfully ran the job
+Copy Image ::node1 :: VM_Task_100 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_100 :: Successfully created the VM
+Update IP::node1 :: VM_Task_100 :: Successfully updated the IP
+Run Job::node1 :: VM_Task_100 :: Successfully ran the job
+Copy Image ::node1 :: VM_Task_11 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_11 :: Successfully created the VM
+Update IP::node1 :: VM_Task_11 :: Successfully updated the IP
+Run Job::node1 :: VM_Task_11 :: Successfully ran the job
+Copy Image ::node1 :: VM_Task_12 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_12 :: Successfully created the VM
+Update IP::node1 :: VM_Task_12 :: Successfully updated the IP
+Run Job::node1 :: VM_Task_12 :: Successfully ran the job
+Copy Image ::node1 :: VM_Task_13 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_13 :: Successfully created the VM
+Update IP::node1 :: VM_Task_13 :: Successfully updated the IP
+Run Job::node1 :: VM_Task_13 :: Successfully ran the job
+Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_14 :: Successfully created the VM
+Update IP::node1 :: VM_Task_14 :: Successfully updated the IP
+Run Job::node1 :: VM_Task_14 :: Successfully ran the job
+Copy Image ::node3 :: VM_Task_15 :: Successfully copied the image
+Create VM ::node3 :: VM_Task_15 :: Successfully created the VM

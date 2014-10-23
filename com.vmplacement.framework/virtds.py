@@ -28,7 +28,7 @@ def main(argv):
 		try:
 			opts, args = getopt.getopt(argv,"vmid:cpu:mem:io:",["vmid=","cpu=","mem=","io="])
 		except getopt.GetoptError:
-            print 'usage : '
+            		print 'usage : '
 			print 'virtds.py --vmid <VMID> --cpu <CPU> --mem <MEMORY> --io <IO>\n'
 			print 'virtds.py --f <csvfilename>\n'
 			sys.exit(2)
@@ -54,16 +54,16 @@ def main(argv):
 		# parse_cmd="python parse.py -T 26 -t "+csv
 		# pass csv file as iput parser.py
 		# os.system(parse_cmd)
-        #task_file = open('VM_Task_26.csv', 'r')
-        #print csv
-        return False
+        	#task_file = open('VM_Task_26.csv', 'r')
+        	#print csv
+        	return False
 	else :
 		print vmid
 		print cpu
 		print memory
 		print io
-        #vm_placement_status = vm_submitjob(vmid,cpu,memory,io)
-        status = create_vm(vmid, cpu, memory, io)
+        	#vm_placement_status = vm_submitjob(vmid,cpu,memory,io)
+        	status = create_vm(vmid, cpu, memory, io)
 
 if __name__ == "__main__":
 	main(sys.argv[1:])

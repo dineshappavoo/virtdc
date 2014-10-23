@@ -36,13 +36,13 @@ class NodeFinder:
 			sys.exit(1)
 
 
-    def is_space_available_for_vm(self, cpu, mem, io):
-        node_dict={}
-        node_dict=GetNodeDict()
-        for key, value in node_dict.iteritems() :
-            if ( float(cpu) <= float(value.avail_cpu) and float(	mem) <= float(value.avail_memory) and float(io) <= float(value.avail_io)) :
-                return value.hostname
-        return None
+	def is_space_available_for_vm(self, cpu, mem, io):
+        	node_dict={}
+        	node_dict=GetNodeDict()
+        	for key, value in node_dict.iteritems() :
+            		if ( float(cpu) <= float(value.avail_cpu) and float(	mem) <= float(value.avail_memory) and float(io) <= float(value.avail_io)) :
+                		return value.hostname
+        	return None
     
 	#Function to place the job in the right node
 	#@staticmethod
@@ -54,7 +54,7 @@ class NodeFinder:
     			print key, value.max_cpu, value.max_memory, value.max_io, value.avail_cpu, value.avail_memory, value.avail_io
 		print " DECISION MAKER END "
 		for key, value in node_dict.iteritems() :
-			if ( key = host ) :
+			if ( key == host ):
 				print "Test Host"+str(value.hostname)
 				print value
 				print "avail CPU : "+str(value.avail_cpu)

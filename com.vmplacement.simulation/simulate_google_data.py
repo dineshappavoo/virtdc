@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 
-import os, sys, subprocess
+import os, sys, subprocess, time
 sys.path.append('/root/Desktop/VMPlacementAndScaling/com.vmplacement.framework')
 from virtds import create_vm
 
@@ -50,7 +50,7 @@ def execute_task(file_name):
 
     vm_status = create_vm(vmid, cpu_val, mem_val, disk)
     if vm_status is not True:
-        while(true):
+        while(True):
             time.sleep(15)
             vm_current_status = execute_task(file_name)
             if vm_current_status is True:
@@ -60,5 +60,7 @@ def execute_task(file_name):
 
 
                       
+if __name__ == "__main__":
+   # stuff only to run when not called via 'import' here
+   simulate_google_data()
 
-simulate_google_data()
