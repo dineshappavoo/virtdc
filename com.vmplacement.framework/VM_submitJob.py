@@ -35,7 +35,7 @@ _master="node1"
 _imageCopyCmd="scp"
 _cloneCmd="virsh --connect qemu+ssh://"
 
-_base_memory_size=1048576
+_base_memory_size=1048576       # 1 GB (This includes OS memory)
 
 #===============================================================================
 
@@ -47,7 +47,12 @@ def vm_submitjob(vmid,cpu,memory,io):
 	obj=NodeFinder()
 	memory=float(_base_memory_size) + float(memory)
 	#print "Memory "+str(memory)
-	host = obj.place_job (cpu,memory,io)
+    
+    #Identify is there a space for the VM
+    host = is_space_available_for_vm(cpu,memory,io)
+    if host is None:
+        return False
+        
 	prefix_host=host
 	print host
 	#Code to check whether the VM can be placed
@@ -99,7 +104,15 @@ def vm_submitjob(vmid,cpu,memory,io):
 		clone_out = subprocess.check_output(clone, shell=True, stderr=subprocess.PIPE)
 		vmsubmission_log.write('Create VM ::'+host+' :: '+vmid+' :: Successfully created the VM\n')
 		
-	        time.sleep(30)
+        #VM Successfully created. Update the node dictionary pickle
+        host = obj.place_job (cpu,memory,io)
+        
+        if host is None:
+            print 'Issue in updating node dictionary'
+            vmsubmission_log.write('Update Node Dictionary ::'+host+' :: '+vmid+' :: Issue in updating node dictionary\n')
+
+
+        time.sleep(30)
 
 		#Get the IP address of Virtual Machine and update in VM_Info_Updater
 		guest_ip=getGuestIP(host, vmid, "root", "Teamb@123")
@@ -109,8 +122,11 @@ def vm_submitjob(vmid,cpu,memory,io):
 		runJobOnVM(host, vmid)
 		vmsubmission_log.write('Run Job::'+host+' :: '+vmid+' :: Successfully ran the job\n')
 
-	else :
+        return True
+
+    else :
 		print "Cant create new"
+        return False
 
 	print subprocess.call("date")
 	print 'VMID "', vmid
@@ -143,7 +159,7 @@ def main(argv):
 		elif opt in ("--vmid", "-vmid"):
 			vmid = arg
 		
-	vm_submitjob(vmid,cpu,memory,io)
+	 value = vm_submitjob(vmid,cpu,memory,io)
 	
 if __name__ == "__main__":
 	main(sys.argv[1:])

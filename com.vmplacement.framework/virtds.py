@@ -3,6 +3,14 @@
 from VM_submitJob import vm_submitjob
 import sys, getopt, os
 
+def create_vm(vmid, cpu, memory, io):
+    print vmid
+    print cpu
+    print memory
+    print io
+    vm_placement_status = vm_submitjob(vmid,cpu,memory,io)
+    return vm_placement_status
+
 def main(argv):
 	filepath=''
 	cpu= ''
@@ -20,13 +28,14 @@ def main(argv):
 		try:
 			opts, args = getopt.getopt(argv,"vmid:cpu:mem:io:",["vmid=","cpu=","mem=","io="])
 		except getopt.GetoptError:
-			print 'VM_submitjob.py --vmid <VMID> --cpu <CPU> --mem <MEMORY> --io <IO>\n'
-			print 'VM_submitjob.py --f <csvfilename>\n'
+            print 'usage : '
+			print 'virtds.py --vmid <VMID> --cpu <CPU> --mem <MEMORY> --io <IO>\n'
+			print 'virtds.py --f <csvfilename>\n'
 			sys.exit(2)
 	
 	for opt, arg in opts:
 		if opt == '--h':
-			print 'VM_submitjob.py --vmid <VMID> --cpu <CPU> --mem <MEMORY> --io <IO>'
+			print 'virtds.py --vmid <VMID> --cpu <CPU> --mem <MEMORY> --io <IO>'
 			sys.exit()
 		if fileinput:
 			if opt in ("--f", "-f"):
@@ -45,14 +54,16 @@ def main(argv):
 		# parse_cmd="python parse.py -T 26 -t "+csv
 		# pass csv file as iput parser.py
 		# os.system(parse_cmd)
-		task_file = open('VM_Task_26.csv', 'r')
-		print csv
+        #task_file = open('VM_Task_26.csv', 'r')
+        #print csv
+        return False
 	else :
 		print vmid
 		print cpu
 		print memory
 		print io
-		vm_submitjob(vmid,cpu,memory,io)
-	
+        #vm_placement_status = vm_submitjob(vmid,cpu,memory,io)
+        status = create_vm(vmid, cpu, memory, io)
+
 if __name__ == "__main__":
 	main(sys.argv[1:])
