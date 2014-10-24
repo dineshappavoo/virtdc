@@ -113,9 +113,9 @@ def process_mem_over_usage(vmid, mem_usage, mem_allocated):
 			print "Test"+str(seconds)
 
 			if ( float(seconds) > float(time_threshold)):
-        			f= open('../com.vmplacement.logs/vm_logs/'+vmid+'.log', 'a+')
+        			f= open('../com.vmplacement.logs/vm_logs/'+vmid+'.dat', 'a+')
 				#over_usage= 'VM ID: '+vmid+'\talotted memory: '+str(mem_allocated)+'\tmemory usage: ' + str(mem_usage) + 'over usage time duration (sec) : '+str(seconds)+"\n"	
-				over_usage= vmid+'::'+str(mem_allocated)+'::' + str(mem_usage) + '::'+str(seconds)+"\n"	
+				over_usage= 'MEMORY::'+vmid+'::'+str(mem_allocated)+'::' + str(mem_usage) + '::'+str(seconds)+"\n"	
 				f.write(over_usage+'\n')
 				print 'Testing'
 				del vm_mem_over_usage_dict[vmid]
