@@ -56,7 +56,8 @@ def monitorAndLogAndReportHotSpot():
                 cpuUsage = getCpuUsage(vmIp)
                 memUsage = getOSMemUsage(vmIp)
 		ioUsage =  getIoUsage(vmIp)
-                usage= 'VM ID: '+vmId+'\tVM IP: '+vmIp + '\t\talloted cpu: '+str(value.current_cpu)+'\tcpu usage: ' + str(cpuUsage) + '\talotted memory: '+str(value.current_memory)+'\tmemory usage: ' + str(memUsage) + '\talotted io: '+str(value.io)+'\tio usage: ' + str(ioUsage) +"\n"
+                #usage= 'VM ID: '+vmId+'\tVM IP: '+vmIp + '\t\talloted cpu: '+str(value.current_cpu)+'\tcpu usage: ' + str(cpuUsage) + '\talotted memory: '+str(value.current_memory)+'\tmemory usage: ' + str(memUsage) + '\talotted io: '+str(value.io)+'\tio usage: ' + str(ioUsage) +"\n"
+                usage= vmId+'::'+vmIp + '::'+str(value.current_cpu)+'::' + str(cpuUsage) + '::'+str(value.current_memory)+'::' + str(memUsage) + '::'+str(value.io)+'::' + str(ioUsage) +"\n"
                 usageInfo+=usage
                 file.write(usage+'\n')
                 if (float(cpuUsage)>float(value.current_cpu) or float(memUsage)>float(value.current_memory)):
