@@ -9,7 +9,7 @@ sys.path.append('/root/Desktop/VMPlacementAndScaling/com.vmplacement.framework')
 from Guest import Guest
 import time
 from VMMemoryOverUsageInfo import VMMemoryOverUsageInfo
-from VM_Monitor_Utility import getCpuUsage, getMemUsage, getIoUsage, slicingIP
+from VM_Monitor_Utility import getCpuUsage, getOSMemUsage, getIoUsage, slicingIP
 
 #==============================================================================
 # Variables
@@ -54,7 +54,7 @@ def monitorAndLogAndReportHotSpot():
             for vmId,value in vm_dict.iteritems():
                 vmIp=slicingIP(value.vmip, '\n')
                 cpuUsage = getCpuUsage(vmIp)
-                memUsage = getMemUsage(vmIp)
+                memUsage = getOSMemUsage(vmIp)
 		ioUsage =  getIoUsage(vmIp)
                 usage= 'VM ID: '+vmId+'\tVM IP: '+vmIp + '\t\talloted cpu: '+str(value.current_cpu)+'\tcpu usage: ' + str(cpuUsage) + '\talotted memory: '+str(value.current_memory)+'\tmemory usage: ' + str(memUsage) + '\talotted io: '+str(value.io)+'\tio usage: ' + str(ioUsage) +"\n"
                 usageInfo+=usage
