@@ -43,11 +43,6 @@ def getCpuUsage(vmIp):
         cmd='ssh -q -o StrictHostKeyChecking=no root@'+vmIp+' uptime | awk \'{print $4}\''
         check=subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 
-        #if check == 'min,\n':
-        #        cmd='ssh -q -o StrictHostKeyChecking=no root@'+vmIp+' uptime | awk \'{print $9}\''
-        #else:
-        #        cmd='ssh -q -o StrictHostKeyChecking=no root@'+vmIp+' uptime | awk \'{print $8}\''
-
         #cmd='uptime | grep -ohe \'load average[s:][: ].*\' | awk \'{ print $3 }\''
         cmd = 'ssh -q -o StrictHostKeyChecking=no root@' +vmIp+ ' cat /proc/loadavg | awk \'{print $1}\''
         cpuUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
@@ -67,7 +62,7 @@ def getMemUsage(vmIp):
 
 def getIoUsage(vmIp):
 
-	cmd='ssh -q -o StrictHostKeyChecking=no root@' +vmIp+ ' iostat -d -x 1 2 | grep sda | tail -1 | awk \'{print $14}\''
+	cmd='ssh -q -o StrictHostKeyChecking=no root@' +vmIp+ ' iostat -d -x 1 2 | grep sda | tail -1 | awk \'{print $(NF)}\''
 	#cmd='ssh root@' +vmIp+ ' free -m | grep \'+\' | awk \'{print $3}\''
 	ioUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 	#memUsage = slicingUsage(ioUsage , '\n') #not working. future work
