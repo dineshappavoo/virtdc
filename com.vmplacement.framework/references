@@ -85,5 +85,8 @@ git fetch origin
 git reset --hard origin/master
 git clean -f -d
 
+GIT  - To get the no of lines in the repo :
+git ls-files | xargs wc -l
+
 
 
