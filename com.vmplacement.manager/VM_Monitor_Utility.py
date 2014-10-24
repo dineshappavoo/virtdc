@@ -48,17 +48,24 @@ def getCpuUsage(vmIp):
         cpuUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
         cpuUsage = slicingUsage(cpuUsage, ',')
 
-        return cpuUsage
+        return cpuUsage.strip()
 
 
-def getMemUsage(vmIp):
+def getOSMemUsage(vmIp):
         cmd='ssh -q -o StrictHostKeyChecking=no root@' +vmIp+ ' free -m | grep \'+\' | awk \'{print $3}\''
         memUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
         #memUsage = slicingUsage(memUsage , '\n') #not working. future work
-        memlen = len(memUsage )
-        memUsage = memUsage[:memlen-1]
+        #memlen = len(memUsage )
+        #memUsage = memUsage[:memlen-1]
 
-        return memUsage
+        return memUsage.strip()
+
+def getTaskMemUsage(vmIp):
+	cmd = 'ssh -q -o StrictHostKeyChecking=no root@' +vmIp+
+	" cat /proc/`cat /root/memory.pid`/status | grep VmSize | awk '{print $2}'"
+	memUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+	
+	return memUsage if memUsage.strip() != '' else 0
 
 def getIoUsage(vmIp):
 
@@ -66,10 +73,10 @@ def getIoUsage(vmIp):
 	#cmd='ssh root@' +vmIp+ ' free -m | grep \'+\' | awk \'{print $3}\''
 	ioUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 	#memUsage = slicingUsage(ioUsage , '\n') #not working. future work
-	iolen = len(ioUsage )
-	ioUsage = ioUsage[:iolen - 1]
+	#iolen = len(ioUsage )
+	#ioUsage = ioUsage[:iolen - 1]
 
-	return ioUsage 
+	return ioUsage.strip()
 
 
 if __name__ == "__main__":
