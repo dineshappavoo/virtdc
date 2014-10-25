@@ -6,12 +6,9 @@ import sys, subprocess
 #==============================================================================
 # Variables
 #==============================================================================
-
 # Some descriptive variables
-# This will eventually be passed to the setup function, but we already need them
-# for doing some other stuff so we have to declare them here.
 #name                = "vmplacementandscaling"
-#version             = "0.1"
+#version             = "0.1.0"
 #long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
 #url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
 #license             = ""
@@ -21,6 +18,8 @@ import sys, subprocess
 #-------------------------------------------------------------------------------
 #Deleting a Virtual Machine
 #To delete a virtual machine, first terminate it (if running), and then undefine it
+#          $ virsh destroy foo_new
+#          $ virsh undefine foo_new
 #Referrence:
 #        https://help.ubuntu.com/community/KVM/Virsh
 #        https://www.centos.org/docs/5/html/5.2/Virtualization/chap-Virtualization-Managing_guests_with_virsh.html
@@ -47,6 +46,9 @@ def vm_terminate_guest(host, vmid):
         print 'Cannot remove VM '+str(vmid)+' in '+str(host)
         vmtermination_log.write('Terminate Guest ::'+host+' :: '+vmid+' :: Cannot terminated the guest\n')
         return False
+
+
+def vm_terminate_vm_dependency(host, vmid):
 
 
 #For Testing
