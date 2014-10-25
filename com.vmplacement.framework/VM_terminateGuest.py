@@ -50,6 +50,9 @@ def vm_terminate_guest(host, vmid):
 
 def vm_terminate_vm_dependency(host, vmid):
 
+    #Remove entry from host_vm_dict.pkl
+    #Remove the configuration XML
+
 
 #For Testing
 if __name__ == "__main__":
