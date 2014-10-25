@@ -52,6 +52,7 @@ def vm_terminate_vm_dependency(host, vmid):
 
     #Remove entry from host_vm_dict.pkl
     #Remove the configuration XML
+    a=0
 
 
 #For Testing
