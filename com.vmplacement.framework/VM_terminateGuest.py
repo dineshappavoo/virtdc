@@ -34,13 +34,19 @@ vmtermination_log = open('../com.vmplacement.logs/activity_logs/vmtermination.lo
 
 def vm_terminate_guest(host, vmid):
 
-    vm_destroy_cmd = 'virsh destroy '+str(vmid)
-    vm_undefine_cmd = 'virsh undefine '+str(vmid)
+    try :
+        vm_destroy_cmd = 'virsh destroy '+str(vmid)
+        vm_undefine_cmd = 'virsh undefine '+str(vmid)
 
-    vm_destroy = subprocess.check_output(vm_destroy_cmd, shell=True, stderr=subprocess.PIPE)
-    vm_undefine = subprocess.check_output(vm_undefine_cmd, shell=True, stderr=subprocess.PIPE)
+        vm_destroy = subprocess.check_output(vm_destroy_cmd, shell=True, stderr=subprocess.PIPE)
+        vm_undefine = subprocess.check_output(vm_undefine_cmd, shell=True, stderr=subprocess.PIPE)
 
-    vmsubmission_log.write('Terminate Guest ::'+host+' :: '+vmid+' :: Successfully terminated the guest\n')
+        vmtermination_log.write('Terminate Guest ::'+host+' :: '+vmid+' :: Successfully terminated the guest\n')
+        return True
+    except:
+        print 'Cannot remove VM '+str(vmid)+' in '+str(host)
+        vmtermination_log.write('Terminate Guest ::'+host+' :: '+vmid+' :: Cannot terminated the guest\n')
+        return False
 
 
 #For Testing
