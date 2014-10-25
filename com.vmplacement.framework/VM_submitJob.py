@@ -41,7 +41,7 @@ _base_memory_size=1048576       # 1 GB (This includes OS memory)
 
 
 #Activity Log
-vmsubmission_log = open('../com.vmplacement.logs/activity_logs/vmsubmissionlog.log', 'a+')
+vmsubmission_log = open('../com.vmplacement.logs/activity_logs/vmsubmission.log', 'a+')
 
 def vm_submitjob(vmid,cpu,memory,io):
 	obj=NodeFinder()
