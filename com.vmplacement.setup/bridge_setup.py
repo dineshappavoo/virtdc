@@ -1,16 +1,30 @@
+#!/usr/bin/python
 import subprocess
 import sys
+
+
+#==============================================================================
+# Variables
+#==============================================================================
+# Some descriptive variables
+#name                = "vmplacementandscaling"
+#version             = "0.1.0"
+#long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
+#url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
+#license             = ""
+
+#==============================================================================
 
 #/root/Desktop/VMPlacementAndScaling/com.vmplacement.setup
 
 def backup(dest):
-	#cmd='cp  /etc/sysconfig/network-scripts/ifcfg-em1 /etc/sysconfig/network-scripts/ifcfg-em1.backHaan'
+	#cmd='cp  /etc/sysconfig/network-scripts/ifcfg-em1 /etc/sysconfig/network-scripts/ifcfg-em1.bak'
 	cmd='cp ' + dest + ' ' + dest+'.bak'
 	backup = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 	return backup
 
 def replace(src, dest):
-	#cmd='cp  /etc/sysconfig/network-scripts/ifcfg-em1 /etc/sysconfig/network-scripts/ifcfg-em1.backHaan'
+	#cmd='cp  /etc/sysconfig/network-scripts/ifcfg-em1 /etc/sysconfig/network-scripts/ifcfg-em1.bak'
 
 	#remove src file
 	cmd='rm -f ' + src
@@ -48,8 +62,8 @@ def getMACADDR():
 
 def updateBridge(src):
 	#path
-	#dest = '/etc/sysconfig/network-scripts/'+src
-	#srcPath = '/root/haan/'+src #for test purpose
+	#dest = '/etc/sysconfig/network-scripts/'+src	#for test purpose
+	#srcPath = '/root/haan/'+src			#for test purpose
 	
 	dest = '/etc/sysconfig/network-scripts/'+src
 	srcPath='/root/Desktop/VMPlacementAndScaling/com.vmplacement.setup/'+src
@@ -85,3 +99,6 @@ def updateBridge(src):
 updateBridge('ifcfg-em1')
 updateBridge('ifcfg-br0')
 
+
+#VMPlacementAndScaling/com.vmplacement.setup/bridge_setup.py
+#/root/Desktop/VMPlacementAndScaling/com.vmplacement.setup
