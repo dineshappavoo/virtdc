@@ -3,7 +3,7 @@
 
 import os, sys, subprocess, time
 sys.path.append('/root/Desktop/VMPlacementAndScaling/com.vmplacement.framework')
-from virtds import create_vm
+from virtdc import create_vm
 
 #==============================================================================
 # Variables
@@ -44,7 +44,7 @@ def execute_task(file_name):
     disk = '4194304'
     vmid=file_name[:-4]
 
-    #create_vm_cmd='python /root/Desktop/VMPlacementAndScaling/com.vmplacement.framework/virtds.py --vmid '+vmid+' --cpu '+cpu_val+' --mem '+mem_val+' --io disk'
+    #create_vm_cmd='python /root/Desktop/VMPlacementAndScaling/com.vmplacement.framework/virtdc.py --vmid '+vmid+' --cpu '+cpu_val+' --mem '+mem_val+' --io disk'
     #print create_vm_cmd+'\n'
     #os.system(create_vm_cmd) #4 GB disk by default
 

@@ -29,13 +29,13 @@ def main(argv):
 			opts, args = getopt.getopt(argv,"vmid:cpu:mem:io:",["vmid=","cpu=","mem=","io="])
 		except getopt.GetoptError:
             		print 'usage : '
-			print 'virtds.py --vmid <VMID> --cpu <CPU> --mem <MEMORY> --io <IO>\n'
-			print 'virtds.py --f <csvfilename>\n'
+			print 'virtdc.py --vmid <VMID> --cpu <CPU> --mem <MEMORY> --io <IO>\n'
+			print 'virtdc.py --f <csvfilename>\n'
 			sys.exit(2)
 	
 	for opt, arg in opts:
 		if opt == '--h':
-			print 'virtds.py --vmid <VMID> --cpu <CPU> --mem <MEMORY> --io <IO>'
+			print 'virtdc.py --vmid <VMID> --cpu <CPU> --mem <MEMORY> --io <IO>'
 			sys.exit()
 		if fileinput:
 			if opt in ("--f", "-f"):

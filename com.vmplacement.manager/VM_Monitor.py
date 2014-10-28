@@ -57,7 +57,7 @@ def monitorAndLogAndReportHotSpot():
                 memUsage = getOSMemUsage(vmIp)
 		ioUsage =  getIoUsage(vmIp)
                 #usage= 'VM ID: '+vmId+'\tVM IP: '+vmIp + '\t\talloted cpu: '+str(value.current_cpu)+'\tcpu usage: ' + str(cpuUsage) + '\talotted memory: '+str(value.current_memory)+'\tmemory usage: ' + str(memUsage) + '\talotted io: '+str(value.io)+'\tio usage: ' + str(ioUsage) +"\n"
-                usage= vmId+'::'+vmIp + '::'+str(value.current_cpu)+'::' + str(cpuUsage) + '::'+str(value.current_memory)+'::' + str(memUsage) + '::'+str(value.io)+'::' + str(ioUsage) +"\n"
+                usage= vmId+'|'+vmIp + '|'+str(value.current_cpu)+'|' + str(cpuUsage) + '|'+str(value.current_memory)+'|' + str(memUsage) + '|'+str(value.io)+'|' + str(ioUsage) +"\n"
                 usageInfo+=usage
                 file.write(usage+'\n')
                 if (float(cpuUsage)>float(value.current_cpu) or float(memUsage)>float(value.current_memory)):
@@ -115,7 +115,7 @@ def process_mem_over_usage(vmid, mem_usage, mem_allocated):
 			if ( float(seconds) > float(time_threshold)):
         			f= open('../com.vmplacement.logs/vm_logs/'+vmid+'.dat', 'a+')
 				#over_usage= 'VM ID: '+vmid+'\talotted memory: '+str(mem_allocated)+'\tmemory usage: ' + str(mem_usage) + 'over usage time duration (sec) : '+str(seconds)+"\n"	
-				over_usage= 'MEMORY::'+vmid+'::'+str(mem_allocated)+'::' + str(mem_usage) + '::'+str(seconds)+"\n"	
+				over_usage= 'MEMORY|'+vmid+'|'+str(mem_allocated)+'|' + str(mem_usage) + '|'+str(seconds)+"\n"	
 				f.write(over_usage+'\n')
 				print 'Testing'
 				del vm_mem_over_usage_dict[vmid]

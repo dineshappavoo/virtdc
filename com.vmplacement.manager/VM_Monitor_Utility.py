@@ -61,7 +61,7 @@ def getOSMemUsage(vmIp):
         return memUsage.strip()
 
 def getTaskMemUsage(vmIp):
-	cmd = 'ssh -q -o StrictHostKeyChecking=no root@' +vmIp+
+	cmd = 'ssh -q -o StrictHostKeyChecking=no root@' +vmIp+\
 	" cat /proc/`cat /root/memory.pid`/status | grep VmSize | awk '{print $2}'"
 	memUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 	
