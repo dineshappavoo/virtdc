@@ -36,10 +36,18 @@ def execute_task(file_name):
     cpu_Val_cmd = 'tail -2 '+data_folder_path+'/'+file_name +' | head -1'
     cpu_val = subprocess.check_output(cpu_Val_cmd, shell=True, stderr=subprocess.PIPE)
     cpu_val = cpu_val.strip()
-    mem_Val_cmd = 'tail -1 '+data_folder_path+'/'+file_name
-    mem_val = subprocess.check_output(mem_Val_cmd, shell=True, stderr=subprocess.PIPE)
-    mem_val = mem_val.strip()
-    mem_val = int(_base_memory_size) + int(mem_val)
+
+    current_mem_cmd = 'head -1 '+data_folder_path+'/'+file_name
+    current_mem_val = subprocess.check_output(current_mem_cmd, shell=True, stderr=subprocess.PIPE)
+    task_spec = current_mem_val.split()
+    current_mem_val = task_spec[2] #Takes the memory value first time interval
+    current_mem_val = int(_base_memory_size) + int(float(current_mem_val))
+    print 'Current memory value '+str(current_mem_val)
+
+    max_mem_val_cmd = 'tail -1 '+data_folder_path+'/'+file_name
+    max_mem_val = subprocess.check_output(max_mem_val_cmd, shell=True, stderr=subprocess.PIPE)
+    max_mem_val = max_mem_val.strip()
+    max_mem_val = int(_base_memory_size) + int(max_mem_val)
 
     disk = '4194304'
     vmid=file_name[:-4]
@@ -48,7 +56,7 @@ def execute_task(file_name):
     #print create_vm_cmd+'\n'
     #os.system(create_vm_cmd) #4 GB disk by default
 
-    vm_status = create_vm(vmid, cpu_val, mem_val, disk)
+    vm_status = create_vm(vmid, cpu_val, current_mem_val, max_mem_val, disk)
     if vm_status is not True:
         while(True):
             time.sleep(15)

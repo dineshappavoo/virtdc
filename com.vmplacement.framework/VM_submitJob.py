@@ -43,19 +43,28 @@ _base_memory_size=1048576       # 1 GB (This includes OS memory)
 #Activity Log
 vmsubmission_log = open('../com.vmplacement.logs/activity_logs/vmsubmission.log', 'a+')
 
-def vm_submitjob(vmid,cpu,memory,io):
+def vm_submitjob(vmid,cpu,memory, max_memory, io):
 	obj=NodeFinder()
 	#memory=float(_base_memory_size) + float(memory)
 	#print "Memory "+str(memory)
     
     	#Identify is there a space for the VM
     	host = obj.is_space_available_for_vm(cpu,memory,io)
+
+
+	print 'VMID "', vmid
+	print 'CPU "', cpu
+	print 'memory"', memory
+	print 'max_memory"', max_memory
+	print 'io"', io
+
     	if host is None:
     		print "Cant create new"
     		#print subprocess.call("date")
 		#print 'VMID "', vmid
 		#print 'CPU "', cpu
 		#print 'memory"', memory
+		#print 'max_memory"', max_memory
 		#print 'io"', io
         	return False
         
@@ -93,7 +102,7 @@ def vm_submitjob(vmid,cpu,memory,io):
 	#config update based on the new VM requiement  	#image_path	max_memory	current_memory	current_cpu	max_cpu
 	xmlstring=xmlstring.replace("vm_name", vmid);
 	xmlstring=xmlstring.replace("vm_uuid", uuid);
-	xmlstring=xmlstring.replace("max_memory", str(int(memory)));
+	xmlstring=xmlstring.replace("max_memory", str(int(max_memory)));
 	xmlstring=xmlstring.replace("current_memory", str(int(memory)));
 	xmlstring=xmlstring.replace("current_cpu", "1");
 	xmlstring=xmlstring.replace("max_cpu", cpu);
@@ -111,7 +120,7 @@ def vm_submitjob(vmid,cpu,memory,io):
 	vmsubmission_log.write('Create VM ::'+host+' :: '+vmid+' :: Successfully created the VM\n')
 	
 	#VM Successfully created. Update the node dictionary pickle
-	host = obj.place_job (host, cpu,memory,io)
+	host = obj.place_job (host, cpu,max_memory,io)
 
        	if host is None:
     		print 'Issue in updating node dictionary'
@@ -123,7 +132,7 @@ def vm_submitjob(vmid,cpu,memory,io):
 
 	#Get the IP address of Virtual Machine and update in VM_Info_Updater
 	guest_ip=getGuestIP(host, vmid, "root", "Teamb@123")
-	addOrUpdateDictionaryOfVM(host, vmid, Guest(guest_ip, vmid, float(1), float(cpu),float(memory),float(memory),float(1)))
+	addOrUpdateDictionaryOfVM(host, vmid, Guest(guest_ip, vmid, float(1), float(cpu),float(memory),float(max_memory),float(1)))
 	vmsubmission_log.write('Update IP::'+host+' :: '+vmid+' :: Successfully updated the IP\n')
 	#Run Job in Guest
 	runJobOnVM(host, vmid)
@@ -138,13 +147,13 @@ def main(argv):
 	vmid = ''
 	max_memory=4194304
 	try:
-		opts, args = getopt.getopt(argv,"vmid:cpu:mem:io:",["vmid=","cpu=","mem=","io="])
+		opts, args = getopt.getopt(argv,"vmid:cpu:mem:max_mem:io:",["vmid=","cpu=","mem=","max_mem=","io="])
 	except getopt.GetoptError:
-		print 'VM_submitjob.py --vmid <VMID> --cpu <CPU> --mem <MEMORY> --io <IO>'
+		print 'VM_submitjob.py --vmid <VMID> --cpu <CPU> --mem <MEMORY> --max_mem <MAX_MEMORY> --io <IO>'
 		sys.exit(2)
 	for opt, arg in opts:
 		if opt == '--h':
-			print 'VM_submitjob.py --vmid <VMID> --cpu <CPU> --mem <MEMORY> --io <IO>'
+			print 'VM_submitjob.py --vmid <VMID> --cpu <CPU> --mem <MEMORY> --max_mem <MAX_MEMORY> --io <IO>'
 			sys.exit()
 		elif opt in ("--cpu", "-cpu"):
 			cpu = arg
@@ -154,7 +163,9 @@ def main(argv):
 			io = arg
 		elif opt in ("--vmid", "-vmid"):
 			vmid = arg
-	value=vm_submitjob(vmid,cpu,memory,io)
+		elif opt in ("--max_memory", "-max_memory"):
+			max_memory = arg
+	value=vm_submitjob(vmid,cpu,memory, max_memory, io)
 	
 if __name__ == "__main__":
 	main(sys.argv[1:])

@@ -3,12 +3,12 @@
 from VM_submitJob import vm_submitjob
 import sys, getopt, os
 
-def create_vm(vmid, cpu, memory, io):
+def create_vm(vmid, cpu, memory, max_memory, io):
     print vmid
     print cpu
     print memory
     print io
-    vm_placement_status = vm_submitjob(vmid,cpu,memory,io)
+    vm_placement_status = vm_submitjob(vmid, cpu, memory, max_memory, io)
     return vm_placement_status
 
 def main(argv):
@@ -63,7 +63,7 @@ def main(argv):
 		print memory
 		print io
         	#vm_placement_status = vm_submitjob(vmid,cpu,memory,io)
-        	status = create_vm(vmid, cpu, memory, io)
+        	status = create_vm(vmid, cpu, memory, max_memory, io)
 
 if __name__ == "__main__":
 	main(sys.argv[1:])

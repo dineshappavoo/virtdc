@@ -8783,3 +8783,11 @@ VM_Task_12|192.168.1.41|1.0|0.00|1108576.0|135|1.0|
 HOST NAME : node3                TIME : 2014-10-28 18:28:34.018335
 HOST NAME : node2                TIME : 2014-10-28 18:28:34.018370
 HOST NAME : node4                TIME : 2014-10-28 18:28:34.018380
+HOST NAME : node1                	TIME : 2014-10-29 01:58:36.569625
+VM ID	|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1|192.168.1.8|1.0||1053576.0||1.0|
+
+HOST NAME : node1                	TIME : 2014-10-29 02:03:53.385931
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.8	|	1.0	|		|	1053576.0	|		|	1.0	|	
+

@@ -10,6 +10,7 @@ from Guest import Guest
 import time
 from VMMemoryOverUsageInfo import VMMemoryOverUsageInfo
 from VM_Monitor_Utility import getCpuUsage, getOSMemUsage, getIoUsage, slicingIP
+from VM_PlacementManager import process_action_on_current_usage
 
 #==============================================================================
 # Variables
@@ -48,23 +49,34 @@ def monitorAndLogAndReportHotSpot():
         file= open('../com.vmplacement.logs/monitor_logs/vmusage.log', 'a+')
 	host_vm_dict=loadPickleVMDictionary()
         for node, vm_dict in host_vm_dict.iteritems():
-            file.write("HOST NAME : "+node+"                TIME : "+str(datetime.now())+'\n')
-            for vmId,value in vm_dict.iteritems():
-                vmIp=slicingIP(value.vmip, '\n')
-                cpuUsage = getCpuUsage(vmIp)
-                memUsage = getOSMemUsage(vmIp)
-		ioUsage =  getIoUsage(vmIp)
-                #usage= 'VM ID: '+vmId+'\tVM IP: '+vmIp + '\t\talloted cpu: '+str(value.current_cpu)+'\tcpu usage: ' + str(cpuUsage) + '\talotted memory: '+str(value.current_memory)+'\tmemory usage: ' + str(memUsage) + '\talotted io: '+str(value.io)+'\tio usage: ' + str(ioUsage) +"\n"
-                usage= vmId+'|'+vmIp + '|'+str(value.current_cpu)+'|' + str(cpuUsage) + '|'+str(value.current_memory)+'|' + str(memUsage) + '|'+str(value.io)+'|' + str(ioUsage) +"\n"
+            file.write("HOST NAME : "+node+"                	TIME : "+str(datetime.now())+'\n')
+	    if(vm_dict!={}):
+		file.write('VM ID\t\t|\tVM IP\t|\tAlloted CPU\t|\tCPU usage\t|\tAllotted memory\t|\tMemory usage\t|\tAllotted IO\t|\tIO usage\n')
+            for vmid,value in vm_dict.iteritems():
+                vmip=slicingIP(value.vmip, '\n')
+                cpu_usage = getCpuUsage(vmip)
+                mem_usage = getOSMemUsage(vmip)
+		io_usage =  getIoUsage(vmip)
+
+                #usage= 'VM ID: '+vmid+'\tVM IP: '+vmip + '\t\talloted cpu: '+str(value.current_cpu)+'\tcpu usage: ' + str(cpuUsage) + '\talotted memory: '+str(value.current_memory)+'\tmemory usage: ' + str(memUsage) + '\talotted io: '+str(value.io)+'\tio usage: ' + str(ioUsage) +"\n"
+
+                usage= vmid+'\t|\t'+vmip + '\t|\t'+str(value.current_cpu)+'\t|\t' + str(cpu_usage) + '\t|\t'+str(value.current_memory)+'\t|\t' + str(mem_usage) + '\t|\t'+str(value.io)+'\t|\t' + str(io_usage) +"\n"
                 usageInfo+=usage
+
                 file.write(usage+'\n')
-                if (float(cpuUsage)>float(value.current_cpu) or float(memUsage)>float(value.current_memory)):
+
+                if (float(cpu_usage)>float(value.current_cpu) or float(mem_usage)>float(value.current_memory)):
                     #report to VM Placement manager
                     a=0
 
+		#Process over memory usage information based on SLA
+		process_mem_over_usage(vmid, float(mem_usage), float(value.current_memory))
 
-		process_mem_over_usage(vmId, float(memUsage), float(value.current_memory))
+		#Report current usage to VM Placement manager
+		process_action_on_current_usage(node, vmid, value, cpu_usage, mem_usage, io_usage)
+
                 #print usageInfo
+
         file.close()
         return usageInfo
 
