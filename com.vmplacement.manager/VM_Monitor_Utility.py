@@ -69,7 +69,7 @@ def getTaskMemUsage(vmIp):
 
 def getIoUsage(vmIp):
 
-	cmd='ssh -q -o StrictHostKeyChecking=no root@' +vmIp+ ' iostat -d -x 1 2 | grep sda | tail -1 | awk \'{print $(NF)}\''
+	cmd='ssh -q -o StrictHostKeyChecking=no root@' +vmIp+ ' iostat -d -x 1 2 | grep [a-z]da | tail -1 | awk \'{print $(NF)}\''
 	#cmd='ssh root@' +vmIp+ ' free -m | grep \'+\' | awk \'{print $3}\''
 	ioUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 	#memUsage = slicingUsage(ioUsage , '\n') #not working. future work
