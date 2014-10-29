@@ -42,13 +42,14 @@ def vm_migrate_guest(source_host, dest_host, vmid):
 	migration_cmd=migration_cmd.replace("source_host", source_host.strip());
 	migration_cmd=migration_cmd.replace("dest_host", dest_host.strip());
 	print migration_cmd
-	migrate_vm = subprocess.check_output(migration_cmd, shell=True, stderr=subprocess.PIPE)
+	subprocess.check_output(migration_cmd, shell=True, stderr=subprocess.PIPE)
 
-        vmmigration_log.write('Terminate Guest ::'+host+' :: '+vmid+' :: Successfully migrated the guest\n')
+        vmmigration_log.write('Terminate Guest ::'+source_host+' :: '+vmid+' :: Successfully migrated the guest\n')
         return True
-    except:
+    except Exception, e:
         print 'Cannot migrate VM '+str(vmid)+' in '+str(source_host)
         vmmigration_log.write('Migrate Guest ::'+source_host+' :: '+vmid+' :: Cannot migrate the guest\n')
+        vmmigration_log.write(str(e.output) + '\n')
         return False
 
 
