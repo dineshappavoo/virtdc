@@ -16,10 +16,8 @@ from VM_Monitor_Utility import getCpuUsage, getOSMemUsage, getIoUsage, slicingIP
 #==============================================================================
 
 # Some descriptive variables
-# This will eventually be passed to the setup function, but we already need them
-# for doing some other stuff so we have to declare them here.
-#name                = "vmplacementandscaling"
-#version             = "0.1"
+#name                = "virtdc"
+#version             = "0.1.0"
 #long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
 #url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
 #license             = ""
@@ -73,7 +71,7 @@ def monitorAndLogAndReportHotSpot():
 def monitorVMFrequently():
     while(1):
         monitorAndLogAndReportHotSpot()
-        time.sleep(20)
+        time.sleep(1)
 
 
 print "Test"

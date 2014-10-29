@@ -66,5 +66,6 @@ def pickleNodeVMDictionary(dictionary) :
 #======================================================================
 if __name__ == "__main__":
    # stuff only to run when not called via 'import' here
-   addOrUpdateDictionaryOfVM('node1', 'Task1',Guest("192.168.1.14","Task1", float(1), float(3),float(42424345353),float(424242),float(1)))
+   #addOrUpdateDictionaryOfVM('node1', 'Task1',Guest("192.168.1.14","Task1", float(1), float(3),float(42424345353),float(424242),float(1)))
+   addOrUpdateDictionaryOfVM('', '','')
 

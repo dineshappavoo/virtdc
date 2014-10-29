@@ -7,7 +7,7 @@ import sys, subprocess
 # Variables
 #==============================================================================
 # Some descriptive variables
-#name                = "vmplacementandscaling"
+#name                = "virtdc"
 #version             = "0.1.0"
 #long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
 #url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"

@@ -4,16 +4,18 @@ import sys
 sys.path.append('../com.vmplacement.framework')
 import VM_Info_Updater
 from Guest import Guest
+from VM_migrateGuest import vm_migrate_guest
+from VM_cpuScaling import vm_cpu_scaling
+from VM_memoryScaling import vm_memory_scaling, vm_max_memory_scaling
+from VM_terminateGuest import vm_terminate_guest
 
 #==============================================================================
 # Variables
 #==============================================================================
 
 # Some descriptive variables
-# This will eventually be passed to the setup function, but we already need them
-# for doing some other stuff so we have to declare them here.
-#name                = "vmplacementandscaling"
-#version             = "0.1"
+#name                = "virtdc"
+#version             = "0.1.0"
 #long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
 #url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
 #license             = ""
@@ -30,16 +32,8 @@ timeThreshold = '300' 			# 5 minutes
 manager_activity_log = open('../com.vmplacement.logs/manager_activity.log', 'a+')
 
 def initiateLiveMigration(vmid,sourcenode,destnode):
-    	#Initiate the module for live migration
-	#migration_cmd = '''virsh migrate --live hm1 qemu+ssh://node3/system'''
-
-	migration_cmd = "ssh -q -o StrictHostKeyChecking=no root@sourcenode \"virsh migrate vm_id qemu+ssh://dest_node/system\""
-	migration_cmd=migration_cmd.replace("vm_id", vmid);
-	migration_cmd=migration_cmd.replace("dest_node", destnode);
-	migrate_vm = subprocess.check_output(migration_cmd, shell=True, stderr=subprocess.PIPE)		
-
+    	
 def initiateVMCPUScaleUp(vmid):
-	scalup_cmd='''ssh -q -o StrictHostKeyChecking=no root@sourcenode \"virsh migrate vm_id qemu+ssh://dest_node/system\"'''
 
 def initiateVMCPUScaleDown():
 	

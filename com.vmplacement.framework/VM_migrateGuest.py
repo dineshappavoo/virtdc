@@ -7,7 +7,7 @@ import sys, subprocess
 # Variables
 #==============================================================================
 # Some descriptive variables
-#name                = "vmplacementandscaling"
+#name                = "virtdc"
 #version             = "0.1.0"
 #long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
 #url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
@@ -30,7 +30,7 @@ import sys, subprocess
 vmmigration_log = open('../com.vmplacement.logs/activity_logs/vmmigration.log', 'a+')
 
 
-def vm_terminate_guest(source_host, dest_host, vmid):
+def vm_migrate_guest(source_host, dest_host, vmid):
 
     try :
 
@@ -41,13 +41,14 @@ def vm_terminate_guest(source_host, dest_host, vmid):
 	migration_cmd=migration_cmd.replace("vm_id", vmid.strip());
 	migration_cmd=migration_cmd.replace("source_host", source_host.strip());
 	migration_cmd=migration_cmd.replace("dest_host", dest_host.strip());
+	print migration_cmd
 	migrate_vm = subprocess.check_output(migration_cmd, shell=True, stderr=subprocess.PIPE)
 
         vmmigration_log.write('Terminate Guest ::'+host+' :: '+vmid+' :: Successfully migrated the guest\n')
         return True
     except:
-        print 'Cannot remove VM '+str(vmid)+' in '+str(host)
-        vmmigration_log.write('Migrate Guest ::'+host+' :: '+vmid+' :: Cannot migrate the guest\n')
+        print 'Cannot migrate VM '+str(vmid)+' in '+str(source_host)
+        vmmigration_log.write('Migrate Guest ::'+source_host+' :: '+vmid+' :: Cannot migrate the guest\n')
         return False
 
 
@@ -61,6 +62,6 @@ def vm_migrate_dependency(host, vmid):
 #For Testing
 if __name__ == "__main__":
     # stuff only to run when not called via 'import' here
-    vm_terminate_guest("node1","Test_node1")
+    vm_migrate_guest("node1", "node2", "VM_Task_11")
 
 
