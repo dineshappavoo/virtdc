@@ -27,7 +27,7 @@ util_last_min = [0] * 30
 def populateUtilList():
     i = 0
     while(True):
-        command = "/usr/bin/iostat -d -x 1 2 | grep sda | tail -1 | awk '{print $(NF)}'"
+        command = "/usr/bin/iostat -d -x 1 2 | grep [a-z]da | tail -1 | awk '{print $(NF)}'"
         util_value = subprocess.check_output(command, shell=True)
         if len(util_value) == 0:
             continue
