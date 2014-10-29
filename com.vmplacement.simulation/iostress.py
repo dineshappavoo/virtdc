@@ -27,8 +27,11 @@ util_last_min = [0] * 30
 def populateUtilList():
     i = 0
     while(True):
-        command = "/usr/bin/iostat -d -x 1 2 | grep sda | tail -1 | awk '{print $14}'"
-        util_value = float(subprocess.check_output(command, shell=True))/100  # percentage to value
+        command = "/usr/bin/iostat -d -x 1 2 | grep [a-z]da | tail -1 | awk '{print $(NF)}'"
+        util_value = subprocess.check_output(command, shell=True)
+        if len(util_value) == 0:
+            continue
+        util_value = float(util_value)/100  # percentage to value
         util_last_min[i % 30] = util_value
         i += 1
 
