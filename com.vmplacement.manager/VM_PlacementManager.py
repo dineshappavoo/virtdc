@@ -31,7 +31,7 @@ time_threshold = '300' 			# 5 minutes
 _base_mem_size = 1048576       		# 1 GB (This includes OS memory)
 
 #Log activity
-manager_activity_log = open('../com.vmplacement.logs/activity_logs/manager_activity.log', 'a+')
+manager_activity_log = open('../com.vmplacement.logs/activity_logs/manager.log', 'a+')
 
 def initiateLiveMigration(vmid,sourcenode,destnode):
 	a=0
@@ -68,6 +68,7 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
 		vm_cpu_scaling(host, vmid, float(cpu_usage))
 		#update vm_host_dict
 		addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, float(cpu_usage), value.max_cpu,value.current_memory,value.max_memory,value.io, value.start_time))
+		manager_activity_log.write('PLACEMENT MANAGER::MEMORY::Scaling ::'+host+' :: '+vmid+' :: Memory scaled from '+value.alotted_memory+' to '+mem_usage+'\n')
 	#if(	(cpu_usage>current_cpu) and 	(cpu_usage<max_cpu)	):  -- CPU scaling down is not implemented
 
 	#Check Memory Usage - Memory scaling will be initiated when usage is lower than usage-scaledown_threshold or greater than usage+scaleup_threshold
@@ -75,7 +76,7 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
 		vm_memory_scaling(host, vmid, float(mem_usage))
 		#update vm_host_dict
 		addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, value.current_cpu, value.max_cpu, float(mem_usage),value.max_memory,value.io, value.start_time))
-    		manager_activity_log.write('PLACEMENT MANAGER::MEMORY::Scaling ::'+host+' :: '+vmid+' :: Memory scaled from '+value.alotted_memory+' to '+mem_usage+'\n')
+    		manager_activity_log.write('PLACEMENT MANAGER::MEMORY::Scaling ::'+str(host)+' :: '+str(vmid)+' :: Memory scaled from '+str(allotted_memory)+' to '+str(mem_usage)+'\n')
 
 
 

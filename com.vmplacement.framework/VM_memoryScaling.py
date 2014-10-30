@@ -42,7 +42,7 @@ def vm_memory_scaling(host, vmid, mem_size):
         return True
     except:
         print 'Cannot scale memory in VM '+str(vmid)+' in '+str(host)
-        vmscaling_log.write('MEMORY :: Scale Guest ::'+host+' :: '+vmid+' :: Cannot scale the cpu in guest\n')
+        vmscaling_log.write('MEMORY :: Scale Guest ::'+str(host)+' :: '+str(vmid)+' :: Cannot scale the cpu in guest\n')
         return False
 
 
