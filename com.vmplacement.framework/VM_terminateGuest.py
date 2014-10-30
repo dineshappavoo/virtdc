@@ -1,6 +1,9 @@
 #!/usr/bin/python
 
 import sys, subprocess
+from Host_Info_Tracker import resume_resources_from_guest
+from VM_Info_Updater import addOrUpdateDictionaryOfVM, getHostVMDict
+
 #API to terminate the running guest in the Host
 
 #==============================================================================
@@ -65,7 +68,10 @@ def vm_terminate_dependency(source_host, vmid):
 
     #Remove entry from host_vm_dict.pkl
     #Remove the configuration XML
-    addOrUpdateDictionaryOfVM(host, vmid, None)
+    host_vm_dict = getHostVMDict()
+    guest = host_vm_dict[source_host][vmid]
+    addOrUpdateDictionaryOfVM(source_host, vmid, None)
+    resume_resources_from_guest(source_host, vmid, guest)
 
 
 #For Testing

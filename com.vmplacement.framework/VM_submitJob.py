@@ -30,6 +30,7 @@ from VM_RunJob import runJobOnVM
 
 guest_image = "/home/vm_img/"
 guest_config_path = "../com.vmplacement.framework/guestconfig.xml"
+guest_config_file_storage_path = "../com.vmplacement.guestconfiguration/"
 
 _master="node1"
 _imageCopyCmd="scp"
@@ -109,7 +110,7 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
 	xmlstring=xmlstring.replace("image_path", image_path);	
 
 	#command to write the xml string to file
-	guest_info_file=vmid+".xml"
+	guest_info_file=guest_config_file_storage_path + vmid+".xml"
 	config_temp_file = open(guest_info_file, "w")
 	config_temp_file.write(xmlstring)
 	config_temp_file.close()

@@ -7,7 +7,7 @@ from Guest import Guest
 from VM_migrateGuest import vm_migrate_guest
 from VM_cpuScaling import vm_cpu_scaling
 from VM_memoryScaling import vm_memory_scaling, vm_max_memory_scaling
-from VM_terminateGuest import vm_terminate_guest
+
 
 #API for VM placement manager
 #==============================================================================

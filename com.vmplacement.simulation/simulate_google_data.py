@@ -60,9 +60,9 @@ def execute_task(file_name):
     if vm_status is not True:
         while(True):
             time.sleep(15)
-            vm_current_status = execute_task(file_name)
-            if vm_current_status is True:
-                vm_status = vm_current_status
+            #vm_current_status = execute_task(file_name)
+	    vm_status = create_vm(vmid, cpu_val, current_mem_val, max_mem_val, disk)
+            if vm_status is True:
                 break
     return vm_status
 

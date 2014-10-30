@@ -74,6 +74,11 @@ def parsenodeInfoAndMakeDict(filename) :
 				pickleAddOrUpdateDictionary(hostName, str(ipaddress), float(cpu_core), float(memory), float(io), float(cpu_core)-1, float(memory), float(io))
         			#node_dict[hostName]=Node(hostName, ipaddress, int(cpu_core), int(memory), int(io), int(cpu_core)-1, int(memory), int(io))
 
+def resume_resources_from_guest(source_host, vmid, guest):
+	node_dict = GetNodeDict()
+	host = node_dict[source_host]
+	pickleAddOrUpdateDictionary(host.hostname, str(host.ip_address), float(host.max_cpu), float(host.max_memory), float(host.max_io), float(host.avail_cpu) + float(guest.max_cpu), float(host.avail_memory) + 		float(guest.max_memory), float(host.avail_io) +  float(guest.io))
+
 def pickleAddOrUpdateDictionary(hostName, ip_address, cpu, mem, disk, avail_cpu, avail_mem, avail_disk) :
 	node_dict=GetNodeDict()
 	print "Pkl Update cpu"+str(avail_cpu)
