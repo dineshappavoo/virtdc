@@ -17,8 +17,6 @@ import time
 
 #==============================================================================
 
-
-
 data_folder_path='../com.vmplacement.data/vms'
 
 def calculate_vm_lifetime(file_name):

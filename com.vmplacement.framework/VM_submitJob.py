@@ -93,7 +93,7 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
 	#command to copy the iso image to the destination. Every VM will have an individual iso image. (I think this copy can be cleared later on). Make the nodes passwordless
 	image_path=guest_image+vmid+".img"
 	image_dest=prefix_host+guest_image+vmid+".img"
-	cp_cmd =_imageCopyCmd+guest_image+"Test.img "+image_dest
+	cp_cmd =_imageCopyCmd+guest_image+"base_image.img "+image_dest
 	copy_image = subprocess.check_output(cp_cmd, shell=True, stderr=subprocess.PIPE)
 	vmsubmission_log.write('Copy Image ::'+host+' :: '+vmid+' :: Successfully copied the image\n')		
 
@@ -128,7 +128,7 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
 		return False
 
 	# Wait for VM to boot up
-	time.sleep(50)
+	time.sleep(60)
 
 	#Get the IP address of Virtual Machine and update in VM_Info_Updater
 	guest_ip=getGuestIP(host.strip(), vmid.strip(), "root", "Teamb@123")

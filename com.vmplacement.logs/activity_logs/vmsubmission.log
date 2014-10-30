@@ -242,3 +242,9 @@ Copy Image ::node1 :: VM_Task_1 :: Successfully copied the image
 Create VM ::node1 :: VM_Task_1 :: Successfully created the VM
 Copy Image ::node1 :: VM_Task_1 :: Successfully copied the image
 Create VM ::node1 :: VM_Task_1 :: Successfully created the VM
+Copy Image ::node1 :: VM_Task_1 :: Successfully copied the image
+Copy Image ::node1 :: VM_Task_1 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_1 :: Successfully created the VM
+Copy Image ::node1 :: VM_Task_1 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_1 :: Successfully created the VM
+Update IP::node1 :: VM_Task_1 :: Successfully updated the IP

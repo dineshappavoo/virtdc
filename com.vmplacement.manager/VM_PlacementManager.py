@@ -66,7 +66,7 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
 	#if(	(cpu_usage>current_cpu) and 	(cpu_usage<max_cpu)	):  -- CPU scaling down is not implemented
 
 	#Check Memory Usage - Memory scaling will be initiated when usage is lower than usage-scaledown_threshold or greater than usage+scaleup_threshold
-	if(	(	(mem_usage > (allotted_memory + mem_scale_up_threshold)) or (mem_usage<(allotted_memory - mem_scale_down_threshold)) )and (mem_usage<max_memory)	):
+	if(	(	(mem_usage > (allotted_memory + float(mem_scale_up_threshold))) or (mem_usage<(allotted_memory - float(mem_scale_down_threshold))) )and (mem_usage<max_memory)	):
 		vm_memory_scaling(host, vmid, float(mem_usage))
 		#update vm_host_dict
 		addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, value.current_cpu, value.max_cpu, float(mem_usage),value.max_memory,value.io, value.start_time))

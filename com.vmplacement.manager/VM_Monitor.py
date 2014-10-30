@@ -7,6 +7,7 @@ from datetime import datetime
 import sys
 sys.path.append('/root/Desktop/VMPlacementAndScaling/com.vmplacement.framework')
 from Guest import Guest
+from VM_Info_Updater import getHostVMDict
 import time
 from VMMemoryOverUsageInfo import VMMemoryOverUsageInfo
 from VM_Monitor_Utility import getCpuUsage, getOSMemUsage, getIoUsage, slicingIP
@@ -34,20 +35,10 @@ mem_scale_down_threshold = '102400' 	# 100 MB
 time_threshold = '1' 			# 1 minutes
 
 
-def loadPickleVMDictionary() :
-    try :
-        with open('../com.vmplacement.framework/host_vm_dict.pkl', 'r') as pickle_in:
-            dictionary = pickle.load(pickle_in)
-            return dictionary
-    except:
-        print 'Cannot open host_vm_dict.pkl file'
-        sys.exit(1)
-
-
 def monitorAndLogAndReportHotSpot():
         usageInfo=""
         file= open('../com.vmplacement.logs/monitor_logs/vmusage.log', 'a+')
-	host_vm_dict=loadPickleVMDictionary()
+	host_vm_dict=getHostVMDict()
         for node, vm_dict in host_vm_dict.iteritems():
             file.write("HOST NAME : "+node+"                	TIME : "+str(datetime.now())+'\n')
 	    if(vm_dict!={}):
