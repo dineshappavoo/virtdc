@@ -75,6 +75,7 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
 		vm_memory_scaling(host, vmid, float(mem_usage))
 		#update vm_host_dict
 		addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, value.current_cpu, value.max_cpu, float(mem_usage),value.max_memory,value.io, value.start_time))
+    		manager_activity_log.write('PLACEMENT MANAGER::MEMORY::Scaling ::'+host+' :: '+vmid+' :: Memory scaled from '+value.alotted_memory+' to '+mem_usage+'\n')
 
 
 
