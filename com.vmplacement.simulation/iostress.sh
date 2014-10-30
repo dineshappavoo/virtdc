@@ -6,7 +6,7 @@ fi
 
 while [ 1 ]
 do
-    dd if=/dev/zero of=/tmp/test bs=128M count=4 conv=fsync 2>/dev/null && rm -f /root/io.pid &
+    dd if=/dev/zero of=/tmp/test bs=4K count=131072 conv=fsync 2>/dev/null && rm -f /root/io.pid &
     echo $! > /root/io.pid
     while [ -e /root/io.pid ]
     do
