@@ -4,6 +4,7 @@ import time
 import subprocess
 import pickle
 import sys,os
+from timeout import timeout
 #==============================================================================
 # Variables
 #==============================================================================
@@ -37,38 +38,53 @@ def slicingIP(data, key):
 #                        data=data[:lengthCut]
 #        return data
 
+@timeout()
 def getCpuUsage(vmIp):
+	
+	try:
+		cmd = 'ssh -q -o StrictHostKeyChecking=no root@' +vmIp+ ' cat /proc/loadavg | awk \'{print $1}\''
+		cpuUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+		if cpuUsage =='': return float("0.0")
 
-        cmd = 'ssh -q -o StrictHostKeyChecking=no root@' +vmIp+ ' cat /proc/loadavg | awk \'{print $1}\''
-        cpuUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+	except Exception as e:
+		return float("0.0")
 
         return cpuUsage.strip()
 
-
+@timeout()
 def getOSMemUsage(vmIp):
-        cmd='ssh -q -o StrictHostKeyChecking=no root@' +vmIp+ ' free -m | grep \'+\' | awk \'{print $3}\''
-        memUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
-        #memUsage = slicingUsage(memUsage , '\n') #not working. future work
-        #memlen = len(memUsage )
-        #memUsage = memUsage[:memlen-1]
+	try:
+		cmd='ssh -q -o StrictHostKeyChecking=no root@' +vmIp+ ' free -m | grep \'+\' | awk \'{print $3}\''
+		memUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+		if memUsage =='': return float("0.0")
+
+	except Exception as e:
+		return float("0.0")
 
         return memUsage.strip()
 
+@timeout()
 def getTaskMemUsage(vmIp):
-	cmd = 'ssh -q -o StrictHostKeyChecking=no root@' +vmIp+\
-	" cat /proc/`cat /root/memory.pid`/status | grep VmSize | awk '{print $2}'"
-	memUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+	try:
+		cmd = 'ssh -q -o StrictHostKeyChecking=no root@' +vmIp+\
+		" cat /proc/`cat /root/memory.pid`/status | grep VmSize | awk '{print $2}'"
+		memUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+		if memUsage =='': return float("0.0")
+
+	except Exception as e:
+		return float("0.0")
 	
 	return memUsage if memUsage.strip() != '' else 0
 
+@timeout()
 def getIoUsage(vmIp):
+	try:
+		cmd='ssh -q -o StrictHostKeyChecking=no root@' +vmIp+ ' iostat -d -x 1 2 | grep [a-z]da | tail -1 | awk \'{print $(NF)}\''
+		ioUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+		if ioUsage =='': return float("0.0")
 
-	cmd='ssh -q -o StrictHostKeyChecking=no root@' +vmIp+ ' iostat -d -x 1 2 | grep [a-z]da | tail -1 | awk \'{print $(NF)}\''
-	#cmd='ssh root@' +vmIp+ ' free -m | grep \'+\' | awk \'{print $3}\''
-	ioUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
-	#memUsage = slicingUsage(ioUsage , '\n') #not working. future work
-	#iolen = len(ioUsage )
-	#ioUsage = ioUsage[:iolen - 1]
+	except Exception as e:
+		return float("0.0")
 
 	return ioUsage.strip()
 
@@ -80,5 +96,4 @@ if __name__ == "__main__":
 
 
 	
-
 
