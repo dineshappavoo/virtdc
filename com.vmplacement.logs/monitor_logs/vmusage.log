@@ -9527,3 +9527,25 @@ VM_Task_10	|	192.168.1.20	|	1.0	|	0.0	|	1053576.0	|	0.0	|	1.0	|	14.80
 HOST NAME : node3                	TIME : 2014-10-30 01:36:33.982257
 HOST NAME : node2                	TIME : 2014-10-30 01:36:33.982284
 HOST NAME : node4                	TIME : 2014-10-30 01:36:33.982291
+HOST NAME : node1                	TIME : 2014-10-30 01:36:33.982502
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.19	|	1.0	|	0.0	|	0.0	|	0.0	|	1.0	|	0.0
+
+VM_Task_10	|	192.168.1.20	|	1.0	|	0.07	|	0.0	|	0.0	|	1.0	|	13.00
+
+VM_Task_100	|	192.168.1.21	|	1.0	|	0.0	|	1053576.0	|	0.0	|	1.0	|	0.0
+
+HOST NAME : node3                	TIME : 2014-10-30 01:37:35.567832
+HOST NAME : node2                	TIME : 2014-10-30 01:37:35.567861
+HOST NAME : node4                	TIME : 2014-10-30 01:37:35.567868
+HOST NAME : node1                	TIME : 2014-10-30 01:38:05.593132
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.19	|	1.0	|	0.00	|	0.0	|	0.0	|	1.0	|	6.80
+
+VM_Task_10	|	192.168.1.20	|	1.0	|	0.0	|	0.0	|	0.0	|	1.0	|	51.30
+
+VM_Task_100	|	192.168.1.21	|	1.0	|	0.0	|	0.0	|	0.0	|	1.0	|	0.0
+
+HOST NAME : node3                	TIME : 2014-10-30 01:38:48.385706
+HOST NAME : node2                	TIME : 2014-10-30 01:38:48.385744
+HOST NAME : node4                	TIME : 2014-10-30 01:38:48.385753

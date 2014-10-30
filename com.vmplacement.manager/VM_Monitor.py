@@ -44,7 +44,7 @@ def monitorAndLogAndReportHotSpot():
 	    if(vm_dict!={}):
 		file.write('VM ID\t\t|\tVM IP\t|\tAlloted CPU\t|\tCPU usage\t|\tAllotted memory\t|\tMemory usage\t|\tAllotted IO\t|\tIO usage\n')
             for vmid,value in vm_dict.iteritems():
-                vmip=slicingIP(value.vmip, '\n')
+                vmip=vmip.strip()
                 cpu_usage = getCpuUsage(vmip)
                 mem_usage = getTaskMemUsage(vmip)
 		io_usage =  getIoUsage(vmip)
