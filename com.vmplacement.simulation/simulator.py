@@ -29,7 +29,7 @@ cat /proc/`cat /root/memory.pid`/status | grep VmSize | awk '{print $2}'
 '''
 
 memory_init_command = '''
-/root/StressMemory %s &
+nice -n 19 /root/StressMemory %s &
 echo $! > /root/memory.pid
 '''
 memory_clear_command = '''
