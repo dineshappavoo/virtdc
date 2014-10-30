@@ -28,25 +28,19 @@ def slicingIP(data, key):
                         data=data[:lengthCut]
         return data
 
-def slicingUsage(data, key):
-        dataLen = len(data) -1
-        for x in range(dataLen):
-                #print 'data:' +data[x]+' key:'+key
-                if data[x]==key:
-                        lengthCut=x
-                        data=data[:lengthCut]
-        return data
+#def slicingUsage(data, key):
+#        dataLen = len(data) -1
+#        for x in range(dataLen):
+#                #print 'data:' +data[x]+' key:'+key
+#                if data[x]==key:
+#                        lengthCut=x
+#                        data=data[:lengthCut]
+#        return data
 
 def getCpuUsage(vmIp):
 
-        #check type of return
-        cmd='ssh -q -o StrictHostKeyChecking=no root@'+vmIp+' uptime | awk \'{print $4}\''
-        check=subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
-
-        #cmd='uptime | grep -ohe \'load average[s:][: ].*\' | awk \'{ print $3 }\''
         cmd = 'ssh -q -o StrictHostKeyChecking=no root@' +vmIp+ ' cat /proc/loadavg | awk \'{print $1}\''
         cpuUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
-        cpuUsage = slicingUsage(cpuUsage, ',')
 
         return cpuUsage.strip()
 
