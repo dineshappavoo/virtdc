@@ -1,6 +1,8 @@
 #!/usr/bin/python
 
 import sys, subprocess
+from VM_Info_Updater import addOrUpdateDictionaryOfVM
+from VM_decisionMaker import place_job
 #API to terminate the running guest in the Host
 
 #==============================================================================
