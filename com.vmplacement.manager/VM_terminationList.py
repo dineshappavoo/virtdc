@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/python
 
 
 import sys
@@ -36,10 +36,18 @@ def calculate_vm_lifetime(file_name):
 
 def calculate_vm_endtime(vm_id, start_time):
         lifetime = calculate_vm_lifetime(data_folder_path+"/"+vm_id+".csv")
-        end_time = (lifetime+ (start_time/60))*60
-        sys.stdout.write("End time: %d   \r" % (end_time) )
+	#print 'START Time-'+ str(start_time)
+        end_time = lifetime+ start_time
+        #print 'END Time-'+ str(end_time)
         return end_time
     	
 
 if __name__ == "__main__":
-    calculate_vm_endtime('VM_Task_1', time.time())			
+	while(1):	
+		end = calculate_vm_endtime('VM_Task_1', 1414643685.64)
+		current_time= time.time()
+		print 'Current Time-'+ str(current_time)
+		#print 'Time '+str(time.time())
+		if(current_time>=end):
+			print 'terminate'
+		time.sleep(20)

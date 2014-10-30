@@ -28,9 +28,10 @@ from VM_terminateGuest import vm_terminate_guest
 mem_scale_up_threshold = '10240'	# 10 MB
 mem_scale_down_threshold = '102400' 	# 100 MB
 time_threshold = '300' 			# 5 minutes
+_base_mem_size = 1048576       		# 1 GB (This includes OS memory)
 
 #Log activity
-manager_activity_log = open('../com.vmplacement.logs/manager_activity.log', 'a+')
+manager_activity_log = open('../com.vmplacement.logs/activity_logs/manager_activity.log', 'a+')
 
 def initiateLiveMigration(vmid,sourcenode,destnode):
 	a=0
@@ -56,7 +57,9 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
 
 	max_cpu = value.max_cpu
 	allotted_cpu = value.current_cpu
-	allotted_memory=value.current_memory
+	#Base OS should not go below
+	#mem_usage = mem_usage + _base_mem_size 
+	allotted_memory=value.current_memory + _base_mem_size 
 	max_memory = value.max_memory
 	#Check CPU usage
 	if(	(cpu_usage>allotted_cpu) and 	(cpu_usage<max_cpu)	):

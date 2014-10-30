@@ -8867,3 +8867,663 @@ VM_Task_16	|	192.168.1.21	|	1.0	|	0.00	|	1053576.0	|	138	|	1.0	|	6.90
 
 HOST NAME : node2                	TIME : 2014-10-29 22:42:10.306928
 HOST NAME : node4                	TIME : 2014-10-29 22:42:10.306960
+HOST NAME : node1                	TIME : 2014-10-29 22:42:11.329413
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.00	|	1053576.0	|	139	|	1.0	|	0.00
+
+VM_Task_100	|	192.168.1.10	|	1.0	|	0.01	|	1053576.0	|	134	|	1.0	|	56.73
+
+VM_Task_11	|	192.168.1.15	|	1.0	|	0.00	|	1053576.0	|	134	|	1.0	|	6.70
+
+VM_Task_10	|	192.168.1.6	|	1.0	|	0.01	|	1053576.0	|	135	|	1.0	|	15.90
+
+VM_Task_13	|	192.168.1.17	|	1.0	|	0.00	|	1053576.0	|	133	|	1.0	|	0.20
+
+VM_Task_12	|	192.168.1.16	|	1.0	|	0.03	|	1053576.0	|	138	|	1.0	|	7.43
+
+HOST NAME : node3                	TIME : 2014-10-29 22:43:51.388223
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_15	|	192.168.1.20	|	1.0	|	0.00	|	1053576.0	|	139	|	1.0	|	1.00
+
+VM_Task_14	|	192.168.1.19	|	1.0	|	0.00	|	1053576.0	|	135	|	1.0	|	0.10
+
+VM_Task_17	|	192.168.1.22	|	1.0	|	0.01	|	1053576.0	|	137	|	1.0	|	23.60
+
+VM_Task_16	|	192.168.1.21	|	1.0	|	0.01	|	1053576.0	|	138	|	1.0	|	24.90
+
+VM_Task_18	|	192.168.1.25	|	1.0	|	0.01	|	1053576.0	|	142	|	1.0	|	58.90
+
+HOST NAME : node2                	TIME : 2014-10-29 22:45:15.280920
+HOST NAME : node4                	TIME : 2014-10-29 22:45:15.280955
+HOST NAME : node1                	TIME : 2014-10-29 22:45:16.282678
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.00	|	1053576.0	|	139	|	1.0	|	100.10
+
+VM_Task_100	|	192.168.1.10	|	1.0	|	0.00	|	1053576.0	|	134	|	1.0	|	0.00
+
+VM_Task_11	|	192.168.1.15	|	1.0	|	0.00	|	1053576.0	|	134	|	1.0	|	0.00
+
+VM_Task_10	|	192.168.1.6	|	1.0	|	0.00	|	1053576.0	|	135	|	1.0	|	21.98
+
+VM_Task_13	|	192.168.1.17	|	1.0	|	0.00	|	1053576.0	|	133	|	1.0	|	0.00
+
+VM_Task_12	|	192.168.1.16	|	1.0	|	0.01	|	1053576.0	|	138	|	1.0	|	0.00
+
+HOST NAME : node3                	TIME : 2014-10-29 22:46:57.774186
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_19	|	192.168.1.26	|	1.0	|	0.00	|	1053576.0	|	138	|	1.0	|	100.00
+
+VM_Task_18	|	192.168.1.25	|	1.0	|	0.00	|	1053576.0	|	143	|	1.0	|	55.45
+
+VM_Task_15	|	192.168.1.20	|	1.0	|	0.06	|	1053576.0	|	139	|	1.0	|	8.10
+
+VM_Task_14	|	192.168.1.19	|	1.0	|	0.01	|	1053576.0	|	135	|	1.0	|	2.60
+
+VM_Task_17	|	192.168.1.22	|	1.0	|	0.00	|	1053576.0	|	137	|	1.0	|	2.00
+
+VM_Task_16	|	192.168.1.21	|	1.0	|	0.00	|	1053576.0	|	138	|	1.0	|	1.01
+
+HOST NAME : node2                	TIME : 2014-10-29 22:49:26.594907
+HOST NAME : node4                	TIME : 2014-10-29 22:49:26.594938
+HOST NAME : node1                	TIME : 2014-10-29 22:49:27.619131
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.00	|	1053576.0	|	139	|	1.0	|	4.90
+
+VM_Task_100	|	192.168.1.10	|	1.0	|	0.00	|	1053576.0	|	134	|	1.0	|	0.50
+
+VM_Task_11	|	192.168.1.15	|	1.0	|	0.00	|	1053576.0	|	134	|	1.0	|	0.00
+
+VM_Task_10	|	192.168.1.6	|	1.0	|	0.00	|	1053576.0	|	135	|	1.0	|	32.22
+
+VM_Task_13	|	192.168.1.17	|	1.0	|	0.00	|	1053576.0	|	133	|	1.0	|	0.00
+
+VM_Task_12	|	192.168.1.16	|	1.0	|	0.00	|	1053576.0	|	138	|	1.0	|	0.00
+
+HOST NAME : node3                	TIME : 2014-10-29 22:51:07.372257
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_2	|	192.168.1.27	|	1.0	|	0.00	|	1053576.0	|	136	|	1.0	|	101.01
+
+VM_Task_19	|	192.168.1.26	|	1.0	|	0.00	|	1053576.0	|	138	|	1.0	|	22.32
+
+VM_Task_18	|	192.168.1.25	|	1.0	|	0.00	|	1053576.0	|	143	|	1.0	|	6.60
+
+VM_Task_15	|	192.168.1.20	|	1.0	|	0.02	|	1053576.0	|	139	|	1.0	|	4.65
+
+VM_Task_14	|	192.168.1.19	|	1.0	|	0.05	|	1053576.0	|	135	|	1.0	|	2.80
+
+VM_Task_17	|	192.168.1.22	|	1.0	|	0.00	|	1053576.0	|	137	|	1.0	|	0.00
+
+VM_Task_16	|	192.168.1.21	|	1.0	|	0.00	|	1053576.0	|	138	|	1.0	|	0.00
+
+HOST NAME : node2                	TIME : 2014-10-29 22:53:06.104013
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_20	|	192.168.1.28	|	1.0	|	0.00	|	1053576.0	|	139	|	1.0	|	0.20
+
+HOST NAME : node4                	TIME : 2014-10-29 22:53:22.820563
+HOST NAME : node1                	TIME : 2014-10-29 22:53:23.840543
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.00	|	1053576.0	|	139	|	1.0	|	7.20
+
+VM_Task_100	|	192.168.1.10	|	1.0	|	0.00	|	1053576.0	|	134	|	1.0	|	0.40
+
+VM_Task_11	|	192.168.1.15	|	1.0	|	0.00	|	1053576.0	|	134	|	1.0	|	99.80
+
+VM_Task_10	|	192.168.1.6	|	1.0	|	0.00	|	1053576.0	|	135	|	1.0	|	29.50
+
+VM_Task_13	|	192.168.1.17	|	1.0	|	0.01	|	1053576.0	|	133	|	1.0	|	4.70
+
+VM_Task_12	|	192.168.1.16	|	1.0	|	0.00	|	1053576.0	|	138	|	1.0	|	1.60
+
+HOST NAME : node3                	TIME : 2014-10-29 22:55:05.338654
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_2	|	192.168.1.27	|	1.0	|	0.04	|	1053576.0	|	136	|	1.0	|	0.00
+
+VM_Task_19	|	192.168.1.26	|	1.0	|	0.00	|	1053576.0	|	138	|	1.0	|	1.40
+
+VM_Task_18	|	192.168.1.25	|	1.0	|	0.08	|	1053576.0	|	143	|	1.0	|	4.20
+
+VM_Task_15	|	192.168.1.20	|	1.0	|	0.00	|	1053576.0	|	139	|	1.0	|	7.00
+
+VM_Task_14	|	192.168.1.19	|	1.0	|	0.00	|	1053576.0	|	135	|	1.0	|	6.50
+
+VM_Task_17	|	192.168.1.22	|	1.0	|	0.08	|	1053576.0	|	137	|	1.0	|	100.00
+
+VM_Task_16	|	192.168.1.21	|	1.0	|	0.01	|	1053576.0	|	138	|	1.0	|	100.00
+
+HOST NAME : node2                	TIME : 2014-10-29 22:56:49.558092
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_20	|	192.168.1.28	|	1.0	|	0.00	|	1053576.0	|	139	|	1.0	|	61.62
+
+VM_Task_21	|	192.168.1.29	|	1.0	|	0.00	|	1053576.0	|	135	|	1.0	|	11.60
+
+HOST NAME : node4                	TIME : 2014-10-29 22:57:23.729071
+HOST NAME : node1                	TIME : 2014-10-29 22:57:24.746132
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.91	|	1053576.0	|	156	|	1.0	|	5.15
+
+VM_Task_100	|	192.168.1.10	|	1.0	|	0.00	|	1053576.0	|	134	|	1.0	|	5.60
+
+VM_Task_11	|	192.168.1.15	|	1.0	|	0.00	|	1053576.0	|	134	|	1.0	|	8.70
+
+VM_Task_10	|	192.168.1.6	|	1.0	|	0.00	|	1053576.0	|	136	|	1.0	|	6.30
+
+VM_Task_13	|	192.168.1.17	|	1.0	|	0.00	|	1053576.0	|	133	|	1.0	|	5.70
+
+VM_Task_12	|	192.168.1.16	|	1.0	|	0.00	|	1053576.0	|	138	|	1.0	|	6.47
+
+HOST NAME : node3                	TIME : 2014-10-29 22:58:49.875779
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_2	|	192.168.1.27	|	1.0	|	0.00	|	1053576.0	|	136	|	1.0	|	100.00
+
+VM_Task_19	|	192.168.1.26	|	1.0	|	0.00	|	1053576.0	|	138	|	1.0	|	15.80
+
+VM_Task_18	|	192.168.1.25	|	1.0	|	0.01	|	1053576.0	|	143	|	1.0	|	8.80
+
+VM_Task_15	|	192.168.1.20	|	1.0	|	0.00	|	1053576.0	|	139	|	1.0	|	0.00
+
+VM_Task_14	|	192.168.1.19	|	1.0	|	0.00	|	1053576.0	|	135	|	1.0	|	7.40
+
+VM_Task_17	|	192.168.1.22	|	1.0	|	0.00	|	1053576.0	|	137	|	1.0	|	0.70
+
+VM_Task_16	|	192.168.1.21	|	1.0	|	0.02	|	1053576.0	|	138	|	1.0	|	2.12
+
+HOST NAME : node2                	TIME : 2014-10-29 23:00:47.273162
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_20	|	192.168.1.28	|	1.0	|	0.00	|	1053576.0	|	140	|	1.0	|	101.01
+
+VM_Task_21	|	192.168.1.29	|	1.0	|	0.06	|	1053576.0	|	135	|	1.0	|	18.71
+
+VM_Task_22	|	192.168.1.30	|	1.0	|	0.00	|	1053576.0	|	138	|	1.0	|	97.30
+
+HOST NAME : node4                	TIME : 2014-10-29 23:01:42.061954
+HOST NAME : node1                	TIME : 2014-10-29 23:01:43.146546
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.61	|	1053576.0	|	146	|	1.0	|	97.80
+
+VM_Task_100	|	192.168.1.10	|	1.0	|	0.06	|	1053576.0	|	134	|	1.0	|	0.70
+
+VM_Task_11	|	192.168.1.15	|	1.0	|	0.00	|	1053576.0	|	134	|	1.0	|	13.10
+
+VM_Task_10	|	192.168.1.6	|	1.0	|	0.05	|	1053576.0	|	136	|	1.0	|	16.14
+
+VM_Task_13	|	192.168.1.17	|	1.0	|	0.00	|	1053576.0	|	133	|	1.0	|	0.00
+
+VM_Task_12	|	192.168.1.16	|	1.0	|	0.00	|	1053576.0	|	138	|	1.0	|	0.99
+
+HOST NAME : node3                	TIME : 2014-10-29 23:03:08.149650
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_2	|	192.168.1.27	|	1.0	|	0.02	|	1053576.0	|	136	|	1.0	|	9.29
+
+VM_Task_19	|	192.168.1.26	|	1.0	|	0.00	|	1053576.0	|	138	|	1.0	|	0.00
+
+VM_Task_18	|	192.168.1.25	|	1.0	|	0.01	|	1053576.0	|	143	|	1.0	|	1.50
+
+VM_Task_15	|	192.168.1.20	|	1.0	|	0.00	|	1053576.0	|	139	|	1.0	|	99.11
+
+VM_Task_14	|	192.168.1.19	|	1.0	|	0.01	|	1053576.0	|	135	|	1.0	|	6.90
+
+VM_Task_17	|	192.168.1.22	|	1.0	|	0.00	|	1053576.0	|	137	|	1.0	|	3.40
+
+VM_Task_16	|	192.168.1.21	|	1.0	|	0.24	|	1053576.0	|	138	|	1.0	|	1.10
+
+HOST NAME : node2                	TIME : 2014-10-29 23:05:05.956030
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_20	|	192.168.1.28	|	1.0	|	0.00	|	1053576.0	|	139	|	1.0	|	6.83
+
+VM_Task_21	|	192.168.1.29	|	1.0	|	0.00	|	1053576.0	|	135	|	1.0	|	6.20
+
+VM_Task_22	|	192.168.1.30	|	1.0	|	0.00	|	1053576.0	|	138	|	1.0	|	1.40
+
+VM_Task_23	|	192.168.1.36	|	1.0	|	0.00	|	1053576.0	|	137	|	1.0	|	0.20
+
+VM_Task_24	|	192.168.1.8	|	1.0	|	0.00	|	1053576.0	|	135	|	1.0	|	100.00
+
+HOST NAME : node4                	TIME : 2014-10-29 23:06:29.427004
+HOST NAME : node1                	TIME : 2014-10-29 23:06:30.503652
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.05	|	1053576.0	|	143	|	1.0	|	0.00
+
+VM_Task_100	|	192.168.1.10	|	1.0	|	0.00	|	1053576.0	|	135	|	1.0	|	1.50
+
+VM_Task_11	|	192.168.1.15	|	1.0	|	0.00	|	1053576.0	|	134	|	1.0	|	1.50
+
+VM_Task_10	|	192.168.1.6	|	1.0	|	0.00	|	1053576.0	|	136	|	1.0	|	10.20
+
+VM_Task_13	|	192.168.1.17	|	1.0	|	0.00	|	1053576.0	|	133	|	1.0	|	1.40
+
+VM_Task_12	|	192.168.1.16	|	1.0	|	0.00	|	1053576.0	|	138	|	1.0	|	0.60
+
+HOST NAME : node3                	TIME : 2014-10-29 23:08:58.157883
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_2	|	192.168.1.27	|	1.0	|	0.00	|	1053576.0	|	136	|	1.0	|	0.00
+
+VM_Task_19	|	192.168.1.26	|	1.0	|	0.00	|	1053576.0	|	138	|	1.0	|	1.10
+
+VM_Task_18	|	192.168.1.25	|	1.0	|	0.00	|	1053576.0	|	143	|	1.0	|	1.80
+
+VM_Task_15	|	192.168.1.20	|	1.0	|	0.00	|	1053576.0	|	139	|	1.0	|	1.20
+
+VM_Task_14	|	192.168.1.19	|	1.0	|	0.00	|	1053576.0	|	135	|	1.0	|	4.80
+
+VM_Task_17	|	192.168.1.22	|	1.0	|	0.00	|	1053576.0	|	137	|	1.0	|	2.30
+
+VM_Task_16	|	192.168.1.21	|	1.0	|	0.00	|	1053576.0	|	138	|	1.0	|	0.71
+
+HOST NAME : node2                	TIME : 2014-10-29 23:10:54.120176
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_20	|	192.168.1.28	|	1.0	|	0.00	|	1053576.0	|	145	|	1.0	|	14.75
+
+VM_Task_21	|	192.168.1.29	|	1.0	|	0.00	|	1053576.0	|	135	|	1.0	|	5.54
+
+VM_Task_22	|	192.168.1.30	|	1.0	|	0.00	|	1053576.0	|	138	|	1.0	|	2.38
+
+VM_Task_23	|	192.168.1.36	|	1.0	|	0.00	|	1053576.0	|	137	|	1.0	|	4.90
+
+VM_Task_24	|	192.168.1.8	|	1.0	|	0.00	|	1053576.0	|	135	|	1.0	|	3.10
+
+VM_Task_25	|	192.168.1.37	|	1.0	|	0.00	|	1053576.0	|	135	|	1.0	|	24.85
+
+VM_Task_26	|	192.168.1.38	|	1.0	|	0.00	|	1053576.0	|	135	|	1.0	|	4.20
+
+HOST NAME : node4                	TIME : 2014-10-29 23:12:50.330733
+HOST NAME : node1                	TIME : 2014-10-29 23:12:51.336961
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|		|	1053576.0	|		|	1.0	|	
+
+HOST NAME : node1                	TIME : 2014-10-30 00:45:01.018460
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.22	|	1053576.0	|	136	|	1.0	|	4.80
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:02.810071
+HOST NAME : node2                	TIME : 2014-10-30 00:45:02.810105
+HOST NAME : node4                	TIME : 2014-10-30 00:45:02.810114
+HOST NAME : node1                	TIME : 2014-10-30 00:45:03.827326
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.21	|	1053576.0	|	136	|	1.0	|	34.06
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:05.630805
+HOST NAME : node2                	TIME : 2014-10-30 00:45:05.630837
+HOST NAME : node4                	TIME : 2014-10-30 00:45:05.630844
+HOST NAME : node1                	TIME : 2014-10-30 00:45:06.632158
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.21	|	1053576.0	|	136	|	1.0	|	100.00
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:08.935978
+HOST NAME : node2                	TIME : 2014-10-30 00:45:08.936008
+HOST NAME : node4                	TIME : 2014-10-30 00:45:08.936014
+HOST NAME : node1                	TIME : 2014-10-30 00:45:10.180592
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.27	|	1053576.0	|	136	|	1.0	|	78.40
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:11.700453
+HOST NAME : node2                	TIME : 2014-10-30 00:45:11.700488
+HOST NAME : node4                	TIME : 2014-10-30 00:45:11.700498
+HOST NAME : node1                	TIME : 2014-10-30 00:45:12.701837
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.25	|	1053576.0	|	136	|	1.0	|	75.00
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:14.226171
+HOST NAME : node2                	TIME : 2014-10-30 00:45:14.226334
+HOST NAME : node4                	TIME : 2014-10-30 00:45:14.226343
+HOST NAME : node1                	TIME : 2014-10-30 00:45:15.227657
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.25	|	1053576.0	|	136	|	1.0	|	58.10
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:16.771597
+HOST NAME : node2                	TIME : 2014-10-30 00:45:16.771631
+HOST NAME : node4                	TIME : 2014-10-30 00:45:16.771639
+HOST NAME : node1                	TIME : 2014-10-30 00:45:17.772991
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.23	|	1053576.0	|	136	|	1.0	|	57.40
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:20.136308
+HOST NAME : node2                	TIME : 2014-10-30 00:45:20.136347
+HOST NAME : node4                	TIME : 2014-10-30 00:45:20.136358
+HOST NAME : node1                	TIME : 2014-10-30 00:45:21.137886
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.23	|	1053576.0	|	136	|	1.0	|	68.81
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:22.657053
+HOST NAME : node2                	TIME : 2014-10-30 00:45:22.657088
+HOST NAME : node4                	TIME : 2014-10-30 00:45:22.657095
+HOST NAME : node1                	TIME : 2014-10-30 00:45:23.658460
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.29	|	1053576.0	|	136	|	1.0	|	99.90
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:25.174926
+HOST NAME : node2                	TIME : 2014-10-30 00:45:25.174960
+HOST NAME : node4                	TIME : 2014-10-30 00:45:25.174967
+HOST NAME : node1                	TIME : 2014-10-30 00:45:26.176302
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.29	|	1053576.0	|	136	|	1.0	|	100.00
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:27.702614
+HOST NAME : node2                	TIME : 2014-10-30 00:45:27.702647
+HOST NAME : node4                	TIME : 2014-10-30 00:45:27.702654
+HOST NAME : node1                	TIME : 2014-10-30 00:45:28.704020
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.35	|	1053576.0	|	136	|	1.0	|	99.01
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:30.222932
+HOST NAME : node2                	TIME : 2014-10-30 00:45:30.222966
+HOST NAME : node4                	TIME : 2014-10-30 00:45:30.222973
+HOST NAME : node1                	TIME : 2014-10-30 00:45:31.224286
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.35	|	1053576.0	|	136	|	1.0	|	99.90
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:33.050880
+HOST NAME : node2                	TIME : 2014-10-30 00:45:33.050922
+HOST NAME : node4                	TIME : 2014-10-30 00:45:33.050933
+HOST NAME : node1                	TIME : 2014-10-30 00:45:34.052257
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.40	|	1053576.0	|	137	|	1.0	|	100.00
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:35.578345
+HOST NAME : node2                	TIME : 2014-10-30 00:45:35.578378
+HOST NAME : node4                	TIME : 2014-10-30 00:45:35.578384
+HOST NAME : node1                	TIME : 2014-10-30 00:45:36.579724
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.40	|	1053576.0	|	137	|	1.0	|	100.00
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:38.116414
+HOST NAME : node2                	TIME : 2014-10-30 00:45:38.116449
+HOST NAME : node4                	TIME : 2014-10-30 00:45:38.116457
+HOST NAME : node1                	TIME : 2014-10-30 00:45:39.117778
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.45	|	1053576.0	|	137	|	1.0	|	99.11
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:40.622206
+HOST NAME : node2                	TIME : 2014-10-30 00:45:40.622249
+HOST NAME : node4                	TIME : 2014-10-30 00:45:40.622261
+HOST NAME : node1                	TIME : 2014-10-30 00:45:41.623693
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.49	|	1053576.0	|	137	|	1.0	|	99.90
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:43.638112
+HOST NAME : node2                	TIME : 2014-10-30 00:45:43.638145
+HOST NAME : node4                	TIME : 2014-10-30 00:45:43.638152
+HOST NAME : node1                	TIME : 2014-10-30 00:45:44.639560
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.49	|	1053576.0	|	137	|	1.0	|	100.00
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:46.168290
+HOST NAME : node2                	TIME : 2014-10-30 00:45:46.168325
+HOST NAME : node4                	TIME : 2014-10-30 00:45:46.168332
+HOST NAME : node1                	TIME : 2014-10-30 00:45:47.169706
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.53	|	1053576.0	|	136	|	1.0	|	0.00
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:49.291909
+HOST NAME : node2                	TIME : 2014-10-30 00:45:49.291981
+HOST NAME : node4                	TIME : 2014-10-30 00:45:49.291989
+HOST NAME : node1                	TIME : 2014-10-30 00:45:50.293313
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.53	|	1053576.0	|	136	|	1.0	|	0.90
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:51.817148
+HOST NAME : node2                	TIME : 2014-10-30 00:45:51.817180
+HOST NAME : node4                	TIME : 2014-10-30 00:45:51.817186
+HOST NAME : node1                	TIME : 2014-10-30 00:45:52.818489
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.49	|	1053576.0	|	136	|	1.0	|	5.10
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:54.350097
+HOST NAME : node2                	TIME : 2014-10-30 00:45:54.350130
+HOST NAME : node4                	TIME : 2014-10-30 00:45:54.350136
+HOST NAME : node1                	TIME : 2014-10-30 00:45:55.351452
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.49	|	1053576.0	|	136	|	1.0	|	6.00
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:56.849778
+HOST NAME : node2                	TIME : 2014-10-30 00:45:56.849807
+HOST NAME : node4                	TIME : 2014-10-30 00:45:56.849814
+HOST NAME : node1                	TIME : 2014-10-30 00:45:57.851133
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.45	|	1053576.0	|	136	|	1.0	|	4.20
+
+HOST NAME : node3                	TIME : 2014-10-30 00:45:59.444642
+HOST NAME : node2                	TIME : 2014-10-30 00:45:59.444674
+HOST NAME : node4                	TIME : 2014-10-30 00:45:59.444680
+HOST NAME : node1                	TIME : 2014-10-30 00:46:00.446071
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.45	|	1053576.0	|	136	|	1.0	|	2.50
+
+HOST NAME : node3                	TIME : 2014-10-30 00:46:01.969550
+HOST NAME : node2                	TIME : 2014-10-30 00:46:01.969592
+HOST NAME : node4                	TIME : 2014-10-30 00:46:01.969602
+HOST NAME : node1                	TIME : 2014-10-30 00:46:02.970965
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.41	|	1053576.0	|	136	|	1.0	|	16.00
+
+HOST NAME : node3                	TIME : 2014-10-30 00:46:04.506574
+HOST NAME : node2                	TIME : 2014-10-30 00:46:04.506609
+HOST NAME : node4                	TIME : 2014-10-30 00:46:04.506617
+HOST NAME : node1                	TIME : 2014-10-30 00:46:05.507931
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.41	|	1053576.0	|	136	|	1.0	|	11.49
+
+HOST NAME : node3                	TIME : 2014-10-30 00:46:07.031857
+HOST NAME : node2                	TIME : 2014-10-30 00:46:07.031909
+HOST NAME : node4                	TIME : 2014-10-30 00:46:07.031921
+HOST NAME : node1                	TIME : 2014-10-30 00:46:08.033228
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.38	|	1053576.0	|	136	|	1.0	|	0.00
+
+HOST NAME : node3                	TIME : 2014-10-30 00:46:09.816449
+HOST NAME : node2                	TIME : 2014-10-30 00:46:09.816483
+HOST NAME : node4                	TIME : 2014-10-30 00:46:09.816491
+HOST NAME : node1                	TIME : 2014-10-30 00:46:10.817804
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.38	|	1053576.0	|	136	|	1.0	|	5.10
+
+HOST NAME : node3                	TIME : 2014-10-30 00:46:12.350292
+HOST NAME : node2                	TIME : 2014-10-30 00:46:12.350326
+HOST NAME : node4                	TIME : 2014-10-30 00:46:12.350332
+HOST NAME : node1                	TIME : 2014-10-30 00:46:13.351639
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.35	|	1053576.0	|	136	|	1.0	|	10.20
+
+HOST NAME : node3                	TIME : 2014-10-30 00:46:14.876454
+HOST NAME : node2                	TIME : 2014-10-30 00:46:14.876488
+HOST NAME : node4                	TIME : 2014-10-30 00:46:14.876495
+HOST NAME : node1                	TIME : 2014-10-30 00:46:15.877807
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.35	|	1053576.0	|	136	|	1.0	|	9.20
+
+HOST NAME : node3                	TIME : 2014-10-30 00:46:17.412520
+HOST NAME : node2                	TIME : 2014-10-30 00:46:17.412562
+HOST NAME : node4                	TIME : 2014-10-30 00:46:17.412571
+HOST NAME : node1                	TIME : 2014-10-30 00:46:18.413881
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.32	|	1053576.0	|	136	|	1.0	|	3.10
+
+HOST NAME : node3                	TIME : 2014-10-30 00:46:19.883310
+HOST NAME : node2                	TIME : 2014-10-30 00:46:19.883343
+HOST NAME : node4                	TIME : 2014-10-30 00:46:19.883351
+HOST NAME : node1                	TIME : 2014-10-30 00:46:20.884671
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.32	|	1053576.0	|	136	|	1.0	|	14.14
+
+HOST NAME : node3                	TIME : 2014-10-30 00:46:22.366938
+HOST NAME : node2                	TIME : 2014-10-30 00:46:22.366980
+HOST NAME : node4                	TIME : 2014-10-30 00:46:22.366987
+HOST NAME : node1                	TIME : 2014-10-30 00:46:23.368061
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.30	|	1053576.0	|	136	|	1.0	|	5.00
+
+HOST NAME : node3                	TIME : 2014-10-30 00:46:24.892686
+HOST NAME : node2                	TIME : 2014-10-30 00:46:24.892720
+HOST NAME : node4                	TIME : 2014-10-30 00:46:24.892734
+HOST NAME : node1                	TIME : 2014-10-30 00:46:25.894138
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.30	|	1053576.0	|	136	|	1.0	|	6.10
+
+HOST NAME : node3                	TIME : 2014-10-30 00:46:28.367171
+HOST NAME : node2                	TIME : 2014-10-30 00:46:28.367204
+HOST NAME : node4                	TIME : 2014-10-30 00:46:28.367210
+HOST NAME : node1                	TIME : 2014-10-30 00:46:29.368814
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.0	|	1053576.0	|	0.0	|	1.0	|	0.0
+
+HOST NAME : node3                	TIME : 2014-10-30 00:46:59.370225
+HOST NAME : node2                	TIME : 2014-10-30 00:46:59.370253
+HOST NAME : node4                	TIME : 2014-10-30 00:46:59.370259
+HOST NAME : node1                	TIME : 2014-10-30 00:47:00.371588
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.0	|	0.0	|	0.0	|	1.0	|	0.0
+
+VM_Task_10	|	192.168.1.7	|	1.0	|	0.12	|	1053576.0	|	138	|	1.0	|	100.00
+
+HOST NAME : node3                	TIME : 2014-10-30 00:47:31.833812
+HOST NAME : node2                	TIME : 2014-10-30 00:47:31.833845
+HOST NAME : node4                	TIME : 2014-10-30 00:47:31.833851
+HOST NAME : node1                	TIME : 2014-10-30 00:47:32.835280
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.0	|	0.0	|	0.0	|	1.0	|	0.0
+
+VM_Task_10	|	192.168.1.7	|	1.0	|	0.26	|	1053576.0	|	138	|	1.0	|	0.00
+
+HOST NAME : node3                	TIME : 2014-10-30 00:48:04.319247
+HOST NAME : node2                	TIME : 2014-10-30 00:48:04.319279
+HOST NAME : node4                	TIME : 2014-10-30 00:48:04.319287
+HOST NAME : node1                	TIME : 2014-10-30 00:48:05.320822
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.0	|	0.0	|	0.0	|	1.0	|	0.0
+
+VM_Task_10	|	192.168.1.7	|	1.0	|	0.0	|	1053576.0	|	0.0	|	1.0	|	0.00
+
+HOST NAME : node3                	TIME : 2014-10-30 00:48:59.478969
+HOST NAME : node2                	TIME : 2014-10-30 00:48:59.478996
+HOST NAME : node4                	TIME : 2014-10-30 00:48:59.479003
+HOST NAME : node1                	TIME : 2014-10-30 00:49:00.480370
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.0	|	0.0	|	0.0	|	1.0	|	0.0
+
+VM_Task_10	|	192.168.1.7	|	1.0	|	0.06	|	0.0	|	138	|	1.0	|	6.77
+
+VM_Task_100	|	192.168.1.8	|	1.0	|	0.0	|	1053576.0	|	136	|	1.0	|	0.10
+
+HOST NAME : node3                	TIME : 2014-10-30 00:49:43.279339
+HOST NAME : node2                	TIME : 2014-10-30 00:49:43.279372
+HOST NAME : node4                	TIME : 2014-10-30 00:49:43.279379
+HOST NAME : node1                	TIME : 2014-10-30 00:49:44.281073
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.0	|	0.0	|	0.0	|	1.0	|	0.0
+
+VM_Task_10	|	192.168.1.7	|	1.0	|	0.0	|	0.0	|	138	|	1.0	|	6.06
+
+VM_Task_100	|	192.168.1.8	|	1.0	|	0.0	|	1053576.0	|	136	|	1.0	|	57.30
+
+HOST NAME : node3                	TIME : 2014-10-30 00:50:43.914046
+HOST NAME : node2                	TIME : 2014-10-30 00:50:43.914083
+HOST NAME : node4                	TIME : 2014-10-30 00:50:43.914091
+HOST NAME : node1                	TIME : 2014-10-30 00:50:44.915873
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.0	|	0.0	|	0.0	|	1.0	|	0.0
+
+VM_Task_11	|	192.168.1.10	|	1.0	|	0.0	|	1053576.0	|	0.0	|	1.0	|	0.0
+
+VM_Task_10	|	192.168.1.7	|	1.0	|	0.0	|	0.0	|	0.0	|	1.0	|	0.0
+
+VM_Task_100	|	192.168.1.8	|	1.0	|	0.0	|	1053576.0	|	136	|	1.0	|	1.20
+
+HOST NAME : node3                	TIME : 2014-10-30 00:52:26.225865
+HOST NAME : node2                	TIME : 2014-10-30 00:52:26.225901
+HOST NAME : node4                	TIME : 2014-10-30 00:52:26.225909
+HOST NAME : node1                	TIME : 2014-10-30 00:52:27.227799
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.0	|	0.0	|	0.0	|	1.0	|	0.0
+
+VM_Task_11	|	192.168.1.10	|	1.0	|	0.0	|	0.0	|	0.0	|	1.0	|	0.0
+
+VM_Task_10	|	192.168.1.7	|	1.0	|	0.0	|	0.0	|	0.0	|	1.0	|	0.0
+
+VM_Task_100	|	192.168.1.8	|	1.0	|	0.0	|	1053576.0	|	136	|	1.0	|	10.00
+
+VM_Task_12	|	192.168.1.15	|	1.0	|	0.0	|	1053576.0	|	135	|	1.0	|	13.20
+
+HOST NAME : node3                	TIME : 2014-10-30 00:54:27.874388
+HOST NAME : node2                	TIME : 2014-10-30 00:54:27.874424
+HOST NAME : node4                	TIME : 2014-10-30 00:54:27.874434
+HOST NAME : node1                	TIME : 2014-10-30 00:54:28.876403
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.00	|	0.0	|	137	|	1.0	|	64.00
+
+VM_Task_100	|	192.168.1.8	|	1.0	|	0.0	|	1053576.0	|	0.0	|	1.0	|	0.0
+
+VM_Task_11	|	192.168.1.10	|	1.0	|	0.00	|	0.0	|	135	|	1.0	|	99.01
+
+VM_Task_10	|	192.168.1.7	|	1.0	|	0.0	|	0.0	|	0.0	|	1.0	|	0.0
+
+VM_Task_13	|	192.168.1.16	|	1.0	|	0.0	|	1053576.0	|	0.0	|	1.0	|	1.40
+
+VM_Task_12	|	192.168.1.15	|	1.0	|	0.01	|	1053576.0	|	135	|	1.0	|	0.20
+
+HOST NAME : node3                	TIME : 2014-10-30 00:55:55.322054
+HOST NAME : node2                	TIME : 2014-10-30 00:55:55.322086
+HOST NAME : node4                	TIME : 2014-10-30 00:55:55.322093
+HOST NAME : node1                	TIME : 2014-10-30 00:55:56.323264
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.0	|	0.0	|	137	|	1.0	|	5.56
+
+VM_Task_100	|	192.168.1.8	|	1.0	|	0.0	|	0.0	|	0.0	|	1.0	|	0.0
+
+VM_Task_11	|	192.168.1.10	|	1.0	|	0.0	|	0.0	|	136	|	1.0	|	99.90
+
+VM_Task_10	|	192.168.1.7	|	1.0	|	0.0	|	0.0	|	0.0	|	1.0	|	0.0
+
+VM_Task_13	|	192.168.1.16	|	1.0	|	0.01	|	0.0	|	133	|	1.0	|	12.12
+
+VM_Task_12	|	192.168.1.15	|	1.0	|	0.0	|	1053576.0	|	135	|	1.0	|	0.00
+
+HOST NAME : node3                	TIME : 2014-10-30 00:57:31.783072
+HOST NAME : node2                	TIME : 2014-10-30 00:57:31.783102
+HOST NAME : node4                	TIME : 2014-10-30 00:57:31.783108
+HOST NAME : node1                	TIME : 2014-10-30 00:57:43.672593
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.0	|	0.0	|	0.0	|	1.0	|	0.0
+
+VM_Task_100	|	192.168.1.8	|	1.0	|	0.0	|	0.0	|	0.0	|	1.0	|	0.0
+
+VM_Task_14	|	192.168.1.17	|	1.0	|	0.0	|	1053576.0	|	134	|	1.0	|	0.10
+
+VM_Task_11	|	192.168.1.10	|	1.0	|	0.0	|	0.0	|	136	|	1.0	|	0.89
+
+VM_Task_10	|	192.168.1.7	|	1.0	|	0.00	|	0.0	|	139	|	1.0	|	5.35
+
+VM_Task_13	|	192.168.1.16	|	1.0	|	0.0	|	0.0	|	133	|	1.0	|	0.00
+
+VM_Task_12	|	192.168.1.15	|	1.0	|	0.00	|	1053576.0	|	135	|	1.0	|	0.00
+
+HOST NAME : node3                	TIME : 2014-10-30 00:59:20.832667
+HOST NAME : node2                	TIME : 2014-10-30 00:59:20.832700
+HOST NAME : node4                	TIME : 2014-10-30 00:59:20.832706
+HOST NAME : node1                	TIME : 2014-10-30 00:59:20.833171
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.9	|	1.0	|	0.0	|	0.0	|	0.0	|	1.0	|	0.0
+
+VM_Task_100	|	192.168.1.8	|	1.0	|	0.0	|	0.0	|	0.0	|	1.0	|	0.0
+
+VM_Task_14	|	192.168.1.17	|	1.0	|	0.00	|	1053576.0	|	134	|	1.0	|	0.00
+
+VM_Task_11	|	192.168.1.10	|	1.0	|	0.00	|	0.0	|	136	|	1.0	|	0.00
+
+VM_Task_10	|	192.168.1.7	|	1.0	|	0.0	|	0.0	|	139	|	1.0	|	6.50
+
+VM_Task_13	|	192.168.1.16	|	1.0	|	0.00	|	0.0	|	133	|	1.0	|	0.00
+
+VM_Task_12	|	192.168.1.15	|	1.0	|	0.0	|	1053576.0	|	135	|	1.0	|	2.10
+
+HOST NAME : node3                	TIME : 2014-10-30 01:00:47.898028
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+HOST NAME : node1                	TIME : 2014-10-30 01:32:47.101290
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+HOST NAME : node1                	TIME : 2014-10-30 01:36:10.828735
+VM ID		|	VM IP	|	Alloted CPU	|	CPU usage	|	Allotted memory	|	Memory usage	|	Allotted IO	|	IO usage
+VM_Task_1	|	192.168.1.19	|	1.0	|	0.0	|	1053576.0	|	0.0	|	1.0	|	5.78
+
+VM_Task_10	|	192.168.1.20	|	1.0	|	0.0	|	1053576.0	|	0.0	|	1.0	|	14.80
+
+HOST NAME : node3                	TIME : 2014-10-30 01:36:33.982257
+HOST NAME : node2                	TIME : 2014-10-30 01:36:33.982284
+HOST NAME : node4                	TIME : 2014-10-30 01:36:33.982291

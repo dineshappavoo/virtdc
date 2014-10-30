@@ -51,6 +51,9 @@ def vm_terminate_guest(source_host, vmid):
         #vm_undefine = subprocess.check_output(vm_undefine_cmd, shell=True, stderr=subprocess.PIPE)
 
         vmtermination_log.write('Terminate Guest ::'+source_host+' :: '+vmid+' :: Successfully terminated the guest\n')
+
+	vm_terminate_dependency(source_host, vmid)
+
         return True
     except Exception, e:
         print 'Cannot remove VM '+str(vmid)+' in '+str(source_host)
@@ -62,7 +65,6 @@ def vm_terminate_dependency(source_host, vmid):
 
     #Remove entry from host_vm_dict.pkl
     #Remove the configuration XML
-    a=0
     addOrUpdateDictionaryOfVM(host, vmid, None)
 
 

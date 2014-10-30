@@ -1,4 +1,5 @@
 #!/usr/bin/python
+
 import sys, time
 from multiprocessing import Process
 sys.path.append('/root/Desktop/VMPlacementAndScaling/com.vmplacement.manager')
@@ -7,7 +8,7 @@ from VM_Info_Updater import getHostVMDict
 from Guest import Guest
 from VM_terminateGuest import vm_terminate_guest
 
-#API to terminate the running guest in the Host
+#API to terminate the running guest in the Host after calculating the life time
 
 #==============================================================================
 # Variables
@@ -34,11 +35,17 @@ def fetch_vm_termination_list():
 	for host, value in host_vm_dict.iteritems() :
 		for vmid in value :
 			vm_obj=value[vmid]
+
 			vm_end_time = calculate_vm_endtime(vm_obj.vmid, vm_obj.start_time)
+			print 'VMID '+vmid+' Host '+host+' Current Time  : '+ str(int(time.time()/60)) +' End Time : '+str(int(vm_end_time/60))
+			#print vm_end_time
+			#For Testing purpose we are subtracting 9000 seconds
+			vm_end_time = float(vm_end_time) - 9000
 			if (time.time() >= vm_end_time ):
 				if (vm_terminate_guest(host, vmid) ):
 					vm_termination_list.append(vmid)
 					vmtermination_log.write('TERMINATION HANDLER ::'+host+' :: '+vmid+' :: Guest terminated\n')
+					
 	time.sleep(20) 
 
 def get_termination_list():
