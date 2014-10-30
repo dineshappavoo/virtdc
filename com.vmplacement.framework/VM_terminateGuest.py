@@ -31,34 +31,44 @@ import sys, subprocess
 vmtermination_log = open('../com.vmplacement.logs/activity_logs/vmtermination.log', 'a+')
 
 
-def vm_terminate_guest(host, vmid):
+def vm_terminate_guest(source_host, vmid):
 
     try :
 
-        vm_destroy_cmd = 'ssh -q -o StrictHostKeyChecking=no root@'+host+'virsh destroy '+str(vmid)
-        vm_undefine_cmd = 'ssh -q -o StrictHostKeyChecking=no root@'+host+'virsh undefine '+str(vmid)
+        vm_destroy_cmd = 'ssh -q -o StrictHostKeyChecking=no root@source_host \"virsh destroy vm_id\"'
+        #vm_undefine_cmd = 'ssh -q -o StrictHostKeyChecking=no root@source_host\"virsh undefine vm_id\"'
+	
+	vm_destroy_cmd = vm_destroy_cmd.replace("vm_id", vmid.strip());
+	vm_destroy_cmd = vm_destroy_cmd.replace("source_host", source_host.strip());
+	
+	#vm_undefine_cmd = vm_undefine_cmd.replace("vm_id", vmid.strip());
+	#vm_undefine_cmd = vm_undefine_cmd.replace("source_host", source_host.strip());
+
+	print vm_destroy_cmd
+	#print vm_undefine_cmd
 
         vm_destroy = subprocess.check_output(vm_destroy_cmd, shell=True, stderr=subprocess.PIPE)
-        vm_undefine = subprocess.check_output(vm_undefine_cmd, shell=True, stderr=subprocess.PIPE)
+        #vm_undefine = subprocess.check_output(vm_undefine_cmd, shell=True, stderr=subprocess.PIPE)
 
-        vmtermination_log.write('Terminate Guest ::'+host+' :: '+vmid+' :: Successfully terminated the guest\n')
+        vmtermination_log.write('Terminate Guest ::'+source_host+' :: '+vmid+' :: Successfully terminated the guest\n')
         return True
-    except:
-        print 'Cannot remove VM '+str(vmid)+' in '+str(host)
-        vmtermination_log.write('Terminate Guest ::'+host+' :: '+vmid+' :: Cannot terminate the guest\n')
+    except Exception, e:
+        print 'Cannot remove VM '+str(vmid)+' in '+str(source_host)
+        vmtermination_log.write('Terminate Guest ::'+source_host+' :: '+vmid+' :: Cannot terminate the guest\n')
         return False
 
 
-def vm_terminate_dependency(host, vmid):
+def vm_terminate_dependency(source_host, vmid):
 
     #Remove entry from host_vm_dict.pkl
     #Remove the configuration XML
     a=0
+    addOrUpdateDictionaryOfVM(host, vmid, None)
 
 
 #For Testing
 if __name__ == "__main__":
     # stuff only to run when not called via 'import' here
-    vm_terminate_guest("node1","Test_node1")
+    vm_terminate_guest("node1","VM_Task_100")
 
 

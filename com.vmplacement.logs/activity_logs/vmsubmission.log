@@ -229,4 +229,16 @@ Update IP::node2 :: VM_Task_22 :: Successfully updated the IP
 Run Job::node2 :: VM_Task_22 :: Successfully ran the job
 Copy Image ::node2 :: VM_Task_23 :: Successfully copied the image
 Create VM ::node2 :: VM_Task_23 :: Successfully created the VM
-Upd
+UpdCopy Image ::node1 :: VM_Task_1 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_1 :: Successfully created the VM
+Copy Image ::node1 :: VM_Task_1 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_1 :: Successfully created the VM
+Copy Image ::node1 :: VM_Task_1 :: Successfully copied the image
+Copy Image ::node1 :: VM_Task_1 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_1 :: Successfully created the VM
+Copy Image ::node1 :: VM_Task_1 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_1 :: Successfully created the VM
+Copy Image ::node1 :: VM_Task_1 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_1 :: Successfully created the VM
+Copy Image ::node1 :: VM_Task_1 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_1 :: Successfully created the VM

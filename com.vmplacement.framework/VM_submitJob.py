@@ -128,11 +128,11 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
 		return False
 
 	# Wait for VM to boot up
-	time.sleep(30)
+	time.sleep(50)
 
 	#Get the IP address of Virtual Machine and update in VM_Info_Updater
-	guest_ip=getGuestIP(host, vmid, "root", "Teamb@123")
-	addOrUpdateDictionaryOfVM(host, vmid, Guest(guest_ip, vmid, float(1), float(cpu),float(memory),float(max_memory),float(1)))
+	guest_ip=getGuestIP(host.strip(), vmid.strip(), "root", "Teamb@123")
+	addOrUpdateDictionaryOfVM(host, vmid, Guest(guest_ip, vmid, float(1), float(cpu),float(memory),float(max_memory),float(1), time.time()))
 	vmsubmission_log.write('Update IP::'+host+' :: '+vmid+' :: Successfully updated the IP\n')
 	#Run Job in Guest
 	runJobOnVM(host, vmid)

@@ -63,6 +63,6 @@ def vm_migrate_dependency(host, vmid):
 #For Testing
 if __name__ == "__main__":
     # stuff only to run when not called via 'import' here
-    vm_migrate_guest("node1", "node2", "VM_Task_11")
+    vm_migrate_guest("node1", "node2", "VM_Task_1")
 
 
