@@ -39,6 +39,9 @@ def runJobOnVM(hostName, vmid):
 	print "IP RUN "+str(ip)
 	scpTask='scp -q -o StrictHostKeyChecking=no /root/Desktop/VMPlacementAndScaling/com.vmplacement.data/vms/'+vmid+'.csv root@'+ip+':/root/task.dat'
 	scpdata = subprocess.check_output(scpTask, shell=True, stderr=subprocess.PIPE)
+	startWork = 'ssh -q -o StrictHostKeyChecking=no root@'+ip+' nohup bash /root/setup.sh &'
+	subprocess.check_output(startWork, shell=True, stderr=subprocess.PIPE)
+	
 	
 	#rebootCmd='ssh -q -o StrictHostKeyChecking=no root@'+ip+' reboot'
 	#rebootGuest = subprocess.check_output(rebootCmd, shell=True, stderr=subprocess.PIPE)
