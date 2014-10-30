@@ -20,7 +20,7 @@ done
 # 2. to keep time sync with iostress
 sleep 60
 
-/root/StressCPU &
+nice -n 19 /root/StressCPU &
 echo $! > /root/cpu.pid
 
 /usr/bin/python /root/simulator.py -T /root/task.dat >> /root/simulator.log &
