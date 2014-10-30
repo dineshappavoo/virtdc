@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import sys
+import sys, time
 sys.path.append('../com.vmplacement.framework')
 from VM_Info_Updater import addOrUpdateDictionaryOfVM
 from Guest import Guest
@@ -62,14 +62,14 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
 	if(	(cpu_usage>allotted_cpu) and 	(cpu_usage<max_cpu)	):
 		vm_cpu_scaling(host, vmid, float(cpu_usage))
 		#update vm_host_dict
-		addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, float(cpu_usage), value.max_cpu,value.current_memory,value.max_memory,value.io))
+		addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, float(cpu_usage), value.max_cpu,value.current_memory,value.max_memory,value.io, value.start_time))
 	#if(	(cpu_usage>current_cpu) and 	(cpu_usage<max_cpu)	):  -- CPU scaling down is not implemented
 
 	#Check Memory Usage - Memory scaling will be initiated when usage is lower than usage-scaledown_threshold or greater than usage+scaleup_threshold
-	if(	(	(mem_usage > (allotted_memory + mem_scale_up_threshold)) or (mem_usage<(allotted_memory - mem_scale_down_threshold)) )and (mem_usage<max_memory)	):
+	if(	(	(mem_usage > (allotted_memory + float(mem_scale_up_threshold))) or (mem_usage<(allotted_memory - float(mem_scale_down_threshold))) )and (mem_usage<max_memory)	):
 		vm_memory_scaling(host, vmid, float(mem_usage))
 		#update vm_host_dict
-		addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, value.current_cpu, value.max_cpu, float(mem_usage),value.max_memory,value.io))
+		addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, value.current_cpu, value.max_cpu, float(mem_usage),value.max_memory,value.io, value.start_time))
 
 
 
@@ -86,4 +86,4 @@ def reactOnHotSpot():
 
 if __name__ == "__main__":
    # stuff only to run when not called via 'import' here
-   process_action_on_current_usage('node1', 'VM_Task_1', Guest("192.168.1.14","Task1", float(1), float(3),float(42424345353),float(424242),float(1)), '1.0', '424242', '42424345353')
+   process_action_on_current_usage('node1', 'VM_Task_1', Guest("192.168.1.14","Task1", float(1), float(3),float(42424345353),float(424242),float(1), time.time()), '1.0', '424242', '42424345353')

@@ -27,12 +27,15 @@ def getGuestIP(host, vmid, username, password) :
 	#password = "Teamb@123"
 	
 	# Ensure ssh to target host is passwordless
-	print "Host" +host
+	print "Host " +str(host)
+	print "VMID "+str(vmid)
+	print "USER "+str(username)
+	print "PASSWORD "+str(password)
 	child = pexpect.spawn('/usr/bin/ssh ' + host)
 	child.expect('\~\]\#')
 	child.sendline('/usr/bin/virsh console ' + vmid)
 	child.sendline('\n\n')
-	i = child.expect([pexpect.TIMEOUT, '\~\]\#', 'ogin: '])
+	i = child.expect([pexpect.TIMEOUT, '\~\]\#', 'ogin:'])
 	if i == 0:  # timeout
 		return
 	if i == 1:  # ttyS0 is logged in, do nothing
@@ -57,7 +60,7 @@ def getGuestIP(host, vmid, username, password) :
 
 if __name__ == "__main__":
    # stuff only to run when not called via 'import' here
-   getGuestIP('node1', 'Test', 'root', 'Teamb@123')
+   getGuestIP('node1', 'VM_Task_1', 'root', 'Teamb@123')
 
 	
 	
