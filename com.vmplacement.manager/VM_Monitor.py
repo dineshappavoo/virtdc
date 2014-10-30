@@ -10,7 +10,7 @@ from Guest import Guest
 from VM_Info_Updater import getHostVMDict
 import time
 from VMMemoryOverUsageInfo import VMMemoryOverUsageInfo
-from VM_Monitor_Utility import getCpuUsage, getIoUsage, slicingIP, getTaskMemUsage
+from VM_Monitor_Utility import getCpuUsage, getIoUsage, getTaskMemUsage
 from VM_PlacementManager import process_action_on_current_usage
 
 #==============================================================================
@@ -44,7 +44,7 @@ def monitorAndLogAndReportHotSpot():
 	    if(vm_dict!={}):
 		file.write('VM ID\t\t|\tVM IP\t|\tAlloted CPU\t|\tCPU usage\t|\tAllotted memory\t|\tMemory usage\t|\tAllotted IO\t|\tIO usage\n')
             for vmid,value in vm_dict.iteritems():
-                vmip=vmip.strip()
+                vmip = value.vmip.strip()
                 cpu_usage = getCpuUsage(vmip)
                 mem_usage = getTaskMemUsage(vmip)
 		io_usage =  getIoUsage(vmip)

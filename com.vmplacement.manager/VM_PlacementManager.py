@@ -57,8 +57,10 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
 
 	max_cpu = value.max_cpu
 	allotted_cpu = value.current_cpu
-	#Base OS should not go below
-	#mem_usage = mem_usage + _base_mem_size 
+
+	#Base OS should not go below the minimum memory
+	mem_usage = mem_usage + _base_mem_size 
+
 	allotted_memory=value.current_memory + _base_mem_size 
 	max_memory = value.max_memory
 	#Check CPU usage
