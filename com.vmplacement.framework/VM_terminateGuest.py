@@ -53,6 +53,8 @@ def vm_terminate_guest(source_host, vmid):
         vm_destroy = subprocess.check_output(vm_destroy_cmd, shell=True, stderr=subprocess.PIPE)
         #vm_undefine = subprocess.check_output(vm_undefine_cmd, shell=True, stderr=subprocess.PIPE)
 
+	print 'Terminate Guest ::'+source_host+' :: '+vmid+' :: Successfully terminated the guest\n'
+
         vmtermination_log.write('Terminate Guest ::'+source_host+' :: '+vmid+' :: Successfully terminated the guest\n')
 
 	vm_terminate_dependency(source_host, vmid)
@@ -77,6 +79,6 @@ def vm_terminate_dependency(source_host, vmid):
 #For Testing
 if __name__ == "__main__":
     # stuff only to run when not called via 'import' here
-    vm_terminate_guest("node1","VM_Task_100")
+    vm_terminate_guest("node3","VM_Task_100")
 
 

@@ -42,7 +42,7 @@ def monitorAndLogAndReportHotSpot():
         for node, vm_dict in host_vm_dict.iteritems():
             file.write("HOST NAME : "+node+"                	TIME : "+str(datetime.now())+'\n')
 	    if(vm_dict!={}):
-		file.write('VM ID\t\t|\tVM IP\t|\tAlloted CPU\t|\tCPU usage\t|\tAllotted memory\t|\tMemory usage\t|\tAllotted IO\t|\tIO usage\n')
+		file.write('VM ID\t\t|\tVM IP\t\t|\tAlloted CPU\t|\tCPU usage\t|\tAllotted memory\t|\tMemory usage\t|\tAllotted IO\t|\tIO usage\n')
             for vmid,value in vm_dict.iteritems():
                 vmip = value.vmip.strip()
                 cpu_usage = getCpuUsage(vmip)
@@ -50,10 +50,11 @@ def monitorAndLogAndReportHotSpot():
 		io_usage =  getIoUsage(vmip)
 
 		print "Current Memory "+str(value.current_memory)
+		print "Task Memory Usage"+str(mem_usage)
 
                 #usage= 'VM ID: '+vmid+'\tVM IP: '+vmip + '\t\talloted cpu: '+str(value.current_cpu)+'\tcpu usage: ' + str(cpuUsage) + '\talotted memory: '+str(value.current_memory)+'\tmemory usage: ' + str(memUsage) + '\talotted io: '+str(value.io)+'\tio usage: ' + str(ioUsage) +"\n"
 
-                usage= vmid+'\t|\t'+vmip + '\t|\t'+str(value.current_cpu)+'\t|\t' + str(cpu_usage) + '\t|\t'+str(value.current_memory)+'\t|\t' + str(mem_usage) + '\t|\t'+str(value.io)+'\t|\t' + str(io_usage) +"\n"
+                usage= vmid+'\t|\t'+vmip + '\t|\t'+str(value.current_cpu)+'\t\t|\t' + str(cpu_usage) + '\t|\t'+str(value.current_memory)+'\t|\t' + str(mem_usage) + '\t|\t'+str(value.io)+'\t|\t' + str(io_usage) +"\n"
                 usageInfo+=usage
 
                 file.write(usage+'\n')

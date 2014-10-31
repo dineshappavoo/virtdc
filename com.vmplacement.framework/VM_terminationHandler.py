@@ -32,19 +32,19 @@ def fetch_vm_termination_list():
   
   while(1):
 	host_vm_dict = getHostVMDict()
-	for host, value in host_vm_dict.iteritems() :
-		for vmid in value :
-			vm_obj=value[vmid]
 
-			vm_end_time = calculate_vm_endtime(vm_obj.vmid, vm_obj.start_time)
-			print 'VMID '+vmid+' Host '+host+' Current Time  : '+ str(int(time.time()/60)) +' End Time : '+str(int(vm_end_time/60))
+	for node, vm_dict in host_vm_dict.iteritems():
+        	for vmid,value in vm_dict.iteritems():
+			vm_end_time = calculate_vm_endtime(value.vmid, value.start_time)
+
 			#print vm_end_time
 			#For Testing purpose we are subtracting 9000 seconds
-			vm_end_time = float(vm_end_time) - 9000
+			vm_end_time = float(vm_end_time) - float(9100)
+			print 'VMID '+vmid+' Host '+node+' Current Time  : '+ str(int(time.time()/60)) +' End Time : '+str(int(vm_end_time/60))
 			if (time.time() >= vm_end_time ):
-				if (vm_terminate_guest(host, vmid) ):
+				if (vm_terminate_guest(node, vmid) ):
 					vm_termination_list.append(vmid)
-					vmtermination_log.write('TERMINATION HANDLER ::'+host+' :: '+vmid+' :: Guest terminated\n')
+					vmtermination_log.write('TERMINATION HANDLER ::'+node+' :: '+vmid+' :: Guest terminated\n')
 					
 	time.sleep(20) 
 

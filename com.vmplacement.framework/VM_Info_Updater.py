@@ -54,7 +54,7 @@ def addOrUpdateDictionaryOfVM(hostName,vmid, guest) :
             		#For Testing
 			#host_vm_dict[key]={"vm1":Guest("192.168.1.14","vm1", float(1), float(3),float(42424),float(424242),float(1))}
 	if(guest==None):
-		del host_vm_dict[hostname][vmid]
+		del host_vm_dict[hostName][vmid]
 	else:
 		host_vm_dict[hostName][vmid]=guest
 		pickleNodeVMDictionary(host_vm_dict)

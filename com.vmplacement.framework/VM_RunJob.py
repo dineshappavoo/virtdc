@@ -34,22 +34,24 @@ def loadPickleDictionary() :
 		sys.exit(1)
 
 def runJobOnVM(hostName, vmid):
-	host_vm_dict=loadPickleDictionary()
-	ip=host_vm_dict[hostName][vmid].vmip
-	print "IP RUN "+str(ip)
-	scpTask='scp -q -o StrictHostKeyChecking=no /root/Desktop/VMPlacementAndScaling/com.vmplacement.data/vms/'+vmid+'.csv root@'+ip+':/root/task.dat'
-	scpdata = subprocess.check_output(scpTask, shell=True, stderr=subprocess.PIPE)
-	startWork = 'ssh -q -o StrictHostKeyChecking=no root@'+ip+' nohup bash /root/setup.sh &'
-	subprocess.Popen(startWork, shell=True, stderr=subprocess.PIPE)
+	try:
+		host_vm_dict=loadPickleDictionary()
+		ip=host_vm_dict[hostName][vmid].vmip
+		print "IP RUN "+str(ip)
+		scpTask='scp -q -o StrictHostKeyChecking=no /root/Desktop/VMPlacementAndScaling/com.vmplacement.data/vms/'+vmid+'.csv root@'+ip+':/root/task.dat'
+		scpdata = subprocess.check_output(scpTask, shell=True, stderr=subprocess.PIPE)
+		startWork = 'ssh -q -o StrictHostKeyChecking=no root@'+ip+' nohup bash /root/setup.sh &'
+		subprocess.Popen(startWork, shell=True, stderr=subprocess.PIPE)
+	except subprocess.CalledProcessError as e: 
+   		print "error>",e.output,'<'	
 	
-	
-	#rebootCmd='ssh -q -o StrictHostKeyChecking=no root@'+ip+' reboot'
-	#rebootGuest = subprocess.check_output(rebootCmd, shell=True, stderr=subprocess.PIPE)
-	#guestNewIP = getGuestIP(vmid, 'root', 'Teamb@123')
-	#updateGuestIP(hostName, vmid, guestNewIP)	#Add this function in VM_info_Updater.py	
+		#rebootCmd='ssh -q -o StrictHostKeyChecking=no root@'+ip+' reboot'
+		#rebootGuest = subprocess.check_output(rebootCmd, shell=True, stderr=subprocess.PIPE)
+		#guestNewIP = getGuestIP(vmid, 'root', 'Teamb@123')
+		#updateGuestIP(hostName, vmid, guestNewIP)	#Add this function in VM_info_Updater.py	
 
-	#jobPermCmd='ssh -q -o StrictHostKeyChecking=no root@'+ip+' chmod +x /root/task.dat'
-	#jobPerm = subprocess.check_output(jobPermCmd, shell=True, stderr=subprocess.PIPE)	
+		#jobPermCmd='ssh -q -o StrictHostKeyChecking=no root@'+ip+' chmod +x /root/task.dat'
+		#jobPerm = subprocess.check_output(jobPermCmd, shell=True, stderr=subprocess.PIPE)	
 	
 
 if __name__ == "__main__":

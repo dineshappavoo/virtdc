@@ -13,8 +13,8 @@ from time import sleep
 #==============================================================================
 
 # Some descriptive variables
-#name                = "vmplacementandscaling"
-#version             = "0.1"
+#name                = "virtdc"
+#version             = "0.1.0"
 #long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
 #url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
 #license             = ""
@@ -35,7 +35,9 @@ def getGuestIP(host, vmid, username, password) :
 	child.expect('\~\]\#')
 	child.sendline('/usr/bin/virsh console ' + vmid)
 	child.sendline('\n\n')
+	sleep(3)
 	i = child.expect([pexpect.TIMEOUT, '\~\]\#', 'ogin:'])
+	
 	if i == 0:  # timeout
 		return
 	if i == 1:  # ttyS0 is logged in, do nothing
@@ -47,20 +49,23 @@ def getGuestIP(host, vmid, username, password) :
 		child.sendline(password)
 		child.expect('\~\]\# ')
 
+	sleep(3)
 	#To get the guest IP
 	child.sendline('ifconfig | grep 192.168.1. | awk \'{print $2}\'')
+	sleep(3)
 	child.expect('(\d+\.\d+\.\d+\.\d+)')
 	ip = child.match.group()
 
 	child.sendline('logout')
 	#sleep(2)
 	child.sendline('\n\n')
+	#	print ip
 	print "IP Address "+str(ip)
 	return ip
 
 if __name__ == "__main__":
    # stuff only to run when not called via 'import' here
-   getGuestIP('node1', 'VM_Task_1', 'root', 'Teamb@123')
+   getGuestIP('node1', 'VM_Task_13', 'root', 'Teamb@123')
 
 	
 	
