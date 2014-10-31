@@ -20,9 +20,7 @@ parser.add_option("-T", "--task-set", dest="task", help="task input file", actio
 #stress -t 1h -c 3 --vm-bytes 64m &
 #'''
 
-uptime_command = '''
-/usr/bin/uptime | cut -d':' -f5 | cut -d',' -f1
-'''
+uptime_command = "cat /proc/loadavg | awk '{print $1}'"
 
 memory_command = '''
 cat /proc/`cat /root/memory.pid`/status | grep VmSize | awk '{print $2}'
@@ -57,7 +55,7 @@ for n in `cat /root/cpu.pid`; do kill -CONT $n || true; done
 
 def getUptime(uptime_output):
 	# Return a float to represent uptime
-	return float(uptime_output[:5].strip())
+	return float(uptime_output.strip())
 
 def getMemory(memory_output):
 	# Return an integer to represent memory
