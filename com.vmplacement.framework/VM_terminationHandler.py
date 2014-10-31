@@ -44,7 +44,7 @@ def fetch_vm_termination_list():
 			if (time.time() >= vm_end_time ):
 				if (vm_terminate_guest(node, vmid) ):
 					vm_termination_list.append(vmid)
-					vmtermination_log.write('TERMINATION HANDLER ::'+node+' :: '+vmid+' :: Guest terminated\n')
+					vmtermination_log.write(time.time()+' :: TERMINATION HANDLER ::'+node+' :: '+vmid+' :: Guest terminated\n')
 					
 	time.sleep(20) 
 

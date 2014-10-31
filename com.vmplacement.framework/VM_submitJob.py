@@ -36,7 +36,7 @@ _master="node1"
 _imageCopyCmd="scp"
 _cloneCmd="virsh --connect qemu+ssh://"
 
-_base_memory_size=1048576       # 1 GB (This includes OS memory)
+_base_memory_size=2097152       # 2 GB (This includes OS memory)
 
 #===============================================================================
 

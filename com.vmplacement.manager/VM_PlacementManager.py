@@ -28,7 +28,7 @@ from VM_memoryScaling import vm_memory_scaling, vm_max_memory_scaling
 mem_scale_up_threshold = '10240'	# 10 MB
 mem_scale_down_threshold = '102400' 	# 100 MB
 time_threshold = '300' 			# 5 minutes
-_base_mem_size = 1048576       		# 1 GB (This includes OS memory)
+_base_mem_size = 2097152       		# 2 GB (This includes OS memory)
 
 #Log activity
 manager_activity_log = open('../com.vmplacement.logs/activity_logs/manager.log', 'a+')

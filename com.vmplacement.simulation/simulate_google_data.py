@@ -17,7 +17,7 @@ from virtdc import create_vm
 #==============================================================================
 
 data_folder_path='../com.vmplacement.data/vms'
-_base_memory_size=1048576       # 1 GB (This includes OS memory)
+_base_memory_size=2097152       # 2 GB (This includes OS memory)
 
 
 def simulate_google_data():
