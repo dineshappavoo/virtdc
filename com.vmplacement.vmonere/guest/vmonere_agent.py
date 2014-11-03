@@ -68,14 +68,17 @@ def report_usage_to_host():
 	task_mem_usage = 0.0
 	io_usage = 0.0
 
-	#cpu_usage = get_cpu_usage()
-	#os_mem_usage = get_os_mem_usage()
-	#task_mem_usage = get_task_mem_usage()
-	#io_usage = get_io_usage()
+	cpu_usage = get_cpu_usage()
+	os_mem_usage = get_os_mem_usage()
+	task_mem_usage = get_task_mem_usage()
+	io_usage = get_io_usage()
 
 	usage = '\''+str(vmid)+' | '+str(cpu_usage)+' | '+str(os_mem_usage)+' | '+str(task_mem_usage)+' | '+str(io_usage)+'\''
 	#usage = "'cpu |sdbfsj |sdfsdhf |sdfvsdvfgdfvj'"
-	cmd = 'python /var/lib/virtdc/com.vmplacement.vmonere/host/vmonere_listener.py '+usage
+	#cmd = 'python /var/lib/virtdc/com.vmplacement.vmonere/host/vmonere_listener.py '+usage
+	cmd = 'ssh -q -o StrictHostKeyChecking=no root@192.168.1.11 \"python /var/lib/virtdc/com.vmplacement.vmonere/host/vmonere_listener.py '+usage+'\"'
+
+	#cmd_res = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
 	os.system(cmd)
 
 def report_usage_periodically():

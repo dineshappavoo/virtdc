@@ -1,0 +1,116 @@
+#!/bin/sh
+# Copyright (C) 2014 virtdc and others.
+# All Rights Reserved. This program and the accompanying
+# materials are made available under the terms of the
+# Common Public License v0.1.0 which accompanies this distribution.
+#
+# Author: Dinesh Appavoo <dinesha.cit@gmail.com>
+#
+# vmonereinit
+#
+# System startup script for the vmonere init facility
+#
+### BEGIN INIT INFO
+# Provides: vmonereinit
+# Required-Start:    $local_fs
+# Should-Start:      $remote_fs $syslog
+# Required-Stop:     $local_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start the vmonere init daemon
+# Description:       Start the vmonere initialization daemon
+### END INIT INFO
+#
+# chkconfig: 2345 20 80
+# description: Runs the vmonere reporter daemon
+# processname: vmonereinit
+# pidfile: /var/lib/virtdc/guest/vmonereinit.pid
+#
+
+# Source function library
+. /etc/init.d/functions
+
+RETVAL=0
+
+prog=vmonereinit
+#exec=/sbin/vmonereinit
+#lockfile=/var/lock/subsys/$prog
+#pidfile=/var/lib/virtdc/guest/vmonereinit.pid
+
+start() {
+   # [ -x $exec ] || exit 5
+    #echo -n "Starting $prog: "
+    #if [ ! -d /sys/class/scsi_generic ] ; then
+     #   modprobe sg
+   # fi
+    daemon /usr/bin/python /var/lib/virtdc/guest/vmonere_agent.py >> /var/lib/virtdc/guest/vmonere_reporter.log & --daemon
+
+    #RETVAL=$?
+    #echo
+    #[ $RETVAL = 0 ] && touch $lockfile && /sbin/pidof $exec > $pidfile
+    #return $RETVAL
+}
+
+stop() {
+    echo -n "Stopping iprinit: "
+    killproc $prog -TERM
+    #RETVAL=$?
+    #[ $RETVAL = 0 ] && rm -f $lockfile $pidfile
+    #return $RETVAL
+}
+
+restart() {
+    stop
+    start
+}
+
+reload() {
+    restart
+}
+
+force_reload() {
+    restart
+}
+
+rh_status() {
+    # run checks to determine if the service is running or use generic status
+    status $prog
+}
+
+rh_status_q() {
+    rh_status >/dev/null 2>&1
+}
+
+
+case "$1" in
+    start)
+        rh_status_q && exit 0
+        $1
+        ;;
+    stop)
+        rh_status_q || exit 0
+        $1
+        ;;
+    restart)
+        $1
+        ;;
+    reload)
+        rh_status_q || exit 7
+        $1
+        ;;
+    force-reload)
+        force_reload
+        ;;
+    status)
+        rh_status
+        ;;
+    condrestart|try-restart)
+        rh_status_q || exit 0
+        restart
+        ;;
+    *)
+        echo $"Usage: $0 {start|stop|status|restart|condrestart|try-restart|reload|force-reload}"
+        exit 2
+esac
+exit $?
+

@@ -46,7 +46,7 @@ def get_cpu_usage():
 	except Exception as e:
 		return float("0.0")
 
-        return cpuUsage.strip()
+        return cpu_usage.strip()
 
 @timeout()
 def get_os_mem_usage():
@@ -58,10 +58,10 @@ def get_os_mem_usage():
 	except Exception as e:
 		return float("0.0")
 
-        return memUsage.strip()
+        return mem_usage.strip()
 
 @timeout()
-def get_task_mem_usage(vmIp):
+def get_task_mem_usage():
 	try:
 		cmd = " cat /proc/`cat /root/memory.pid`/status | grep VmSize | awk '{print $2}'"
 		mem_usage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
@@ -70,19 +70,19 @@ def get_task_mem_usage(vmIp):
 	except Exception as e:
 		return float("0.0")
 	
-	return memUsage if memUsage.strip() != '' else 0
+	return mem_usage if mem_usage.strip() != '' else 0
 
 @timeout()
-def get_io_usage(vmIp):
+def get_io_usage():
 	try:
 		cmd='iostat -d -x 1 2 | grep [a-z]da | tail -1 | awk \'{print $(NF)}\''
-		ioUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
-		if ioUsage =='': return float("0.0")
+		io_usage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+		if io_usage =='': return float("0.0")
 
 	except Exception as e:
 		return float("0.0")
 
-	return ioUsage.strip()
+	return io_usage.strip()
 
 
 if __name__ == "__main__":
