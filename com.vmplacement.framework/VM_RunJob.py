@@ -25,7 +25,7 @@ host_vm_dict={}
 
 def loadPickleDictionary() :
 	try :
-		with open('/var/virtdc/com.vmplacement.framework/host_vm_dict.pkl', 'r') as pickle_in:
+		with open('/var/lib/virtdc/com.vmplacement.framework/host_vm_dict.pkl', 'r') as pickle_in:
 			dictionary = pickle.load(pickle_in)
 			return dictionary
 	except:
@@ -37,7 +37,7 @@ def runJobOnVM(hostName, vmid):
 		host_vm_dict=loadPickleDictionary()
 		ip=host_vm_dict[hostName][vmid].vmip
 		print "IP RUN "+str(ip)
-		scpTask='scp -q -o StrictHostKeyChecking=no /root/Desktop/VMPlacementAndScaling/com.vmplacement.data/vms/'+vmid+'.csv root@'+ip+':/root/task.dat'
+		scpTask='scp -q -o StrictHostKeyChecking=no /var/lib/virtdc/com.vmplacement.data/vms/'+vmid+'.csv root@'+ip+':/root/task.dat'
 		scpdata = subprocess.check_output(scpTask, shell=True, stderr=subprocess.PIPE)
 		startWork = 'ssh -q -o StrictHostKeyChecking=no root@'+ip+' nohup bash /root/setup.sh &'
 		subprocess.Popen(startWork, shell=True, stderr=subprocess.PIPE)

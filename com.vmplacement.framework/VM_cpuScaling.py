@@ -6,11 +6,12 @@ import sys, subprocess
 #==============================================================================
 # Variables
 #==============================================================================
+
 # Some descriptive variables
 #name                = "virtdc"
 #version             = "0.1.0"
-#long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
-#url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
+#long_description    = """virtdc is a set of API's/tools written to create virtual machines for cloud users efficiently."""
+#url                 = "https://github.com/dineshappavoo/virtdc"
 #license             = ""
 
 #==============================================================================
@@ -28,7 +29,7 @@ import sys, subprocess
 
 
 #Activity Log
-vmscaling_log = open('/var/virtdc/com.vmplacement.logs/activity_logs/scaling.log', 'a+')
+vmscaling_log = open('/var/lib/virtdc/com.vmplacement.logs/activity_logs/scaling.log', 'a+')
 
 def vm_cpu_scaling(host, vmid, cpu_count):
 

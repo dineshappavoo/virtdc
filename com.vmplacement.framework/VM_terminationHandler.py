@@ -2,7 +2,7 @@
 
 import sys, time
 from multiprocessing import Process
-sys.path.append('/var/virtdc/com.vmplacement.manager')
+sys.path.append('/var/lib/virtdc/com.vmplacement.manager')
 from VM_terminationList import calculate_vm_endtime
 from VM_Info_Updater import getHostVMDict
 from Guest import Guest
@@ -24,7 +24,7 @@ from VM_terminateGuest import vm_terminate_guest
 #==============================================================================
 
 #Activity Log
-vmtermination_log = open('/var/virtdc/com.vmplacement.logs/activity_logs/vmtermination.log', 'a+')
+vmtermination_log = open('/var/lib/virtdc/com.vmplacement.logs/activity_logs/vmtermination.log', 'a+')
 
 
 vm_termination_list = []

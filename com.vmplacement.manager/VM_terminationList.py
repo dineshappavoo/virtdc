@@ -19,7 +19,7 @@ import time
 
 #==============================================================================
 
-data_folder_path='/var/virtdc/com.vmplacement.data/vms'
+data_folder_path='/var/lib/virtdc/com.vmplacement.data/vms'
 
 def calculate_vm_lifetime(file_name):
         ifile  = open(file_name, "rt")

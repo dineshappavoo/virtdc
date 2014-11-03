@@ -30,7 +30,7 @@ from vmonere_utility import get_cpu_usage, get_os_mem_usage, get_task_mem_usage,
 #-------------------------------------------------------------------------------
 
 #This file must be placed in the guest
-host_config_path = '''/var/virtdc/host_config.txt'''
+host_config_path = '''/var/lib/virtdc/host_config.txt'''
 
 
 def vmonere_agent():
@@ -75,7 +75,7 @@ def report_usage_to_host():
 
 	usage = '\''+str(vmid)+' | '+str(cpu_usage)+' | '+str(os_mem_usage)+' | '+str(task_mem_usage)+' | '+str(io_usage)+'\''
 	#usage = "'cpu |sdbfsj |sdfsdhf |sdfvsdvfgdfvj'"
-	cmd = 'python /var/virtdc/com.vmplacement.vmonere/host/vmonere_listener.py '+usage
+	cmd = 'python /var/lib/virtdc/com.vmplacement.vmonere/host/vmonere_listener.py '+usage
 	os.system(cmd)
 
 def report_usage_periodically():

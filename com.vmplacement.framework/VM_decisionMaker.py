@@ -27,7 +27,7 @@ class NodeFinder:
 	#@staticmethod
 	def loadPickleDictionary(self) :
 		try :
-			with open('/var/virtdc/com.vmplacement.framework/node_dict.pkl', 'r') as pickle_in:
+			with open('/var/lib/virtdc/com.vmplacement.framework/node_dict.pkl', 'r') as pickle_in:
     				dictionary = pickle.load(pickle_in)
 				return dictionary
 		except:

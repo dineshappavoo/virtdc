@@ -20,7 +20,7 @@ from Host_Info_Tracker import GetNodeDict
 
 def loadPickleDictionary() :
 	try :
-		with open('/var/virtdc/com.vmplacement.framework/node_dict.pkl', 'r') as pickle_in:
+		with open('/var/lib/virtdc/com.vmplacement.framework/node_dict.pkl', 'r') as pickle_in:
 			dictionary = pickle.load(pickle_in)
 			return dictionary
 	except:
@@ -29,7 +29,7 @@ def loadPickleDictionary() :
 
 def loadPickleHostVMDictionary() :
 	try :
-		with open('/var/virtdc/com.vmplacement.framework/host_vm_dict.pkl', 'r') as pickle_in:
+		with open('/var/lib/virtdc/com.vmplacement.framework/host_vm_dict.pkl', 'r') as pickle_in:
 			dictionary = pickle.load(pickle_in)
 			return dictionary
 	except:
@@ -61,7 +61,7 @@ def addOrUpdateDictionaryOfVM(hostName,vmid, guest) :
 	print host_vm_dict
 
 def pickleNodeVMDictionary(dictionary) :
-	with open('/var/virtdc/com.vmplacement.framework/host_vm_dict.pkl','w') as host_vm_pickle_out:
+	with open('/var/lib/virtdc/com.vmplacement.framework/host_vm_dict.pkl','w') as host_vm_pickle_out:
     		pickle.dump(dictionary,host_vm_pickle_out)
 		#host_vm_pickle_out.close()
 

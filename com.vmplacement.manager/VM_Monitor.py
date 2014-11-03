@@ -5,7 +5,7 @@ import pickle
 import sys,os
 from datetime import datetime
 import sys
-sys.path.append('/var/virtdc/com.vmplacement.framework')
+sys.path.append('/var/lib/virtdc/com.vmplacement.framework')
 from Guest import Guest
 from VM_Info_Updater import getHostVMDict
 import time
@@ -37,7 +37,7 @@ time_threshold = '1' 			# 1 minutes
 
 def monitorAndLogAndReportHotSpot():
         usageInfo=""
-        file= open('/var/virtdc/com.vmplacement.logs/monitor_logs/vmusage.log', 'a+')
+        file= open('/var/lib/virtdc/com.vmplacement.logs/monitor_logs/vmusage.log', 'a+')
 	host_vm_dict=getHostVMDict()
         for node, vm_dict in host_vm_dict.iteritems():
             file.write("HOST NAME : "+node+"                	TIME : "+str(datetime.now())+'\n')
@@ -117,7 +117,7 @@ def process_mem_over_usage(vmid, mem_usage, mem_allocated):
 			print "Test"+str(seconds)
 
 			if ( float(seconds) > float(time_threshold)):
-        			f= open('/var/virtdc/com.vmplacement.logs/vm_logs/'+vmid+'.dat', 'a+')
+        			f= open('/var/lib/virtdc/com.vmplacement.logs/vm_logs/'+vmid+'.dat', 'a+')
 				#over_usage= 'VM ID: '+vmid+'\talotted memory: '+str(mem_allocated)+'\tmemory usage: ' + str(mem_usage) + 'over usage time duration (sec) : '+str(seconds)+"\n"	
 				over_usage= 'MEMORY|'+vmid+'|'+str(mem_allocated)+'|' + str(mem_usage) + '|'+str(seconds)+"\n"	
 				f.write(over_usage+'\n')
@@ -145,7 +145,7 @@ def accumulateValue():
 	minute = now % 60
 	seconds = now / 60
 	print 'Next time you add blood is '+str(minute)+':'+str(seconds)
-        f= open('/var/virtdc/com.vmplacement.logs/vm_logs/'+vmid+'.log', 'a+')
+        f= open('/var/lib/virtdc/com.vmplacement.logs/vm_logs/'+vmid+'.log', 'a+')
 	if(currentUsage>memAllocated):
 		memOverUsage=True
 		extraUsage=memAllocated-currentUsage

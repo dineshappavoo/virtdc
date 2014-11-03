@@ -27,8 +27,8 @@ from VM_RunJob import runJobOnVM
 #==============================================================================
 
 guest_image = "/home/vm_img/"
-guest_config_path = "/var/virtdc/com.vmplacement.framework/guestconfig.xml"
-guest_config_file_storage_path = "/var/virtdc/com.vmplacement.guestconfiguration/"
+guest_config_path = "/var/lib/virtdc/com.vmplacement.framework/guestconfig.xml"
+guest_config_file_storage_path = "/var/lib/virtdc/com.vmplacement.guestconfiguration/"
 
 _master="node1"
 _imageCopyCmd="scp"
@@ -40,7 +40,7 @@ _base_memory_size=2097152       # 2 GB (This includes OS memory)
 
 
 #Activity Log
-vmsubmission_log = open('/var/virtdc/com.vmplacement.logs/activity_logs/vmsubmission.log', 'a+')
+vmsubmission_log = open('/var/lib/virtdc/com.vmplacement.logs/activity_logs/vmsubmission.log', 'a+')
 
 def vm_submitjob(vmid,cpu,memory, max_memory, io):
 	obj=NodeFinder()

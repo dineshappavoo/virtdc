@@ -32,7 +32,7 @@ from VM_Info_Updater import addOrUpdateDictionaryOfVM, getHostVMDict
 
 
 #Activity Log
-vmtermination_log = open('/var/virtdc/com.vmplacement.logs/activity_logs/vmtermination.log', 'a+')
+vmtermination_log = open('/var/lib/virtdc/com.vmplacement.logs/activity_logs/vmtermination.log', 'a+')
 
 
 def vm_terminate_guest(source_host, vmid):

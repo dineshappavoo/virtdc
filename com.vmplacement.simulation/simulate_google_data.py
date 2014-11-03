@@ -2,7 +2,7 @@
 
 
 import os, sys, subprocess, time
-sys.path.append('/var/virtdc/com.vmplacement.framework')
+sys.path.append('/var/lib/virtdc/com.vmplacement.framework')
 from virtdc import create_vm
 
 #==============================================================================
@@ -16,7 +16,7 @@ from virtdc import create_vm
 
 #==============================================================================
 
-data_folder_path='/var/virtdc/com.vmplacement.data/vms'
+data_folder_path='/var/lib/virtdc/com.vmplacement.data/vms'
 _base_memory_size=2097152       # 2 GB (This includes OS memory)
 
 

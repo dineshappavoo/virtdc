@@ -28,7 +28,7 @@ import sys, subprocess
 
 
 #Activity Log
-vmmigration_log = open('/var/virtdc/com.vmplacement.logs/activity_logs/vmmigration.log', 'a+')
+vmmigration_log = open('/var/lib/virtdc/com.vmplacement.logs/activity_logs/vmmigration.log', 'a+')
 
 
 def vm_migrate_guest(source_host, dest_host, vmid):

@@ -18,7 +18,7 @@ import pickle
 
 #Function to load the dictionary from the pickle
 def loadPickleDictionary() :
-	with open('/var/virtdc/com.vmplacement.framework/node_dict.pkl', 'r') as pickle_in:
+	with open('/var/lib/virtdc/com.vmplacement.framework/node_dict.pkl', 'r') as pickle_in:
             node_dictionary = pickle.load(pickle_in)
         return node_dictionary
 

@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import sys, time
-sys.path.append('/var/virtdc/com.vmplacement.framework')
+sys.path.append('/var/lib/virtdc/com.vmplacement.framework')
 from VM_Info_Updater import addOrUpdateDictionaryOfVM
 from Guest import Guest
 from VM_migrateGuest import vm_migrate_guest
@@ -31,7 +31,7 @@ time_threshold = '300' 			# 5 minutes
 _base_mem_size = 2097152       		# 2 GB (This includes OS memory)
 
 #Log activity
-manager_activity_log = open('/var/virtdc/com.vmplacement.logs/activity_logs/manager.log', 'a+')
+manager_activity_log = open('/var/lib/virtdc/com.vmplacement.logs/activity_logs/manager.log', 'a+')
 
 def initiateLiveMigration(vmid,sourcenode,destnode):
 	a=0

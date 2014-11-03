@@ -31,7 +31,7 @@ from xml.dom import minidom
 
 def loadPickleDictionary() :
 	try :
-		with open('/var/virtdc/com.vmplacement.framework/node_dict.pkl', 'r') as pickle_in:
+		with open('/var/lib/virtdc/com.vmplacement.framework/node_dict.pkl', 'r') as pickle_in:
 			dictionary = pickle.load(pickle_in)
 			return dictionary
 	except:
@@ -84,7 +84,7 @@ def pickleAddOrUpdateDictionary(hostName, ip_address, cpu, mem, disk, avail_cpu,
 	print "Pkl Update cpu"+str(avail_cpu)
 	print "Pkl Update mem"+str(avail_mem)
 	node_dict[hostName]=Node(str(hostName), str(ip_address), float(cpu), float(mem), float(disk), float(avail_cpu), float(avail_mem), float(avail_disk))
-	with open('/var/virtdc/com.vmplacement.framework/node_dict.pkl','w') as node_pickle_out:
+	with open('/var/lib/virtdc/com.vmplacement.framework/node_dict.pkl','w') as node_pickle_out:
     		pickle.dump(node_dict,node_pickle_out)
 		#node_pickle_out.close()
 

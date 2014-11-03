@@ -67,7 +67,7 @@ def updateBridge(src):
 	#srcPath = '/root/haan/'+src			#for test purpose
 	
 	dest = '/etc/sysconfig/network-scripts/'+src
-	srcPath='/var/virtdc/com.vmplacement.setup/'+src
+	srcPath='/var/lib/virtdc/com.vmplacement.setup/'+src
 
 	#make backup
 	backup(dest)
