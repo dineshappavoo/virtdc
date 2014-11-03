@@ -30,8 +30,7 @@ from vmonere_utility import get_cpu_usage, get_os_mem_usage, get_task_mem_usage,
 #-------------------------------------------------------------------------------
 
 #This file must be placed in the guest
-host_config_path = '''/var/lib/virtdc/host_config.txt'''
-
+host_config_path = '''/var/lib/virtdc/com.vmplacement.vmonere/guest/host_config.txt'''
 
 def vmonere_agent():
 	a=0
@@ -43,26 +42,27 @@ def get_host_ip():
 				break
 		else :
 			print 'Host config file does not exist'
-			sleep(10)		
+			time.sleep(10)		
 
-	host_ip_cmd = '''cat host_config_file | grep \'host_ip\' |awk '{print$2}' '''
+
+	host_ip_cmd = '''cat host_config_file | grep \'host_ip\' |awk '{print$3}' '''
 	host_ip_cmd = host_ip_cmd.replace("host_config_file",str(host_config_path).strip())
 
 	host_ip = subprocess.check_output(host_ip_cmd, shell=True, stderr=subprocess.PIPE)
+	print 'getting Ip'+str(host_ip)
 	return host_ip
 
 def get_vmid():
-	vmid_cmd = '''cat host_config_file | grep \'vmid\' |awk '{print$2}' '''
-	vmid_cmd = host_ip_cmd.replace("host_config_file",str(host_config_path).strip())
+	vmid_cmd = '''cat host_config_file | grep \'vmid\' |awk '{print$3}' '''
+	vmid_cmd = vmid_cmd.replace("host_config_file",str(host_config_path).strip())
 
 	vmid = subprocess.check_output(vmid_cmd, shell=True, stderr=subprocess.PIPE)
 
-	return host_ip
+	return vmid
 
-def report_usage_to_host():
+def report_usage_to_host(host_ip, vmid):
 	
 	#base value
-	vmid = 'VM_Task_1'
 	cpu_usage = 0.0
 	os_mem_usage = 0.0
 	task_mem_usage = 0.0
@@ -73,17 +73,20 @@ def report_usage_to_host():
 	task_mem_usage = get_task_mem_usage()
 	io_usage = get_io_usage()
 
-	usage = '\''+str(vmid)+' | '+str(cpu_usage)+' | '+str(os_mem_usage)+' | '+str(task_mem_usage)+' | '+str(io_usage)+'\''
+	usage = '\''+str(vmid.strip())+' | '+str(cpu_usage)+' | '+str(os_mem_usage)+' | '+str(task_mem_usage)+' | '+str(io_usage)+'\''
 	#usage = "'cpu |sdbfsj |sdfsdhf |sdfvsdvfgdfvj'"
 	#cmd = 'python /var/lib/virtdc/com.vmplacement.vmonere/host/vmonere_listener.py '+usage
-	cmd = 'ssh -q -o StrictHostKeyChecking=no root@192.168.1.11 \"python /var/lib/virtdc/com.vmplacement.vmonere/host/vmonere_listener.py '+usage+'\"'
+	cmd = 'ssh -q -o StrictHostKeyChecking=no root@host_ip \"python /var/lib/virtdc/com.vmplacement.vmonere/host/vmonere_listener.py '+usage+'\"'
+	cmd = cmd.replace("host_ip",str(host_ip).strip())
 
 	#cmd_res = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
 	os.system(cmd)
 
 def report_usage_periodically():
+	host_ip = get_host_ip()
+	vmid = get_vmid()
 	while(1):
-		report_usage_to_host()
+		report_usage_to_host(host_ip, vmid)
 		time.sleep(5)
 
 if __name__ == "__main__":

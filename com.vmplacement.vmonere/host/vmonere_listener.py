@@ -30,7 +30,7 @@ def receive_guest_usage(usage):
         file= open('/var/lib/virtdc/com.vmplacement.logs/monitor_logs/vmusageTest.log', 'a+')
 	usage= vmid+' \t|\t '+ str(cpu_usage) + '\t|\t' + str(os_mem_usage) + '\t|\t' + str(task_mem_usage) + '\t|\t' + str(io_usage) +"\n"
         file.write(usage+'\n')
-	#print usage
+	print usage
 
 
 if __name__ == "__main__":
