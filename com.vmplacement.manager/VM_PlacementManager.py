@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import sys, time
-sys.path.append('../com.vmplacement.framework')
+sys.path.append('/var/virtdc/com.vmplacement.framework')
 from VM_Info_Updater import addOrUpdateDictionaryOfVM
 from Guest import Guest
 from VM_migrateGuest import vm_migrate_guest
@@ -17,8 +17,8 @@ from VM_memoryScaling import vm_memory_scaling, vm_max_memory_scaling
 # Some descriptive variables
 #name                = "virtdc"
 #version             = "0.1.0"
-#long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
-#url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
+#long_description    = """virtdc is a set of API's/tools written to create virtual machines for cloud users efficiently."""
+#url                 = "https://github.com/dineshappavoo/virtdc"
 #license             = ""
 
 #==============================================================================
@@ -31,7 +31,7 @@ time_threshold = '300' 			# 5 minutes
 _base_mem_size = 2097152       		# 2 GB (This includes OS memory)
 
 #Log activity
-manager_activity_log = open('../com.vmplacement.logs/activity_logs/manager.log', 'a+')
+manager_activity_log = open('/var/virtdc/com.vmplacement.logs/activity_logs/manager.log', 'a+')
 
 def initiateLiveMigration(vmid,sourcenode,destnode):
 	a=0

@@ -16,12 +16,10 @@ from VM_RunJob import runJobOnVM
 #==============================================================================
 
 # Some descriptive variables
-# This will eventually be passed to the setup function, but we already need them
-# for doing some other stuff so we have to declare them here.
-#name                = "vmplacementandscaling"
-#version             = "0.1"
-#long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
-#url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
+#name                = "virtdc"
+#version             = "0.1.0"
+#long_description    = """virtdc is a set of API's/tools written to create virtual machines for cloud users efficiently."""
+#url                 = "https://github.com/dineshappavoo/virtdc"
 #license             = ""
 
 #==============================================================================
@@ -29,8 +27,8 @@ from VM_RunJob import runJobOnVM
 #==============================================================================
 
 guest_image = "/home/vm_img/"
-guest_config_path = "../com.vmplacement.framework/guestconfig.xml"
-guest_config_file_storage_path = "../com.vmplacement.guestconfiguration/"
+guest_config_path = "/var/virtdc/com.vmplacement.framework/guestconfig.xml"
+guest_config_file_storage_path = "/var/virtdc/com.vmplacement.guestconfiguration/"
 
 _master="node1"
 _imageCopyCmd="scp"
@@ -42,7 +40,7 @@ _base_memory_size=2097152       # 2 GB (This includes OS memory)
 
 
 #Activity Log
-vmsubmission_log = open('../com.vmplacement.logs/activity_logs/vmsubmission.log', 'a+')
+vmsubmission_log = open('/var/virtdc/com.vmplacement.logs/activity_logs/vmsubmission.log', 'a+')
 
 def vm_submitjob(vmid,cpu,memory, max_memory, io):
 	obj=NodeFinder()

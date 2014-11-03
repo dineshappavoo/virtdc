@@ -2,7 +2,7 @@
 
 import sys, time
 from multiprocessing import Process
-sys.path.append('/root/Desktop/VMPlacementAndScaling/com.vmplacement.manager')
+sys.path.append('/var/virtdc/com.vmplacement.manager')
 from VM_terminationList import calculate_vm_endtime
 from VM_Info_Updater import getHostVMDict
 from Guest import Guest
@@ -13,17 +13,18 @@ from VM_terminateGuest import vm_terminate_guest
 #==============================================================================
 # Variables
 #==============================================================================
+
 # Some descriptive variables
 #name                = "virtdc"
 #version             = "0.1.0"
-#long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
-#url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
+#long_description    = """virtdc is a set of API's/tools written to create virtual machines for cloud users efficiently."""
+#url                 = "https://github.com/dineshappavoo/virtdc"
 #license             = ""
 
 #==============================================================================
 
 #Activity Log
-vmtermination_log = open('../com.vmplacement.logs/activity_logs/vmtermination.log', 'a+')
+vmtermination_log = open('/var/virtdc/com.vmplacement.logs/activity_logs/vmtermination.log', 'a+')
 
 
 vm_termination_list = []

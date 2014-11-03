@@ -10,17 +10,17 @@ from Host_Info_Tracker import GetNodeDict
 #==============================================================================
 
 # Some descriptive variables
-#name                = "vmplacementandscaling"
-#version             = "0.1"
-#long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
-#url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
+#name                = "virtdc"
+#version             = "0.1.0"
+#long_description    = """virtdc is a set of API's/tools written to create virtual machines for cloud users efficiently."""
+#url                 = "https://github.com/dineshappavoo/virtdc"
 #license             = ""
 
 #==============================================================================
 
 def loadPickleDictionary() :
 	try :
-		with open('../com.vmplacement.framework/node_dict.pkl', 'r') as pickle_in:
+		with open('/var/virtdc/com.vmplacement.framework/node_dict.pkl', 'r') as pickle_in:
 			dictionary = pickle.load(pickle_in)
 			return dictionary
 	except:
@@ -29,7 +29,7 @@ def loadPickleDictionary() :
 
 def loadPickleHostVMDictionary() :
 	try :
-		with open('../com.vmplacement.framework/host_vm_dict.pkl', 'r') as pickle_in:
+		with open('/var/virtdc/com.vmplacement.framework/host_vm_dict.pkl', 'r') as pickle_in:
 			dictionary = pickle.load(pickle_in)
 			return dictionary
 	except:
@@ -61,7 +61,7 @@ def addOrUpdateDictionaryOfVM(hostName,vmid, guest) :
 	print host_vm_dict
 
 def pickleNodeVMDictionary(dictionary) :
-	with open('../com.vmplacement.framework/host_vm_dict.pkl','w') as host_vm_pickle_out:
+	with open('/var/virtdc/com.vmplacement.framework/host_vm_dict.pkl','w') as host_vm_pickle_out:
     		pickle.dump(dictionary,host_vm_pickle_out)
 		#host_vm_pickle_out.close()
 

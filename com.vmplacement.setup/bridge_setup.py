@@ -6,16 +6,17 @@ import sys
 #==============================================================================
 # Variables
 #==============================================================================
+
 # Some descriptive variables
-#name                = "vmplacementandscaling"
+#name                = "virtdc"
 #version             = "0.1.0"
-#long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
-#url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
+#long_description    = """virtdc is a set of API's/tools written to create virtual machines for cloud users efficiently."""
+#url                 = "https://github.com/dineshappavoo/virtdc"
 #license             = ""
 
 #==============================================================================
 
-#/root/Desktop/VMPlacementAndScaling/com.vmplacement.setup
+#/var/virtdc/com.vmplacement.setup
 
 def backup(dest):
 	#cmd='cp  /etc/sysconfig/network-scripts/ifcfg-em1 /etc/sysconfig/network-scripts/ifcfg-em1.bak'
@@ -66,7 +67,7 @@ def updateBridge(src):
 	#srcPath = '/root/haan/'+src			#for test purpose
 	
 	dest = '/etc/sysconfig/network-scripts/'+src
-	srcPath='/root/Desktop/VMPlacementAndScaling/com.vmplacement.setup/'+src
+	srcPath='/var/virtdc/com.vmplacement.setup/'+src
 
 	#make backup
 	backup(dest)

@@ -6,11 +6,12 @@ import sys, subprocess
 #==============================================================================
 # Variables
 #==============================================================================
+
 # Some descriptive variables
 #name                = "virtdc"
 #version             = "0.1.0"
-#long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
-#url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
+#long_description    = """virtdc is a set of API's/tools written to create virtual machines for cloud users efficiently."""
+#url                 = "https://github.com/dineshappavoo/virtdc"
 #license             = ""
 
 #==============================================================================
@@ -27,7 +28,7 @@ import sys, subprocess
 
 
 #Activity Log
-vmmigration_log = open('../com.vmplacement.logs/activity_logs/vmmigration.log', 'a+')
+vmmigration_log = open('/var/virtdc/com.vmplacement.logs/activity_logs/vmmigration.log', 'a+')
 
 
 def vm_migrate_guest(source_host, dest_host, vmid):

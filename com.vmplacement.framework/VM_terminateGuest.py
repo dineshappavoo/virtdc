@@ -9,11 +9,12 @@ from VM_Info_Updater import addOrUpdateDictionaryOfVM, getHostVMDict
 #==============================================================================
 # Variables
 #==============================================================================
+
 # Some descriptive variables
 #name                = "virtdc"
 #version             = "0.1.0"
-#long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
-#url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
+#long_description    = """virtdc is a set of API's/tools written to create virtual machines for cloud users efficiently."""
+#url                 = "https://github.com/dineshappavoo/virtdc"
 #license             = ""
 
 #==============================================================================
@@ -31,7 +32,7 @@ from VM_Info_Updater import addOrUpdateDictionaryOfVM, getHostVMDict
 
 
 #Activity Log
-vmtermination_log = open('../com.vmplacement.logs/activity_logs/vmtermination.log', 'a+')
+vmtermination_log = open('/var/virtdc/com.vmplacement.logs/activity_logs/vmtermination.log', 'a+')
 
 
 def vm_terminate_guest(source_host, vmid):

@@ -10,15 +10,17 @@ from timeout import timeout
 #==============================================================================
 
 # Some descriptive variables
-#name                = "virtdc"
-#version             = "0.1.0"
-#long_description    = """virtdc is a set of API's/tools written to create virtual machines for cloud users efficiently."""
-#url                 = "https://github.com/dineshappavoo/virtdc"
+# This will eventually be passed to the setup function, but we already need them
+# for doing some other stuff so we have to declare them here.
+#name                = "vmplacementandscaling"
+#version             = "0.1"
+#long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
+#url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
 #license             = ""
 
 #==============================================================================
 
-def slicingIP(data, key):
+def slicing_ip(data, key):
         dataLen = len(data)
         for x in range(dataLen):
                 #print 'data:' +data[x]+' key:'+key
@@ -37,12 +39,12 @@ def slicingIP(data, key):
 #        return data
 
 @timeout()
-def getCpuUsage(vmIp):
+def get_cpu_usage():
 	
 	try:
-		cmd = 'ssh -q -o StrictHostKeyChecking=no root@' +vmIp+ ' cat /proc/loadavg | awk \'{print $1}\''
-		cpuUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
-		if cpuUsage =='': return float("0.0")
+		cmd = ''' cat /proc/loadavg | awk \'{print $1}\''''
+		cpu_usage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+		if cpu_usage =='': return float("0.0")
 
 	except Exception as e:
 		return float("0.0")
@@ -50,11 +52,11 @@ def getCpuUsage(vmIp):
         return cpuUsage.strip()
 
 @timeout()
-def getOSMemUsage(vmIp):
+def get_os_mem_usage():
 	try:
-		cmd='ssh -q -o StrictHostKeyChecking=no root@' +vmIp+ ' free -m | grep \'+\' | awk \'{print $3}\''
-		memUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
-		if memUsage =='': return float("0.0")
+		cmd=''' free -m | grep \'+\' | awk \'{print $3}\''''
+		mem_usage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+		if mem_usage =='': return float("0.0")
 
 	except Exception as e:
 		return float("0.0")
@@ -62,12 +64,11 @@ def getOSMemUsage(vmIp):
         return memUsage.strip()
 
 @timeout()
-def getTaskMemUsage(vmIp):
+def get_task_mem_usage(vmIp):
 	try:
-		cmd = 'ssh -q -o StrictHostKeyChecking=no root@' +vmIp+\
-		" cat /proc/`cat /root/memory.pid`/status | grep VmSize | awk '{print $2}'"
-		memUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
-		if memUsage =='': return float("0.0")
+		cmd = " cat /proc/`cat /root/memory.pid`/status | grep VmSize | awk '{print $2}'"
+		mem_usage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+		if mem_usage =='': return float("0.0")
 
 	except Exception as e:
 		return float("0.0")
@@ -75,9 +76,9 @@ def getTaskMemUsage(vmIp):
 	return memUsage if memUsage.strip() != '' else 0
 
 @timeout()
-def getIoUsage(vmIp):
+def get_io_usage(vmIp):
 	try:
-		cmd='ssh -q -o StrictHostKeyChecking=no root@' +vmIp+ ' iostat -d -x 1 2 | grep [a-z]da | tail -1 | awk \'{print $(NF)}\''
+		cmd='iostat -d -x 1 2 | grep [a-z]da | tail -1 | awk \'{print $(NF)}\''
 		ioUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 		if ioUsage =='': return float("0.0")
 
@@ -90,6 +91,7 @@ def getIoUsage(vmIp):
 if __name__ == "__main__":
    # stuff only to run when not called via 'import' here
 	a=0
+	get_cpu_usage()
 
 
 

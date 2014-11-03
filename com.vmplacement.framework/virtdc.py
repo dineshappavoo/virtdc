@@ -3,6 +3,19 @@
 from VM_submitJob import vm_submitjob
 import sys, getopt, os
 
+#==============================================================================
+# Variables
+#==============================================================================
+
+# Some descriptive variables
+#name                = "virtdc"
+#version             = "0.1.0"
+#long_description    = """virtdc is a set of API's/tools written to create virtual machines for cloud users efficiently."""
+#url                 = "https://github.com/dineshappavoo/virtdc"
+#license             = ""
+
+#==============================================================================
+
 def create_vm(vmid, cpu, memory, max_memory, io):
     print vmid
     print cpu
@@ -29,8 +42,8 @@ def main(argv):
 			opts, args = getopt.getopt(argv,"vmid:cpu:mem:io:",["vmid=","cpu=","mem=","io="])
 		except getopt.GetoptError:
             		print 'usage : '
-			print 'virtdc.py --vmid <VMID> --cpu <CPU> --mem <MEMORY> --io <IO>\n'
-			print 'virtdc.py --f <csvfilename>\n'
+			print 'virtdc --vmid <VMID> --cpu <CPU> --mem <MEMORY> --io <IO>\n'
+			print 'virtdc --f <csvfilename>\n'
 			sys.exit(2)
 	
 	for opt, arg in opts:

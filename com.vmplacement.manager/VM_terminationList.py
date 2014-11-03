@@ -9,15 +9,17 @@ import time
 #==============================================================================
 # Variables
 #==============================================================================
-#name                = "vmplacementandscaling"
-#version             = "0.1"
-#long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
-#url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
+
+# Some descriptive variables
+#name                = "virtdc"
+#version             = "0.1.0"
+#long_description    = """virtdc is a set of API's/tools written to create virtual machines for cloud users efficiently."""
+#url                 = "https://github.com/dineshappavoo/virtdc"
 #license             = ""
 
 #==============================================================================
 
-data_folder_path='../com.vmplacement.data/vms'
+data_folder_path='/var/virtdc/com.vmplacement.data/vms'
 
 def calculate_vm_lifetime(file_name):
         ifile  = open(file_name, "rt")

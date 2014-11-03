@@ -28,7 +28,7 @@ import sys, subprocess
 
 
 #Activity Log
-vmscaling_log = open('../com.vmplacement.logs/activity_logs/scaling.log', 'a+')
+vmscaling_log = open('/var/virtdc/com.vmplacement.logs/activity_logs/scaling.log', 'a+')
 
 def vm_cpu_scaling(host, vmid, cpu_count):
 

@@ -7,21 +7,18 @@ import pickle
 #==============================================================================
 
 # Some descriptive variables
-# This will eventually be passed to the setup function, but we already need them
-# for doing some other stuff so we have to declare them here.
-#name                = "vmplacementandscaling"
-#version             = "0.1"
-#long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
-#author              = "Dinesh Appavoo"
-#author_email        = "dinesha.cit@gmail.com"
-#url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
+#name                = "virtdc"
+#version             = "0.1.0"
+#long_description    = """virtdc is a set of API's/tools written to create virtual machines for cloud users efficiently."""
+#url                 = "https://github.com/dineshappavoo/virtdc"
 #license             = ""
+
 #==============================================================================
 
 
 #Function to load the dictionary from the pickle
 def loadPickleDictionary() :
-	with open('node_dict.pkl', 'r') as pickle_in:
+	with open('/var/virtdc/com.vmplacement.framework/node_dict.pkl', 'r') as pickle_in:
             node_dictionary = pickle.load(pickle_in)
         return node_dictionary
 

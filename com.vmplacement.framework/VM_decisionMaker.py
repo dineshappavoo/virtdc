@@ -14,21 +14,20 @@ from Host_Info_Tracker import pickleAddOrUpdateDictionary, GetNodeDict
 #==============================================================================
 
 # Some descriptive variables
-# This will eventually be passed to the setup function, but we already need them
-# for doing some other stuff so we have to declare them here.
-#name                = "vmplacementandscaling"
-#version             = "0.1"
-#long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
-#url                 = "https://github.com/dineshappavoo/VMPlacementAndScaling"
+#name                = "virtdc"
+#version             = "0.1.0"
+#long_description    = """virtdc is a set of API's/tools written to create virtual machines for cloud users efficiently."""
+#url                 = "https://github.com/dineshappavoo/virtdc"
 #license             = ""
 
 #==============================================================================
+
 class NodeFinder:
 	#Function to load the dictionary from the pickle
 	#@staticmethod
 	def loadPickleDictionary(self) :
 		try :
-			with open('../com.vmplacement.framework/node_dict.pkl', 'r') as pickle_in:
+			with open('/var/virtdc/com.vmplacement.framework/node_dict.pkl', 'r') as pickle_in:
     				dictionary = pickle.load(pickle_in)
 				return dictionary
 		except:

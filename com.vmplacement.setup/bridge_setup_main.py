@@ -17,7 +17,7 @@ import pickle
 
 def loadPickleVMDictionary() :
 	try :
-		with open('/root/Desktop/VMPlacementAndScaling/com.vmplacement.framework/host_vm_dict.pkl', 'r') as pickle_in:
+		with open('/var/virtdc/com.vmplacement.framework/host_vm_dict.pkl', 'r') as pickle_in:
 			dictionary = pickle.load(pickle_in)
 			return dictionary
 	except:
@@ -26,7 +26,7 @@ def loadPickleVMDictionary() :
 
 def bridgeAutomate():
 	for node, vm_dict in host_vm_dict.iteritems():
-		cmd= 'ssh '+node+' python /root/Desktop/VMPlacementAndScaling/com.vmplacement.setup/bridge_setup.py'
+		cmd= 'ssh '+node+' python /var/virtdc/com.vmplacement.setup/bridge_setup.py'
 		#print cmd
 		uuid = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 		print 'Bridge network setup for '+node+' is completed'
