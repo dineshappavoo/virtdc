@@ -17,11 +17,13 @@ Reference : [http://unix.stackexchange.com/questions/165378/basic-steps-to-devel
 
 		main(sys.argv[1:])
 
-2. There must be an empty file in '/var/lib/virtdc/com.vmplacement.framework' where virtdc.py is located. So that virtdc.py can be imported from other files.
+2. There must be an empty file named __init__.py in '/var/lib/virtdc/com.vmplacement.framework' where virtdc.py is located. So that virtdc.py can be imported from other files.
 
 	export PATH=$/usr/bin/:$PATH
 
-Referrence sample code for importing:
+3. While do packaging dont forget to include /usr/bin/virtdc
+
+Referrence sample code for importing virtdc.py from other files:
 
     $ ls -l                                                                                          
     -rw-rw-r--  1 dotancohen dotancohen   97 Nov  1 16:52 foo.py
