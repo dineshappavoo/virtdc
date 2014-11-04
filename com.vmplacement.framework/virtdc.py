@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 from VM_submitJob import vm_submitjob
 import sys, getopt, os
@@ -31,7 +31,7 @@ def main(argv):
 	io=''
 	vmid = ''
 	fileinput=False
-	#max_memory=4194304
+	max_memory=4194304
 
 	try:
 		opts, args = getopt.getopt(argv,"t:",["f="])

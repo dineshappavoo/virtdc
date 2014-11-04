@@ -1,0 +1,22 @@
+PYTHON PACKAGING:
+
+Always use #!/usr/bin/env python
+
+
+To make virtdc as a command,
+Reference : [http://unix.stackexchange.com/questions/165378/basic-steps-to-develop-python-api-in-unix-environment]
+1. create another file in /usr/bin/virtdc. In this virtdc is the file name.
+ (Similarly this file also can be created in /usr/local/bin. This path must be appended to $PATH. In most of the cases /usr/bin or /usr/loacl/bin is already available in $PATH)
+ If /usr/bin is not available in $PATH then we have to add it.
+	File content:
+		#!/usr/bin/env python
+		import sys
+		sys.path.append('/var/lib/virtdc/com.vmplacement.framework')
+		from virtdc import main
+
+		main(sys.argv[1:])
+
+2. There must be an empty file in '/var/lib/virtdc/com.vmplacement.framework' where virtdc.py is located. So that virtdc.py can be imported from other files.
+	export PATH=$/usr/bin/:$PATH
+
+
