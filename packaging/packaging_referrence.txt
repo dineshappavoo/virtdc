@@ -12,12 +12,12 @@ Reference : [http://unix.stackexchange.com/questions/165378/basic-steps-to-devel
 	File content:
 		#!/usr/bin/env python
 		import sys
-		sys.path.append('/var/lib/virtdc/com.vmplacement.framework')
+		sys.path.append('/var/lib/virtdc/framework')
 		from virtdc import main
 
 		main(sys.argv[1:])
 
-2. There must be an empty file named __init__.py in '/var/lib/virtdc/com.vmplacement.framework' where virtdc.py is located. So that virtdc.py can be imported from other files.
+2. There must be an empty file named __init__.py in '/var/lib/virtdc/framework' where virtdc.py is located. So that virtdc.py can be imported from other files.
 
 	export PATH=$/usr/bin/:$PATH
 
