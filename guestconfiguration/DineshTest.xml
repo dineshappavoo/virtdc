@@ -1,9 +1,9 @@
 <domain type='kvm' id='2'>
   <name>DineshTest</name>
-  <uuid>bde3de4c-ced0-4393-accf-350f3f19eabc
+  <uuid>bb6e69d4-4369-4106-b132-f4e5c6d93edc
 </uuid>
   <memory unit='KiB'>4194304</memory>
-  <currentMemory unit='KiB'>5335353</currentMemory>
+  <currentMemory unit='KiB'>4194304</currentMemory>
   <vcpu placement='static' current='1'>1</vcpu>
   <resource>
     <partition>/machine</partition>

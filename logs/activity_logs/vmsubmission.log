@@ -1779,4 +1779,7 @@ Update IP::node2 :: VM_Task_23 :: Successfully updated the IP
 Run Job::node2 :: VM_Task_23 :: Successfully ran the job
 Copy Image ::node2 :: VM_Task_24 :: Successfully copied the image
 Create VM ::node2 :: VM_Task_24 :: Successfully created the VM
-Update 
+Update Copy Image ::node1 :: DineshTest :: Successfully copied the image
+Create VM ::node1 :: DineshTest :: Successfully created the VM
+Update IP::node1 :: DineshTest :: Successfully updated the IP
+Run Job::node1 :: DineshTest :: Successfully ran the job
