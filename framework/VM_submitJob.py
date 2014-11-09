@@ -4,12 +4,14 @@
 #This is the part of VM placement and scaling
 #This takes the VM guest configuration file from the local disk and create a new VM in current node or in a different one
 
-import sys, getopt, subprocess, time
+import sys, getopt, subprocess, time, os
 from VM_decisionMaker import NodeFinder
 from VM_Framework_Utility import getGuestIP
 from VM_Info_Updater import addOrUpdateDictionaryOfVM
 from Guest import Guest
 from VM_RunJob import runJobOnVM
+sys.path.append('/var/lib/virtdc/mail')
+from vm_mail import send_support_mail
 
 #==============================================================================
 # Variables
@@ -43,6 +45,8 @@ _base_memory_size=2097152       # 2 GB (This includes OS memory)
 vmsubmission_log = open('/var/lib/virtdc/logs/activity_logs/vmsubmission.log', 'a+')
 
 def vm_submitjob(vmid,cpu,memory, max_memory, io):
+
+    try :
 	obj=NodeFinder()
 	#memory=float(_base_memory_size) + float(memory)
 	#print "Memory "+str(memory)
@@ -138,6 +142,20 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
 	vmsubmission_log.write('Run Job::'+host+' :: '+vmid+' :: Successfully ran the job\n')
 
 	return True
+
+    except Exception, e:
+        print 'Cannot create VM '+str(vmid)
+
+	#exc_type, exc_obj, exc_tb = sys.exc_info()
+    	#fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+    	#print exc_type, fname, exc_tb.tb_lineno
+
+        vmsubmission_log.write(str(time.time())+' :: Create Guest :: '+vmid+' :: Cannot create the guest\n')
+        vmsubmission_log.write(str(e) + '\n')
+ 	mail_subject = 'Guest creation error - '+str(vmid)
+	mail_content = 'Error occured during guest creation '+vmid+' . The error as follows, \n\n'+str(e)+'\n'
+	send_support_mail(mail_subject, mail_content.strip())
+        return False
 
 def main(argv):
 	cpu= ''

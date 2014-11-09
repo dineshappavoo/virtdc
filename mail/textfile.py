@@ -1,1 +1,4 @@
-This is test mail from virtdc application support. VM health will be reported through email
+Error occured during guest creation DineshTest1 . The error as follows, 
+
+invalid literal for float(): 419cv4304
+

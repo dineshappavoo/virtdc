@@ -1783,3 +1783,45 @@ Update Copy Image ::node1 :: DineshTest :: Successfully copied the image
 Create VM ::node1 :: DineshTest :: Successfully created the VM
 Update IP::node1 :: DineshTest :: Successfully updated the IP
 Run Job::node1 :: DineshTest :: Successfully ran the job
+1415499688.66 :: Create Guest :: DineshTest :: Cannot create the guest
+1415499759.66 :: Create Guest :: DineshTest1 :: Cannot create the guest
+1415499997.42 :: Create Guest :: DineshTest1 :: Cannot create the guest
+1415500034.49 :: Create Guest :: DineshTest1 :: Cannot create the guest
+1415500204.71 :: Create Guest :: DineshTest1 :: Cannot create the guest
+invalid literal for float(): 419cv4304
+1415500225.88 :: Create Guest :: DineshTest1 :: Cannot create the guest
+invalid literal for float(): 419cv4304
+1415500330.35 :: Create Guest :: DineshTest1 :: Cannot create the guest
+invalid literal for float(): 419cv4304
+1415500403.81 :: Create Guest :: DineshTest1 :: Cannot create the guest
+invalid literal for float(): 419cv4304
+1415500426.72 :: Create Guest :: DineshTest1 :: Cannot create the guest
+invalid literal for float(): 419cv4304
+1415500615.87 :: Create Guest :: DineshTest1 :: Cannot create the guest
+invalid literal for float(): 419cv4304
+1415500648.96 :: Create Guest :: DineshTest1 :: Cannot create the guest
+invalid literal for float(): 419cv4304
+1415500700.7 :: Create Guest :: DineshTest1 :: Cannot create the guest
+invalid literal for float(): 419cv4304
+1415500725.77 :: Create Guest :: DineshTest1 :: Cannot create the guest
+invalid literal for float(): 419cv4304
+1415500748.93 :: Create Guest :: DineshTest1 :: Cannot create the guest
+invalid literal for float(): 419cv4304
+1415500991.28 :: Create Guest :: DineshTest1 :: Cannot create the guest
+invalid literal for float(): 419cv4304
+1415501149.69 :: Create Guest :: DineshTest1 :: Cannot create the guest
+invalid literal for float(): 419cv4304
+1415501216.9 :: Create Guest :: DineshTest1 :: Cannot create the guest
+invalid literal for float(): 419cv4304
+1415501230.14 :: Create Guest :: DineshTest1 :: Cannot create the guest
+invalid literal for float(): 419cv4304
+1415501460.67 :: Create Guest :: DineshTest1 :: Cannot create the guest
+invalid literal for float(): 419cv4304
+1415501475.86 :: Create Guest :: DineshTest1 :: Cannot create the guest
+invalid literal for float(): 419cv4304
+1415501496.47 :: Create Guest :: DineshTest1 :: Cannot create the guest
+invalid literal for float(): 419cv4304
+1415501538.35 :: Create Guest :: DineshTest1 :: Cannot create the guest
+invalid literal for float(): 419cv4304
+1415501969.53 :: Create Guest :: DineshTest1 :: Cannot create the guest
+invalid literal for float(): 419cv4304

@@ -1,0 +1,41 @@
+#!/usr/bin/env python
+import argparse
+import sys
+import subparsers
+#API - virtdc command line tool
+
+#==============================================================================
+# Variables
+#==============================================================================
+# Some descriptive variables
+#name                = "virtdc"
+#version             = "0.1.0"
+#long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
+#url                 = "https://github.com/dineshappavoo/virtdc"
+#license             = ""
+
+#==============================================================================
+
+
+def main(argv):
+	
+	parent_parser = argparse.ArgumentParser(description="an api for data center")
+	
+	parent_parser.add_argument('create', help='create new domain from the base image')
+
+	#subparsers = parent_parser.add_subparsers(help='Grouped command')
+
+	args = parent_parser.parse_args()
+
+	create_parser = subparsers.add_parser('vmid', parents=[parent_parser], help='get the vmid')
+	#create_args = create_parser.parse_args()
+	#if create_args.vmid:
+	print "You asked for installation"+str(create_args.vmid)
+
+	#create_parser.add_argument('create', help='create new domain from the base image')
+
+	
+
+
+if __name__ == "__main__":
+	main(sys.argv[1:])
