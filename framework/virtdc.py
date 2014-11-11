@@ -1,16 +1,19 @@
 #!/usr/bin/env python
-
+import argparse
+import sys
 from VM_submitJob import vm_submitjob
-import sys, getopt, os
+from VM_terminateGuest import vm_terminate_guest
+from virtdc_command_line_utility import get_host_name, list_host_and_domain
+
+#API - virtdc command line tool
 
 #==============================================================================
 # Variables
 #==============================================================================
-
 # Some descriptive variables
 #name                = "virtdc"
 #version             = "0.1.0"
-#long_description    = """virtdc is a set of API's/tools written to create virtual machines for cloud users efficiently."""
+#long_description    = """vmplacementandscaling is a set of API's/tools written to create virtual machines for cloud users efficiently."""
 #url                 = "https://github.com/dineshappavoo/virtdc"
 #license             = ""
 
@@ -25,58 +28,122 @@ def create_vm(vmid, cpu, memory, max_memory, io):
     return vm_placement_status
 
 def main(argv):
-	filepath=''
-	cpu= ''
-	memory = ''
-	io=''
-	vmid = ''
-	fileinput=False
-	max_memory=4194304
-
-	try:
-		opts, args = getopt.getopt(argv,"t:",["f="])
-		fileinput=True
-	except getopt.GetoptError:
-		#print 'VM_submitjob.py --vmid <VMID> --cpu <CPU> --mem <MEMORY> --io <IO>'
-		try:
-			opts, args = getopt.getopt(argv,"vmid:cpu:mem:io:",["vmid=","cpu=","mem=","io="])
-		except getopt.GetoptError:
-            		print 'usage : '
-			print 'virtdc --vmid <VMID> --cpu <CPU> --mem <MEMORY> --io <IO>\n'
-			print 'virtdc --f <csvfilename>\n'
-			sys.exit(2)
 	
-	for opt, arg in opts:
-		if opt == '--h':
-			print 'virtdc.py --vmid <VMID> --cpu <CPU> --mem <MEMORY> --io <IO>'
-			sys.exit()
-		if fileinput:
-			if opt in ("--f", "-f"):
-				csv=arg
-		else:		
-			if opt in ("--cpu", "-cpu"):
-				cpu = arg
-			elif opt in ("--mem", "-mem"):
-				memory = arg
-			elif opt in ("--io", "-io"):
-				io = arg
-			elif opt in ("--vmid", "-vmid"):
-				vmid = arg			
-	if fileinput:
-		a=0
-		# parse_cmd="python parse.py -T 26 -t "+csv
-		# pass csv file as iput parser.py
-		# os.system(parse_cmd)
-        	#task_file = open('VM_Task_26.csv', 'r')
-        	#print csv
-        	return False
-	else :
-		print vmid
-		print cpu
-		print memory
-		print io
-        	#vm_placement_status = vm_submitjob(vmid,cpu,memory,io)
-        	status = create_vm(vmid, cpu, memory, max_memory, io)
+	parser = argparse.ArgumentParser(description="an api for data centers", version='virtdc 0.1.0')
+	
+	subparsers = parser.add_subparsers(help='Grouped command', dest='subparser_name')
+
+	create_parser = subparsers.add_parser('create',help='create new domain from the base image')
+	create_parser.add_argument('vmid', action = 'store', help ='get the vmid')
+	create_parser.add_argument('cpu', action = 'store', help ='get the cpu')
+	create_parser.add_argument('memory', action = 'store', help ='get memory in KiB')
+	create_parser.add_argument('maxmemory', action = 'store', help ='get maximum memory in KiB')
+	create_parser.add_argument('io', action = 'store', help ='get the io in KiB')
+
+	terminate_parser = subparsers.add_parser('terminate',help='terminate running domain')
+	terminate_parser.add_argument('vmid', action = 'store', help ='get the vmid')
+
+	list_parser = subparsers.add_parser('list',help='list running domain')
+	list_parser.add_argument('hostname', action = 'store', help ='get the host')
+
+	dominfo_parser = subparsers.add_parser('dominfo',help='domain information')
+	dominfo_parser.add_argument('vmid', action = 'store', help ='get the domain id')
+
+	hostinfo_parser = subparsers.add_parser('hostinfo',help='host information')
+	hostinfo_parser.add_argument('hostname', action = 'store', help ='get the host')
+
+	forcemigrate_parser = subparsers.add_parser('force-migrate',help='migrate domain from source host to dest host')
+	forcemigrate_parser.add_argument('vmid', action = 'store', help ='get the domain')
+	forcemigrate_parser.add_argument('source-host', action = 'store', help ='get the source host')
+	forcemigrate_parser.add_argument('dest-host', action = 'store', help ='get the dest host')
+
+	removehost_parser = subparsers.add_parser('removehost',help='remove host')
+	removehost_parser.add_argument('hostname', action = 'store', help ='get the host')
+
+	loadbalance_parser = subparsers.add_parser('loadbalance',help='loadbalance host')
+	loadbalance_parser.add_argument('hostname', action = 'store', help ='get the host')
+
+	consolidate_parser = subparsers.add_parser('consolidate',help='consolidate host')
+	removehost_parser.add_argument('hostname', action = 'store', help ='get the host')
+
+	addhost_parser = subparsers.add_parser('addhost',help='add new host')
+	addhost_parser.add_argument('hostname', action = 'store', help ='get the host')
+	addhost_parser.add_argument('cpu', action = 'store', help ='get the cpu')
+	addhost_parser.add_argument('memory', action = 'store', help ='get memory in KiB')
+	addhost_parser.add_argument('io', action = 'store', help ='get the io in KiB')	
+
+	getip_parser = subparsers.add_parser('getip',help='get domain ip')
+	getip_parser.add_argument('vmid', action = 'store', help ='get the domain id')
+
+	#mail api configuration
+	setsmtpserver_parser = subparsers.add_parser('setsmtpserver',help='set smtp server')
+	setsmtpserver_parser.add_argument('serverip', action = 'store', help ='get the server ip')
+
+	setfrommailaddress_parser = subparsers.add_parser('setfrommailaddress',help='set from mailaddress')
+	setfrommailaddress_parser.add_argument('mailid', action = 'store', help ='get the from mail address')
+
+	addsupportmail_parser = subparsers.add_parser('addsupportmail',help='add support mail address')
+	addsupportmail_parser.add_argument('mailid', action = 'store', help ='get the mail address')
+
+
+	args = parser.parse_args()
+
+	if args.subparser_name == 'create':
+		print 'Call create vm_submit job'
+		vmid =args.vmid
+		cpu = args.cpu
+		memory = args.memory
+		max_memory = args.maxmemory
+		io = args.io
+		create_vm(vmid, cpu, memory, max_memory, io)
+		
+	elif args.subparser_name == 'terminate':
+		print 'Call vm_terminate job'
+		vmid = args.vmid
+		host_name = get_host_name(vmid)
+		print 'Host Name : '+str(host_name)
+		vm_termination = vm_terminate_guest(host_name, vmid)
+		if vm_terminate is False:
+			print 'The requested domain '+str(vmid) +' cannot be terminated'
+		else:
+			print 'The requested domain '+str(vmid) +' terminated successfully'
+		
+	elif args.subparser_name == 'list':
+		#print 'Call vm_list'
+		list_host_and_domain()
+	elif args.subparser_name == 'dominfo':
+		print 'Call vm_dominfo'
+	elif args.subparser_name == 'hostinfo':
+		print 'Call vm_hostinfo'
+	elif args.subparser_name == 'force-migrate':
+		print 'Call vm_migrate'
+	elif args.subparser_name == 'removehost':
+		print 'Call host_removehost'
+	elif args.subparser_name == 'loadbalance':
+		print 'Call vm_loadbalance'
+	elif args.subparser_name == 'consolidate':
+		print 'Call vm_consolidate'
+	elif args.subparser_name == 'addhost':
+		print 'Call vm_addhost'
+	elif args.subparser_name == 'list':
+		print 'Call vm_list'
+	elif args.subparser_name == 'list':
+		print 'Call vm_list'
+	elif args.subparser_name == 'list':
+		print 'Call vm_list'
+	elif args.subparser_name == 'list':
+		print 'Call vm_list'
+	elif args.subparser_name == 'list':
+		print 'Call vm_list'
+	elif args.subparser_name == 'list':
+		print 'Call vm_list'
+
+
+	#print args
+	#print parser.parse_args(['terminate','Dinesh'])
+	#print parser.parse_args(['create','Dinesh','1','64434','53445'])
+	
+
 
 if __name__ == "__main__":
 	main(sys.argv[1:])

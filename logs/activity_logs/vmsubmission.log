@@ -1825,3 +1825,14 @@ invalid literal for float(): 419cv4304
 invalid literal for float(): 419cv4304
 1415501969.53 :: Create Guest :: DineshTest1 :: Cannot create the guest
 invalid literal for float(): 419cv4304
+Copy Image ::node1 :: Dinesh :: Successfully copied the image
+1415580989.58 :: Create Guest :: Dinesh :: Cannot create the guest
+Command 'virsh create /var/lib/virtdc/guestconfiguration/Dinesh.xml' returned non-zero exit status 1
+Copy Image ::node1 :: Dinesh1 :: Successfully copied the image
+1415581090.89 :: Create Guest :: Dinesh1 :: Cannot create the guest
+Command 'virsh create /var/lib/virtdc/guestconfiguration/Dinesh1.xml' returned non-zero exit status 1
+Copy Image ::node1 :: Dinesh :: Successfully copied the image
+Create VM ::node1 :: Dinesh :: Successfully created the VM
+Update IP::node1 :: Dinesh :: Successfully updated the IP
+1415581251.38 :: Create Guest :: Dinesh :: Cannot create the guest
+cannot concatenate 'str' and 'NoneType' objects
