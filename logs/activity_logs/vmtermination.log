@@ -36712,4 +36712,27 @@ Terminate Guest ::node2 :: VM_Task_24 :: Cannot terminate the guest
 Terminate Guest ::node2 :: VM_Task_25 :: Cannot terminate the guest
 Terminate Guest ::node2 :: VM_Task_26 :: Cannot terminate the guest
 Terminate Guest ::node2 :: VM_Task_27 :: Cannot terminate the guest
-Terminate Guest ::nod
+Terminate Guest ::nodTerminate Guest ::node2 :: VM_Task_22 :: Successfully terminated the guest
+Terminate Guest ::node2 :: VM_Task_23 :: Successfully terminated the guest
+Terminate Guest ::node2 :: VM_Task_24 :: Successfully terminated the guest
+Terminate Guest ::node2 :: VM_Task_25 :: Successfully terminated the guest
+Terminate Guest ::node2 :: VM_Task_26 :: Successfully terminated the guest
+Terminate Guest ::node2 :: VM_Task_27 :: Successfully terminated the guest
+Terminate Guest ::node2 :: VM_Task_28 :: Successfully terminated the guest
+Terminate Guest ::node4 :: VM_Task_29 :: Successfully terminated the guest
+Terminate Guest ::node4 :: VM_Task_30 :: Successfully terminated the guest
+Terminate Guest ::node4 :: VM_Task_31 :: Successfully terminated the guest
+Terminate Guest ::node4 :: VM_Task_32 :: Successfully terminated the guest
+Terminate Guest ::node4 :: VM_Task_33 :: Successfully terminated the guest
+Terminate Guest ::node4 :: VM_Task_34 :: Successfully terminated the guest
+Terminate Guest ::node4 :: VM_Task_3 :: Successfully terminated the guest
+Terminate Guest ::node1 :: VM_Task_35 :: Cannot terminate the guest
+Terminate Guest ::node2 :: VM_Task_15 :: Successfully terminated the guest
+Terminate Guest ::node3 :: VM_Task_16 :: Successfully terminated the guest
+Terminate Guest ::node3 :: VM_Task_17 :: Successfully terminated the guest
+Terminate Guest ::node3 :: VM_Task_18 :: Successfully terminated the guest
+Terminate Guest ::node3 :: VM_Task_19 :: Successfully terminated the guest
+Terminate Guest ::node3 :: VM_Task_20 :: Successfully terminated the guest
+Terminate Guest ::node3 :: VM_Task_21 :: Successfully terminated the guest
+Terminate Guest ::node3 :: VM_Task_2 :: Successfully terminated the guest
+Terminate Guest ::node2 :: VM_Task_37 :: Successfully terminated the guest

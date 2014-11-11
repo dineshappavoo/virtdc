@@ -10,3 +10,12 @@ Terminate Guest ::node1 :: VM_Task_1 :: Successfully migrated the guest
 Migrate Guest ::node1 :: VM_Task_1 :: Cannot migrate the guest
 
 
+Terminate Guest ::node1 :: VM_Task_15 :: Successfully migrated the guest
+Terminate Guest ::node2 :: VM_Task_15 :: Successfully migrated the guest
+Terminate Guest ::node1 :: VM_Task_15 :: Successfully migrated the guest
+Terminate Guest ::node2 :: VM_Task_15 :: Successfully migrated the guest
+Terminate Guest ::node1 :: VM_Task_15 :: Successfully migrated the guest
+Terminate Guest ::node2 :: VM_Task_15 :: Successfully migrated the guest
+Terminate Guest ::node1 :: VM_Task_15 :: Successfully migrated the guest
+Terminate Guest ::node2 :: VM_Task_15 :: Successfully migrated the guest
+Terminate Guest ::node1 :: VM_Task_15 :: Successfully migrated the guest

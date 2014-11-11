@@ -2,8 +2,8 @@
 import argparse
 import sys
 from VM_submitJob import vm_submitjob
-from VM_terminateGuest import vm_terminate_guest
-from virtdc_command_line_utility import get_host_name, list_host_and_domain
+#from VM_terminateGuest import vm_terminate_guest
+from virtdc_command_line_utility import get_host_name, list_host_and_domain, show_domain_info, show_host_info, force_migrate, terminate_guest
 
 #API - virtdc command line tool
 
@@ -44,7 +44,7 @@ def main(argv):
 	terminate_parser.add_argument('vmid', action = 'store', help ='get the vmid')
 
 	list_parser = subparsers.add_parser('list',help='list running domain')
-	list_parser.add_argument('hostname', action = 'store', help ='get the host')
+	#list_parser.add_argument('hostname', action = 'store', help ='get the host')
 
 	dominfo_parser = subparsers.add_parser('dominfo',help='domain information')
 	dominfo_parser.add_argument('vmid', action = 'store', help ='get the domain id')
@@ -54,8 +54,8 @@ def main(argv):
 
 	forcemigrate_parser = subparsers.add_parser('force-migrate',help='migrate domain from source host to dest host')
 	forcemigrate_parser.add_argument('vmid', action = 'store', help ='get the domain')
-	forcemigrate_parser.add_argument('source-host', action = 'store', help ='get the source host')
-	forcemigrate_parser.add_argument('dest-host', action = 'store', help ='get the dest host')
+	forcemigrate_parser.add_argument('sourcehost', action = 'store', help ='get the source host')
+	forcemigrate_parser.add_argument('desthost', action = 'store', help ='get the dest host')
 
 	removehost_parser = subparsers.add_parser('removehost',help='remove host')
 	removehost_parser.add_argument('hostname', action = 'store', help ='get the host')
@@ -89,7 +89,7 @@ def main(argv):
 	args = parser.parse_args()
 
 	if args.subparser_name == 'create':
-		print 'Call create vm_submit job'
+		#print 'Call create vm_submit job'
 		vmid =args.vmid
 		cpu = args.cpu
 		memory = args.memory
@@ -98,25 +98,38 @@ def main(argv):
 		create_vm(vmid, cpu, memory, max_memory, io)
 		
 	elif args.subparser_name == 'terminate':
-		print 'Call vm_terminate job'
+		#print 'Call vm_terminate job'
 		vmid = args.vmid
 		host_name = get_host_name(vmid)
-		print 'Host Name : '+str(host_name)
-		vm_termination = vm_terminate_guest(host_name, vmid)
-		if vm_terminate is False:
+		if host_name == None:
 			print 'The requested domain '+str(vmid) +' cannot be terminated'
 		else:
-			print 'The requested domain '+str(vmid) +' terminated successfully'
+			print 'Host Name : '+str(host_name)
+			vm_termination = terminate_guest(host_name, vmid)
+			if vm_termination is False:
+				print 'The requested domain '+str(vmid) +' cannot be terminated'
+			else:
+				print 'The requested domain '+str(vmid) +' terminated successfully'
 		
 	elif args.subparser_name == 'list':
 		#print 'Call vm_list'
 		list_host_and_domain()
 	elif args.subparser_name == 'dominfo':
-		print 'Call vm_dominfo'
+		#print 'Call vm_dominfo'
+		vmid = args.vmid
+		show_domain_info(vmid)
 	elif args.subparser_name == 'hostinfo':
-		print 'Call vm_hostinfo'
+		#print 'Call vm_hostinfo'
+		host_name = args.hostname
+		show_host_info(host_name)
+	# Python argparse Namespace of '-' will be converted to '_'
 	elif args.subparser_name == 'force-migrate':
-		print 'Call vm_migrate'
+		#print 'Call vm_migrate'
+		#print args
+		vmid = args.vmid
+		source_host = args.sourcehost
+		dest_host = args.desthost
+		force_migrate(vmid, source_host, dest_host)
 	elif args.subparser_name == 'removehost':
 		print 'Call host_removehost'
 	elif args.subparser_name == 'loadbalance':

@@ -1,6 +1,6 @@
 <domain type='kvm' id='2'>
   <name>VM_Task_1</name>
-  <uuid>535367ef-96bd-4ae2-b75d-72f49db2085b
+  <uuid>7cb80edb-f7fe-4b7c-9a61-84fe774911cc
 </uuid>
   <memory unit='KiB'>2157152</memory>
   <currentMemory unit='KiB'>2102152</currentMemory>

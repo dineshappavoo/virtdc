@@ -1,6 +1,8 @@
 #!/usr/bin/python
 
 import sys, subprocess
+from Host_Info_Tracker import resume_resources_from_guest
+from VM_Info_Updater import addOrUpdateDictionaryOfVM, getHostVMDict
 #API to migrate the running guest from source host to the destination host
 
 #==============================================================================
@@ -40,9 +42,10 @@ def vm_migrate_guest(source_host, dest_host, vmid):
 	migration_cmd=migration_cmd.replace("vm_id", vmid.strip());
 	migration_cmd=migration_cmd.replace("source_host", source_host.strip());
 	migration_cmd=migration_cmd.replace("dest_host", dest_host.strip());
-	print migration_cmd
+	#print migration_cmd
 	subprocess.check_output(migration_cmd, shell=True, stderr=subprocess.PIPE)
 
+	vm_migrate_dependency(source_host,dest_host,vmid)
         vmmigration_log.write('Terminate Guest ::'+source_host+' :: '+vmid+' :: Successfully migrated the guest\n')
         return True
     except Exception, e:
@@ -52,11 +55,16 @@ def vm_migrate_guest(source_host, dest_host, vmid):
         return False
 
 
-def vm_migrate_dependency(host, vmid):
+def vm_migrate_dependency(source_host,dest_host,vmid):
+    #Remove entry from host_vm_dict.pkl for the source_host
+    #Add Entry to the dest_host in node_dict.pkl
+    #Remove the configuration XML
+    host_vm_dict = getHostVMDict()
+    guest = host_vm_dict[source_host][vmid]
+    addOrUpdateDictionaryOfVM(source_host, vmid, None)
+    resume_resources_from_guest(source_host, vmid, guest)
+    addOrUpdateDictionaryOfVM(dest_host, vmid, guest)
 
-    #change entry from host_vm_dict.pkl
-
-    a=0
 
 
 #For Testing
