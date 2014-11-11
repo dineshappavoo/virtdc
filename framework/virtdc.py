@@ -138,6 +138,9 @@ def main(argv):
 		print 'Call vm_consolidate'
 	elif args.subparser_name == 'addhost':
 		print 'Call vm_addhost'
+		#Add entry to nodeinfo XML and then run Host_Info_Tracker.py
+		#So from next new domain creation will consider this space
+		
 	elif args.subparser_name == 'list':
 		print 'Call vm_list'
 	elif args.subparser_name == 'list':
