@@ -1968,4 +1968,108 @@ Update IP::node2 :: VM_Task_23 :: Successfully updated the IP
 Run Job::node2 :: VM_Task_23 :: Successfully ran the job
 Copy Image ::node2 :: VM_Task_24 :: Successfully copied the image
 Create VM ::node2 :: VM_Task_24 :: Successfully created the VM
-Update 
+Update IP::node2 :: VM_Task_24 :: Successfully updated the IP
+Run Job::node2 :: VM_Task_24 :: Successfully ran the job
+Copy Image ::node2 :: VM_Task_25 :: Successfully copied the image
+Create VM ::node2 :: VM_Task_25 :: Successfully created the VM
+Update IP::node2 :: VM_Task_25 :: Successfully updated the IP
+Run Job::node2 :: VM_Task_25 :: Successfully ran the job
+Copy Image ::node2 :: VM_Task_26 :: Successfully copied the image
+Create VM ::node2 :: VM_Task_26 :: Successfully created the VM
+Update IP::node2 :: VM_Task_26 :: Successfully updated the IP
+Run Job::node2 :: VM_Task_26 :: Successfully ran the job
+Copy Image ::node2 :: VM_Task_27 :: Successfully copied the image
+Create VM ::node2 :: VM_Task_27 :: Successfully created the VM
+Update IP::node2 :: VM_Task_27 :: Successfully updated the IP
+Run Job::node2 :: VM_Task_27 :: Successfully ran the job
+Copy Image ::node2 :: VM_Task_28 :: Successfully copied the image
+Create VM ::node2 :: VM_Task_28 :: Successfully created the VM
+Update IP::node2 :: VM_Task_28 :: Successfully updated the IP
+Run Job::node2 :: VM_Task_28 :: Successfully ran the job
+Copy Image ::node4 :: VM_Task_29 :: Successfully copied the image
+Create VM ::node4 :: VM_Task_29 :: Successfully created the VM
+Update IP::node4 :: VM_Task_29 :: Successfully updated the IP
+Run Job::node4 :: VM_Task_29 :: Successfully ran the job
+Copy Image ::node4 :: VM_Task_3 :: Successfully copied the image
+Create VM ::node4 :: VM_Task_3 :: Successfully created the VM
+Update IP::node4 :: VM_Task_3 :: Successfully updated the IP
+Run Job::node4 :: VM_Task_3 :: Successfully ran the job
+Copy Image ::node4 :: VM_Task_30 :: Successfully copied the image
+Create VM ::node4 :: VM_Task_30 :: Successfully created the VM
+Update IP::node4 :: VM_Task_30 :: Successfully updated the IP
+Run Job::node4 :: VM_Task_30 :: Successfully ran the job
+Copy Image ::node4 :: VM_Task_31 :: Successfully copied the image
+Create VM ::node4 :: VM_Task_31 :: Successfully created the VM
+Update IP::node4 :: VM_Task_31 :: Successfully updated the IP
+Run Job::node4 :: VM_Task_31 :: Successfully ran the job
+Copy Image ::node4 :: VM_Task_32 :: Successfully copied the image
+Create VM ::node4 :: VM_Task_32 :: Successfully created the VM
+Update IP::node4 :: VM_Task_32 :: Successfully updated the IP
+Run Job::node4 :: VM_Task_32 :: Successfully ran the job
+Copy Image ::node4 :: VM_Task_33 :: Successfully copied the image
+Create VM ::node4 :: VM_Task_33 :: Successfully created the VM
+Update IP::node4 :: VM_Task_33 :: Successfully updated the IP
+Run Job::node4 :: VM_Task_33 :: Successfully ran the job
+Copy Image ::node4 :: VM_Task_34 :: Successfully copied the image
+Create VM ::node4 :: VM_Task_34 :: Successfully created the VM
+Update IP::node4 :: VM_Task_34 :: Successfully updated the IP
+Run Job::node4 :: VM_Task_34 :: Successfully ran the job
+Copy Image ::node4 :: VM_Task_35 :: Successfully copied the image
+Create VM ::node4 :: VM_Task_35 :: Successfully created the VM
+Update IP::node4 :: VM_Task_35 :: Successfully updated the IP
+Run Job::node4 :: VM_Task_35 :: Successfully ran the job
+Copy Image ::node1 :: VM_Task_36 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_36 :: Successfully created the VM
+1415757314.34 :: Create Guest :: VM_Task_36 :: Cannot create the guest
+Timeout exceeded in read_nonblocking().
+<pexpect.spawn object at 0x7f2061423750>
+version: 2.3 ($Revision: 399 $)
+command: /usr/bin/ssh
+args: ['/usr/bin/ssh', 'node1']
+searcher: searcher_re:
+    0: re.compile("(\d+\.\d+\.\d+\.\d+)")
+buffer (last 100 chars): ifconfig | grep 192.168.1. | awk '{print $2}'
+[root@node1-guest ~]# 
+before (last 100 chars): ifconfig | grep 192.168.1. | awk '{print $2}'
+[root@node1-guest ~]# 
+after: <class 'pexpect.TIMEOUT'>
+match: None
+match_index: None
+exitstatus: None
+flag_eof: False
+pid: 4914
+child_fd: 3
+closed: False
+timeout: 30
+delimiter: <class 'pexpect.EOF'>
+logfile: None
+logfile_read: None
+logfile_send: None
+maxread: 2000
+ignorecase: False
+searchwindowsize: None
+delaybeforesend: 0.05
+delayafterclose: 0.1
+delayafterterminate: 0.1
+Copy Image ::node1 :: VM_Task_1 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_1 :: Successfully created the VM
+Update IP::node1 :: VM_Task_1 :: Successfully updated the IP
+Run Job::node1 :: VM_Task_1 :: Successfully ran the job
+Copy Image ::node1 :: VM_Task_10 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_10 :: Successfully created the VM
+Update IP::node1 :: VM_Task_10 :: Successfully updated the IP
+Run Job::node1 :: VM_Task_10 :: Successfully ran the job
+Copy Image ::node1 :: VM_Task_11 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_11 :: Successfully created the VM
+Update IP::node1 :: VM_Task_11 :: Successfully updated the IP
+Run Job::node1 :: VM_Task_11 :: Successfully ran the job
+Copy Image ::node1 :: VM_Task_12 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_12 :: Successfully created the VM
+Update IP::node1 :: VM_Task_12 :: Successfully updated the IP
+Run Job::node1 :: VM_Task_12 :: Successfully ran the job
+Copy Image ::node1 :: VM_Task_13 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_13 :: Successfully created the VM
+Update IP::node1 :: VM_Task_13 :: Successfully updated the IP
+Run Job::node1 :: VM_Task_13 :: Successfully ran the job
+Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_14 :: Successfully created the VM

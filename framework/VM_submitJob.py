@@ -100,11 +100,11 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
 	copy_image = subprocess.check_output(cp_cmd, shell=True, stderr=subprocess.PIPE)
 	vmsubmission_log.write('Copy Image ::'+host+' :: '+vmid+' :: Successfully copied the image\n')		
 
-	uuid = subprocess.check_output("uuidgen", shell=True, stderr=subprocess.PIPE)
+	#uuid = subprocess.check_output("uuidgen", shell=True, stderr=subprocess.PIPE)
 
 	#config update based on the new VM requiement  	#image_path	max_memory	current_memory	current_cpu	max_cpu
 	xmlstring=xmlstring.replace("vm_name", vmid);
-	xmlstring=xmlstring.replace("vm_uuid", uuid);
+	#xmlstring=xmlstring.replace("vm_uuid", uuid);
 	xmlstring=xmlstring.replace("max_memory", str(int(max_memory)));
 	xmlstring=xmlstring.replace("current_memory", str(int(memory)));
 	xmlstring=xmlstring.replace("current_cpu", "1");
