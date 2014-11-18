@@ -31,6 +31,7 @@ parser.add_option("-T", "--task-index", dest="task_index", help="task usage sour
 
 # group by task_index
 
+
 all_tasks = {}
 
 with open(options.task, 'rb') as csvfile:
@@ -42,7 +43,9 @@ with open(options.task, 'rb') as csvfile:
 		cpu_rate = row[5]
 		memory = round(float(row[6]), 2) * 500000   # in Kb
 		io_usage = round(float(row[11]), 4)
-		data = ((int(end_time) - int(start_time)) / 1000000, round(float(cpu_rate), 2), memory, io_usage)
+		data = ((int(end_time) - int(start_time)) / 1000000, round(float(cpu_rate) * 8, 2), memory, io_usage)
+		if(data[1] < 0.1):
+			continue
 		if(task_index not in all_tasks):
 			all_tasks[task_index] = [data]
 		else:
