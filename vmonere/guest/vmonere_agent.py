@@ -30,7 +30,7 @@ from vmonere_utility import get_cpu_usage, get_os_mem_usage, get_task_mem_usage,
 #-------------------------------------------------------------------------------
 
 #This file must be placed in the guest
-host_config_path = '''/var/lib/virtdc/vmonere/guest/host_config.txt'''
+host_config_path = '''/var/lib/virtdc/guest/host_config.txt'''
 
 def vmonere_agent():
 	a=0
@@ -75,8 +75,8 @@ def report_usage_to_host(host_ip, vmid):
 
 	usage = '\''+str(vmid.strip())+' | '+str(cpu_usage)+' | '+str(os_mem_usage)+' | '+str(task_mem_usage)+' | '+str(io_usage)+'\''
 	#usage = "'cpu |sdbfsj |sdfsdhf |sdfvsdvfgdfvj'"
-	#cmd = 'python /var/lib/virtdc/com.vmplacement.vmonere/host/vmonere_listener.py '+usage
-	cmd = 'ssh -q -o StrictHostKeyChecking=no root@host_ip \"python /var/lib/virtdc/com.vmplacement.vmonere/host/vmonere_listener.py '+usage+'\"'
+	#cmd = 'python /var/lib/virtdc/vmonere/host/vmonere_listener.py '+usage
+	cmd = 'ssh -q -o StrictHostKeyChecking=no root@host_ip \"python /var/lib/virtdc/vmonere/host/vmonere_listener.py '+usage+'\"'
 	cmd = cmd.replace("host_ip",str(host_ip).strip())
 
 	#cmd_res = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)

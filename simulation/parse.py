@@ -34,6 +34,12 @@ parser.add_option("-T", "--task-index", dest="task_index", help="task usage sour
 
 all_tasks = {}
 
+def convertFloat(data, digit):
+	if(len(data) == 0):
+		return round(float(0), digit)
+	else:
+		return round(float(data), digit)
+
 with open(options.task, 'rb') as csvfile:
 	task_reader = csv.reader(csvfile, delimiter=',')
 	for row in task_reader:
@@ -41,8 +47,8 @@ with open(options.task, 'rb') as csvfile:
 		start_time = row[0]
 		end_time = row[1]
 		cpu_rate = row[5]
-		memory = round(float(row[6]), 2) * 500000   # in Kb
-		io_usage = round(float(row[11]), 4)
+		memory = convertFloat(row[6], 2) * 500000   # in Kb
+		io_usage = convertFloat(row[11], 4)
 		data = ((int(end_time) - int(start_time)) / 1000000, round(float(cpu_rate) * 8, 2), memory, io_usage)
 		if(data[1] < 0.1):
 			continue
