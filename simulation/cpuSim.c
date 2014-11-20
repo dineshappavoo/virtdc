@@ -12,7 +12,8 @@
 
 int main(int argc, char *argv[]){
 	
-	int interval=300; //sec
+	//int interval=300; //sec
+	int interval=atoi(argv[2]); //sec
 	float input=atof(argv[1]);
 	int cores=(int)input+1;
 	float cpuUsage=input/cores;
