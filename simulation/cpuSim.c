@@ -49,7 +49,7 @@ int main(int argc, char *argv[]){
 
 				end=clock();
 				time=(double)(end-start)/(CLOCKS_PER_SEC);
-				// printf("core: %d process ID: %d usage: %.2f calc time: %.2f\n", cores, myId, cpuUsage, time);
+				printf("core: %d process ID: %d usage: %.2f calc time: %.2f\n", cores, myId, cpuUsage, time);
 
 				usleep(sleepTime);
 				elapsedTime++;
