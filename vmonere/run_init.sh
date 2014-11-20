@@ -1,5 +1,6 @@
-while [ ! -e /var/lib/virtdc/guest ]
+while [ ! -e /var/lib/virtdc/vmonere/guest ]
 do
 	sleep 10
 done
-echo 'run'
+
+/var/lib/virtdc/vmonere/guest/vmonere_agent.py &

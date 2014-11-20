@@ -1,5 +1,5 @@
 #!/bin/bash
-# path on node1 is /home/cloud/VMPlacementAndScaling/com.vmplacement.framework/vms
+# path on node1 is /var/lib/virtdc/simulation
 
 # while loop to detect
 
@@ -12,16 +12,14 @@ done
 /usr/bin/python /root/iostress.py -T /root/task.dat >> /root/io.log &
 
 # compile the two files
-/usr/bin/gcc -fopenmp /root/StressCPU.c -o /root/StressCPU
+##/usr/bin/gcc -fopenmp /root/StressCPU.c -o /root/StressCPU
 /usr/bin/gcc /root/StressMemory.c -o /root/StressMemory
 
-# Sleep 1 min before start stressing
-# 1. to mitigate OS post-boot performance stats
-# 2. to keep time sync with iostress
+# Sleep 1 min before start stressing to keep time sync with iostress
 sleep 60
 
-nice -n 19 /root/StressCPU &
-echo $! > /root/cpu.pid
+##nice -n 19 /root/StressCPU &
+##echo $! > /root/cpu.pid
 
 /usr/bin/python /root/simulator.py -T /root/task.dat >> /root/simulator.log &
 
