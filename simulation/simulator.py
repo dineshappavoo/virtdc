@@ -53,6 +53,10 @@ cont_command = '''
 for n in `cat /root/cpu.pid`; do kill -CONT $n || true; done
 '''
 
+run_cpusim = '''
+/root/cpuSim %s %s
+'''
+
 def getUptime(uptime_output):
 	# Return a float to represent uptime
 	return float(uptime_output.strip())
@@ -69,15 +73,17 @@ def wrapTimeOut(target, time, memory):
 	def func(target, memory):
 		clear_memory = run(memory_clear_command)
 		os.system(memory_init_command % memory)
-		while(True):
-			up = getUptime(run(uptime_command))
-#			memory_used = getMemory(run(memory_command)) - 150000
-			if(up < target):
-				print "The uptime now is %s, cpu program will be running." % up
-				go = run(cont_command)
-			elif(up > target):
-				print "The uptime now is %s, cpu program will not be running." % up
-				go = run(stop_command)
+		cpuSim = run(run_cpusim % (target, time))
+		sleep(500)
+#		while(True):
+#			up = getUptime(run(uptime_command))
+##			memory_used = getMemory(run(memory_command)) - 150000
+#			if(up < target):
+#				print "The uptime now is %s, cpu program will be running." % up
+#				go = run(cont_command)
+#			elif(up > target):
+#				print "The uptime now is %s, cpu program will not be running." % up
+#				go = run(stop_command)
 #			if(memory_used < memory):
 #				print 'The total memory used now is %s, memory program will be running.' % memory_used
 #				go = run(memory_cont_command)
@@ -85,7 +91,7 @@ def wrapTimeOut(target, time, memory):
 #				print 'The total memory used now is %s, memory program will be running.' % memory_used
 #				go = run(memory_stop_command)
 
-			sleep(2)
+#			sleep(2)
 	return func
 
 
