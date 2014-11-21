@@ -40,7 +40,7 @@ def slicingIP(data, key):
 def getCpuUsage(vmIp):
 	
 	try:
-		cmd = 'ssh -q -o StrictHostKeyChecking=no root@' +vmIp+ ' cat /proc/loadavg | awk \'{print $1}\''
+		cmd = 'ssh -q -o StrictHostKeyChecking=no root@' +vmIp+ ' ps au | grep cpuSim | awk \'{s+=$3} END {print s}\''
 		cpuUsage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 		if cpuUsage =='': return float("0.0")
 
