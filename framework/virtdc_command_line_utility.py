@@ -6,6 +6,10 @@ from Host_Info_Tracker import GetNodeDict
 from VM_migrateGuest import vm_migrate_guest
 from VM_terminateGuest import vm_terminate_guest
 
+sys.path.append('/var/lib/virtdc/vmonere/host')
+
+from vmonere_monitorgraph import monitor_cpu, monitor_memory, monitor_io
+
 #==============================================================================
 # Variables
 #==============================================================================
@@ -70,6 +74,15 @@ def force_migrate(vmid, source_host, dest_host):
 
 def terminate_guest(host_name,vmid):
 	return vm_terminate_guest(host_name, vmid)
+
+def monitorcpu(vmid):
+	monitor_cpu(vmid)
+	
+def monitormemory(vmid):
+	monitor_memory(vmid)
+
+def monitorio(vmid):
+	monitor_io(vmid)
 
 if __name__ == "__main__":
    # stuff only to run when not called via 'import' here

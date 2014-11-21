@@ -3,7 +3,7 @@ import argparse
 import sys
 from VM_submitJob import vm_submitjob
 #from VM_terminateGuest import vm_terminate_guest
-from virtdc_command_line_utility import get_host_name, list_host_and_domain, show_domain_info, show_host_info, force_migrate, terminate_guest
+from virtdc_command_line_utility import get_host_name, list_host_and_domain, show_domain_info, show_host_info, force_migrate, terminate_guest, monitorcpu, monitormemory, monitorio
 
 #API - virtdc command line tool
 
@@ -85,6 +85,16 @@ def main(argv):
 	addsupportmail_parser = subparsers.add_parser('addsupportmail',help='add support mail address')
 	addsupportmail_parser.add_argument('mailid', action = 'store', help ='get the mail address')
 
+	monitorcpu_parser = subparsers.add_parser('monitorcpu',help='monitor cpu usage')
+	monitorcpu_parser.add_argument('vmid', action = 'store', help ='get the domain id')
+
+	monitormemory_parser = subparsers.add_parser('monitormemory',help='monitor memory usage')
+	monitormemory_parser.add_argument('vmid', action = 'store', help ='get the domain id')
+
+
+	monitorcpu_parser = subparsers.add_parser('monitorio',help='monitor io usage')
+	monitorcpu_parser.add_argument('vmid', action = 'store', help ='get the domain id')
+
 
 	args = parser.parse_args()
 
@@ -141,8 +151,18 @@ def main(argv):
 		#Add entry to nodeinfo XML and then run Host_Info_Tracker.py
 		#So from next new domain creation will consider this space
 		
-	elif args.subparser_name == 'list':
-		print 'Call vm_list'
+	elif args.subparser_name == 'monitorcpu':
+		#print 'Call vm_monitorgraph'
+		vmid = args.vmid
+		monitorcpu(vmid)
+	elif args.subparser_name == 'monitormemory':
+		#print 'Call vm_monitorgraph'
+		vmid = args.vmid
+		monitormemory(vmid)
+	elif args.subparser_name == 'monitorio':
+		#print 'Call vm_monitorgraph'
+		vmid = args.vmid
+		monitorio(vmid)
 	elif args.subparser_name == 'list':
 		print 'Call vm_list'
 	elif args.subparser_name == 'list':
