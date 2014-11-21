@@ -9,6 +9,7 @@ import subprocess
 from timeout import timeout
 from time import sleep
 import os
+import random
 
 parser = optparse.OptionParser()
 
@@ -55,6 +56,10 @@ for n in `cat /root/cpu.pid`; do kill -CONT $n || true; done
 
 run_cpusim = '''
 /root/cpuSim %s %s
+'''
+
+reboot_command = '''
+reboot
 '''
 
 def getUptime(uptime_output):
@@ -112,6 +117,9 @@ for l in all_tasks:
 	time = l[0]
 	memory = l[2]
 	try:
+		lucky_num = round(random.random(), 2)
+		if(lucky_num == 0.01):
+			reboot = run(reboot_command)
 		curr_func = wrapTimeOut(target, time, memory)
 		curr_func(target, memory)
 	except Exception as e:

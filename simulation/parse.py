@@ -7,6 +7,7 @@ import optparse
 import sys
 import math
 import csv
+import random
 
 parser = optparse.OptionParser()
 
@@ -49,6 +50,8 @@ with open(options.task, 'rb') as csvfile:
 		cpu_rate = row[5]
 		memory = convertFloat(row[6], 2) * 500000   # in Kb
 		io_usage = convertFloat(row[11], 4)
+		if(io_usage == 0.0):
+			io_usage = convertFloat(str(random.random()), 2)
 		data = ((int(end_time) - int(start_time)) / 1000000, round(float(cpu_rate) * 8, 2), memory, io_usage)
 		if(data[1] < 0.1):
 			continue

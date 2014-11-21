@@ -3,4 +3,4 @@ do
 	sleep 10
 done
 
-/var/lib/virtdc/vmonere/guest/vmonere_agent.py &
+/usr/bin/python /var/lib/virtdc/vmonere/guest/vmonere_agent.py &
