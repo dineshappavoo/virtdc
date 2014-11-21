@@ -1,2 +1,15 @@
 Terminate Guest ::node4 :: VM_Task_29 :: Successfully terminated the guest
 Terminate Guest ::node1 :: VM_Task_1 :: Successfully terminated the guest
+Terminate Guest ::node1 :: VM_Task_1 :: Successfully terminated the guest
+Terminate Guest ::node3 :: VM_Task_2 :: Cannot terminate the guest
+Terminate Guest ::node4 :: VM_Task_3 :: Cannot terminate the guest
+Terminate Guest ::node1 :: VM_Task_11 :: Successfully terminated the guest
+Terminate Guest ::node1 :: VM_Task_12 :: Successfully terminated the guest
+Terminate Guest ::node1 :: VM_Task_13 :: Successfully terminated the guest
+Terminate Guest ::node1 :: VM_Task_14 :: Successfully terminated the guest
+Terminate Guest ::node1 :: VM_Task_15 :: Cannot terminate the guest
+Terminate Guest ::node3 :: VM_Task_16 :: Cannot terminate the guest
+Terminate Guest ::node3 :: VM_Task_17 :: Cannot terminate the guest
+Terminate Guest ::node3 :: VM_Task_18 :: Cannot terminate the guest
+Terminate Guest ::node3 :: VM_Task_21 :: Cannot terminate the guest
+Terminate Guest ::node2 :: VM_Task_22 :: Cannot terminate the guest
