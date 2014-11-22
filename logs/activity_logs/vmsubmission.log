@@ -2073,3 +2073,4 @@ Update IP::node1 :: VM_Task_13 :: Successfully updated the IP
 Run Job::node1 :: VM_Task_13 :: Successfully ran the job
 Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
 Create VM ::node1 :: VM_Task_14 :: Successfully created the VM
+Copy Image ::node1 :: VM_Task_10 :: Successfully copied the image

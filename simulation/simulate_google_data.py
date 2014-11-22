@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 
-import os, sys, subprocess, time
+import os, sys, subprocess, time, math
 sys.path.append('/var/lib/virtdc/framework')
 from virtdc import create_vm
 
@@ -33,9 +33,12 @@ def simulate_google_data():
             continue
 
 def execute_task(file_name):
-    cpu_Val_cmd = 'tail -2 '+data_folder_path+'/'+file_name +' | head -1'
+    #cpu_Val_cmd = 'tail -2 '+data_folder_path+'/'+file_name +' | head -1'
+    cpu_Val_cmd = 'head -1 '+data_folder_path+'/'+file_name +' | awk \'{print $2}\''
     cpu_val = subprocess.check_output(cpu_Val_cmd, shell=True, stderr=subprocess.PIPE)
     cpu_val = cpu_val.strip()
+    cpu_val = math.ceil(float(cpu_val))
+    print "CPU VAL  GUGGU : "+str(cpu_val)
 
     current_mem_cmd = 'head -1 '+data_folder_path+'/'+file_name
     current_mem_val = subprocess.check_output(current_mem_cmd, shell=True, stderr=subprocess.PIPE)
