@@ -12,7 +12,7 @@ from Host_InfoTracker import GetNodeDict
 
 def setupAll(username, password):
 	
-	cmd= 'python ../com.vmplacement.setup/bridge_setup_main.py'
+	cmd= 'python ../setup/bridge_setup_main.py'
 	uuid = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 	num = 1
 	
@@ -25,8 +25,8 @@ def setupAll(username, password):
 				print cmd
 				uuid = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 	
-	cmd= 'ssh '+node+' python /root/Desktop/VMPlacementAndScaling/com.vmplacement.setup/bridge_setup.py'
-	uuid = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+	# cmd= 'ssh '+node+' python /root/Desktop/VMPlacementAndScaling/com.vmplacement.setup/bridge_setup.py'
+	# uuid = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 		
 
 for arg in sys.argv: 
