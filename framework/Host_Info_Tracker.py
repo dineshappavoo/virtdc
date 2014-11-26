@@ -29,9 +29,11 @@ from xml.dom import minidom
 
 #node_dict={}
 
-def loadPickleDictionary() :
+def loadPickleDictionary(path = None) :
 	try :
-		with open('/var/lib/virtdc/framework/node_dict.pkl', 'r') as pickle_in:
+		if(path is None):
+			path = '/var/lib/virtdc/framework/node_dict.pkl'
+		with open(path, 'r') as pickle_in:
 			dictionary = pickle.load(pickle_in)
 			return dictionary
 	except:
@@ -39,8 +41,8 @@ def loadPickleDictionary() :
 		return None
 
 
-def GetNodeDict():
-	dictionary=loadPickleDictionary()
+def GetNodeDict(path = None):
+	dictionary=loadPickleDictionary(path)
 	if dictionary is not None :
 		return dictionary
 	else : 
