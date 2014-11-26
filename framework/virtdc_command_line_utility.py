@@ -1,10 +1,15 @@
 #!/usr/bin/env python
-import sys, time
+import sys, time, subprocess
 from Guest import Guest
 from VM_Info_Updater import getHostVMDict
 from Host_Info_Tracker import GetNodeDict
 from VM_migrateGuest import vm_migrate_guest
 from VM_terminateGuest import vm_terminate_guest
+
+
+
+import libvirt
+import sys
 
 sys.path.append('/var/lib/virtdc/vmonere/host')
 
@@ -23,6 +28,10 @@ from vmonere_monitorgraph import monitor_cpu, monitor_memory, monitor_io
 
 #==============================================================================
 
+
+
+
+
 def get_host_name(vm_id):
 	host_vm_dict = getHostVMDict()
 	for node, vm_dict in host_vm_dict.iteritems():
@@ -38,6 +47,28 @@ def list_host_and_domain():
 	for node, vm_dict in host_vm_dict.iteritems():
         	for vmid,value in vm_dict.iteritems():
 			print '%s%s%s' %(str(node).ljust(25),vmid.ljust(25),'running')
+
+def list_host_domain_information():
+	node_dict = GetNodeDict()
+	print '----------------------------------------------------------'
+	print '%s%s%s%s' %(str('Host Name').ljust(12), str(' Id').ljust(7),str('Domain Name').ljust(32),'Status')
+	print '----------------------------------------------------------'
+	for node, value in node_dict.iteritems() :
+	    #print 'Host Name : '+str(node)
+	    host = " "+str(node)+"     "
+            #print '-------------------------------------------------'
+            list_cmd="virsh --connect qemu+ssh://host_node/system list | tail -n +3 |  sed '/^$/d'  | sed \'s/^/ "+host+"/\'"
+	    list_cmd = list_cmd.replace("host_node", node.strip());
+	    #print list_cmd
+	    #print list_cmd
+	    running_domains = subprocess.check_output(list_cmd, shell=True, stderr=subprocess.PIPE)
+	    #print running_domains
+	    running_domains = "  "+str(running_domains.strip())
+	    print(running_domains.decode(sys.stdout.encoding))
+            list_cmd="virsh --connect qemu+ssh://host_node/system list | tail -n +3 |  sed '/^$/d'  | sed \'s/^/ "+host+"/\'"
+	    #print key, value.hostname, value.ip_address, value.max_cpu, value.max_memory, value.max_io, value.avail_cpu, value.avail_memory, value.avail_io
+	   
+
 
 def show_domain_info(vm_id):
 	host_vm_dict = getHostVMDict()

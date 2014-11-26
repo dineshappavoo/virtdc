@@ -3,7 +3,7 @@ import argparse
 import sys
 from VM_submitJob import vm_submitjob
 #from VM_terminateGuest import vm_terminate_guest
-from virtdc_command_line_utility import get_host_name, list_host_and_domain, show_domain_info, show_host_info, force_migrate, terminate_guest, monitorcpu, monitormemory, monitorio
+from virtdc_command_line_utility import get_host_name, list_host_and_domain, show_domain_info, show_host_info, force_migrate, terminate_guest, monitorcpu, monitormemory, monitorio, list_host_domain_information
 
 #API - virtdc command line tool
 
@@ -123,7 +123,7 @@ def main(argv):
 		
 	elif args.subparser_name == 'list':
 		#print 'Call vm_list'
-		list_host_and_domain()
+		list_host_domain_information()
 	elif args.subparser_name == 'dominfo':
 		#print 'Call vm_dominfo'
 		vmid = args.vmid
@@ -173,6 +173,8 @@ def main(argv):
 		print 'Call vm_list'
 	elif args.subparser_name == 'list':
 		print 'Call vm_list'
+	else:
+		a=0
 
 
 	#print args
