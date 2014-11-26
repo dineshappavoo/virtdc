@@ -32,6 +32,10 @@ parser.add_option("-T", "--task-index", dest="task_index", help="task usage sour
 
 # group by task_index
 
+def getRandom():
+	CONST_up = 0.2
+	CONST_down = 0.9
+	return random.random() >= CONST_up and random.random() <= CONST_down
 
 all_tasks = {}
 
@@ -52,7 +56,7 @@ with open(options.task, 'rb') as csvfile:
 		io_usage = convertFloat(row[11], 4)
 		if(io_usage == 0.0):
 			io_usage = convertFloat(str(random.random()), 2)
-		data = ((int(end_time) - int(start_time)) / 1000000, round(float(cpu_rate) * 8, 2), memory, io_usage)
+		data = (max((int(end_time) - int(start_time)) / (1000000 * 30), 1), round(float(cpu_rate) * 3, 2), memory, io_usage)
 		if(data[1] < 0.1):
 			continue
 		if(task_index not in all_tasks):
@@ -65,6 +69,7 @@ if(options.task_index and options.task_index in all_tasks):
 		writer = csv.writer(csvfile, delimiter=' ')
 		max_cpu = 1
 		max_memory = 0
+		total_time = 0
 		for n in all_tasks[task_index]:
 			curr_load = n[1]
 			curr_memory = n[2]
@@ -73,7 +78,14 @@ if(options.task_index and options.task_index in all_tasks):
 			if(math.ceil(curr_memory) > max_memory):
 				max_memory = int(math.ceil(curr_memory))
 			writer.writerow(n)
-		writer.writerow([max_cpu])
+			total_time = total_time + n[0]
+			if(total_time >= 300):
+				break
+
+		if(getRandom()):
+			writer.writerow([max(1, max_cpu / 2)])
+		else:
+			writer.writerow([max_cpu])
 		writer.writerow([max_memory])
 
 
