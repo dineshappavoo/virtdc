@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import sys, time
+import sys, time, subprocess
 from VM_Info_Updater import getHostVMDict
 
 #==============================================================================
@@ -47,7 +47,21 @@ def do_prereq_start_workload(hostName, vmid):
 	
 
 def update_vmid_in_config(vmid):
-	vmid = 0
+	srcPath=file_path
+	dstPath='/var/lib/virtdc/vmonere/dominfo/'+vmid+'.txt'
+	
+	value_vmid='vmid = '+vmid
+
+	srcFile=file(srcPath)
+	dstFile=open(dstPath, 'w')
+	for line in srcFile.readlines():
+		if line[0]=='v' and line[1]=='m' and line[2]=='i' and line[3]=='d':
+			dstFile.writelines(value_vmid)
+		else:
+			dstFile.writelines(line)
+	dstFile.writelines('\n')
+	srcFile.close()
+	dstFile.close()
 
 if __name__ == "__main__":
    # stuff only to run when not called via 'import' here
