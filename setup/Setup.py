@@ -24,6 +24,9 @@ def setupAll():
 	cmd= 'cp -f ../setup/SSHPasswordless.sh /root/'
 	uuid = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 	
+	cmd= '../nfs_client_setup.sh'
+	uuid = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+
 	node_dict=GetNodeDict('../framework/node_dict.pkl')
 	all_address = []
 	for key, value in node_dict.iteritems() :
