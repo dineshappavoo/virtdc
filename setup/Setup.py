@@ -2,7 +2,9 @@
 import subprocess
 import sys
 import pickle
-from Host_InfoTracker import GetNodeDict
+sys.path.append('../framework')
+from Host_Info_Tracker import GetNodeDict
+import itertools
 
 #==============================================================================
 # Variables
@@ -10,25 +12,29 @@ from Host_InfoTracker import GetNodeDict
 
 #==============================================================================
 
-def setupAll(username, password):
+def setupAll():
 	
-	cmd= 'python ../setup/bridge_setup_main.py'
+	cmd= 'python ../setup/bridge_setup.py'
 	uuid = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
-	num = 1
+	username = 'root'
+	password = 'Teamb@123'
 	
-	node_dict=GetNodeDict()
+	cmd= '../setup/SSHPasswordless.sh -h '+'localhost'+' -u '+username+' -p '+password
+	uuid = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+	cmd= 'cp -f ../setup/SSHPasswordless.sh /root/'
+	uuid = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+	
+	node_dict=GetNodeDict('../framework/node_dict.pkl')
+	all_address = []
 	for key, value in node_dict.iteritems() :
-		innernum=1
-		for innerkey, innervalue in node_dict.iteritems() :
-			if innerkey != key
-				cmd= 'ssh root@'+key+' \"./SSHPasswordless.sh -h '+innerkey+' -u '+username+' -p '+password+'\"'
-				print cmd
-				uuid = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
-	
-	# cmd= 'ssh '+node+' python /root/Desktop/VMPlacementAndScaling/com.vmplacement.setup/bridge_setup.py'
-	# uuid = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
-		
-
-for arg in sys.argv: 
-    if arg		
+		all_address.append(key)
+	for node in all_address:
+		cmd= '../setup/SSHPasswordless.sh -h '+node+' -u '+username+' -p '+password
+		uuid = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+		cmd= 'scp ../setup/SSHPasswordless.sh root@'+node+':/root/'
+		uuid = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+	for n in itertools.permutations(all_address, 2):
+		print n
+		cmd= 'ssh root@'+n[0]+' \"/root/SSHPasswordless.sh -h '+n[0]+' -u '+username+' -p '+password+'\"'
+		uuid = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 result = setupAll()
