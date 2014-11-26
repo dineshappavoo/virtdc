@@ -32,18 +32,18 @@ def replace(src, dest):
 	subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 	
 	#copy tmp as a new em 1 file
-	cmd='cp /root/haan/tmp '+src
+	cmd='cp /tmp/haan '+src
 	subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 
 	#update dest
 	cmd='rm -f ' + dest
 	subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 
-	cmd='cp /root/haan/tmp '+dest
+	cmd='cp /tmp/haan '+dest
 	subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 
 	#remove tmp file
-	cmd='rm -f /root/haan/tmp'
+	cmd='rm -f /tmp/haan'
 	subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 
 
@@ -67,7 +67,7 @@ def updateBridge(src):
 	#srcPath = '/root/haan/'+src			#for test purpose
 	
 	dest = '/etc/sysconfig/network-scripts/'+src
-	srcPath='../setup/'+src
+	srcPath='./'+src
 
 	#make backup
 	backup(dest)
@@ -80,7 +80,7 @@ def updateBridge(src):
 
 	#generate tmp
 	srcFile=file(srcPath)
-	tmpFile=open('/root/haan/tmp', 'w')
+	tmpFile=open('/tmp/haan', 'w')
 	for line in srcFile.readlines():
 			
 			if line[0]=='U' and line[1]=='U' and line[2]=='I' and line[3]=='D':
@@ -94,6 +94,8 @@ def updateBridge(src):
 	tmpFile.close()
 
 	replace(srcPath, dest)
+	cmd = "service network restart"
+	uuid = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 	print dest + ' is updated'
 	
 #/root/Desktop/VMPlacementAndScaling/com.vmplacement.setup
