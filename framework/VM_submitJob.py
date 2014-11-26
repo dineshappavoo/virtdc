@@ -12,6 +12,7 @@ from Guest import Guest
 from VM_RunJob import runJobOnVM
 sys.path.append('/var/lib/virtdc/mail')
 from vm_mail import send_support_mail
+from vmonere.host.vmonere_start_monitor import do_prereq_start_workload
 
 #==============================================================================
 # Variables
@@ -137,6 +138,9 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
 	guest_ip=getGuestIP(host.strip(), vmid.strip(), "root", "Teamb@123")
 	addOrUpdateDictionaryOfVM(host, vmid, Guest(guest_ip, vmid, float(1), float(cpu),float(memory),float(max_memory),float(1), time.time()))
 	vmsubmission_log.write('Update IP::'+host+' :: '+vmid+' :: Successfully updated the IP\n')
+	# copy host_config.txt file to guest
+	# this will start monitor_agent on guest
+	do_prereq_start_workload(host, vmid)
 	#Run Job in Guest
 	runJobOnVM(host, vmid)
 	vmsubmission_log.write('Run Job::'+host+' :: '+vmid+' :: Successfully ran the job\n')
