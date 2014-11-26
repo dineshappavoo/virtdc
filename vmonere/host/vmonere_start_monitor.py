@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import sys, time, subprocess
-from VM_Info_Updater import getHostVMDict
+from framework.VM_Info_Updater import getHostVMDict
 
 #==============================================================================
 # Variables
@@ -23,7 +23,7 @@ def do_prereq_start_workload(hostName, vmid):
 		print "IP RUN "+str(ip)
 		
 		# copy host configuration file to guest
-		scpHostConfig = 'scp -q -o StrictHostKeyChecking=no /var/lib/virtdc/dominfo/'+vmid+'.txt root@'+
+		scpHostConfig = 'scp -q -o StrictHostKeyChecking=no /var/lib/virtdc/dominfo/'+vmid+'.txt root@'+\
 			ip+':'+file_path
 		subprocess.Popen(scpHostConfig, shell=True, stderr=subprocess.PIPE)
 		

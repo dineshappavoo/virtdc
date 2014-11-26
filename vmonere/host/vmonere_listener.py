@@ -27,7 +27,8 @@ def receive_guest_usage(usage):
 	task_mem_usage = guest_usage[6]
 	io_usage = guest_usage[8]
 
-        file= open('/var/lib/virtdc/logs/monitor_logs/vmusageTest.log', 'a+')
+	path = '/var/lib/virtdc/logs/monitor_logs/'+vmid+'.log'
+        file= open(path, 'a+')
 	usage= vmid+' \t|\t '+ str(cpu_usage) + '\t|\t' + str(os_mem_usage) + '\t|\t' + str(task_mem_usage) + '\t|\t' + str(io_usage) +"\n"
         file.write(usage+'\n')
 	print usage

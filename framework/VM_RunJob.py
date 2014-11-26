@@ -6,7 +6,6 @@
 import sys, subprocess
 import pickle
 from VM_Framework_Utility import getGuestIP
-from vmonere.host.vmonere_start_monitor import do_prereq_start_workload
 #from VM_Info_Updater import updateGuestIP
 
 #==============================================================================
@@ -38,7 +37,10 @@ def runJobOnVM(hostName, vmid):
 		host_vm_dict=loadPickleDictionary()
 		ip=host_vm_dict[hostName][vmid].vmip
 		print "IP RUN "+str(ip)
-		do_prereq_start_workload(hostName, vmid)
+		scpTask='scp -q -o StrictHostKeyChecking=no /var/lib/virtdc/data/vms/'+vmid+'.csv root@'+ip+':/root/task.dat'
+                scpdata = subprocess.check_output(scpTask, shell=True, stderr=subprocess.PIPE)
+                startWork = 'ssh -q -o StrictHostKeyChecking=no root@'+ip+' nohup bash /root/setup.sh &'
+                subprocess.Popen(startWork, shell=True, stderr=subprocess.PIPE)
 	except subprocess.CalledProcessError as e: 
    		print "error>",e.output,'<'	
 	
