@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import sys, time, subprocess
-from framework.VM_Info_Updater import getHostVMDict
+sys.path.append('/var/lib/virtdc/framework')
+from VM_Info_Updater import getHostVMDict
 
 #==============================================================================
 # Variables
@@ -19,21 +20,19 @@ file_path = '/var/lib/virtdc/vmonere/guest/host_config.txt'
 def do_prereq_start_workload(hostName, vmid):
 	try:
 		host_vm_dict=getHostVMDict()
+		print host_vm_dict
 		ip=host_vm_dict[hostName][vmid].vmip
 		print "IP RUN "+str(ip)
 		
+		update_vmid_in_config(vmid)
 		# copy host configuration file to guest
-		scpHostConfig = 'scp -q -o StrictHostKeyChecking=no /var/lib/virtdc/dominfo/'+vmid+'.txt root@'+\
-			ip+':'+file_path
+		scpHostConfig = 'scp -q -o StrictHostKeyChecking=no /var/lib/virtdc/vmonere/dominfo/'+vmid+'.txt root@'+ip+':'+file_path
 		subprocess.Popen(scpHostConfig, shell=True, stderr=subprocess.PIPE)
+
+		start_monitor = 'ssh -q -o StrictHostKeyChecking=no root@'+ip+' nohup /bin/python /var/lib/virtdc/vmonere/guest/vmonere_agent.py'
+                subprocess.Popen(start_monitor, shell=True, stderr=subprocess.PIPE)
 		
-		# copy task file to guest
-		scpTask='scp -q -o StrictHostKeyChecking=no /var/lib/virtdc/data/vms/'+vmid+'.csv root@'+ip+':/root/task.dat'
-		scpdata = subprocess.check_output(scpTask, shell=True, stderr=subprocess.PIPE)
 		
-		# initiate workload on guest
-		startWork = 'ssh -q -o StrictHostKeyChecking=no root@'+ip+' nohup bash /root/setup.sh &'
-		subprocess.Popen(startWork, shell=True, stderr=subprocess.PIPE)
 	except subprocess.CalledProcessError as e: 
    		print "error>",e.output,'<'	
 	
@@ -65,5 +64,6 @@ def update_vmid_in_config(vmid):
 
 if __name__ == "__main__":
    # stuff only to run when not called via 'import' here
-   do_prereq_start_workload("node1","Test_node1")
+   do_prereq_start_workload("node1","VM_Task_100")
+   #update_vmid_in_config("VM_Task_100")
 

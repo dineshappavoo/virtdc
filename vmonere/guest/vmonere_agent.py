@@ -30,7 +30,7 @@ from vmonere_utility import get_cpu_usage, get_os_mem_usage, get_task_mem_usage,
 #-------------------------------------------------------------------------------
 
 #This file must be placed in the guest
-host_config_path = '''/var/lib/virtdc/guest/host_config.txt'''
+host_config_path = '''/var/lib/virtdc/vmonere/guest/host_config.txt'''
 
 def vmonere_agent():
 	a=0
@@ -45,7 +45,7 @@ def get_host_ip():
 			time.sleep(10)		
 
 
-	host_ip_cmd = '''cat host_config_file | grep \'host_ip\' |awk '{print$3}' '''
+	host_ip_cmd = '''/bin/cat host_config_file | /bin/grep \'host_ip\' | /bin/awk '{print$3}' '''
 	host_ip_cmd = host_ip_cmd.replace("host_config_file",str(host_config_path).strip())
 
 	host_ip = subprocess.check_output(host_ip_cmd, shell=True, stderr=subprocess.PIPE)
@@ -53,7 +53,7 @@ def get_host_ip():
 	return host_ip
 
 def get_vmid():
-	vmid_cmd = '''cat host_config_file | grep \'vmid\' |awk '{print$3}' '''
+	vmid_cmd = '''/bin/cat host_config_file | /bin/grep \'vmid\' | /bin/awk '{print$3}' '''
 	vmid_cmd = vmid_cmd.replace("host_config_file",str(host_config_path).strip())
 
 	vmid = subprocess.check_output(vmid_cmd, shell=True, stderr=subprocess.PIPE)
@@ -76,7 +76,7 @@ def report_usage_to_host(host_ip, vmid):
 	usage = '\''+str(vmid.strip())+' | '+str(cpu_usage)+' | '+str(os_mem_usage)+' | '+str(task_mem_usage)+' | '+str(io_usage)+'\''
 	#usage = "'cpu |sdbfsj |sdfsdhf |sdfvsdvfgdfvj'"
 	#cmd = 'python /var/lib/virtdc/vmonere/host/vmonere_listener.py '+usage
-	cmd = 'ssh -q -o StrictHostKeyChecking=no root@host_ip \"python /var/lib/virtdc/vmonere/host/vmonere_listener.py '+usage+'\"'
+	cmd = '/bin/ssh -q -o StrictHostKeyChecking=no root@host_ip \"/bin/python /var/lib/virtdc/vmonere/host/vmonere_listener.py '+usage+'\"'
 	cmd = cmd.replace("host_ip",str(host_ip).strip())
 
 	#cmd_res = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
