@@ -39,7 +39,7 @@ def slicing_ip(data, key):
 def get_cpu_usage():
 	
 	try:
-		cmd = '''ps au | grep cpuSim | awk \'{s+=$3} END {print s}\''''
+		cmd = " ps au | grep cpuSim | awk \'{s+=$3} END {print s}\'"
 		cpu_usage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 		if cpu_usage =='': return float("0.0")
 
@@ -51,7 +51,7 @@ def get_cpu_usage():
 @timeout()
 def get_os_mem_usage():
 	try:
-		cmd=''' free -m | grep \'+\' | awk \'{print $3}\''''
+		cmd=" free -m | grep \'+\' | awk \'{print $3}\'"
 		mem_usage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 		if mem_usage =='': return float("0.0")
 
@@ -75,7 +75,7 @@ def get_task_mem_usage():
 @timeout()
 def get_io_usage():
 	try:
-		cmd='iostat -d -x 1 2 | grep [a-z]da | tail -1 | awk \'{print $(NF)}\''
+		cmd=" iostat -d -x 1 2 | grep [a-z]da | tail -1 | awk \'{print $(NF)}\'"
 		io_usage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 		if io_usage =='': return float("0.0")
 
@@ -88,7 +88,7 @@ def get_io_usage():
 if __name__ == "__main__":
    # stuff only to run when not called via 'import' here
 	a=0
-	get_cpu_usage()
+	print get_cpu_usage()
 
 
 

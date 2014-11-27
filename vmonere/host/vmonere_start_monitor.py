@@ -29,7 +29,7 @@ def do_prereq_start_workload(hostName, vmid):
 		scpHostConfig = 'scp -q -o StrictHostKeyChecking=no /var/lib/virtdc/vmonere/dominfo/'+vmid+'.txt root@'+ip+':'+file_path
 		subprocess.Popen(scpHostConfig, shell=True, stderr=subprocess.PIPE)
 
-		start_monitor = 'ssh -n -q -o StrictHostKeyChecking=no root@'+ip+' \"/bin/nohup \'/bin/python /var/lib/virtdc/vmonere/guest/vmonere_agent.py\' &' + '\"'
+		start_monitor = 'ssh -n -q -o StrictHostKeyChecking=no root@'+ip+' \"/bin/nohup sh -c \'/bin/python /var/lib/virtdc/vmonere/guest/vmonere_agent.py\' > /dev/null 2>&1 &' + '\"'
 		print start_monitor
                 subprocess.Popen(start_monitor, shell=True, stderr=subprocess.PIPE)
 		
