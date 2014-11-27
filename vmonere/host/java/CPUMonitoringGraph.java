@@ -29,6 +29,7 @@ public class CPUMonitoringGraph extends ApplicationFrame {
     private static final int FAST = 100;
     private Timer timer;
     public static BufferedReader br;
+    public static String vmid;
 
     public CPUMonitoringGraph(final String title) {
         super(title);
@@ -61,10 +62,8 @@ public class CPUMonitoringGraph extends ApplicationFrame {
 					return cpuValue;
 			}
 		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return (float) 0.0;
@@ -85,7 +84,7 @@ public class CPUMonitoringGraph extends ApplicationFrame {
         ValueAxis domain = plot.getDomainAxis();
         domain.setAutoRange(true);
         ValueAxis range = plot.getRangeAxis();
-        range.setRange(0, 3);
+        range.setRange(0, 800);
         return result;
     }
 
@@ -93,26 +92,33 @@ public class CPUMonitoringGraph extends ApplicationFrame {
         timer.start();
     }
 
-    public static void main(final String[] args) throws FileNotFoundException {
+    public static void main(final String[] args) {
 
     	if(args.length !=1)
     	{
     		System.out.println("Please provide valid inputs!");
     		return;
     	}
-    	String vmid= args[0];
-    	FileInputStream in = new FileInputStream("/var/lib/virtdc/logs/monitor_logs/"+vmid+".log");
-		br = new BufferedReader(new InputStreamReader(in));
-    	EventQueue.invokeLater(new Runnable() {
+    	vmid= args[0];
+    	FileInputStream in;
+		try {
+			in = new FileInputStream("/var/lib/virtdc/logs/monitor_logs/"+vmid+".log");
+			br = new BufferedReader(new InputStreamReader(in));
+	    	EventQueue.invokeLater(new Runnable() {
 
-            @Override
-            public void run() {
-                CPUMonitoringGraph demo = new CPUMonitoringGraph(TITLE);
-                demo.pack();
-                RefineryUtilities.centerFrameOnScreen(demo);
-                demo.setVisible(true);
-                demo.start();
-            }
-        });
+	            @Override
+	            public void run() {
+	                CPUMonitoringGraph demo = new CPUMonitoringGraph(TITLE+"-"+vmid);
+	                demo.pack();
+	                RefineryUtilities.centerFrameOnScreen(demo);
+	                demo.setVisible(true);
+	                demo.start();
+	            }
+	        });
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found!!");
+			e.printStackTrace();
+		}
+		
     }
 }

@@ -32,6 +32,7 @@ public class MemoryMonitoringGraph extends ApplicationFrame {
 	private static final int FAST = 100;
 	private Timer timer;
 	public static BufferedReader br;
+	public static String vmid;
 
 	public MemoryMonitoringGraph(final String title) {
 		super(title);
@@ -60,14 +61,12 @@ public class MemoryMonitoringGraph extends ApplicationFrame {
 		try {
 			if ((currentLine = br.readLine()) != null && !currentLine.trim().equals("")) {
 				String[] currentValues = currentLine.split("\\|");
-				float cpuValue = Float.valueOf(currentValues[2].trim());
+				float cpuValue = Float.valueOf(currentValues[3].trim());
 				return cpuValue;
 			}
 		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return (float) 0.0;
@@ -88,7 +87,7 @@ public class MemoryMonitoringGraph extends ApplicationFrame {
 		ValueAxis domain = plot.getDomainAxis();
 		domain.setAutoRange(true);
 		ValueAxis range = plot.getRangeAxis();
-		range.setRange(0, 50000);
+		range.setRange(0, 100000);
 		return result;
 	}
 
@@ -96,26 +95,33 @@ public class MemoryMonitoringGraph extends ApplicationFrame {
 		timer.start();
 	}
 
-	public static void main(final String[] args) throws FileNotFoundException {
+	public static void main(final String[] args) {
 
 		if(args.length !=1)
 		{
 			System.out.println("Please provide valid inputs!");
 			return;
 		}
-		String vmid= args[0];
-		FileInputStream in = new FileInputStream("/var/lib/virtdc/logs/monitor_logs/"+vmid+".log");
-		br = new BufferedReader(new InputStreamReader(in));
-		EventQueue.invokeLater(new Runnable() {
+		vmid= args[0];
+		FileInputStream in;
+		try {
+			in = new FileInputStream("/var/lib/virtdc/logs/monitor_logs/"+vmid+".log");
+			br = new BufferedReader(new InputStreamReader(in));
+			EventQueue.invokeLater(new Runnable() {
 
-			@Override
-			public void run() {
-				MemoryMonitoringGraph demo = new MemoryMonitoringGraph(TITLE);
-				demo.pack();
-				RefineryUtilities.centerFrameOnScreen(demo);
-				demo.setVisible(true);
-				demo.start();
-			}
-		});
+				@Override
+				public void run() {
+					MemoryMonitoringGraph demo = new MemoryMonitoringGraph(TITLE+"-"+vmid);
+					demo.pack();
+					RefineryUtilities.centerFrameOnScreen(demo);
+					demo.setVisible(true);
+					demo.start();
+				}
+			});
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found!!");
+			e.printStackTrace();
+		}
+		
 	}
 }
