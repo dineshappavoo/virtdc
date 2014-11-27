@@ -1,0 +1,93 @@
+Copy Image ::node1 :: VM_Task_100 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_100 :: Successfully created the VM
+Update IP::node1 :: VM_Task_100 :: Successfully updated the IP
+Run Job::node1 :: VM_Task_100 :: Successfully ran the job
+Copy Image ::node1 :: VM_Task_11 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_11 :: Successfully created the VM
+Update IP::node1 :: VM_Task_11 :: Successfully updated the IP
+Run Job::node1 :: VM_Task_11 :: Successfully ran the job
+Copy Image ::node1 :: VM_Task_12 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_12 :: Successfully created the VM
+Update IP::node1 :: VM_Task_12 :: Successfully updated the IP
+Run Job::node1 :: VM_Task_12 :: Successfully ran the job
+Copy Image ::node1 :: VM_Task_13 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_13 :: Successfully created the VM
+Update IP::node1 :: VM_Task_13 :: Successfully updated the IP
+Run Job::node1 :: VM_Task_13 :: Successfully ran the job
+Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_14 :: Successfully created the VM
+Update IP::node1 :: VM_Task_14 :: Successfully updated the IP
+Run Job::node1 :: VM_Task_14 :: Successfully ran the job
+Copy Image ::node1 :: VM_Task_15 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_15 :: Successfully created the VM
+Update IP::node1 :: VM_Task_15 :: Successfully updated the IP
+Run Job::node1 :: VM_Task_15 :: Successfully ran the job
+Copy Image ::node1 :: VM_Task_16 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_16 :: Successfully created the VM
+Update IP::node1 :: VM_Task_16 :: Successfully updated the IP
+Run Job::node1 :: VM_Task_16 :: Successfully ran the job
+Copy Image ::node3 :: VM_Task_17 :: Successfully copied the image
+Create VM ::node3 :: VM_Task_17 :: Successfully created the VM
+Update IP::node3 :: VM_Task_17 :: Successfully updated the IP
+Run Job::node3 :: VM_Task_17 :: Successfully ran the job
+Copy Image ::node3 :: VM_Task_18 :: Successfully copied the image
+Create VM ::node3 :: VM_Task_18 :: Successfully created the VM
+Update IP::node3 :: VM_Task_18 :: Successfully updated the IP
+Run Job::node3 :: VM_Task_18 :: Successfully ran the job
+Copy Image ::node3 :: VM_Task_19 :: Successfully copied the image
+Create VM ::node3 :: VM_Task_19 :: Successfully created the VM
+Update IP::node3 :: VM_Task_19 :: Successfully updated the IP
+Run Job::node3 :: VM_Task_19 :: Successfully ran the job
+Copy Image ::node3 :: VM_Task_2 :: Successfully copied the image
+Create VM ::node3 :: VM_Task_2 :: Successfully created the VM
+1417051004.98 :: Create Guest :: VM_Task_2 :: Cannot create the guest
+Timeout exceeded in read_nonblocking().
+<pexpect.spawn object at 0x7f1b98509950>
+version: 2.3 ($Revision: 399 $)
+command: /usr/bin/ssh
+args: ['/usr/bin/ssh', 'node3']
+searcher: searcher_re:
+    0: re.compile("ogin: ")
+buffer (last 100 chars):  
+before (last 100 chars):  
+after: <class 'pexpect.TIMEOUT'>
+match: None
+match_index: None
+exitstatus: None
+flag_eof: False
+pid: 19798
+child_fd: 3
+closed: False
+timeout: 30
+delimiter: <class 'pexpect.EOF'>
+logfile: None
+logfile_read: None
+logfile_send: None
+maxread: 2000
+ignorecase: False
+searchwindowsize: None
+delaybeforesend: 0.05
+delayafterclose: 0.1
+delayafterterminate: 0.1
+Copy Image ::node3 :: VM_Task_2 :: Successfully copied the image
+1417051091.31 :: Create Guest :: VM_Task_2 :: Cannot create the guest
+Command 'virsh --connect qemu+ssh://node3/system create /var/lib/virtdc/guestconfiguration/VM_Task_2.xml' returned non-zero exit status 1
+Copy Image ::node3 :: VM_Task_2 :: Successfully copied the image
+1417051182.64 :: Create Guest :: VM_Task_2 :: Cannot create the guest
+Command 'virsh --connect qemu+ssh://node3/system create /var/lib/virtdc/guestconfiguration/VM_Task_2.xml' returned non-zero exit status 1
+Copy Image ::node3 :: VM_Task_2 :: Successfully copied the image
+1417051282.2 :: Create Guest :: VM_Task_2 :: Cannot create the guest
+Command 'virsh --connect qemu+ssh://node3/system create /var/lib/virtdc/guestconfiguration/VM_Task_2.xml' retu1417057029.66 :: Create Guest :: VM_Task_100 :: Cannot create the guest
+unbound method getInstance() must be called with NodeFinder instance as first argument (got nothing instead)
+1417057049.15 :: Create Guest :: VM_Task_100 :: Cannot create the guest
+unbound method getInstance() must be called with NodeFinder instance as first argument (got nothing instead)
+1417057160.15 :: Create Guest :: VM_Task_100 :: Cannot create the guest
+unbound method getInstance() must be called with NodeFinder instance as first argument (got nothing instead)
+1417057175.15 :: Create Guest :: VM_Task_100 :: Cannot create the guest
+unbound method getInstance() must be called with NodeFinder instance as first argument (got nothing instead)
+Copy Image ::node1 :: VM_Task_100 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_100 :: Successfully created the VM
+Update IP::node1 :: VM_Task_100 :: Successfully updated the IP
+Run Job::node1 :: VM_Task_100 :: Successfully ran the job
+Copy Image ::node1 :: VM_Task_11 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_11 :: Successfully created the VM

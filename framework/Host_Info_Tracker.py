@@ -76,6 +76,20 @@ def parsenodeInfoAndMakeDict(filename) :
 				pickleAddOrUpdateDictionary(hostName, str(ipaddress), float(cpu_core), float(memory), float(io), float(cpu_core)-1, float(memory), float(io))
         			#node_dict[hostName]=Node(hostName, ipaddress, int(cpu_core), int(memory), int(io), int(cpu_core)-1, int(memory), int(io))
 
+def find_max_cpu_mem_io_values():
+	node_dict=GetNodeDict()
+	max_cpu = ''
+	max_memory = ''
+	max_io = ''
+	for node, value in node_dict.iteritems() :
+		if(value.avail_cpu > max_cpu):
+			max_cpu = value.avail_cpu
+		if(value.avail_memory > max_memory):
+			max_memory = value.avail_memory
+		if(value.avail_io > max_io):
+			max_io = value.avail_io
+		print node, value.hostname, value.ip_address, value.max_cpu, value.max_memory, value.max_io, value.avail_cpu, value.avail_memory, value.avail_io
+
 def resume_resources_from_guest(source_host, vmid, guest):
 	node_dict = GetNodeDict()
 	host = node_dict[source_host]

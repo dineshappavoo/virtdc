@@ -7,6 +7,8 @@ from Guest import Guest
 from VM_migrateGuest import vm_migrate_guest
 from VM_cpuScaling import vm_cpu_scaling
 from VM_memoryScaling import vm_memory_scaling, vm_max_memory_scaling
+from VM_decisionMaker import NodeFinder
+from VM_migrateGuest import vm_migrate_guest
 
 
 #API for VM placement manager
@@ -55,31 +57,51 @@ def makeMemSaclingDecision(hostName,guest,memoryUsage,time):
 #Process current usage and take action based on SLA
 def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_usage):
 
+	obj=NodeFinder()
 	max_cpu = value.max_cpu
 	allotted_cpu = value.current_cpu
 
 	#Base OS should not go below the minimum memory
 	mem_usage = mem_usage + _base_mem_size 
 
-	allotted_memory=value.current_memory
+	allotted_memory = value.current_memory
 
 	#allotted_memory=value.current_memory + _base_mem_size 
 
 	max_memory = value.max_memory
 	#Check CPU usage
 	if(	(cpu_usage>allotted_cpu) and 	(cpu_usage<max_cpu)	):
-		vm_cpu_scaling(host, vmid, float(cpu_usage))
-		#update vm_host_dict
-		addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, float(cpu_usage), value.max_cpu,value.current_memory,value.max_memory,value.io, value.start_time))
-		manager_activity_log.write('PLACEMENT MANAGER::MEMORY::Scaling ::'+host+' :: '+vmid+' :: Memory scaled from '+value.alotted_memory+' to '+mem_usage+'\n')
+
+		if (  obj.is_cpu_available_on_host(host, (cpu_usage-alloted_cpu) )  ):
+			vm_cpu_scaling(host, vmid, float(cpu_usage))
+			#update vm_host_dict
+			addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, float(cpu_usage), value.max_cpu,value.current_memory,value.max_memory,value.io, value.start_time))
+			manager_activity_log.write('PLACEMENT MANAGER::MEMORY::Scaling ::'+host+' :: '+vmid+' :: Memory scaled from '+value.alotted_memory+' to '+mem_usage+'\n')
+		else:
+			new_host = obj.is_space_available_for_vm(cpu_usage, mem_usage , io_usage)
+			if new_host is None:
+    				print "Cant migrate guest"
+			else:
+				#Initiate vm migration
+				vm_migrate_guest(host, new_host, vmid)
+
 	#if(	(cpu_usage>current_cpu) and 	(cpu_usage<max_cpu)	):  -- CPU scaling down is not implemented
 
 	#Check Memory Usage - Memory scaling will be initiated when usage is lower than usage-scaledown_threshold or greater than usage+scaleup_threshold
-	if(	(	(mem_usage > (allotted_memory + float(mem_scale_up_threshold))) or (mem_usage<(allotted_memory - float(mem_scale_down_threshold))) )and (mem_usage<max_memory)	):
-		vm_memory_scaling(host, vmid, float(mem_usage))
-		#update vm_host_dict
-		addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, value.current_cpu, value.max_cpu, float(mem_usage),value.max_memory,value.io, value.start_time))
-    		manager_activity_log.write('PLACEMENT MANAGER::MEMORY::Scaling ::'+str(host)+' :: '+str(vmid)+' :: Memory scaled from '+str(allotted_memory)+' to '+str(mem_usage)+'\n')
+	if(	(	(mem_usage > (allotted_memory + float(mem_scale_up_threshold))) or (mem_usage<(allotted_memory - float(mem_scale_down_threshold))) )and (mem_usage<max_memory)	):		
+		
+		if( obj.is_mem_available_on_host(host, allotted_memory) ):
+			vm_memory_scaling(host, vmid, float(mem_usage))
+			#update vm_host_dict
+			addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, value.current_cpu, value.max_cpu, float(mem_usage),value.max_memory,value.io, value.start_time))
+	    		manager_activity_log.write('PLACEMENT MANAGER::MEMORY::Scaling ::'+str(host)+' :: '+str(vmid)+' :: Memory scaled from '+str(allotted_memory)+' to '+str(mem_usage)+'\n')
+		else:
+			new_host = obj.is_space_available_for_vm(cpu_usage, mem_usage , io_usage)
+			if new_host is None:
+    				print "Cant migrate Guest"
+			else:
+				#Initiate vm migration
+				vm_migrate_guest(host, new_host, vmid)
 
 
 

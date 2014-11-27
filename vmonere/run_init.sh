@@ -5,4 +5,4 @@ do
 	sleep 5
 done
 
-/usr/bin/python /var/lib/virtdc/vmonere/guest/vmonere_agent.py &
+/bin/nohup /bin/python /var/lib/virtdc/vmonere/guest/vmonere_agent.py &

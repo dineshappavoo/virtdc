@@ -33,7 +33,7 @@ from vmonere_utility import get_cpu_usage, get_os_mem_usage, get_task_mem_usage,
 host_config_path = '''/var/lib/virtdc/vmonere/guest/host_config.txt'''
 
 def vmonere_agent():
-	a=0
+	pass
 
 def get_host_ip():	
 	while(1):

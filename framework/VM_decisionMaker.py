@@ -23,6 +23,21 @@ from Host_Info_Tracker import pickleAddOrUpdateDictionary, GetNodeDict
 #==============================================================================
 
 class NodeFinder:
+
+	'''
+	def __init__(self):
+		if(NodeFinder.instance is None):
+			NodeFinder.instance = NodeFinder()
+
+	def getInstance():
+		if(NodeFinder.instance is None):
+			NodeFinder.instance = NodeFinder()
+			return NodeFinder.instance
+		else:
+			return NodeFinder.instance
+	'''
+
+
 	#Function to load the dictionary from the pickle
 	#@staticmethod
 	def loadPickleDictionary(self) :
@@ -42,6 +57,27 @@ class NodeFinder:
             		if ( float(cpu) <= float(value.avail_cpu) and float(	mem) <= float(value.avail_memory) and float(io) <= float(value.avail_io)) :
                 		return value.hostname
         	return None
+	
+	#Function to verify wether the domain can be scaled up in the same host. Required extra CPU space should be available
+	def is_cpu_available_on_host(self, host, cpu):
+        	node_dict={}
+        	node_dict=GetNodeDict()
+        	for key, value in node_dict.iteritems() :
+			if key is host:
+            			if ( float(cpu) <= float(value.avail_cpu) ):
+                		 return True
+        	return False
+
+	#Function to verify wether the domain can be scaled up in the same host. Required extra Memory space should be available
+	def is_mem_available_on_host(self, host, memory):
+        	node_dict={}
+        	node_dict=GetNodeDict()
+        	for key, value in node_dict.iteritems() :
+			if key is host:
+            			if ( float(memory) <= float(value.avail_memory) ):
+                		 return True
+        	return False
+
     
 	#Function to place the job in the right node
 	#@staticmethod
