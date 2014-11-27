@@ -3,13 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Virtdc by dineshappavoo</title>
+    <title>Virtdc by virtdc</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -19,18 +17,199 @@
       <header>
         <h1>Virtdc</h1>
         <p>Statically place and schedule and dynamically scale and migrate Vitual Machines (VMs) to optimize resource utilization by using efficient VM algorithms while meeting the SLAs of users in cloud</p>
-        <p class="view"><a href="https://github.com/dineshappavoo/virtdc">View the Project on GitHub <small>dineshappavoo/virtdc</small></a></p>
+
+        <p class="view"><a href="https://github.com/virtdc/virtdc">View the Project on GitHub <small>virtdc/virtdc</small></a></p>
+
+
         <ul>
-          <li><a href="https://github.com/dineshappavoo/virtdc/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/dineshappavoo/virtdc/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/dineshappavoo/virtdc">View On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/virtdc/virtdc/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/virtdc/virtdc/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/virtdc/virtdc">View On <strong>GitHub</strong></a></li>
         </ul>
       </header>
       <section>
         <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction.</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>Virtdc is an API for virtual machine placement and scaling which provides an environment to create, manage and monitor virtual machines effectively. Virtdc – framework provides API’s to create virtual machines, maintain information about guest and host, 
+terminate virtual machine and to handle static virtual machine placement. Internally it uses libvirt management API to accomplish this.</p>
+
+<p>After your page is generated, you can check out the new branch:</p>
+
+<p>The follow the core functionalities of the virtdc api</p>
+
+<h5>
+<a id="create-creates-new-domain-from-the-base-image" class="anchor" href="#create-creates-new-domain-from-the-base-image" aria-hidden="true"><span class="octicon octicon-link"></span></a>create creates new domain from the base image</h5>
+
+<pre><code>$virtdc create -h
+usage: virtdc create [-h] vmid cpu memory maxmemory io
+
+positional arguments:
+  vmid        get the vmid
+  cpu         get the cpu
+  memory      get memory in KiB
+  maxmemory   get maximum memory in KiB
+  io          get the io in KiB
+</code></pre>
+
+<h5>
+<a id="terminate-terminates-the-running-domain" class="anchor" href="#terminate-terminates-the-running-domain" aria-hidden="true"><span class="octicon octicon-link"></span></a>terminate terminates the running domain</h5>
+
+<pre><code>$virtdc terminate -h
+usage: virtdc terminate [-h] vmid
+
+positional arguments:
+  vmid        get the vmid
+</code></pre>
+
+<h5>
+<a id="list-lists-running-domain-in-all-hosts" class="anchor" href="#list-lists-running-domain-in-all-hosts" aria-hidden="true"><span class="octicon octicon-link"></span></a>list lists running domain in all hosts</h5>
+
+<pre><code>$virtdc list -h
+usage: virtdc list [-h]
+</code></pre>
+
+<h5>
+<a id="dominfo-gives-the-domain-information" class="anchor" href="#dominfo-gives-the-domain-information" aria-hidden="true"><span class="octicon octicon-link"></span></a>dominfo gives the domain information</h5>
+
+<pre><code>$virtdc dominfo -h
+usage: virtdc dominfo [-h] vmid
+
+positional arguments:
+  vmid        get the domain id
+</code></pre>
+
+<h5>
+<a id="hostinfo-gives-the-host-information" class="anchor" href="#hostinfo-gives-the-host-information" aria-hidden="true"><span class="octicon octicon-link"></span></a>hostinfo gives the host information</h5>
+
+<pre><code>$virtdc hostinfo -h
+usage: virtdc hostinfo [-h] hostname
+
+positional arguments:
+  hostname    get the host
+</code></pre>
+
+<h5>
+<a id="force-migrate-migrates-domain-from-source-host-to-dest-host" class="anchor" href="#force-migrate-migrates-domain-from-source-host-to-dest-host" aria-hidden="true"><span class="octicon octicon-link"></span></a>force-migrate migrates domain from source host to dest host</h5>
+
+<pre><code>$virtdc force-migrate -h
+usage: virtdc force-migrate [-h] vmid sourcehost desthost
+
+positional arguments:
+  vmid        get the domain
+  sourcehost  get the source host
+  desthost    get the dest host
+</code></pre>
+
+<h5>
+<a id="removehost-removes-the-host-from-the-cluster" class="anchor" href="#removehost-removes-the-host-from-the-cluster" aria-hidden="true"><span class="octicon octicon-link"></span></a>removehost removes the host from the cluster</h5>
+
+<pre><code>$virtdc removehost -h
+usage: virtdc removehost [-h] hostname
+
+positional arguments:
+  hostname    get the host
+</code></pre>
+
+<h5>
+<a id="loadbalance-loadbalances-all-the-hosts-in-the-cluster" class="anchor" href="#loadbalance-loadbalances-all-the-hosts-in-the-cluster" aria-hidden="true"><span class="octicon octicon-link"></span></a>loadbalance loadbalances all the hosts in the cluster</h5>
+
+<pre><code>$virtdc loadbalance -h
+usage: virtdc loadbalance [-h] hostname
+
+positional arguments:
+  hostname    get the host
+</code></pre>
+
+<h5>
+<a id="consolidate-consolidates-domains-with-the-minimal-number-of-hosts" class="anchor" href="#consolidate-consolidates-domains-with-the-minimal-number-of-hosts" aria-hidden="true"><span class="octicon octicon-link"></span></a>consolidate consolidates domains with the minimal number of hosts</h5>
+
+<pre><code>$virtdc consolidate  -h
+usage: virtdc consolidate [-h]
+</code></pre>
+
+<h5>
+<a id="addhost-adds-new-host-to-the-cluster" class="anchor" href="#addhost-adds-new-host-to-the-cluster" aria-hidden="true"><span class="octicon octicon-link"></span></a>addhost adds new host to the cluster</h5>
+
+<pre><code>$virtdc addhost  -h
+usage: virtdc addhost [-h] hostname cpu memory io
+
+positional arguments:
+  hostname    get the host
+  cpu         get the cpu
+  memory      get memory in KiB
+  io          get the io in KiB
+</code></pre>
+
+<h5>
+<a id="getip-gets-domain-ip" class="anchor" href="#getip-gets-domain-ip" aria-hidden="true"><span class="octicon octicon-link"></span></a>getip gets domain ip</h5>
+
+<pre><code>$virtdc getip  -h
+usage: virtdc getip [-h] vmid
+
+positional arguments:
+  vmid        get the domain id
+</code></pre>
+
+<h5>
+<a id="setsmtpserver-sets-smtp-server-to-send-emails" class="anchor" href="#setsmtpserver-sets-smtp-server-to-send-emails" aria-hidden="true"><span class="octicon octicon-link"></span></a>setsmtpserver sets smtp server to send emails</h5>
+
+<pre><code>virtdc setsmtpserver  -h
+usage: virtdc setsmtpserver [-h] serverip
+
+positional arguments:
+  serverip    get the smtp server ip
+</code></pre>
+
+<h5>
+<a id="setfrommailaddress-sets-from-mailaddress-to-send-emails" class="anchor" href="#setfrommailaddress-sets-from-mailaddress-to-send-emails" aria-hidden="true"><span class="octicon octicon-link"></span></a>setfrommailaddress sets from mailaddress to send emails</h5>
+
+<pre><code>$virtdc setfrommailaddress  -h
+usage: virtdc setfrommailaddress [-h] mailid
+
+positional arguments:
+  mailid      get the from mail address
+</code></pre>
+
+<h5>
+<a id="addsupportmail-adds-support-mail-address-to-send-mails-in-case-of-any-exception" class="anchor" href="#addsupportmail-adds-support-mail-address-to-send-mails-in-case-of-any-exception" aria-hidden="true"><span class="octicon octicon-link"></span></a>addsupportmail adds support mail address to send mails in case of any exception</h5>
+
+<pre><code>$virtdc addsupportmail  -h
+usage: virtdc addsupportmail [-h] mailid
+
+positional arguments:
+  mailid      get the mail address
+</code></pre>
+
+<h5>
+<a id="monitorcpu-monitors-cpu-usage" class="anchor" href="#monitorcpu-monitors-cpu-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>monitorcpu monitors cpu usage</h5>
+
+<pre><code>$virtdc monitorcpu  -h
+usage: virtdc monitorcpu [-h] vmid
+
+positional arguments:
+  vmid        get the domain id
+</code></pre>
+
+<h5>
+<a id="monitormemory-monitors-memory-usage" class="anchor" href="#monitormemory-monitors-memory-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>monitormemory monitors memory usage</h5>
+
+<pre><code>$virtdc monitormemory  -h
+usage: virtdc monitormemory [-h] vmid
+
+positional arguments:
+  vmid        get the domain id
+</code></pre>
+
+<h5>
+<a id="monitorio-monitors-io-usage" class="anchor" href="#monitorio-monitors-io-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>monitorio monitors io usage</h5>
+
+<pre><code>$virtdc monitorio  -h
+usage: virtdc monitorio [-h] vmid
+
+positional arguments:
+  vmid        get the domain id
+</code></pre>
 
 <pre><code>$ cd your_repo_root/repo_name
 $ git fetch origin
@@ -52,19 +231,34 @@ $ git checkout gh-pages
 <h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>You can contact the contributors for any assistance,</p>
+
+<ul>
+<li>
+<a href="https://github.com/dineshappavoo" class="user-mention">@dineshappavoo</a> - Dinesh Appavoo</li>
+<li>
+<a href="https://github.com/deanmax" class="user-mention">@deanmax</a> - Ryan Wang</li>
+<li>
+<a href="https://github.com/maximus511" class="user-mention">@maximus511</a> - Rahul Nair</li>
+<li>
+<a href="https://github.com/rogerdai16" class="user-mention">@rogerdai16</a> - Quinghao Dai</li>
+<li>
+<a href="https://github.com/haanmo" class="user-mention">@haanmo</a> - Haan Mo Jhong</li>
+</ul>
+
+<p><a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
 
 <h3>
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
 <p>Having trouble with Pages? Check out the documentation at <a href="https://help.github.com/pages">https://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
       </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/virtdc">virtdc</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
     </div>
-    <footer>
-      <p>Project maintained by <a href="https://github.com/dineshappavoo">dineshappavoo</a></p>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    <script src="javascripts/scale.fix.js"></script>
     
   </body>
 </html>
