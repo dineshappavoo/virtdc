@@ -40,7 +40,7 @@ def initiateLiveMigration(vmid,sourcenode,destnode):
 
 
 #Not used
-def makeMemSaclingDecision(hostName,guest,memoryUsage,time):
+def makeMemScalingDecision(hostName,guest,memoryUsage,time):
 	memoryAlloted=guest.current_memory
 	maxMemory=''
 #	if(memoryUsage>memoryAlloted):
