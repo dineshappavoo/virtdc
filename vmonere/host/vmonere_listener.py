@@ -26,6 +26,8 @@ def receive_guest_usage(usage):
 		os_mem_usage = guest_usage[2].strip() if len(guest_usage[2].strip()) != 0 else 0
 		task_mem_usage = guest_usage[3].strip() if len(guest_usage[3].strip()) != 0 else 0
 		io_usage = guest_usage[4].strip() if len(guest_usage[4].strip()) != 0 else 0
+
+
 	except Exception as e:
 		pass
 	
