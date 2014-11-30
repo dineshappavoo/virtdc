@@ -3921,4 +3921,7 @@ Copy Image ::node4 :: VM_Task_3 :: Successfully copied the image
 Command 'virsh --connect qemu+ssh://node4/system create /var/lib/virtdc/guestconfiguration/VM_Task_3.xml' returned non-zero exit status 1
 Copy Image ::node4 :: VM_Task_3 :: Successfully copied the image
 1417222559.22 :: Create Guest :: VM_Task_3 :: Cannot create the guest
-Command 'virsh --connect qemu+ssh
+Command 'virsh --connect qemu+sshCopy Image ::node1 :: VM_Task_100 :: Successfully copied the image
+Create VM ::node1 :: VM_Task_100 :: Successfully created the VM
+Update IP::node1 :: VM_Task_100 :: Successfully updated the IP
+Copy Image ::node1 :: VM_Task_100 :: Successfully copied the image

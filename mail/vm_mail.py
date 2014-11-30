@@ -25,34 +25,34 @@ from email.mime.text import MIMEText
 
 #Activity Log
 vmmail_log = open('/var/lib/virtdc/logs/activity_logs/vmmail.log', 'a+')
-
+to_address = ''
 
 def send_support_mail(subject, content):
-    to_address = ''
-    try :	
-	# Create a text/plain message
-	msg = MIMEText(content)
+	try:
+		# Create a text/plain message
+		msg = MIMEText(content)
 
-	from_address = 'virtdc-support@virtdc.org'
-	to_address = ['dinesh.appavoo@utdallas.edu'] #['dinesh.appavoo@utdallas.edu','imaginejhm@gmail.com','rxw130330@utdallas.edu','qxd130530@utdallas.edu','rkn130030@utdallas.edu']
+		from_address = 'virtdc-support@virtdc.org'
+		to_address = ['dinesh.appavoo@utdallas.edu'] #['dinesh.appavoo@utdallas.edu','imaginejhm@gmail.com','rxw130330@utdallas.edu','qxd130530@utdallas.edu','rkn130030@utdallas.edu']
 
-	msg['Subject'] = subject
-	msg['From'] = from_address
-	msg['To'] = ",".join(to_address)
+		msg['Subject'] = subject
+		msg['From'] = from_address
+		msg['To'] = ",".join(to_address)
 
-	# Send the message via our own SMTP server, but don't include the
-	# envelope header.
-	s = smtplib.SMTP('localhost')
-	s.sendmail(from_address, to_address, msg.as_string())
-	s.quit()
-	vmmail_log.write(str(time.time())+'Mail to support ::'+str(to_address)+' :: Successfully sent\n')
+		# Send the message via our own SMTP server, but don't include the
+		# envelope header.
+		s = smtplib.SMTP('localhost')
+		s.sendmail(from_address, to_address, msg.as_string())
+		s.quit()
+		vmmail_log.write(str(time.time())+'Mail to support ::'+str(to_address)+' :: Successfully sent\n')
 
-    except Exception, e:
-	print str(time.time())+'Mail to support ::'+str(to_address)+' :: Failed\n'
-	vmmail_log.write(str(time.time())+'Mail to support ::'+str(to_address)+' :: Failed\n')
+	except Exception, e:
+		print str(time.time())+'Mail to support ::'+str(to_address)+' :: Failed\n'
+		vmmail_log.write(str(time.time())+'Mail to support ::'+str(to_address)+' :: Failed\n')
+
 
 if __name__ == "__main__":
-   # stuff only to run when not called via 'import' here
+	# stuff only to run when not called via 'import' here
 	# Open a plain text file for reading.  For this example, assume that
 	# the text file contains only ASCII characters.
 	fp = open('/var/lib/virtdc/mail/textfile.py', 'rb')

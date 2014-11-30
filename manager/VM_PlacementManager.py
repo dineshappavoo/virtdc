@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import sys, time
+import datetime
 sys.path.append('/var/lib/virtdc/framework')
 from VM_Info_Updater import addOrUpdateDictionaryOfVM
 from Guest import Guest
@@ -75,7 +76,7 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
 			vm_cpu_scaling(host, vmid, float(cpu_usage))
 			#update vm_host_dict
 			addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, float(cpu_usage), value.max_cpu,value.current_memory,value.max_memory,value.io, value.start_time))
-			manager_activity_log.write('PLACEMENT MANAGER::MEMORY::Scaling ::'+host+' :: '+vmid+' :: Memory scaled from '+value.alotted_memory+' to '+mem_usage+'\n')
+			manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::Scaling ::'+host+' :: '+vmid+' :: Memory scaled from '+value.alotted_memory+' to '+mem_usage+'\n')
 		else:
 			new_host = obj.is_space_available_for_vm(cpu_usage, mem_usage , io_usage)
 			if new_host is None:
@@ -93,7 +94,7 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
 			vm_memory_scaling(host, vmid, float(mem_usage))
 			#update vm_host_dict
 			addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, value.current_cpu, value.max_cpu, float(mem_usage),value.max_memory,value.io, value.start_time))
-	    		manager_activity_log.write('PLACEMENT MANAGER::MEMORY::Scaling ::'+str(host)+' :: '+str(vmid)+' :: Memory scaled from '+str(allotted_memory)+' to '+str(mem_usage)+'\n')
+	    		manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::Scaling ::'+str(host)+' :: '+str(vmid)+' :: Memory scaled from '+str(allotted_memory)+' to '+str(mem_usage)+'\n')
 		else:
 			new_host = obj.is_space_available_for_vm(cpu_usage, mem_usage , io_usage)
 			if new_host is None:

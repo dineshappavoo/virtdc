@@ -2,6 +2,7 @@
 
 import time
 import sys
+import datetime
 sys.path.append('/var/lib/virtdc/manager')
 sys.path.append('/var/lib/virtdc/framework')
 from VM_PlacementManager import process_action_on_current_usage
@@ -32,6 +33,8 @@ def receive_guest_usage(usage):
 		task_mem_usage = guest_usage[3].strip() if len(guest_usage[3].strip()) != 0 else 0
 		io_usage = guest_usage[4].strip() if len(guest_usage[4].strip()) != 0 else 0
 
+		#To report current usage to the placement manager
+		report_usage_to_placement_manager(vmid, cpu_usage, mem_usage, io_usage)
 
 	except Exception as e:
 		pass
@@ -39,17 +42,21 @@ def receive_guest_usage(usage):
 
 	path = '/var/lib/virtdc/logs/monitor_logs/'+vmid+'.log'
         file= open(path, 'a+')
-	usage= vmid+' \t|\t '+ str(cpu_usage) + '\t|\t' + str(os_mem_usage) + '\t|\t' + str(task_mem_usage) + '\t|\t' + str(io_usage) +"\n"
+	usage= str(datetime.datetime.now()) +' \t|\t '+ vmid+' \t|\t '+ str(cpu_usage) + '\t|\t' + str(os_mem_usage) + '\t|\t' + str(task_mem_usage) + '\t|\t' + str(io_usage) +"\n"
         file.write(usage+'\n')
 	file.close()
 
 
 def report_usage_to_placement_manager(vmid, cpu_usage, mem_usage, io_usage):
-	host = get_host_name(vmid)
-	domain_object = get_domain_object(vmid)
-	process_action_on_current_usage(host, vmid, domain_object, cpu_usage, mem_usage, io_usage)	
-	
 
+	try:
+		host = get_host_name(vmid)
+		domain_object = get_domain_object(vmid)
+		process_action_on_current_usage(host, vmid, domain_object, cpu_usage, mem_usage, io_usage)	
+
+	except Exception as e:
+		pass
+	
 
 if __name__ == "__main__":
 	receive_guest_usage(sys.argv[1])

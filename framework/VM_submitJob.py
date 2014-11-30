@@ -151,7 +151,7 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
 	return True
 
     except Exception, e:
-        print 'Cannot create VM '+str(vmid)
+        print 'Error occured during domain creation/run job'+str(vmid)
 
 	#exc_type, exc_obj, exc_tb = sys.exc_info()
     	#fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
