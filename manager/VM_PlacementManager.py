@@ -8,7 +8,6 @@ from VM_migrateGuest import vm_migrate_guest
 from VM_cpuScaling import vm_cpu_scaling
 from VM_memoryScaling import vm_memory_scaling, vm_max_memory_scaling
 from VM_decisionMaker import NodeFinder
-from VM_migrateGuest import vm_migrate_guest
 
 
 #API for VM placement manager
@@ -40,7 +39,7 @@ def initiateLiveMigration(vmid,sourcenode,destnode):
 
 
 #Not used
-def makeMemSaclingDecision(hostName,guest,memoryUsage,time):
+def makeMemScalingDecision(hostName,guest,memoryUsage,time):
 	memoryAlloted=guest.current_memory
 	maxMemory=''
 #	if(memoryUsage>memoryAlloted):

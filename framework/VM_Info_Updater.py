@@ -4,6 +4,7 @@ import sys, time
 from Guest import Guest
 from VM_Framework_Utility import getGuestIP
 from Host_Info_Tracker import GetNodeDict
+from lockfile import LockFile
 
 #==============================================================================
 # Variables
@@ -62,9 +63,17 @@ def addOrUpdateDictionaryOfVM(hostName,vmid, guest) :
 	print host_vm_dict
 
 def pickleNodeVMDictionary(dictionary) :
+	lock = LockFile("/var/lib/virtdc/framework/host_vm_dict.pkl")
+	try:
+		lock.acquire(timeout=5)    # wait up to 5 seconds
+	except LockTimeout:
+		lock.break_lock()
+		lock.acquire()
+	#print "I locked", lock.path
 	with open('/var/lib/virtdc/framework/host_vm_dict.pkl','w') as host_vm_pickle_out:
     		pickle.dump(dictionary,host_vm_pickle_out)
 		#host_vm_pickle_out.close()
+	lock.release()
 
 #======================================================================
 #			Function calls 42424345353
