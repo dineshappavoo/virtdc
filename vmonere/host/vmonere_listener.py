@@ -2,6 +2,11 @@
 
 import time
 import sys
+sys.path.append('/var/lib/virtdc/manager')
+sys.path.append('/var/lib/virtdc/framework')
+from VM_PlacementManager import process_action_on_current_usage
+from virtdc_command_line_utility import get_host_name, get_domain_object
+
 
 #==============================================================================
 # Variables
@@ -37,6 +42,13 @@ def receive_guest_usage(usage):
 	usage= vmid+' \t|\t '+ str(cpu_usage) + '\t|\t' + str(os_mem_usage) + '\t|\t' + str(task_mem_usage) + '\t|\t' + str(io_usage) +"\n"
         file.write(usage+'\n')
 	file.close()
+
+
+def report_usage_to_placement_manager(vmid, cpu_usage, mem_usage, io_usage):
+	host = get_host_name(vmid)
+	domain_object = get_domain_object(vmid)
+	process_action_on_current_usage(host, vmid, domain_object, cpu_usage, mem_usage, io_usage)	
+	
 
 
 if __name__ == "__main__":

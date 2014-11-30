@@ -40,6 +40,14 @@ def get_host_name(vm_id):
 				return node
 	return None
 
+def get_domain_object(vm_id):
+	host_vm_dict = getHostVMDict()
+	for node, vm_dict in host_vm_dict.iteritems():
+        	for vmid,value in vm_dict.iteritems():
+			if vm_id == vmid:
+				return value
+	return None
+
 def list_host_and_domain():
 	host_vm_dict = getHostVMDict()
 	print '%s%s%s' %(str('Host Name').ljust(25),str('Domain Name').ljust(25),'Status')
