@@ -5028,4 +5028,6 @@ MEMORY :: Scale Guest ::node1 :: VM_Task_10 :: Cannot scale the cpu in guest
 MEMORY :: Scale Guest ::node1 :: VM_Task_100 :: Cannot scale the cpu in guest
 MEMORY :: Scale Guest ::node1 :: VM_Task_12 :: Cannot scale the cpu in guest
 MEMORY :: Scale Guest ::node3 :: VM_Task_2 :: Cannot scale the cpu in guest
-MEMORY :: Scale Guest ::node3
+MEMORY :: Scale Guest ::node32014-12-01 00:32:54.004134::Scale Guest ::node1 :: VM_Task_11 :: Cannot scale the cpu in guest
+2014-12-01 00:33:18.729828::Scale Guest ::node1 :: VM_Task_11 :: Cannot scale the cpu in guest
+2014-12-01 00:35:02.103381::Scale Guest ::node3 :: VM_Task_2 :: Cannot scale the cpu in guest

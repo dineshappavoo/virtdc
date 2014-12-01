@@ -65,4 +65,4 @@ def vm_max_memory_scaling(host, vmid, max_mem_size):
 #For Testing
 if __name__ == "__main__":
     # stuff only to run when not called via 'import' here
-    vm_memory_scaling("node1","VM_Task_1","1108576")
+    vm_memory_scaling("node1","VM_Task_100","2132152")

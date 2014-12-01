@@ -54,6 +54,17 @@ def makeMemScalingDecision(hostName,guest,memoryUsage,time):
 #			else:
 #				initiateMemScaleUpOrDown(hostName, guest.vmid, memoryUsage)
 
+def report_usage_to_placement_manager(vmid, cpu_usage, mem_usage, io_usage):
+
+	try:
+		host = get_host_name(vmid)
+		domain_object = get_domain_object(vmid)
+		process_action_on_current_usage(host, vmid, domain_object, cpu_usage, mem_usage, io_usage)	
+
+	except Exception as e:
+		pass
+
+
 #Process current usage and take action based on SLA
 def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_usage):
 
@@ -118,5 +129,6 @@ def reactOnHotSpot():
     e=0
 
 if __name__ == "__main__":
-   # stuff only to run when not called via 'import' here
-   process_action_on_current_usage('node1', 'VM_Task_1', Guest("192.168.1.14","Task1", float(1), float(3),float(42424345353),float(424242),float(1), time.time()), '1.0', '424242', '42424345353')
+	# stuff only to run when not called via 'import' here
+	report_usage_to_placement_manager(vmid, cpu_usage, mem_usage, io_usage)
+	#process_action_on_current_usage('node1', 'VM_Task_1', Guest("192.168.1.14","Task1", float(1), float(3),float(42424345353),float(424242),float(1), time.time()), '1.0', '424242', '42424345353')

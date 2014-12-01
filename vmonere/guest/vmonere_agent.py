@@ -87,7 +87,7 @@ def report_usage_periodically():
 	vmid = get_vmid()
 	while(1):
 		report_usage_to_host(host_ip, vmid)
-		time.sleep(5)
+		time.sleep(10)
 
 if __name__ == "__main__":
 	report_usage_periodically()
