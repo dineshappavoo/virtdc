@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import sys, subprocess
+import datetime
 from Host_Info_Tracker import resume_resources_from_guest
 from VM_Info_Updater import addOrUpdateDictionaryOfVM, getHostVMDict
 
@@ -56,14 +57,14 @@ def vm_terminate_guest(source_host, vmid):
 
 	print 'Terminate Guest ::'+source_host+' :: '+vmid+' :: Successfully terminated the guest\n'
 
-        vmtermination_log.write('Terminate Guest ::'+source_host+' :: '+vmid+' :: Successfully terminated the guest\n')
+        vmtermination_log.write(str(datetime.datetime.now()) +'::Terminate Guest ::'+source_host+' :: '+vmid+' :: Successfully terminated the guest\n')
 
 	vm_terminate_dependency(source_host, vmid)
 
         return True
     except Exception, e:
         print 'Cannot remove VM '+str(vmid)+' in '+str(source_host)
-        vmtermination_log.write('Terminate Guest ::'+source_host+' :: '+vmid+' :: Cannot terminate the guest\n')
+        vmtermination_log.write(str(datetime.datetime.now()) +'::Terminate Guest ::'+source_host+' :: '+vmid+' :: Cannot terminate the guest\n')
         return False
 
 

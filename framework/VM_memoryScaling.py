@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import sys, subprocess
+import datetime
 #API to scale the memory in the running guest on any Host
 
 #==============================================================================
@@ -43,7 +44,7 @@ def vm_memory_scaling(host, vmid, mem_size):
         return True
     except:
         print 'Cannot scale memory in VM '+str(vmid)+' in '+str(host)
-        vmscaling_log.write('MEMORY :: Scale Guest ::'+str(host)+' :: '+str(vmid)+' :: Cannot scale the cpu in guest\n')
+        vmscaling_log.write(str(datetime.datetime.now()) +'::MEMORY :: Scale Guest ::'+str(host)+' :: '+str(vmid)+' :: Cannot scale the cpu in guest\n')
         return False
 
 
@@ -58,7 +59,7 @@ def vm_max_memory_scaling(host, vmid, max_mem_size):
         return True
     except:
         print 'Cannot scale memory in VM '+str(vmid)+' in '+str(host)
-        vmscaling_log.write('MEMORY :: Scale Guest ::'+host+' :: '+vmid+' :: Cannot scale the max memory in guest\n')
+        vmscaling_log.write(str(datetime.datetime.now()) +'::MEMORY :: Scale Guest ::'+host+' :: '+vmid+' :: Cannot scale the max memory in guest\n')
         return False
 
 #For Testing

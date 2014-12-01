@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import sys, subprocess
+import datetime
 from Host_Info_Tracker import resume_resources_from_guest
 from VM_Info_Updater import addOrUpdateDictionaryOfVM, getHostVMDict
 #API to migrate the running guest from source host to the destination host
@@ -46,11 +47,11 @@ def vm_migrate_guest(source_host, dest_host, vmid):
 	subprocess.check_output(migration_cmd, shell=True, stderr=subprocess.PIPE)
 
 	vm_migrate_dependency(source_host,dest_host,vmid)
-        vmmigration_log.write('Terminate Guest ::'+source_host+' :: '+vmid+' :: Successfully migrated the guest\n')
+        vmmigration_log.write(str(datetime.datetime.now()) +'::Migrate Guest ::'+source_host+' :: '+vmid+' :: Successfully migrated the guest\n')
         return True
     except Exception, e:
         print 'Cannot migrate VM '+str(vmid)+' in '+str(source_host)
-        vmmigration_log.write('Migrate Guest ::'+source_host+' :: '+vmid+' :: Cannot migrate the guest\n')
+        vmmigration_log.write(str(datetime.datetime.now()) +'::Migrate Guest ::'+source_host+' :: '+vmid+' :: Cannot migrate the guest\n')
         vmmigration_log.write(str(e.output) + '\n')
         return False
 

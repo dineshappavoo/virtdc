@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import sys, subprocess
+import datetime
 #API to scale the CPU in the running guest on any Host
 
 #==============================================================================
@@ -40,11 +41,11 @@ def vm_cpu_scaling(host, vmid, cpu_count):
 	scaling_cmd = scaling_cmd.replace("cpu_count", cpu_count.strip());
 	print scaling_cmd
 	cpu_scale = subprocess.check_output(scaling_cmd, shell=True, stderr=subprocess.PIPE)
-	vmscaling_log.write('Scale Guest ::'+host+' :: '+vmid+' :: Successful\n')
+	vmscaling_log.write(str(datetime.datetime.now()) +'Scale Guest ::'+host+' :: '+vmid+' :: Successful\n')
         return True
     except:
         print 'Cannot scale cpu in VM '+str(vmid)+' in '+str(host)
-        vmscaling_log.write('Scale Guest ::'+host+' :: '+vmid+' :: Cannot scale the cpu in guest\n')
+        vmscaling_log.write(str(datetime.datetime.now()) +'::Scale Guest ::'+host+' :: '+vmid+' :: Cannot scale the cpu in guest\n')
         return False
 
 #For Testing

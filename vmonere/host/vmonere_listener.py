@@ -34,7 +34,7 @@ def receive_guest_usage(usage):
 		io_usage = guest_usage[4].strip() if len(guest_usage[4].strip()) != 0 else 0
 
 		#To report current usage to the placement manager
-		report_usage_to_placement_manager(vmid, cpu_usage, mem_usage, io_usage)
+		report_usage_to_placement_manager(vmid, cpu_usage, task_mem_usage, io_usage)
 
 	except Exception as e:
 		pass

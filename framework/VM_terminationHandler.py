@@ -1,9 +1,10 @@
 #!/usr/bin/python
 
 import sys, time
+import datetime
 from multiprocessing import Process
 sys.path.append('/var/lib/virtdc/manager')
-from VM_terminationList import calculate_vm_endtime
+from VM_calculateLifeTime import calculate_vm_endtime
 from VM_Info_Updater import getHostVMDict
 from Guest import Guest
 from VM_terminateGuest import vm_terminate_guest
@@ -45,7 +46,7 @@ def fetch_vm_termination_list():
 			if (time.time() >= vm_end_time ):
 				if (vm_terminate_guest(node, vmid) ):
 					vm_termination_list.append(vmid)
-					vmtermination_log.write(str(time.time())+' :: TERMINATION HANDLER ::'+node+' :: '+vmid+' :: Guest terminated\n')
+					vmtermination_log.write(str(datetime.datetime.now()) +' :: TERMINATION HANDLER ::'+node+' :: '+vmid+' :: Guest terminated\n')
 					
 	time.sleep(20) 
 

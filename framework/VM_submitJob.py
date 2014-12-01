@@ -5,6 +5,7 @@
 #This takes the VM guest configuration file from the local disk and create a new VM in current node or in a different one
 
 import sys, getopt, subprocess, time, os
+import datetime
 from VM_decisionMaker import NodeFinder
 from VM_Framework_Utility import getGuestIP
 from VM_Info_Updater import addOrUpdateDictionaryOfVM
@@ -43,12 +44,14 @@ _base_memory_size=2097152       # 2 GB (This includes OS memory)
 #===============================================================================
 
 
-#Activity Log
-vmsubmission_log = open('/var/lib/virtdc/logs/activity_logs/vmsubmission.log', 'a+')
+
 
 def vm_submitjob(vmid,cpu,memory, max_memory, io):
 
     try :
+	#Activity Log
+	vmsubmission_log = open('/var/lib/virtdc/logs/activity_logs/vmsubmission.log', 'a+')
+
 	obj=NodeFinder()
 	#memory=float(_base_memory_size) + float(memory)
 	#print "Memory "+str(memory)
@@ -100,7 +103,7 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
 	image_dest=prefix_host+guest_image+vmid+".img"
 	cp_cmd =_imageCopyCmd+guest_image+"base_image.img "+image_dest
 	copy_image = subprocess.check_output(cp_cmd, shell=True, stderr=subprocess.PIPE)
-	vmsubmission_log.write('Copy Image ::'+host+' :: '+vmid+' :: Successfully copied the image\n')		
+	vmsubmission_log.write(str(datetime.datetime.now()) +'::Copy Image ::'+host+' :: '+vmid+' :: Successfully copied the image\n')		
 
 	#uuid = subprocess.check_output("uuidgen", shell=True, stderr=subprocess.PIPE)
 
@@ -122,14 +125,14 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
 	#command to clone the image
 	clone=_cloneCmd+guest_info_file
 	clone_out = subprocess.check_output(clone, shell=True, stderr=subprocess.PIPE)
-	vmsubmission_log.write('Create VM ::'+host+' :: '+vmid+' :: Successfully created the VM\n')
+	vmsubmission_log.write(str(datetime.datetime.now()) +'::Create VM ::'+host+' :: '+vmid+' :: Successfully created the VM\n')
 	
 	#VM Successfully created. Update the node dictionary pickle
 	host = obj.place_job (host, cpu,max_memory,io)
 
        	if host is None:
     		print 'Issue in updating node dictionary'
-    		vmsubmission_log.write('Update Node Dictionary ::'+host+' :: '+vmid+' :: Issue in updating node dictionary\n')
+    		vmsubmission_log.write(str(datetime.datetime.now()) +'::Update Node Dictionary ::'+host+' :: '+vmid+' :: Issue in updating node dictionary\n')
 		return False
 
 	# Wait for VM to boot up
@@ -137,8 +140,8 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
 
 	#Get the IP address of Virtual Machine and update in VM_Info_Updater
 	guest_ip=getGuestIP(host.strip(), vmid.strip(), "root", "Teamb@123")
-	addOrUpdateDictionaryOfVM(host, vmid, Guest(guest_ip, vmid, float(1), float(cpu),float(memory),float(max_memory),float(1), time.time()))
-	vmsubmission_log.write('Update IP::'+host+' :: '+vmid+' :: Successfully updated the IP\n')
+	addOrUpdateDictionaryOfVM(host, vmid, Guest(guest_ip, vmid, float(1), float(cpu),float(memory),float(max_memory),float(1), str(datetime.datetime.now())  ))
+	vmsubmission_log.write(str(datetime.datetime.now())+'::Update IP::'+host+' :: '+vmid+' :: Successfully updated the IP\n')
 	
 	# copy host_config.txt file to guest
 	# this will start monitor_agent on guest
@@ -146,7 +149,7 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
 
 	#Run Job in Guest
 	runJobOnVM(host, vmid)
-	vmsubmission_log.write('Run Job::'+host+' :: '+vmid+' :: Successfully ran the job\n')
+	vmsubmission_log.write(str(datetime.datetime.now()) +'::Run Job::'+host+' :: '+vmid+' :: Successfully ran the job\n')
 
 	return True
 
@@ -157,7 +160,7 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
     	#fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
     	#print exc_type, fname, exc_tb.tb_lineno
 
-        vmsubmission_log.write(str(time.time())+' :: Create Guest :: '+vmid+' :: Cannot create the guest\n')
+        vmsubmission_log.write(str(datetime.datetime.now()) +' :: Create Guest :: '+vmid+' :: Cannot create the guest\n')
         vmsubmission_log.write(str(e) + '\n')
  	mail_subject = 'Guest creation error - '+str(vmid)
 	mail_content = 'Error occured during guest creation '+vmid+' . The error as follows, \n\n'+str(e)+'\n'

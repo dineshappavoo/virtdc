@@ -2,6 +2,7 @@
 # Import smtplib for the actual sending function
 import smtplib
 import time
+import datetime
 # Import the email modules we'll need
 from email.mime.text import MIMEText
 
@@ -44,11 +45,11 @@ def send_support_mail(subject, content):
 		s = smtplib.SMTP('localhost')
 		s.sendmail(from_address, to_address, msg.as_string())
 		s.quit()
-		vmmail_log.write(str(time.time())+'Mail to support ::'+str(to_address)+' :: Successfully sent\n')
+		vmmail_log.write(str(datetime.datetime.now()) +'Mail to support ::'+str(to_address)+' :: Successfully sent\n')
 
 	except Exception, e:
-		print str(time.time())+'Mail to support ::'+str(to_address)+' :: Failed\n'
-		vmmail_log.write(str(time.time())+'Mail to support ::'+str(to_address)+' :: Failed\n')
+		print str(datetime.datetime.now()) +'Mail to support ::'+str(to_address)+' :: Failed\n'
+		vmmail_log.write(str(datetime.datetime.now()) +'Mail to support ::'+str(to_address)+' :: Failed\n')
 
 
 if __name__ == "__main__":

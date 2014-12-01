@@ -21,16 +21,18 @@ _base_memory_size=2097152       # 2 GB (This includes OS memory)
 
 
 def simulate_google_data():
-    #cmd = "python /root/Desktop/VMPlacementAndScaling/com.vmplacement.manager/VM_Monitor.py &"
-    #os.system(cmd)
-    #monitor_process = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
-    for file_name in os.listdir(data_folder_path):
-        if file_name.endswith(".csv"):
-            #print file_name
-            vm_status = execute_task(file_name)
-            continue
-        else:
-            continue
+	#cmd = "python /root/Desktop/VMPlacementAndScaling/com.vmplacement.manager/VM_Monitor.py &"
+	#os.system(cmd)
+	#monitor_process = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
+
+
+	for file_name in os.listdir(data_folder_path):
+		if file_name.endswith(".csv"):
+		    #print file_name
+		    vm_status = execute_task(file_name)
+		    continue
+		else:
+		    continue
 
 def execute_task(file_name):
     #cpu_Val_cmd = 'tail -2 '+data_folder_path+'/'+file_name +' | head -1'
