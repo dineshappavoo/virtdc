@@ -51,4 +51,4 @@ def vm_cpu_scaling(host, vmid, cpu_count):
 #For Testing
 if __name__ == "__main__":
     # stuff only to run when not called via 'import' here
-    vm_cpu_scaling("node3","VM_Task_2","2")
+    vm_cpu_scaling("node1","VM_Task_2","2")

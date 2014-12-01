@@ -3618,3 +3618,101 @@ global name 'report_usage_to_placement_manager' is not defined
 global name 'report_usage_to_placement_manager' is not defined
 2014-12-01 00:39:37.785605 :: vmonere listener :: VM_Task_11 :: error in listener / reporting to manager 
 global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:39:40.384823 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:39:41.943419 :: vmonere listener :: VM_Task_13 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:39:46.562487 :: vmonere listener :: VM_Task_12 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:39:50.326209 :: vmonere listener :: VM_Task_11 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:39:51.690575 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:39:53.309169 :: vmonere listener :: VM_Task_13 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:39:58.444080 :: vmonere listener :: VM_Task_12 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:01.905117 :: vmonere listener :: VM_Task_11 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:03.841601 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:04.546447 :: vmonere listener :: VM_Task_13 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:09.789663 :: vmonere listener :: VM_Task_12 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:13.139234 :: vmonere listener :: VM_Task_11 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:15.094621 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:15.824114 :: vmonere listener :: VM_Task_13 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:21.085372 :: vmonere listener :: VM_Task_12 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:24.399223 :: vmonere listener :: VM_Task_11 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:26.956622 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:27.077912 :: vmonere listener :: VM_Task_13 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:32.730786 :: vmonere listener :: VM_Task_12 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:36.254736 :: vmonere listener :: VM_Task_11 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:38.422789 :: vmonere listener :: VM_Task_13 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:38.595685 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:43.985776 :: vmonere listener :: VM_Task_12 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:47.740155 :: vmonere listener :: VM_Task_11 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:49.683119 :: vmonere listener :: VM_Task_13 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:49.875208 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:55.247005 :: vmonere listener :: VM_Task_12 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:40:59.228135 :: vmonere listener :: VM_Task_11 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:41:01.167378 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:41:48.490421 :: vmonere listener :: VM_Task_13 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:41:48.662638 :: vmonere listener :: VM_Task_14 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:41:48.798479 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:41:49.768939 :: vmonere listener :: VM_Task_12 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:41:50.400338 :: vmonere listener :: VM_Task_11 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:41:59.918131 :: vmonere listener :: VM_Task_14 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:42:00.067828 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:42:01.391666 :: vmonere listener :: VM_Task_12 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:42:01.391692 :: vmonere listener :: VM_Task_13 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:42:01.903929 :: vmonere listener :: VM_Task_11 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:42:11.164087 :: vmonere listener :: VM_Task_14 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:42:11.328660 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:42:12.643654 :: vmonere listener :: VM_Task_13 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:42:12.811880 :: vmonere listener :: VM_Task_12 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:42:13.218403 :: vmonere listener :: VM_Task_11 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:42:23.565979 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:42:23.633990 :: vmonere listener :: VM_Task_14 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:42:24.090477 :: vmonere listener :: VM_Task_13 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:42:24.132165 :: vmonere listener :: VM_Task_12 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:42:24.483334 :: vmonere listener :: VM_Task_11 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined

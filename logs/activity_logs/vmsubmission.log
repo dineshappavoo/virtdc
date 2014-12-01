@@ -4652,3 +4652,11 @@ Command 'cp /home/vm_img/base_image.img /home/vm_img/VM_Task_100.img' returned n
 2014-12-01 00:37:08.615233::Create VM ::node1 :: VM_Task_12 :: Successfully created the VM
 2014-12-01 00:38:19.419187::Update IP::node1 :: VM_Task_12 :: Successfully updated the IP
 2014-12-01 00:38:19.766544::Run Job::node1 :: VM_Task_12 :: Successfully ran the job
+2014-12-01 00:38:27.839889::Copy Image ::node1 :: VM_Task_13 :: Successfully copied the image
+2014-12-01 00:38:28.726377::Create VM ::node1 :: VM_Task_13 :: Successfully created the VM
+2014-12-01 00:39:40.109143::Update IP::node1 :: VM_Task_13 :: Successfully updated the IP
+2014-12-01 00:39:40.443400::Run Job::node1 :: VM_Task_13 :: Successfully ran the job
+2014-12-01 00:39:48.099025::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 00:39:49.170802::Create VM ::node1 :: VM_Task_14 :: Successfully created the VM
+2014-12-01 00:41:00.156406::Update IP::node1 :: VM_Task_14 :: Successfully updated the IP
+2014-12-01 00:41:00.934346::Run Job::node1 :: VM_Task_14 :: Successfully ran the job
