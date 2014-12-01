@@ -21,10 +21,13 @@ from virtdc_command_line_utility import get_host_name, get_domain_object
 
 #==============================================================================
 
+
 def receive_guest_usage(usage):
-	
+
 	#print 'Listener '+str(usage)
 	try:
+		#Activity Log
+		vmlistener_log = open('/var/lib/virtdc/logs/activity_logs/vmlistener.log', 'a+')
 		usage = usage.strip()
 		guest_usage = usage.split('|')
 		vmid = guest_usage[0].strip() if len(guest_usage[0].strip()) != 0 else 0
@@ -37,10 +40,11 @@ def receive_guest_usage(usage):
 		report_usage_to_placement_manager(vmid, cpu_usage, task_mem_usage, io_usage)
 
 	except Exception as e:
+		vmlistener_log.write(str(datetime.datetime.now()) +' :: vmonere listener :: '+vmid+' :: error in listener / reporting to manager \n')
+		vmlistener_log.write(str(e) + '\n')
 		pass
-	
 
-	path = '/var/lib/virtdc/logs/monitor_logs/'+vmid+'.log'
+	path = '/var/lib/vmonere/logs/monitor_logs/'+vmid+'.log'
         file= open(path, 'a+')
 	usage= str(datetime.datetime.now()) +' \t|\t '+ vmid+' \t|\t '+ str(cpu_usage) + '\t|\t' + str(os_mem_usage) + '\t|\t' + str(task_mem_usage) + '\t|\t' + str(io_usage) +"\n"
         file.write(usage+'\n')

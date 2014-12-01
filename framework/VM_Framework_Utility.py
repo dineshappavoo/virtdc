@@ -65,7 +65,7 @@ def getGuestIP(host, vmid, username, password) :
 
 if __name__ == "__main__":
    # stuff only to run when not called via 'import' here
-   getGuestIP('node1', 'VM_Task_13', 'root', 'Teamb@123')
+   getGuestIP('node3', 'VM_Task_20', 'root', 'Teamb@123')
 
 	
 	

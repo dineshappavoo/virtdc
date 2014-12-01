@@ -57,6 +57,7 @@ def makeMemScalingDecision(hostName,guest,memoryUsage,time):
 #Process current usage and take action based on SLA
 def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_usage):
 
+	manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::Scaling ::'+host+' :: '+vmid+' :: Memory scaled from '+value.alotted_memory+' to '+mem_usage+'\n')
 	obj=NodeFinder()
 	max_cpu = value.max_cpu
 	allotted_cpu = value.current_cpu
