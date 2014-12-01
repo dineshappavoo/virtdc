@@ -5033,3 +5033,13 @@ MEMORY :: Scale Guest ::node32014-12-01 00:32:54.004134::Scale Guest ::node1 :: 
 2014-12-01 00:35:02.103381::Scale Guest ::node3 :: VM_Task_2 :: Cannot scale the cpu in guest
 2014-12-01 00:39:44.836453::Scale Guest ::node1 :: VM_Task_ :: Cannot scale the cpu in guest
 2014-12-01 00:40:14.026331::Scale Guest ::node1 :: VM_Task_2 :: Cannot scale the cpu in guest
+2014-12-01 00:48:21.861772Scale Guest ::node1 :: VM_Task_100 :: Successful
+2014-12-01 01:01:04.294368""MEMORY :: Scale Guest ::node1 :: VM_Task_100 :: Successful
+2014-12-01 01:02:09.305042""MEMORY :: Scale Guest ::node1 :: VM_Task_100 :: Successful
+2014-12-01 01:15:56.154523::Scale Guest ::node1 :: VM_Task_100 :: Cannot scale the cpu in guest
+2014-12-01 01:16:59.961236::Scale Guest ::node1 :: VM_Task_100 :: Cannot scale the cpu in guest
+2014-12-01 01:17:36.919665::Scale Guest ::node1 :: VM_Task_100 :: Cannot scale the cpu in guest
+2014-12-01 01:18:12.053880::Scale Guest ::node1 :: VM_Task_100 :: Cannot scale the cpu in guest
+2014-12-01 01:18:43.576846::Scale Guest ::node1 :: VM_Task_100 :: Cannot scale the cpu in guest
+2014-12-01 01:19:54.378189Scale Guest ::node1 :: VM_Task_100 :: Successful
+2014-12-01 01:21:01.228303""MEMORY :: Scale Guest ::node1 :: VM_Task_100 :: Successful

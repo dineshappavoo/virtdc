@@ -2,6 +2,8 @@
 
 import sys, subprocess
 import datetime
+from Guest import Guest
+from VM_Info_Updater import addOrUpdateDictionaryOfVM, getHostVMDict
 #API to scale the memory in the running guest on any Host
 
 #==============================================================================
@@ -41,6 +43,9 @@ def vm_memory_scaling(host, vmid, mem_size):
 	scaling_cmd = scaling_cmd.replace("host_node", host.strip());
 	scaling_cmd = scaling_cmd.replace("mem_size", mem_size.strip());
 	mem_scale = subprocess.check_output(scaling_cmd, shell=True, stderr=subprocess.PIPE)
+	#call to update dictionary
+	update_dictionary(host, vmid, mem_size)
+	vmscaling_log.write(str(datetime.datetime.now()) +'""MEMORY :: Scale Guest ::'+host+' :: '+vmid+' :: Successful\n')
         return True
     except:
         print 'Cannot scale memory in VM '+str(vmid)+' in '+str(host)
@@ -62,7 +67,13 @@ def vm_max_memory_scaling(host, vmid, max_mem_size):
         vmscaling_log.write(str(datetime.datetime.now()) +'::MEMORY :: Scale Guest ::'+host+' :: '+vmid+' :: Cannot scale the max memory in guest\n')
         return False
 
+def update_dictionary(host, vmid, mem_size):
+	host_vm_dict = getHostVMDict()
+    	value = host_vm_dict[host][vmid]
+	addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, value.current_cpu, value.max_cpu, mem_size, value.max_memory,value.io, value.start_time))
+
+
 #For Testing
 if __name__ == "__main__":
     # stuff only to run when not called via 'import' here
-    vm_memory_scaling("node1","VM_Task_100","2132152")
+    vm_memory_scaling("node1","VM_Task_100","2150000")

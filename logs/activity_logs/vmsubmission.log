@@ -4660,3 +4660,31 @@ Command 'cp /home/vm_img/base_image.img /home/vm_img/VM_Task_100.img' returned n
 2014-12-01 00:39:49.170802::Create VM ::node1 :: VM_Task_14 :: Successfully created the VM
 2014-12-01 00:41:00.156406::Update IP::node1 :: VM_Task_14 :: Successfully updated the IP
 2014-12-01 00:41:00.934346::Run Job::node1 :: VM_Task_14 :: Successfully ran the job
+2014-12-01 00:41:48.026947::Copy Image ::node1 :: VM_Task_15 :: Successfully copied the image
+2014-12-01 00:41:50.657100::Create VM ::node1 :: VM_Task_15 :: Successfully created the VM
+2014-12-01 00:43:01.870356::Update IP::node1 :: VM_Task_15 :: Successfully updated the IP
+2014-12-01 00:43:02.450470::Run Job::node1 :: VM_Task_15 :: Successfully ran the job
+2014-12-01 00:43:44.649828::Copy Image ::node1 :: VM_Task_16 :: Successfully copied the image
+2014-12-01 00:43:45.963761::Create VM ::node1 :: VM_Task_16 :: Successfully created the VM
+2014-12-01 00:44:57.193357::Update IP::node1 :: VM_Task_16 :: Successfully updated the IP
+2014-12-01 00:44:57.903444::Run Job::node1 :: VM_Task_16 :: Successfully ran the job
+2014-12-01 01:14:07.956015::Copy Image ::node1 :: VM_Task_100 :: Successfully copied the image
+2014-12-01 01:14:09.491002::Create VM ::node1 :: VM_Task_100 :: Successfully created the VM
+2014-12-01 01:15:20.457170::Update IP::node1 :: VM_Task_100 :: Successfully updated the IP
+2014-12-01 01:15:20.724477::Run Job::node1 :: VM_Task_100 :: Successfully ran the job
+2014-12-01 01:15:29.479223::Copy Image ::node1 :: VM_Task_11 :: Successfully copied the image
+2014-12-01 01:15:30.317740::Create VM ::node1 :: VM_Task_11 :: Successfully created the VM
+2014-12-01 01:16:41.142612::Update IP::node1 :: VM_Task_11 :: Successfully updated the IP
+2014-12-01 01:16:41.429035::Run Job::node1 :: VM_Task_11 :: Successfully ran the job
+2014-12-01 01:16:51.181007::Copy Image ::node1 :: VM_Task_12 :: Successfully copied the image
+2014-12-01 01:16:52.260337::Create VM ::node1 :: VM_Task_12 :: Successfully created the VM
+2014-12-01 01:18:03.572977::Update IP::node1 :: VM_Task_12 :: Successfully updated the IP
+2014-12-01 01:18:03.881843::Run Job::node1 :: VM_Task_12 :: Successfully ran the job
+2014-12-01 01:18:19.075130::Copy Image ::node1 :: VM_Task_13 :: Successfully copied the image
+2014-12-01 01:18:20.049962::Create VM ::node1 :: VM_Task_13 :: Successfully created the VM
+2014-12-01 01:19:31.017860::Update IP::node1 :: VM_Task_13 :: Successfully updated the IP
+2014-12-01 01:19:31.347960::Run Job::node1 :: VM_Task_13 :: Successfully ran the job
+2014-12-01 01:19:51.534186::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 01:19:53.383006::Create VM ::node1 :: VM_Task_14 :: Successfully created the VM
+2014-12-01 01:21:04.951494::Update IP::node1 :: VM_Task_14 :: Successfully updated the IP
+2014-12-01 01:21:05.676744::Run Job::node1 :: VM_Task_14 :: Successfully ran the job

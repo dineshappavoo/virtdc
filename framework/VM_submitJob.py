@@ -141,7 +141,8 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
 
 	#Get the IP address of Virtual Machine and update in VM_Info_Updater
 	guest_ip=getGuestIP(host.strip(), vmid.strip(), "root", "Teamb@123")
-	addOrUpdateDictionaryOfVM(host, vmid, Guest(guest_ip, vmid, float(1), float(cpu),float(memory),float(max_memory),float(1), str(datetime.datetime.now())  ))
+	#Making the max cpu as 8 for all VM's
+	addOrUpdateDictionaryOfVM(host, vmid, Guest(guest_ip, vmid, float(1), float(8),float(memory),float(max_memory),float(1), str(datetime.datetime.now())  ))
 	vmsubmission_log.write(str(datetime.datetime.now())+'::Update IP::'+host+' :: '+vmid+' :: Successfully updated the IP\n')
 	
 	# copy host_config.txt file to guest
