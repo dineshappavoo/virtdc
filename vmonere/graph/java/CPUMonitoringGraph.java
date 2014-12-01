@@ -17,6 +17,11 @@ import org.jfree.data.time.DynamicTimeSeriesCollection;
 import org.jfree.data.time.Second;
 import org.jfree.data.xy.XYDataset;
 
+/**
+ * Class to monitor and produce graph output for CPU usage from logs
+ * @author Rahul
+ *
+ */
 public class CPUMonitoringGraph extends JPanel {
 
 	private static final long serialVersionUID = 1L;
@@ -50,7 +55,7 @@ public class CPUMonitoringGraph extends JPanel {
 
 
 	/**
-	 * Creates a dataset 
+	 * Creates a DynamicTimeSeries dataset for a continuous moving graph 
 	 */
 
 	private  DynamicTimeSeriesCollection createDataset() {
@@ -63,7 +68,7 @@ public class CPUMonitoringGraph extends JPanel {
 
 
 	/**
-	 * Creates a chart
+	 * Creates the continuously updating graph
 	 */
 
 	private JFreeChart createChart(final XYDataset dataset, String title) {
@@ -76,10 +81,15 @@ public class CPUMonitoringGraph extends JPanel {
 		domain.setAutoRange(true);
 		domain.setVisible(false);
 		ValueAxis range = plot.getRangeAxis();
-		range.setRange(0, 100);
+		range.setRange(0, 8);
 		return result;
 
 	}
+	
+	/**
+	 * Fetches the CPU data from the log file
+	 * @return
+	 */
 	private float fetchCPUData() {
 		String currentLine;
 		try {
@@ -104,6 +114,10 @@ public class CPUMonitoringGraph extends JPanel {
 		return (float) 0.0;
 	}
 
+	/**
+	 * Set initial values to zero for the first image of the graph
+	 * @return
+	 */
 	private float[] cpuData() {
 		float[] a = new float[COUNT];
 		for (int i = 0; i < a.length; i++) {
@@ -112,6 +126,9 @@ public class CPUMonitoringGraph extends JPanel {
 		return a;
 	}
 
+	/**
+	 * Start Timer
+	 */
 	public void start() {
 		timer.start();
 	}

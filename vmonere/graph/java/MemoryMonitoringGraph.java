@@ -1,5 +1,3 @@
-
-
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,7 +16,11 @@ import org.jfree.data.time.DynamicTimeSeriesCollection;
 import org.jfree.data.time.Second;
 import org.jfree.data.xy.XYDataset;
 
-
+/**
+ * Class to monitor and produce graph output for Memory usage from logs
+ * @author Rahul
+ *
+ */
 public class MemoryMonitoringGraph extends JPanel {
 
 	private static final long serialVersionUID = 1L;
@@ -52,11 +54,9 @@ public class MemoryMonitoringGraph extends JPanel {
 
 	}
 
-
 	/**
-	 * Creates a dataset 
+	 * Creates a DynamicTimeSeries dataset for a continuous moving graph 
 	 */
-
 	private  DynamicTimeSeriesCollection createDataset() {
 		final DynamicTimeSeriesCollection dataset =
 				new DynamicTimeSeriesCollection(1, COUNT, new Second());
@@ -65,11 +65,9 @@ public class MemoryMonitoringGraph extends JPanel {
 		return dataset;
 	}
 
-
 	/**
-	 * Creates a chart
+	 * Creates the continuously updating graph
 	 */
-
 	private JFreeChart createChart(final XYDataset dataset, String title) {
 
 		final JFreeChart result = ChartFactory.createTimeSeriesChart(
@@ -81,10 +79,13 @@ public class MemoryMonitoringGraph extends JPanel {
 		domain.setVisible(false);
 		ValueAxis range = plot.getRangeAxis();
 		range.setRange(0, 100000);
-
 		return result;
-
 	}
+
+	/**
+	 * Fetches the Memory data from the log file
+	 * @return
+	 */
 	private float fetchMemData() {
 		String currentLine;
 		try {
@@ -109,6 +110,10 @@ public class MemoryMonitoringGraph extends JPanel {
 		return (float) 0.0;
 	}
 
+	/**
+	 * Set initial values to zero for the first image of the graph
+	 * @return
+	 */
 	private float[] memData() {
 		float[] a = new float[COUNT];
 		for (int i = 0; i < a.length; i++) {
@@ -117,6 +122,9 @@ public class MemoryMonitoringGraph extends JPanel {
 		return a;
 	}
 
+	/**
+	 * Start Timer
+	 */
 	public void start() {
 		timer.start();
 	}

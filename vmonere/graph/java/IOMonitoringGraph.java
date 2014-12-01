@@ -1,5 +1,3 @@
-
-
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,6 +15,12 @@ import org.jfree.chart.plot.XYPlot;
 import org.jfree.data.time.DynamicTimeSeriesCollection;
 import org.jfree.data.time.Second;
 import org.jfree.data.xy.XYDataset;
+
+/**
+ * Class to monitor and produce graph output for IO usage from logs
+ * @author Rahul
+ *
+ */
 
 public class IOMonitoringGraph extends JPanel {
 
@@ -52,9 +56,8 @@ public class IOMonitoringGraph extends JPanel {
 
 
 	/**
-	 * Creates a dataset 
+	 * Creates a DynamicTimeSeries dataset for a continuous moving graph 
 	 */
-
 	private  DynamicTimeSeriesCollection createDataset() {
 		final DynamicTimeSeriesCollection dataset =
 				new DynamicTimeSeriesCollection(1, COUNT, new Second());
@@ -63,11 +66,9 @@ public class IOMonitoringGraph extends JPanel {
 		return dataset;
 	}
 
-
 	/**
-	 * Creates a chart
+	 * Creates the continuously updating graph
 	 */
-
 	private JFreeChart createChart(final XYDataset dataset, String title) {
 
 		final JFreeChart result = ChartFactory.createTimeSeriesChart(
@@ -82,6 +83,11 @@ public class IOMonitoringGraph extends JPanel {
 		return result;
 
 	}
+
+	/**
+	 * Fetches the IO data from the log file
+	 * @return
+	 */
 	private float fetchIOData() {
 		String currentLine;
 		try {
@@ -106,6 +112,10 @@ public class IOMonitoringGraph extends JPanel {
 		return (float) 0.0;
 	}
 
+	/**
+	 * Set initial values to zero for the first image of the graph
+	 * @return
+	 */
 	private float[] ioData() {
 		float[] a = new float[COUNT];
 		for (int i = 0; i < a.length; i++) {
@@ -114,6 +124,9 @@ public class IOMonitoringGraph extends JPanel {
 		return a;
 	}
 
+	/**
+	 * Start Timer
+	 */
 	public void start() {
 		timer.start();
 	}
