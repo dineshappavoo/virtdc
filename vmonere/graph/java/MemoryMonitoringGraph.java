@@ -1,15 +1,12 @@
 
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
+import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import org.jfree.chart.ChartFactory;
@@ -20,33 +17,29 @@ import org.jfree.chart.plot.XYPlot;
 import org.jfree.data.time.DynamicTimeSeriesCollection;
 import org.jfree.data.time.Second;
 import org.jfree.data.xy.XYDataset;
-import org.jfree.ui.ApplicationFrame;
-import org.jfree.ui.RefineryUtilities;
 
-import com.monitoring.io.IOMonitoringGraph;
 
-public class MemoryMonitoringGraph extends ApplicationFrame {
+public class MemoryMonitoringGraph extends JPanel {
 
-	private static final String TITLE = "Memory Monitoring Graph";
-	private static final int COUNT = 180;
-	private static final int FAST = 100;
-	private Timer timer;
-	public static BufferedReader br;
+	private static final long serialVersionUID = 1L;
+	private static final int COUNT = 20;
+	private static final int FAST = 500;
+	public  BufferedReader br;
 	public static String vmid;
-
-	public MemoryMonitoringGraph(final String title) {
-		super(title);
-		final DynamicTimeSeriesCollection dataset =
-				new DynamicTimeSeriesCollection(1, COUNT, new Second());
-		dataset.setTimeBase(new Second());
-		dataset.addSeries(memData(), 0, "Memory data");
-		JFreeChart chart = createMemChart(dataset);
-
-
-		this.add(new ChartPanel(chart), BorderLayout.CENTER);
+	private Timer timer; 
+	public MemoryMonitoringGraph(String applicationTitle, String chartTitle, String args, BufferedReader bReader) {
+		super(new BorderLayout());
+		br= bReader;
+		vmid = args;
+		final DynamicTimeSeriesCollection dataset = createDataset();
+		JFreeChart chart = createChart(dataset, chartTitle);
+		ChartPanel chartPanel = new ChartPanel(chart);
+		chartPanel.setPreferredSize(new java.awt.Dimension(500, 270));
+		chartPanel.repaint();
+		add(chartPanel, BorderLayout.CENTER);
 		timer = new Timer(FAST, new ActionListener() {
-			float[] newData = new float[1];
 
+			float[] newData = new float[1];
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				newData[0] = fetchMemData();
@@ -54,15 +47,59 @@ public class MemoryMonitoringGraph extends ApplicationFrame {
 				dataset.appendData(newData);
 			}
 		});
+		timer.setInitialDelay(5000);
+		timer.setDelay(5000);
+
 	}
 
+
+	/**
+	 * Creates a dataset 
+	 */
+
+	private  DynamicTimeSeriesCollection createDataset() {
+		final DynamicTimeSeriesCollection dataset =
+				new DynamicTimeSeriesCollection(1, COUNT, new Second());
+		dataset.setTimeBase(new Second());
+		dataset.addSeries(memData(), 0, "Memory data");
+		return dataset;
+	}
+
+
+	/**
+	 * Creates a chart
+	 */
+
+	private JFreeChart createChart(final XYDataset dataset, String title) {
+
+		final JFreeChart result = ChartFactory.createTimeSeriesChart(
+				title, "", "Value", dataset, true, true, false);
+		final XYPlot plot = result.getXYPlot();
+		plot.setDomainGridlinesVisible(false);
+		ValueAxis domain = plot.getDomainAxis();
+		domain.setAutoRange(true);
+		domain.setVisible(false);
+		ValueAxis range = plot.getRangeAxis();
+		range.setRange(0, 100000);
+
+		return result;
+
+	}
 	private float fetchMemData() {
 		String currentLine;
 		try {
 			if ((currentLine = br.readLine()) != null && !currentLine.trim().equals("")) {
 				String[] currentValues = currentLine.split("\\|");
-				float cpuValue = Float.valueOf(currentValues[3].trim());
-				return cpuValue;
+				float memValue = Float.valueOf(currentValues[4].trim());
+				if(memValue<0)
+				{
+					memValue = 0;
+				}
+				else if (memValue>100000)
+				{
+					memValue = 100000;
+				}
+				return memValue;
 			}
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
@@ -75,53 +112,13 @@ public class MemoryMonitoringGraph extends ApplicationFrame {
 	private float[] memData() {
 		float[] a = new float[COUNT];
 		for (int i = 0; i < a.length; i++) {
-			a[i] = fetchMemData();
+			a[i] = 0;
 		}
 		return a;
-	}
-
-	private JFreeChart createMemChart(final XYDataset dataset) {
-		final JFreeChart result = ChartFactory.createTimeSeriesChart(
-				TITLE, "", "Value", dataset, true, true, false);
-		final XYPlot plot = result.getXYPlot();
-		ValueAxis domain = plot.getDomainAxis();
-		domain.setAutoRange(true);
-		ValueAxis range = plot.getRangeAxis();
-		range.setRange(0, 100000);
-		return result;
 	}
 
 	public void start() {
 		timer.start();
 	}
 
-	public static void main(final String[] args) {
-
-		if(args.length !=1)
-		{
-			System.out.println("Please provide valid inputs!");
-			return;
-		}
-		vmid= args[0];
-		FileInputStream in;
-		try {
-			in = new FileInputStream("/var/lib/virtdc/logs/monitor_logs/"+vmid+".log");
-			br = new BufferedReader(new InputStreamReader(in));
-			EventQueue.invokeLater(new Runnable() {
-
-				@Override
-				public void run() {
-					MemoryMonitoringGraph demo = new MemoryMonitoringGraph(TITLE+"-"+vmid);
-					demo.pack();
-					RefineryUtilities.centerFrameOnScreen(demo);
-					demo.setVisible(true);
-					demo.start();
-				}
-			});
-		} catch (FileNotFoundException e) {
-			System.out.println("File not found!!");
-			e.printStackTrace();
-		}
-		
-	}
-}
+}  
