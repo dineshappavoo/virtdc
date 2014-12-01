@@ -3716,3 +3716,13 @@ global name 'report_usage_to_placement_manager' is not defined
 global name 'report_usage_to_placement_manager' is not defined
 2014-12-01 00:42:24.483334 :: vmonere listener :: VM_Task_11 :: error in listener / reporting to manager 
 global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:42:34.985421 :: vmonere listener :: VM_Task_14 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:42:35.124868 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:42:35.379559 :: vmonere listener :: VM_Task_13 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:42:35.436088 :: vmonere listener :: VM_Task_12 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
+2014-12-01 00:42:36.413481 :: vmonere listener :: VM_Task_11 :: error in listener / reporting to manager 
+global name 'report_usage_to_placement_manager' is not defined
