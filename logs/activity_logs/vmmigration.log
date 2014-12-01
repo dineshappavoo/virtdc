@@ -19,3 +19,4 @@ Terminate Guest ::node2 :: VM_Task_15 :: Successfully migrated the guest
 Terminate Guest ::node1 :: VM_Task_15 :: Successfully migrated the guest
 Terminate Guest ::node2 :: VM_Task_15 :: Successfully migrated the guest
 Terminate Guest ::node1 :: VM_Task_15 :: Successfully migrated the guest
+2014-12-01 01:22:52.936630::Migrate Guest ::node1 :: VM_Task_100 :: Successfully migrated the guest

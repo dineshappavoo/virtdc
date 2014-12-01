@@ -81,6 +81,6 @@ def vm_terminate_dependency(source_host, vmid):
 #For Testing
 if __name__ == "__main__":
     # stuff only to run when not called via 'import' here
-    vm_terminate_guest("node3","VM_Task_100")
+    vm_terminate_guest("node4","VM_Task_100")
 
 
