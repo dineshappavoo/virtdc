@@ -79,7 +79,8 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
 	#Log activity
 	manager_activity_log = open('/var/lib/virtdc/logs/activity_logs/manager.log', 'a+')
 
-	manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::'+host+' :: '+vmid+' :: Alotted Memory '+str(value.current_memory)+' :: Current Memory '+str(mem_usage)+'\n')
+	manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::'+host+' :: '+vmid+' :: Alotted Memory '+str(value.current_memory)+' :: Current Memory '+str(mem_usage)+'\n')
+	manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::CPU::'+host+' :: '+vmid+' :: Alotted CPU '+str(value.current_cpu)+' :: Current CPU '+str(cpu_usage)+'\n')
 
 	obj=NodeFinder()
 	max_cpu = value.max_cpu
@@ -106,7 +107,7 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
 			vm_cpu_scaling(host, vmid, new_cpu_value)
 			#update vm_host_dict
 			addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, float(new_cpu_value), value.max_cpu,value.current_memory,value.max_memory,value.io, value.start_time))
-			manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::Scaling ::'+host+' :: '+vmid+' :: Memory scaled from '+str(value.current_memory)+' to '+str(mem_usage)+'\n')
+			manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::Scaling ::'+host+' :: '+vmid+' :: Memory scaled from '+str(value.current_cpu)+' to '+str(cpu_usage)+'\n')
 		else:
 			print 'Test 3'
 			new_host = obj.is_space_available_for_vm(cpu_usage, mem_usage , io_usage)
@@ -116,6 +117,7 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
 				print 'Dest Node : '+new_host
 				#Initiate vm migration
 				vm_migrate_guest(host, new_host, vmid)
+				manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::CPU::Migration ::'+host+' :: '+vmid+' :: Domain migrated from '+str(host)+' to '+str(new_host)+' for CPU Scaling from'+str(value.current_cpu)+' to '+str(cpu_usage)+'\n')
 
 	#if(	(cpu_usage>current_cpu) and 	(cpu_usage<max_cpu)	):  -- CPU scaling down is not implemented
 

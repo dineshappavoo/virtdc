@@ -4,7 +4,7 @@ import sys, subprocess
 import datetime
 from Guest import Guest
 from VM_Info_Updater import addOrUpdateDictionaryOfVM, getHostVMDict
-from Host_Info_Tracker import resume_resources_for_cpu_scaling
+from Host_Info_Tracker import update_resources_after_cpu_scaling
 #API to scale the CPU in the running guest on any Host
 
 #==============================================================================
@@ -64,7 +64,7 @@ def update_dictionary(host, vmid, cpu_count):
 	required_cpu = float(cpu_count) - float(old_cpu)
 	guest = Guest(value.vmip,value.vmid, float(cpu_count), value.max_cpu, value.current_memory, value.max_memory,value.io, value.start_time)
 	addOrUpdateDictionaryOfVM(host, vmid, guest)
-	resume_resources_for_cpu_scaling(host, vmid, guest, required_cpu)
+	update_resources_after_cpu_scaling(host, vmid, guest, required_cpu)
 
 #For Testing
 if __name__ == "__main__":
