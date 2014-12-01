@@ -27,6 +27,10 @@ def simulate_google_data():
 	#os.system(cmd)
 	termination_process = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
 
+	delete_log_files_cmd = "/usr/bin/python /var/lib/virtdc/vmonere/host/vmonere_exec_log_deleter.py &"
+	#os.system(cmd)
+	delete_log_files_process = subprocess.Popen(delete_log_files_cmd, shell=True, stderr=subprocess.PIPE)
+
 	for file_name in os.listdir(data_folder_path):
 		if file_name.endswith(".csv"):
 		    #print file_name

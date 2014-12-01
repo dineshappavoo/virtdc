@@ -24,7 +24,7 @@ from virtdc_command_line_utility import get_host_name, get_domain_object
 
 def receive_guest_usage(usage):
 
-	#print 'Listener '+str(usage)
+	print 'Listener '+str(usage)
 	try:
 		#Activity Log
 		vmlistener_log = open('/var/lib/virtdc/logs/activity_logs/vmlistener.log', 'a+')
@@ -36,19 +36,21 @@ def receive_guest_usage(usage):
 		task_mem_usage = guest_usage[3].strip() if len(guest_usage[3].strip()) != 0 else 0
 		io_usage = guest_usage[4].strip() if len(guest_usage[4].strip()) != 0 else 0
 
+
+		path = '/var/lib/vmonere/logs/monitor_logs/'+vmid+'.log'
+		file= open(path, 'a+')
+		usage= str(datetime.datetime.now()) +' \t|\t '+ vmid+' \t|\t '+ str(cpu_usage) + '\t|\t' + str(os_mem_usage) + '\t|\t' + str(task_mem_usage) + '\t|\t' + str(io_usage) +"\n"
+		file.write(usage+'\n')
+		file.close()
+
+
 		#To report current usage to the placement manager
-		report_usage_to_placement_manager(vmid, cpu_usage, task_mem_usage, io_usage)
+		#report_usage_to_placement_manager(vmid, cpu_usage, task_mem_usage, io_usage)
 
 	except Exception as e:
 		vmlistener_log.write(str(datetime.datetime.now()) +' :: vmonere listener :: '+vmid+' :: error in listener / reporting to manager \n')
 		vmlistener_log.write(str(e) + '\n')
 		pass
-
-	path = '/var/lib/vmonere/logs/monitor_logs/'+vmid+'.log'
-        file= open(path, 'a+')
-	usage= str(datetime.datetime.now()) +' \t|\t '+ vmid+' \t|\t '+ str(cpu_usage) + '\t|\t' + str(os_mem_usage) + '\t|\t' + str(task_mem_usage) + '\t|\t' + str(io_usage) +"\n"
-        file.write(usage+'\n')
-	file.close()
 
 
 def report_usage_to_placement_manager(vmid, cpu_usage, mem_usage, io_usage):
