@@ -5,8 +5,8 @@ import sys
 import datetime
 sys.path.append('/var/lib/virtdc/manager')
 sys.path.append('/var/lib/virtdc/framework')
-from VM_PlacementManager import process_action_on_current_usage
-from virtdc_command_line_utility import get_host_name, get_domain_object
+from VM_PlacementManager import report_usage_to_placement_manager
+
 
 
 #==============================================================================

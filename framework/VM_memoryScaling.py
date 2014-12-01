@@ -4,6 +4,7 @@ import sys, subprocess
 import datetime
 from Guest import Guest
 from VM_Info_Updater import addOrUpdateDictionaryOfVM, getHostVMDict
+from Host_Info_Tracker import resume_resources_for_mem_scaling
 #API to scale the memory in the running guest on any Host
 
 #==============================================================================
@@ -70,8 +71,11 @@ def vm_max_memory_scaling(host, vmid, max_mem_size):
 def update_dictionary(host, vmid, mem_size):
 	host_vm_dict = getHostVMDict()
     	value = host_vm_dict[host][vmid]
-	addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, value.current_cpu, value.max_cpu, mem_size, value.max_memory,value.io, value.start_time))
-
+	old_memory = value.current_memory
+	required_memory = float(mem_size) - float(old_memory)
+	guest = Guest(value.vmip,value.vmid, value.current_cpu, value.max_cpu, float(mem_size), value.max_memory,value.io, value.start_time)
+	addOrUpdateDictionaryOfVM(host, vmid, guest)
+	resume_resources_for_mem_scaling(host, vmid, guest, required_memory)
 
 #For Testing
 if __name__ == "__main__":

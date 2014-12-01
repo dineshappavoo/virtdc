@@ -5043,3 +5043,27 @@ MEMORY :: Scale Guest ::node32014-12-01 00:32:54.004134::Scale Guest ::node1 :: 
 2014-12-01 01:18:43.576846::Scale Guest ::node1 :: VM_Task_100 :: Cannot scale the cpu in guest
 2014-12-01 01:19:54.378189Scale Guest ::node1 :: VM_Task_100 :: Successful
 2014-12-01 01:21:01.228303""MEMORY :: Scale Guest ::node1 :: VM_Task_100 :: Successful
+2014-12-01 02:46:21.493464::Scale Guest ::node1 :: VM_Task_100 :: Cannot scale the cpu in guest
+2014-12-01 02:52:05.620282::Scale Guest ::node1 :: VM_Task_100 :: Cannot scale the cpu in guest
+2014-12-01 02:53:20.859500::Scale Guest ::node1 :: VM_Task_11 :: Cannot scale the cpu in guest
+2014-12-01 02:55:43.266464::Scale Guest ::node1 :: VM_Task_11 :: Cannot scale the cpu in guest
+2014-12-01 02:58:17.992614::Scale Guest ::node1 :: VM_Task_12 :: Cannot scale the cpu in guest
+2014-12-01 03:01:08.052926::Scale Guest ::node1 :: VM_Task_13 :: Cannot scale the cpu in guest
+2014-12-01 03:02:25.229488::Scale Guest ::node1 :: VM_Task_13 :: Cannot scale the cpu in guest
+2014-12-01 03:07:06.042887Scale Guest ::node1 :: VM_Task_11 :: Successful
+2014-12-01 03:08:02.371272Scale Guest ::node1 :: VM_Task_11 :: Successful
+2014-12-01 03:09:20.218155Scale Guest ::node1 :: VM_Task_11 :: Successful
+2014-12-01 03:10:56.669319Scale Guest ::node1 :: VM_Task_11 :: Successful
+2014-12-01 03:11:27.219393Scale Guest ::node1 :: VM_Task_11 :: Successful
+2014-12-01 03:21:44.147898Scale Guest ::node1 :: VM_Task_100 :: Successful
+2014-12-01 03:23:08.703174Scale Guest ::node1 :: VM_Task_100 :: Successful
+2014-12-01 03:23:48.019762Scale Guest ::node1 :: VM_Task_100 :: Successful
+2014-12-01 03:24:24.412924Scale Guest ::node1 :: VM_Task_100 :: Successful
+2014-12-01 03:35:36.413724Scale Guest ::node1 :: VM_Task_100 :: Successful
+2014-12-01 03:36:14.602244Scale Guest ::node1 :: VM_Task_100 :: Successful
+2014-12-01 04:02:05.107122Scale Guest ::node1 :: VM_Task_100 :: Successful
+2014-12-01 04:12:40.437530Scale Guest ::node1 :: VM_Task_12 :: Successful
+2014-12-01 04:20:27.854614Scale Guest ::node1 :: VM_Task_100 :: Successful
+2014-12-01 04:21:41.405971Scale Guest ::node1 :: VM_Task_11 :: Successful
+2014-12-01 04:22:16.481274Scale Guest ::node1 :: VM_Task_100 :: Successful
+2014-12-01 04:26:50.172869Scale Guest ::node1 :: VM_Task_12 :: Successful

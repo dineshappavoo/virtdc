@@ -5,7 +5,7 @@ import sys
 import datetime
 sys.path.append('/var/lib/virtdc/manager')
 sys.path.append('/var/lib/virtdc/framework')
-from VM_PlacementManager import process_action_on_current_usage
+from VM_PlacementManager import report_usage_to_placement_manager
 from virtdc_command_line_utility import get_host_name, get_domain_object
 
 
@@ -37,7 +37,7 @@ def receive_guest_usage(usage):
 		io_usage = guest_usage[4].strip() if len(guest_usage[4].strip()) != 0 else 0
 
 
-		path = '/var/lib/virtdc/vmonere/logs/monitor_logs/'+vmid+'.log'
+		path = '/var/lib/virtdc/vmonere/monitor_logs/'+vmid+'.log'
 		file= open(path, 'a+')
 		usage= str(datetime.datetime.now()) +' \t|\t '+ vmid+' \t|\t '+ str(cpu_usage) + '\t|\t' + str(os_mem_usage) + '\t|\t' + str(task_mem_usage) + '\t|\t' + str(io_usage) +"\n"
 		file.write(usage+'\n')

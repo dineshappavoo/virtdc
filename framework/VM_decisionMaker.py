@@ -63,9 +63,9 @@ class NodeFinder:
         	node_dict={}
         	node_dict=GetNodeDict()
         	for key, value in node_dict.iteritems() :
-			if key is host:
+			if key == host:
             			if ( float(cpu) <= float(value.avail_cpu) ):
-                		 return True
+					return True
         	return False
 
 	#Function to verify wether the domain can be scaled up in the same host. Required extra Memory space should be available

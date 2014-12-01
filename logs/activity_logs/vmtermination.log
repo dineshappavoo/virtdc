@@ -22,3 +22,13 @@ Terminate Guest ::node2 :: VM_Task_22 :: Cannot terminate the guest
 2014-12-01 01:28:11.037926::Terminate Guest ::node1 :: VM_Task_16 :: Successfully terminated the guest
 2014-12-01 01:28:13.620815::Terminate Guest ::node1 :: VM_Task_17 :: Successfully terminated the guest
 2014-12-01 01:28:15.060026::Terminate Guest ::node1 :: VM_Task_18 :: Successfully terminated the guest
+2014-12-01 01:48:49.051857::Terminate Guest ::node1 :: VM_Task_100 :: Successfully terminated the guest
+2014-12-01 01:48:49.603908::Terminate Guest ::node1 :: VM_Task_11 :: Successfully terminated the guest
+2014-12-01 01:48:50.354316::Terminate Guest ::node1 :: VM_Task_12 :: Successfully terminated the guest
+2014-12-01 01:48:51.048012::Terminate Guest ::node1 :: VM_Task_13 :: Successfully terminated the guest
+2014-12-01 01:48:51.733404::Terminate Guest ::node1 :: VM_Task_14 :: Successfully terminated the guest
+2014-12-01 01:48:52.638533::Terminate Guest ::node1 :: VM_Task_15 :: Successfully terminated the guest
+2014-12-01 01:48:53.260858::Terminate Guest ::node1 :: VM_Task_16 :: Successfully terminated the guest
+2014-12-01 02:53:49.329589::Terminate Guest ::node1 :: VM_Task_100 :: Successfully terminated the guest
+2014-12-01 03:00:49.468554::Terminate Guest ::node1 :: VM_Task_12 :: Successfully terminated the guest
+2014-12-01 03:03:31.850677::Terminate Guest ::node1 :: VM_Task_13 :: Successfully terminated the guest

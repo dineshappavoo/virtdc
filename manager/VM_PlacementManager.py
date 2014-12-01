@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import sys, time
+import sys, time, math
 import datetime
 sys.path.append('/var/lib/virtdc/framework')
 from VM_Info_Updater import addOrUpdateDictionaryOfVM
@@ -9,6 +9,9 @@ from VM_migrateGuest import vm_migrate_guest
 from VM_cpuScaling import vm_cpu_scaling
 from VM_memoryScaling import vm_memory_scaling, vm_max_memory_scaling
 from VM_decisionMaker import NodeFinder
+from virtdc_command_line_utility import get_host_name, get_domain_object
+
+from Host_Info_Tracker import GetNodeDict
 
 
 #API for VM placement manager
@@ -32,8 +35,7 @@ mem_scale_down_threshold = '102400' 	# 100 MB
 time_threshold = '300' 			# 5 minutes
 _base_mem_size = 2097152       		# 2 GB (This includes OS memory)
 
-#Log activity
-manager_activity_log = open('/var/lib/virtdc/logs/activity_logs/manager.log', 'a+')
+
 
 def initiateLiveMigration(vmid,sourcenode,destnode):
 	a=0
@@ -59,41 +61,59 @@ def report_usage_to_placement_manager(vmid, cpu_usage, mem_usage, io_usage):
 	try:
 		host = get_host_name(vmid)
 		domain_object = get_domain_object(vmid)
-		process_action_on_current_usage(host, vmid, domain_object, cpu_usage, mem_usage, io_usage)	
+		print domain_object
+		process_action_on_current_usage(host, vmid, domain_object, float(cpu_usage), float(mem_usage), float(io_usage))	
 
 	except Exception as e:
-		pass
+		print e
 
 
 #Process current usage and take action based on SLA
 def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_usage):
 
-	manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::Scaling ::'+host+' :: '+vmid+' :: Memory scaled from '+value.alotted_memory+' to '+mem_usage+'\n')
+	node_dict = GetNodeDict()
+
+	#for key, value in node_dict.iteritems() :
+	    #print key, value.hostname, value.ip_address, value.max_cpu, value.max_memory, value.max_io, value.avail_cpu, value.avail_memory, value.avail_io
+
+	#Log activity
+	manager_activity_log = open('/var/lib/virtdc/logs/activity_logs/manager.log', 'a+')
+
+	manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::'+host+' :: '+vmid+' :: Alotted Memory '+str(value.current_memory)+' :: Current Memory '+str(mem_usage)+'\n')
+
 	obj=NodeFinder()
 	max_cpu = value.max_cpu
-	allotted_cpu = value.current_cpu
+	print 'Max CPU '+str(max_cpu)
+	allotted_cpu = float(value.current_cpu)
+	print allotted_cpu
 
 	#Base OS should not go below the minimum memory
-	mem_usage = mem_usage + _base_mem_size 
+	mem_usage = float(mem_usage) + float(_base_mem_size)
 
-	allotted_memory = value.current_memory
+	allotted_memory = float(value.current_memory)
 
 	#allotted_memory=value.current_memory + _base_mem_size 
 
-	max_memory = value.max_memory
+	max_memory = float(value.max_memory)
+
 	#Check CPU usage
 	if(	(cpu_usage>allotted_cpu) and 	(cpu_usage<max_cpu)	):
-
-		if (  obj.is_cpu_available_on_host(host, (cpu_usage-alloted_cpu) )  ):
-			vm_cpu_scaling(host, vmid, float(cpu_usage))
+		required_cpu_value = float(math.ceil(cpu_usage - allotted_cpu))
+		if (  obj.is_cpu_available_on_host(host, required_cpu_value )  ):
+			print 'Test 2'
+			new_cpu_value = float(value.current_cpu)+float(required_cpu_value)
+			print new_cpu_value
+			vm_cpu_scaling(host, vmid, new_cpu_value)
 			#update vm_host_dict
-			addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, float(cpu_usage), value.max_cpu,value.current_memory,value.max_memory,value.io, value.start_time))
-			manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::Scaling ::'+host+' :: '+vmid+' :: Memory scaled from '+value.alotted_memory+' to '+mem_usage+'\n')
+			addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, float(new_cpu_value), value.max_cpu,value.current_memory,value.max_memory,value.io, value.start_time))
+			manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::Scaling ::'+host+' :: '+vmid+' :: Memory scaled from '+str(value.current_memory)+' to '+str(mem_usage)+'\n')
 		else:
+			print 'Test 3'
 			new_host = obj.is_space_available_for_vm(cpu_usage, mem_usage , io_usage)
 			if new_host is None:
     				print "Cant migrate guest"
 			else:
+				print 'Dest Node : '+new_host
 				#Initiate vm migration
 				vm_migrate_guest(host, new_host, vmid)
 
@@ -130,5 +150,5 @@ def reactOnHotSpot():
 
 if __name__ == "__main__":
 	# stuff only to run when not called via 'import' here
-	report_usage_to_placement_manager(vmid, cpu_usage, mem_usage, io_usage)
+	report_usage_to_placement_manager('VM_Task_100', '3.467', '8260', '0.3')
 	#process_action_on_current_usage('node1', 'VM_Task_1', Guest("192.168.1.14","Task1", float(1), float(3),float(42424345353),float(424242),float(1), time.time()), '1.0', '424242', '42424345353')
