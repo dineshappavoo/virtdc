@@ -39,7 +39,7 @@ def slicing_ip(data, key):
 def get_cpu_usage():
 	
 	try:
-		cmd = " ps au | grep cpuSim | awk \'{s+=$3} END {print s}\'"
+		cmd = " ps aux | grep cpuSim | awk \'{s+=$3} END {print s}\'"
 		cpu_usage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
 		if cpu_usage =='': return float("0.0")
 
