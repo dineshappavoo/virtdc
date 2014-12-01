@@ -8,6 +8,7 @@
  */
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -43,6 +44,7 @@ public class MainPanel extends JPanel {
 	private static IOMonitoringGraph ioChart;
 	public JTextField vmIdTextField;
 	public JButton submit;
+	public JPanel panel;
 
 	public MainPanel() {
 		super(new BorderLayout());
@@ -63,7 +65,7 @@ public class MainPanel extends JPanel {
 		labelPanel.add(text);
 		labelPanel.add(vmIdTextField);
 		labelPanel.add(submit);
-		final JPanel panel = new JPanel();
+		panel = new JPanel();
 		JPanel northPanel = new JPanel();
 		try {
 			getMemGraph("VM_Task_100");
@@ -88,12 +90,22 @@ public class MainPanel extends JPanel {
 					vmIdTextField.requestFocusInWindow();
 				} else {
 					try {
+
 						vmid = vmIdTextField.getText();
+						((Container) getComponent(1)).removeAll();
+						((Container) getComponent(1)).repaint();
+						JPanel northPanel = new JPanel();
 						getMemGraph(vmid);
 						getCPUGraph(vmid);
 						getIOGraph(vmid);
-						panel.setVisible(true);
-						
+						northPanel.add(memoryChart, BorderLayout.EAST);
+						northPanel.add(cpuChart, BorderLayout.WEST);
+						northPanel.setVisible(true);
+						((Container) getComponent(1)).add(northPanel, BorderLayout.NORTH);
+						((Container) getComponent(1)).add(ioChart, BorderLayout.SOUTH);
+						((Container) getComponent(1)).setPreferredSize(new java.awt.Dimension(1024, 600));
+						((Container) getComponent(1)).setVisible(true);
+						((Container) getComponent(1)).validate();
 					} catch (FileNotFoundException fe) {
 						System.out.println(fe.getMessage());
 						panel.setVisible(false);
@@ -116,7 +128,7 @@ public class MainPanel extends JPanel {
 		FileInputStream in;
 		in = new FileInputStream(PATH+vmid+".log");
 		final BufferedReader br = new BufferedReader(new InputStreamReader(in));
-		
+
 		memoryChart = new MemoryMonitoringGraph("VM Monitoring", "Memory"+"-"+vmid, vmid, br);
 		//memoryChart.pack();
 		//RefineryUtilities.centerFrameOnScreen(memoryChart);
@@ -167,9 +179,9 @@ public class MainPanel extends JPanel {
 		});
 
 	}
-	
+
 	public void paintComponent(Graphics g) {
-	    super.paintComponent(g); // first draw a clear/empty panel
-	    // then draw using your custom logic.
-	  }
+		super.paintComponent(g); // first draw a clear/empty panel
+		// then draw using your custom logic.
+	}
 }
