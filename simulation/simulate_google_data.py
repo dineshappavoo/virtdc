@@ -4,6 +4,7 @@
 import os, sys, subprocess, time, math
 sys.path.append('/var/lib/virtdc/framework')
 from virtdc import create_vm
+from VM_terminationHandler import find_lifetime_and_terminate_vm
 
 #==============================================================================
 # Variables
@@ -21,10 +22,10 @@ _base_memory_size=2097152       # 2 GB (This includes OS memory)
 
 
 def simulate_google_data():
-	#cmd = "python /root/Desktop/VMPlacementAndScaling/com.vmplacement.manager/VM_Monitor.py &"
+	#start domain termination process
+	cmd = "/usr/bin/python /var/lib/virtdc/framework/VM_terminationHandler.py &"
 	#os.system(cmd)
-	#monitor_process = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
-
+	termination_process = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
 
 	for file_name in os.listdir(data_folder_path):
 		if file_name.endswith(".csv"):

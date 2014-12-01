@@ -30,8 +30,8 @@ vmtermination_log = open('/var/lib/virtdc/logs/activity_logs/vmtermination.log',
 
 vm_termination_list = []
 
-def fetch_vm_termination_list():
-  
+def find_lifetime_and_terminate_vm():
+  print 'termination'
   while(1):
 	host_vm_dict = getHostVMDict()
 
@@ -57,5 +57,5 @@ def get_termination_list():
 			
 
 if __name__ == '__main__':
-	fetch_vm_termination_list()
+	find_lifetime_and_terminate_vm()
 

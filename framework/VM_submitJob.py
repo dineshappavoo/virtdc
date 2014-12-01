@@ -161,6 +161,7 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
     	#print exc_type, fname, exc_tb.tb_lineno
 
         vmsubmission_log.write(str(datetime.datetime.now()) +' :: Create Guest :: '+vmid+' :: Cannot create the guest\n')
+	#print "error>",e.output,'<'	
         vmsubmission_log.write(str(e) + '\n')
  	mail_subject = 'Guest creation error - '+str(vmid)
 	mail_content = 'Error occured during guest creation '+vmid+' . The error as follows, \n\n'+str(e)+'\n'
