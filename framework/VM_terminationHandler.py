@@ -43,7 +43,8 @@ def find_lifetime_and_terminate_vm():
 			#For Testing purpose we are subtracting 9000 seconds
 			vm_end_time = float(vm_end_time) - float(9100)
 			print 'VMID '+vmid+' Host '+node+' Current Time  : '+ str(int(time.time()/60)) +' End Time : '+str(int(vm_end_time/60))
-			if (time.time() >= vm_end_time ):
+			now=datetime.datetime.now()
+			if (time.mktime(now.timetuple()) >= vm_end_time ):
 				if (vm_terminate_guest(node, vmid) ):
 					vm_termination_list.append(vmid)
 					vmtermination_log.write(str(datetime.datetime.now()) +' :: TERMINATION HANDLER ::'+node+' :: '+vmid+' :: Guest terminated\n')
