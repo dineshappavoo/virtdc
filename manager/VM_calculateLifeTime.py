@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 
-import sys, math, csv, time
+import sys, math, csv, time, datetime
 
 #==============================================================================
 # Variables
@@ -35,17 +35,18 @@ def calculate_vm_lifetime(file_name):
 
 def calculate_vm_endtime(vm_id, start_time):
         lifetime = calculate_vm_lifetime(data_folder_path+"/"+vm_id+".csv")
-	#print 'START Time-'+ str(start_time)
-        end_time = lifetime+ start_time
-        #print 'END Time-'+ str(end_time)
+        #print 'START Time-' + str(time.mktime(start_time.timetuple()))
+        #print 'Lifetime - '+ str(lifetime)
+        end_time = lifetime+ time.mktime(start_time.timetuple())
+        #print "END Time" +str(end_time)
         return end_time
     	
 
 if __name__ == "__main__":
 	while(1):	
-		end = calculate_vm_endtime('VM_Task_1', 1414643685.64)
+		end = calculate_vm_endtime('VM_Task_26', datetime.datetime.now())
 		current_time= time.time()
-		print 'Current Time-'+ str(current_time)
+		#print 'Current Time-'+ str(current_time)
 		#print 'Time '+str(time.time())
 		if(current_time>=end):
 			print 'terminate'
