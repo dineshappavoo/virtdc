@@ -1,11 +1,10 @@
 #!/usr/bin/python
 
+import subprocess, os
+import os.path
 import time
 import sys
-import datetime
-sys.path.append('/var/lib/virtdc/manager')
-sys.path.append('/var/lib/virtdc/framework')
-from VM_PlacementManager import report_usage_to_placement_manager
+from vmonere_utility import get_cpu_usage, get_os_mem_usage, get_task_mem_usage, get_io_usage
 
 import socket               # Import socket module
 
@@ -32,7 +31,7 @@ def start_client_socket(host, usage):
 	port = 12345                # Reserve a port for your service.
 
 	s.connect((host, port))
-	print s.recv(1024)
+	#print s.recv(1024)
 	#usage = 'VM_Task_100 	|	 0.0	|	146432.0	|	13380	|	100.00'
 	s.send(usage)
 	s.close                     # Close the socket when done
@@ -44,10 +43,10 @@ def vmonere_agent():
 def get_host_ip():	
 	while(1):
 		if (os.path.exists(host_config_path)):
-				print 'Host config file exists'
+				#print 'Host config file exists'
 				break
 		else :
-			print 'Host config file does not exist'
+			#print 'Host config file does not exist'
 			time.sleep(10)		
 
 
@@ -55,7 +54,7 @@ def get_host_ip():
 	host_ip_cmd = host_ip_cmd.replace("host_config_file",str(host_config_path).strip())
 
 	host_ip = subprocess.check_output(host_ip_cmd, shell=True, stderr=subprocess.PIPE)
-	print 'getting Ip'+str(host_ip)
+	#print 'getting Ip'+str(host_ip)
 	return host_ip
 
 def get_vmid():
@@ -79,7 +78,7 @@ def report_usage_to_host(host_ip, vmid):
 	task_mem_usage = get_task_mem_usage()
 	io_usage = get_io_usage()
 
-	usage = '\''+str(vmid.strip())+' | '+str(cpu_usage)+' | '+str(os_mem_usage)+' | '+str(task_mem_usage)+' | '+str(io_usage)+'\''
+	usage = str(vmid.strip())+' | '+str(cpu_usage)+' | '+str(os_mem_usage)+' | '+str(task_mem_usage)+' | '+str(io_usage)
 	#usage = "'cpu |sdbfsj |sdfsdhf |sdfvsdvfgdfvj'"
 	#cmd = 'python /var/lib/virtdc/vmonere/host/vmonere_listener.py '+usage
 	
@@ -98,7 +97,7 @@ def report_usage_periodically():
 	vmid = get_vmid()
 	while(1):
 		report_usage_to_host(host_ip, vmid)
-		time.sleep(10)
+		time.sleep(5)
 
 if __name__ == "__main__":
    # stuff only to run when not called via 'import' here
