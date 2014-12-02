@@ -32,3 +32,35 @@ Terminate Guest ::node2 :: VM_Task_22 :: Cannot terminate the guest
 2014-12-01 02:53:49.329589::Terminate Guest ::node1 :: VM_Task_100 :: Successfully terminated the guest
 2014-12-01 03:00:49.468554::Terminate Guest ::node1 :: VM_Task_12 :: Successfully terminated the guest
 2014-12-01 03:03:31.850677::Terminate Guest ::node1 :: VM_Task_13 :: Successfully terminated the guest
+2014-12-01 22:05:29.658079::Terminate Guest ::node3 :: VM_Task_17 :: Successfully terminated the guest
+2014-12-01 22:05:29.658610::Terminate Guest ::node3 :: VM_Task_17 :: Cannot terminate the guest
+END TIME::1417494501.0 ::: CURRENT TIME :: 2014-12-01 22:30:06.282834
+2014-12-01 22:30:07.898507 :: TERMINATION HANDLER ::node1 :: VM_Task_19 :: Guest terminated
+END TIME::1417494396.0 ::: CURRENT TIME :: 2014-12-01 22:30:07.898708
+2014-12-01 22:30:08.463177 :: TERMINATION HANDLER ::node1 :: VM_Task_18 :: Guest terminated
+END TIME::1417493831.0 ::: CURRENT TIME :: 2014-12-01 22:30:08.463360
+2014-12-01 22:30:09.642613 :: TERMINATION HANDLER ::node1 :: VM_Task_100 :: Guest terminated
+END TIME::1417493714.0 ::: CURRENT TIME :: 2014-12-01 22:30:09.656775
+2014-12-01 22:30:10.707513 :: TERMINATION HANDLER ::node1 :: VM_Task_11 :: Guest terminated
+END TIME::1417493889.0 ::: CURRENT TIME :: 2014-12-01 22:30:11.307260
+2014-12-01 22:30:11.981778 :: TERMINATION HANDLER ::node1 :: VM_Task_13 :: Guest terminated
+END TIME::1417493802.0 ::: CURRENT TIME :: 2014-12-01 22:30:12.499047
+2014-12-01 22:30:13.681055 :: TERMINATION HANDLER ::node1 :: VM_Task_12 :: Guest terminated
+END TIME::1417494081.0 ::: CURRENT TIME :: 2014-12-01 22:30:13.690995
+2014-12-01 22:30:19.196919 :: TERMINATION HANDLER ::node3 :: VM_Task_15 :: Guest terminated
+END TIME::1417493980.0 ::: CURRENT TIME :: 2014-12-01 22:30:19.325440
+2014-12-01 22:30:20.135860 :: TERMINATION HANDLER ::node3 :: VM_Task_14 :: Guest terminated
+END TIME::1417494281.0 ::: CURRENT TIME :: 2014-12-01 22:30:20.136063
+2014-12-01 22:30:20.990595 :: TERMINATION HANDLER ::node3 :: VM_Task_17 :: Guest terminated
+END TIME::1417494184.0 ::: CURRENT TIME :: 2014-12-01 22:30:20.990785
+2014-12-01 22:30:24.285354 :: TERMINATION HANDLER ::node3 :: VM_Task_16 :: Guest terminated
+2014-12-01 22:30:07.636713::Terminate Guest ::node1 :: VM_Task_19 :: Successfully terminated the guest
+2014-12-01 22:30:08.285804::Terminate Guest ::node1 :: VM_Task_18 :: Successfully terminated the guest
+2014-12-01 22:30:08.849897::Terminate Guest ::node1 :: VM_Task_100 :: Successfully terminated the guest
+2014-12-01 22:30:10.056951::Terminate Guest ::node1 :: VM_Task_11 :: Successfully terminated the guest
+2014-12-01 22:30:11.706159::Terminate Guest ::node1 :: VM_Task_13 :: Successfully terminated the guest
+2014-12-01 22:30:13.270977::Terminate Guest ::node1 :: VM_Task_12 :: Successfully terminated the guest
+2014-12-01 22:30:19.096038::Terminate Guest ::node3 :: VM_Task_15 :: Successfully terminated the guest
+2014-12-01 22:30:19.966075::Terminate Guest ::node3 :: VM_Task_14 :: Successfully terminated the guest
+2014-12-01 22:30:20.879623::Terminate Guest ::node3 :: VM_Task_17 :: Successfully terminated the guest
+2014-12-01 22:30:24.116719::Terminate Guest ::node3 :: VM_Task_16 :: Successfully terminated the guest

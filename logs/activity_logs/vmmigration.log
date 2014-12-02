@@ -1394,3 +1394,113 @@ Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_16
 2014-12-01 21:11:09.832219::Migrate Guest ::node1 :: VM_Task_15 :: Cannot migrate the guest
 Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_15 qemu+ssh://node1/system"' returned non-zero exit status 1
 2014-12-01 21:11:18.422299::Migrate Guest ::node3 :: VM_Task_16 :: Successfully migrated the guest
+2014-12-01 22:15:04.145596::Migrate Guest ::node1 :: VM_Task_14 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_14 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:15:27.277938::Migrate Guest ::node1 :: VM_Task_14 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_14 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:15:33.372912::Migrate Guest ::node1 :: VM_Task_14 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_14 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:15:39.876605::Migrate Guest ::node1 :: VM_Task_14 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_14 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:15:45.908780::Migrate Guest ::node1 :: VM_Task_14 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_14 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:15:57.939120::Migrate Guest ::node1 :: VM_Task_14 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_14 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:16:04.059366::Migrate Guest ::node1 :: VM_Task_14 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_14 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:16:10.531475::Migrate Guest ::node1 :: VM_Task_14 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_14 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:16:22.634071::Migrate Guest ::node1 :: VM_Task_14 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_14 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:16:28.193113::Migrate Guest ::node1 :: VM_Task_15 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_15 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:16:34.699376::Migrate Guest ::node1 :: VM_Task_15 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_15 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:17:13.490413::Migrate Guest ::node1 :: VM_Task_14 :: Successfully migrated the guest
+2014-12-01 22:17:13.859784::Migrate Guest ::node1 :: VM_Task_15 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_15 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:17:36.844134::Migrate Guest ::node3 :: VM_Task_14 :: Successfully migrated the guest
+2014-12-01 22:17:54.882750::Migrate Guest ::node1 :: VM_Task_15 :: Successfully migrated the guest
+2014-12-01 22:17:55.292363::Migrate Guest ::node1 :: VM_Task_14 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_14 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:18:20.759113::Migrate Guest ::node3 :: VM_Task_15 :: Successfully migrated the guest
+2014-12-01 22:18:33.714484::Migrate Guest ::node1 :: VM_Task_14 :: Successfully migrated the guest
+2014-12-01 22:18:42.174643::Migrate Guest ::node3 :: VM_Task_14 :: Successfully migrated the guest
+2014-12-01 22:18:49.899674::Migrate Guest ::node1 :: VM_Task_15 :: Successfully migrated the guest
+2014-12-01 22:18:54.872634::Migrate Guest ::node1 :: VM_Task_14 :: Successfully migrated the guest
+2014-12-01 22:19:03.293616::Migrate Guest ::node3 :: VM_Task_15 :: Successfully migrated the guest
+2014-12-01 22:19:14.765132::Migrate Guest ::node1 :: VM_Task_15 :: Successfully migrated the guest
+2014-12-01 22:19:22.127951::Migrate Guest ::node3 :: VM_Task_15 :: Successfully migrated the guest
+2014-12-01 22:19:27.531157::Migrate Guest ::node1 :: VM_Task_15 :: Successfully migrated the guest
+2014-12-01 22:19:27.989157::Migrate Guest ::node1 :: VM_Task_16 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_16 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:19:28.438366::Migrate Guest ::node1 :: VM_Task_16 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_16 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:19:35.650320::Migrate Guest ::node3 :: VM_Task_15 :: Successfully migrated the guest
+2014-12-01 22:19:47.645389::Migrate Guest ::node1 :: VM_Task_16 :: Successfully migrated the guest
+2014-12-01 22:20:00.082844::Migrate Guest ::node3 :: VM_Task_14 :: Successfully migrated the guest
+2014-12-01 22:20:19.153105::Migrate Guest ::node1 :: VM_Task_14 :: Successfully migrated the guest
+2014-12-01 22:20:31.285648::Migrate Guest ::node3 :: VM_Task_14 :: Successfully migrated the guest
+2014-12-01 22:20:34.011195::Migrate Guest ::node3 :: VM_Task_16 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node3 "virsh migrate VM_Task_16 qemu+ssh://node3/system"' returned non-zero exit status 1
+2014-12-01 22:20:37.029827::Migrate Guest ::node3 :: VM_Task_16 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node3 "virsh migrate VM_Task_16 qemu+ssh://node3/system"' returned non-zero exit status 1
+2014-12-01 22:20:42.464443::Migrate Guest ::node1 :: VM_Task_14 :: Successfully migrated the guest
+2014-12-01 22:20:42.880764::Migrate Guest ::node3 :: VM_Task_16 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node3 "virsh migrate VM_Task_16 qemu+ssh://node3/system"' returned non-zero exit status 1
+2014-12-01 22:20:58.314196::Migrate Guest ::node1 :: VM_Task_17 :: Successfully migrated the guest
+2014-12-01 22:21:10.864134::Migrate Guest ::node3 :: VM_Task_16 :: Successfully migrated the guest
+2014-12-01 22:21:16.804811::Migrate Guest ::node1 :: VM_Task_16 :: Successfully migrated the guest
+2014-12-01 22:22:45.277084::Migrate Guest ::node3 :: VM_Task_17 :: Successfully migrated the guest
+2014-12-01 22:24:28.911837::Migrate Guest ::node3 :: VM_Task_16 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node3 "virsh migrate VM_Task_16 qemu+ssh://node3/system"' returned non-zero exit status 1
+2014-12-01 22:24:40.838306::Migrate Guest ::node1 :: VM_Task_15 :: Successfully migrated the guest
+2014-12-01 22:24:49.754226::Migrate Guest ::node3 :: VM_Task_15 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node3 "virsh migrate VM_Task_15 qemu+ssh://node3/system"' returned non-zero exit status 1
+2014-12-01 22:24:51.952043::Migrate Guest ::node3 :: VM_Task_16 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node3 "virsh migrate VM_Task_16 qemu+ssh://node3/system"' returned non-zero exit status 1
+2014-12-01 22:25:05.014615::Migrate Guest ::node3 :: VM_Task_16 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node3 "virsh migrate VM_Task_16 qemu+ssh://node3/system"' returned non-zero exit status 1
+2014-12-01 22:25:05.695763::Migrate Guest ::node3 :: VM_Task_15 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node3 "virsh migrate VM_Task_15 qemu+ssh://node3/system"' returned non-zero exit status 1
+2014-12-01 22:25:15.180085::Migrate Guest ::node1 :: VM_Task_17 :: Successfully migrated the guest
+2014-12-01 22:25:15.564843::Migrate Guest ::node1 :: VM_Task_18 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_18 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:25:16.330671::Migrate Guest ::node1 :: VM_Task_18 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_18 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:25:16.999071::Migrate Guest ::node1 :: VM_Task_18 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_18 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:25:28.639022::Migrate Guest ::node1 :: VM_Task_19 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_19 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:25:29.251265::Migrate Guest ::node1 :: VM_Task_19 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_19 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:25:29.663307::Migrate Guest ::node1 :: VM_Task_18 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_18 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:25:32.009393::Migrate Guest ::node1 :: VM_Task_19 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_19 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:25:34.871542::Migrate Guest ::node1 :: VM_Task_18 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_18 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:25:37.986219::Migrate Guest ::node1 :: VM_Task_19 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_19 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:25:44.926011::Migrate Guest ::node1 :: VM_Task_19 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_19 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:25:47.232839::Migrate Guest ::node1 :: VM_Task_18 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_18 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:25:50.757112::Migrate Guest ::node1 :: VM_Task_19 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_19 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:25:53.608595::Migrate Guest ::node1 :: VM_Task_18 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_18 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:26:27.193725::Migrate Guest ::node1 :: VM_Task_19 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_19 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:26:33.318239::Migrate Guest ::node1 :: VM_Task_19 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_19 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:26:39.671720::Migrate Guest ::node1 :: VM_Task_19 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_19 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:26:45.805388::Migrate Guest ::node1 :: VM_Task_19 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_19 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:26:52.095335::Migrate Guest ::node1 :: VM_Task_19 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_19 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:27:11.115346::Migrate Guest ::node1 :: VM_Task_19 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_19 qemu+ssh://node1/system"' returned non-zero exit status 1
+2014-12-01 22:27:31.259825::Migrate Guest ::node1 :: VM_Task_19 :: Cannot migrate the guest
+Command 'ssh -q -o StrictHostKeyChecking=no root@node1 "virsh migrate VM_Task_19 qemu+ssh://node1/system"' returned no
