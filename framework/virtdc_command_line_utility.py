@@ -116,6 +116,14 @@ def force_migrate(vmid, source_host, dest_host):
 def terminate_guest(host_name,vmid):
 	return vm_terminate_guest(host_name, vmid)
 
+def get_ip(vm_id):
+	host_vm_dict = getHostVMDict()
+	for node, vm_dict in host_vm_dict.iteritems():
+		for vmid,value in vm_dict.iteritems():
+			if vm_id == vmid:
+				return value.vmip
+	return None
+
 def monitorgraph(vmid):
 	domain_monitor(vmid)
 	

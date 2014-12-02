@@ -3,7 +3,7 @@ import argparse
 import sys
 from VM_submitJob import vm_submitjob
 #from VM_terminateGuest import vm_terminate_guest
-from virtdc_command_line_utility import get_host_name, list_host_and_domain, show_domain_info, show_host_info, force_migrate, terminate_guest, monitorgraph, list_host_domain_information
+from virtdc_command_line_utility import get_host_name, list_host_and_domain, show_domain_info, show_host_info, force_migrate, terminate_guest, monitorgraph, list_host_domain_information, get_ip
 
 #API - virtdc command line tool
 
@@ -147,6 +147,15 @@ def main(argv):
 		#print 'Call vm_monitorgraph'
 		vmid = args.vmid
 		monitorgraph(vmid)
+	elif args.subparser_name == 'getip':
+		#print 'Call vm_monitorgraph'
+		vmid = args.vmid
+		ip_addr = get_ip(vmid)
+		if ip_addr is None:
+			print  'IP address not found'
+		else:
+			print ip_addr
+
 	elif args.subparser_name == 'list':
 		print 'Call vm_list'
 	elif args.subparser_name == 'list':

@@ -21,6 +21,7 @@ import socket               # Import socket module
 
 #==============================================================================
 
+#domain_dict = {}
 
 def start_server():
 	s = socket.socket()         # Create a socket object
@@ -66,6 +67,14 @@ def start_server():
 		#print usage
 
 		c.close()                # Close the connection
+
+def report_usage_periodically(vmid):
+	#is_domain_exist = domain_dict[vmid]
+	
+	#if is_domain_exist == True:
+	a=0
+		
+	
 
 if __name__ == "__main__":
    # stuff only to run when not called via 'import' here
