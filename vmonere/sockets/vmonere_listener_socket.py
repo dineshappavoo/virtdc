@@ -24,14 +24,20 @@ import socket               # Import socket module
 #domain_dict = {}
 
 def start_server():
-	s = socket.socket()         # Create a socket object
-	host = socket.gethostname() # Get local machine name
-	port = 12345                # Reserve a port for your service.
-	s.bind((host, port))        # Bind to the port
 
-	s.listen(15)                 # Now wait for client connection.
+	domain_dict = {}			#Maintain the dictionary to count the domain report frequency. It will be helpful to report usage to placement manager
+
+	   
+	s = socket.socket()			# Create a socket object
+	host = socket.gethostname()		# Get local machine name
+	port = 12345				# Reserve a port for your service.
+	s.bind((host, port))        		# Bind to the port
+
+	s.listen(15)                 		# Now wait for client connection.
+
+
 	while True:
-		c, addr = s.accept()     # Establish connection with client.
+		c, addr = s.accept()		# Establish connection with client.
 		#print 'Got connection from', addr
 		#c.send('Thank you for connecting')
 		
@@ -57,7 +63,15 @@ def start_server():
 
 
 			#To report current usage to the placement manager
-			report_usage_to_placement_manager(vmid, cpu_usage, task_mem_usage, io_usage)
+			domain_reported_count = domain_dict[vmid]
+			if domain_reported_count is None:
+				domain_dict[vmid] = 1
+			elif (domain_reported_count >= 6):
+				report_usage_to_placement_manager(vmid, cpu_usage, task_mem_usage, io_usage)		# Report the usage every 30 seconds [6 * 5s interval]
+				domain_dict[vmid] = 0
+			else:
+				domain_dict[vmid] = (domain_reported_count + 1)
+
 
 		except Exception as e:
 			vmlistener_log.write(str(datetime.datetime.now()) +' :: vmonere listener :: '+vmid+' :: error in listener / reporting to manager \n')

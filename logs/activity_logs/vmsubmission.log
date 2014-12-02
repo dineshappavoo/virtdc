@@ -5146,3 +5146,177 @@ Command 'virsh --connect qemu+ssh://node3/system create /var/lib/virtdc/guestcon
 2014-12-01 22:32:15.496718::Create VM ::node1 :: VM_Task_20 :: Successfully created the VM
 2014-12-01 22:33:26.513140::Update IP::node1 :: VM_Task_20 :: Successfully updated the IP
 2014-12-01 22:33:26.806748::Run Job::node1 :: VM_Task_20 :: Successfully ran the job
+2014-12-01 22:33:37.324683::Copy Image ::node1 :: VM_Task_21 :: Successfully copied the image
+2014-12-01 22:33:39.025287::Create VM ::node1 :: VM_Task_21 :: Successfully created the VM
+2014-12-01 22:34:49.777304::Update IP::node1 :: VM_Task_21 :: Successfully updated the IP
+2014-12-01 22:34:50.097557::Run Job::node1 :: VM_Task_21 :: Successfully ran the job
+2014-12-01 22:35:07.734912::Copy Image ::node1 :: VM_Task_22 :: Successfully copied the image
+2014-12-01 22:35:09.840223::Create VM ::node1 :: VM_Task_22 :: Successfully created the VM
+2014-12-01 22:36:20.622052::Update IP::node1 :: VM_Task_22 :: Successfully updated the IP
+2014-12-01 22:36:20.952447::Run Job::node1 :: VM_Task_22 :: Successfully ran the job
+2014-12-01 22:36:41.072053::Copy Image ::node1 :: VM_Task_23 :: Successfully copied the image
+2014-12-01 22:36:42.309033::Create VM ::node1 :: VM_Task_23 :: Successfully created the VM
+2014-12-01 22:37:53.420673::Update IP::node1 :: VM_Task_23 :: Successfully updated the IP
+2014-12-01 22:37:54.028333::Run Job::node1 :: VM_Task_23 :: Successfully ran the job
+2014-12-01 22:38:16.595822::Copy Image ::node1 :: VM_Task_24 :: Successfully copied the image
+2014-12-01 22:38:18.489971::Create VM ::node1 :: VM_Task_24 :: Successfully created the VM
+2014-12-01 22:39:29.757418::Update IP::node1 :: VM_Task_24 :: Successfully updated the IP
+2014-12-01 22:39:31.114469::Run Job::node1 :: VM_Task_24 :: Successfully ran the job
+2014-12-01 22:39:53.739465::Copy Image ::node1 :: VM_Task_25 :: Successfully copied the image
+2014-12-01 22:39:55.312007::Create VM ::node1 :: VM_Task_25 :: Successfully created the VM
+2014-12-01 22:41:06.454111::Update IP::node1 :: VM_Task_25 :: Successfully updated the IP
+2014-12-01 22:41:06.985746::Run Job::node1 :: VM_Task_25 :: Successfully ran the job
+2014-12-01 22:41:43.365196::Copy Image ::node1 :: VM_Task_26 :: Successfully copied the image
+2014-12-01 22:41:45.105585::Create VM ::node1 :: VM_Task_26 :: Successfully created the VM
+2014-12-01 22:42:56.229299::Update IP::node1 :: VM_Task_26 :: Successfully updated the IP
+2014-12-01 22:42:56.960817::Run Job::node1 :: VM_Task_26 :: Successfully ran the job
+2014-12-01 22:44:55.020302::Copy Image ::node3 :: VM_Task_27 :: Successfully copied the image
+2014-12-01 22:44:59.532156::Create VM ::node3 :: VM_Task_27 :: Successfully created the VM
+2014-12-01 22:51:06.149054::Copy Image ::node3 :: VM_Task_27 :: Successfully copied the image
+2014-12-01 22:52:10.296558::Create VM ::node3 :: VM_Task_27 :: Successfully created the VM
+2014-12-01 22:58:08.663617::Copy Image ::node3 :: VM_Task_27 :: Successfully copied the image
+2014-12-01 22:59:13.778804::Create VM ::node3 :: VM_Task_27 :: Successfully created the VM
+2014-12-01 23:04:09.698109::Copy Image ::node2 :: VM_Task_27 :: Successfully copied the image
+2014-12-01 23:04:13.006194::Create VM ::node2 :: VM_Task_27 :: Successfully created the VM
+2014-12-01 23:05:24.085411::Update IP::node2 :: VM_Task_27 :: Successfully updated the IP
+2014-12-01 23:05:24.719461::Run Job::node2 :: VM_Task_27 :: Successfully ran the job
+2014-12-01 23:06:39.110349::Copy Image ::node2 :: VM_Task_28 :: Successfully copied the image
+2014-12-01 23:06:41.198881::Create VM ::node2 :: VM_Task_28 :: Successfully created the VM
+2014-12-01 23:08:01.336043::Copy Image ::node1 :: VM_Task_100 :: Successfully copied the image
+2014-12-01 23:08:02.775077::Create VM ::node1 :: VM_Task_100 :: Successfully created the VM
+2014-12-01 23:09:13.633868::Update IP::node1 :: VM_Task_100 :: Successfully updated the IP
+2014-12-01 23:09:13.909510::Run Job::node1 :: VM_Task_100 :: Successfully ran the job
+2014-12-01 23:09:24.814692::Copy Image ::node1 :: VM_Task_11 :: Successfully copied the image
+2014-12-01 23:09:25.938912::Create VM ::node1 :: VM_Task_11 :: Successfully created the VM
+2014-12-01 23:10:37.000768::Update IP::node1 :: VM_Task_11 :: Successfully updated the IP
+2014-12-01 23:10:37.387091::Run Job::node1 :: VM_Task_11 :: Successfully ran the job
+2014-12-01 23:10:54.206291::Copy Image ::node1 :: VM_Task_12 :: Successfully copied the image
+2014-12-01 23:10:55.395371::Create VM ::node1 :: VM_Task_12 :: Successfully created the VM
+2014-12-01 23:12:06.228977::Update IP::node1 :: VM_Task_12 :: Successfully updated the IP
+2014-12-01 23:12:06.563389::Run Job::node1 :: VM_Task_12 :: Successfully ran the job
+2014-12-01 23:12:19.625265::Copy Image ::node1 :: VM_Task_13 :: Successfully copied the image
+2014-12-01 23:12:20.626560::Create VM ::node1 :: VM_Task_13 :: Successfully created the VM
+2014-12-01 23:13:31.444931::Update IP::node1 :: VM_Task_13 :: Successfully updated the IP
+2014-12-01 23:13:31.747168::Run Job::node1 :: VM_Task_13 :: Successfully ran the job
+2014-12-01 23:13:51.356217::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 23:13:53.150274::Create VM ::node1 :: VM_Task_14 :: Successfully created the VM
+2014-12-01 23:15:04.295737::Update IP::node1 :: VM_Task_14 :: Successfully updated the IP
+2014-12-01 23:15:04.679886::Run Job::node1 :: VM_Task_14 :: Successfully ran the job
+2014-12-01 23:15:27.951569::Copy Image ::node1 :: VM_Task_15 :: Successfully copied the image
+2014-12-01 23:15:29.910011::Create VM ::node1 :: VM_Task_15 :: Successfully created the VM
+2014-12-01 23:16:40.923572::Update IP::node1 :: VM_Task_15 :: Successfully updated the IP
+2014-12-01 23:16:41.788662::Run Job::node1 :: VM_Task_15 :: Successfully ran the job
+2014-12-01 23:17:16.720679::Copy Image ::node1 :: VM_Task_16 :: Successfully copied the image
+2014-12-01 23:17:17.985365::Create VM ::node1 :: VM_Task_16 :: Successfully created the VM
+2014-12-01 23:18:29.195830::Update IP::node1 :: VM_Task_16 :: Successfully updated the IP
+2014-12-01 23:18:29.521918::Run Job::node1 :: VM_Task_16 :: Successfully ran the job
+2014-12-01 23:18:37.593734::Copy Image ::node1 :: VM_Task_17 :: Successfully copied the image
+2014-12-01 23:18:39.297028::Create VM ::node1 :: VM_Task_17 :: Successfully created the VM
+2014-12-01 23:19:50.306208::Update IP::node1 :: VM_Task_17 :: Successfully updated the IP
+2014-12-01 23:19:50.621901::Run Job::node1 :: VM_Task_17 :: Successfully ran the job
+2014-12-01 23:19:59.181304::Copy Image ::node1 :: VM_Task_18 :: Successfully copied the image
+2014-12-01 23:20:00.646868::Create VM ::node1 :: VM_Task_18 :: Successfully created the VM
+2014-12-01 23:21:11.716366::Update IP::node1 :: VM_Task_18 :: Successfully updated the IP
+2014-12-01 23:21:12.557540::Run Job::node1 :: VM_Task_18 :: Successfully ran the job
+2014-12-01 23:24:50.646352::Copy Image ::node1 :: VM_Task_100 :: Successfully copied the image
+2014-12-01 23:24:51.491565::Create VM ::node1 :: VM_Task_100 :: Successfully created the VM
+2014-12-01 23:26:02.220416::Update IP::node1 :: VM_Task_100 :: Successfully updated the IP
+2014-12-01 23:26:02.530957::Run Job::node1 :: VM_Task_100 :: Successfully ran the job
+2014-12-01 23:26:12.444976::Copy Image ::node1 :: VM_Task_11 :: Successfully copied the image
+2014-12-01 23:26:13.655202::Create VM ::node1 :: VM_Task_11 :: Successfully created the VM
+2014-12-01 23:27:24.529932::Update IP::node1 :: VM_Task_11 :: Successfully updated the IP
+2014-12-01 23:27:25.164695::Run Job::node1 :: VM_Task_11 :: Successfully ran the job
+2014-12-01 23:27:34.010222::Copy Image ::node1 :: VM_Task_12 :: Successfully copied the image
+2014-12-01 23:27:34.926889::Create VM ::node1 :: VM_Task_12 :: Successfully created the VM
+2014-12-01 23:28:45.720236::Update IP::node1 :: VM_Task_12 :: Successfully updated the IP
+2014-12-01 23:28:46.064423::Run Job::node1 :: VM_Task_12 :: Successfully ran the job
+2014-12-01 23:28:59.407647::Copy Image ::node1 :: VM_Task_13 :: Successfully copied the image
+2014-12-01 23:29:00.449032::Create VM ::node1 :: VM_Task_13 :: Successfully created the VM
+2014-12-01 23:30:11.272405::Update IP::node1 :: VM_Task_13 :: Successfully updated the IP
+2014-12-01 23:30:11.842893::Run Job::node1 :: VM_Task_13 :: Successfully ran the job
+2014-12-01 23:30:34.979798::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 23:30:36.685701::Create VM ::node1 :: VM_Task_14 :: Successfully created the VM
+2014-12-01 23:31:48.290138::Update IP::node1 :: VM_Task_14 :: Successfully updated the IP
+2014-12-01 23:31:48.670496::Run Job::node1 :: VM_Task_14 :: Successfully ran the job
+2014-12-01 23:32:18.660902::Copy Image ::node1 :: VM_Task_15 :: Successfully copied the image
+2014-12-01 23:32:20.179969::Create VM ::node1 :: VM_Task_15 :: Successfully created the VM
+2014-12-01 23:33:31.183478::Update IP::node1 :: VM_Task_15 :: Successfully updated the IP
+2014-12-01 23:33:31.659541::Run Job::node1 :: VM_Task_15 :: Successfully ran the job
+2014-12-01 23:33:49.050137::Copy Image ::node1 :: VM_Task_16 :: Successfully copied the image
+2014-12-01 23:33:50.780007::Create VM ::node1 :: VM_Task_16 :: Successfully created the VM
+2014-12-01 23:35:02.237052::Update IP::node1 :: VM_Task_16 :: Successfully updated the IP
+2014-12-01 23:35:02.569028::Run Job::node1 :: VM_Task_16 :: Successfully ran the job
+2014-12-01 23:35:25.042682::Copy Image ::node1 :: VM_Task_17 :: Successfully copied the image
+2014-12-01 23:35:26.877916::Create VM ::node1 :: VM_Task_17 :: Successfully created the VM
+2014-12-01 23:36:37.719648::Update IP::node1 :: VM_Task_17 :: Successfully updated the IP
+2014-12-01 23:36:38.637174::Run Job::node1 :: VM_Task_17 :: Successfully ran the job
+2014-12-01 23:38:34.067897::Copy Image ::node1 :: VM_Task_100 :: Successfully copied the image
+2014-12-01 23:38:35.916418::Create VM ::node1 :: VM_Task_100 :: Successfully created the VM
+2014-12-01 23:39:47.418151::Update IP::node1 :: VM_Task_100 :: Successfully updated the IP
+2014-12-01 23:39:48.973946::Run Job::node1 :: VM_Task_100 :: Successfully ran the job
+2014-12-01 23:40:21.987419::Copy Image ::node1 :: VM_Task_11 :: Successfully copied the image
+2014-12-01 23:40:24.417954::Create VM ::node1 :: VM_Task_11 :: Successfully created the VM
+2014-12-01 23:41:37.334023::Update IP::node1 :: VM_Task_11 :: Successfully updated the IP
+2014-12-01 23:41:38.051998::Run Job::node1 :: VM_Task_11 :: Successfully ran the job
+2014-12-01 23:42:10.887775::Copy Image ::node1 :: VM_Task_12 :: Successfully copied the image
+2014-12-01 23:42:13.879274::Create VM ::node1 :: VM_Task_12 :: Successfully created the VM
+2014-12-01 23:43:25.995785::Update IP::node1 :: VM_Task_12 :: Successfully updated the IP
+2014-12-01 23:43:27.386574::Run Job::node1 :: VM_Task_12 :: Successfully ran the job
+2014-12-01 23:44:03.889260::Copy Image ::node1 :: VM_Task_13 :: Successfully copied the image
+2014-12-01 23:44:07.132740::Create VM ::node1 :: VM_Task_13 :: Successfully created the VM
+2014-12-01 23:45:53.619814::Update IP::node1 :: VM_Task_13 :: Successfully updated the IP
+2014-12-01 23:45:54.250029::Run Job::node1 :: VM_Task_13 :: Successfully ran the job
+2014-12-01 23:46:32.833836::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 23:46:33.378509 :: Create Guest :: VM_Task_14 :: Cannot create the guest
+Command 'virsh create /var/lib/virtdc/guestconfiguration/VM_Task_14.xml' returned non-zero exit status 1
+2014-12-01 23:47:30.524672::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 23:47:30.966195 :: Create Guest :: VM_Task_14 :: Cannot create the guest
+Command 'virsh create /var/lib/virtdc/guestconfiguration/VM_Task_14.xml' returned non-zero exit status 1
+2014-12-01 23:48:31.039093::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 23:48:31.330548 :: Create Guest :: VM_Task_14 :: Cannot create the guest
+Command 'virsh create /var/lib/virtdc/guestconfiguration/VM_Task_14.xml' returned non-zero exit status 1
+2014-12-01 23:49:29.462032::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 23:49:29.501755 :: Create Guest :: VM_Task_14 :: Cannot create the guest
+Command 'virsh create /var/lib/virtdc/guestconfiguration/VM_Task_14.xml' returned non-zero exit status 1
+2014-12-01 23:50:17.101541::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 23:50:18.169012 :: Create Guest :: VM_Task_14 :: Cannot create the guest
+Command 'virsh create /var/lib/virtdc/guestconfiguration/VM_Task_14.xml' returned non-zero exit status 1
+2014-12-01 23:50:50.701191::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 23:50:50.979223 :: Create Guest :: VM_Task_14 :: Cannot create the guest
+Command 'virsh create /var/lib/virtdc/guestconfiguration/VM_Task_14.xml' returned non-zero exit status 1
+2014-12-01 23:51:46.251988::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 23:51:46.497793 :: Create Guest :: VM_Task_14 :: Cannot create the guest
+Command 'virsh create /var/lib/virtdc/guestconfiguration/VM_Task_14.xml' returned non-zero exit status 1
+2014-12-01 23:52:42.557790::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 23:52:42.811275 :: Create Guest :: VM_Task_14 :: Cannot create the guest
+Command 'virsh create /var/lib/virtdc/guestconfiguration/VM_Task_14.xml' returned non-zero exit status 1
+2014-12-01 23:53:09.242211::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 23:53:09.700906 :: Create Guest :: VM_Task_14 :: Cannot create the guest
+Command 'virsh create /var/lib/virtdc/guestconfiguration/VM_Task_14.xml' returned non-zero exit status 1
+2014-12-01 23:53:37.703490::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 23:53:37.973852 :: Create Guest :: VM_Task_14 :: Cannot create the guest
+Command 'virsh create /var/lib/virtdc/guestconfiguration/VM_Task_14.xml' returned non-zero exit status 1
+2014-12-01 23:54:13.106946::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 23:54:13.254637 :: Create Guest :: VM_Task_14 :: Cannot create the guest
+Command 'virsh create /var/lib/virtdc/guestconfiguration/VM_Task_14.xml' returned non-zero exit status 1
+2014-12-01 23:54:42.391386::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 23:54:42.503294 :: Create Guest :: VM_Task_14 :: Cannot create the guest
+Command 'virsh create /var/lib/virtdc/guestconfiguration/VM_Task_14.xml' returned non-zero exit status 1
+2014-12-01 23:55:13.625384::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 23:55:13.808650 :: Create Guest :: VM_Task_14 :: Cannot create the guest
+Command 'virsh create /var/lib/virtdc/guestconfiguration/VM_Task_14.xml' returned non-zero exit status 1
+2014-12-01 23:55:43.383963::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 23:55:43.559335 :: Create Guest :: VM_Task_14 :: Cannot create the guest
+Command 'virsh create /var/lib/virtdc/guestconfiguration/VM_Task_14.xml' returned non-zero exit status 1
+2014-12-01 23:56:11.420150::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 23:56:11.605318 :: Create Guest :: VM_Task_14 :: Cannot create the guest
+Command 'virsh create /var/lib/virtdc/guestconfiguration/VM_Task_14.xml' returned non-zero exit status 1
+2014-12-01 23:56:39.807997::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 23:56:39.950812 :: Create Guest :: VM_Task_14 :: Cannot create the guest
+Command 'virsh create /var/lib/virtdc/guestconfiguration/VM_Task_14.xml' returned non-zero exit status 1
+2014-12-01 23:57:08.115352::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 23:57:08.287979 :: Create Guest :: VM_Task_14 :: Cannot create the guest
+Command 'virsh create /var/lib/virtdc/guestconfiguration/VM_Task_14.xml' returned non-zero exit status 1
+2014-12-01 23:57:35.880128::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 23:57:35.979184 :: Create Guest :: VM_Task_14 :: Cannot create the guest
+Command 'virsh create /var/lib/virtdc/guestconfiguration/VM_Task_14.xml' returned non-zero exit status 1
