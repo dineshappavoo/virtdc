@@ -31,41 +31,55 @@ def getGuestIP(host, vmid, username, password) :
 	print "VMID "+str(vmid)
 	print "USER "+str(username)
 	print "PASSWORD "+str(password)
-	child = pexpect.spawn('/usr/bin/ssh ' + host)
-	child.expect('\~\]\#')
-	child.sendline('/usr/bin/virsh console ' + vmid)
-	child.sendline('\n\n')
-	sleep(3)
-	i = child.expect([pexpect.TIMEOUT, '\~\]\#', 'ogin:'])
 	
-	if i == 0:  # timeout
-		return
-	if i == 1:  # ttyS0 is logged in, do nothing
-		pass
-	if i == 2:  # ttyS0 is waiting at login prompt
-		child.expect('ogin: ')
-		child.sendline(username)
-		child.expect('assword:')
-		child.sendline(password)
-		child.expect('\~\]\# ')
+	retry_counter = 0
+	ip = ""
 
-	sleep(3)
-	#To get the guest IP
-	child.sendline('ifconfig | grep 192.168.1. | awk \'{print $2}\'')
-	sleep(3)
-	child.expect('(\d+\.\d+\.\d+\.\d+)')
-	ip = child.match.group()
+	# Retry up to 2 times
+	while retry_counter < 3:
+		try:
+			child = pexpect.spawn('/usr/bin/ssh ' + host)
+			child.expect('\~\]\#')
+			child.sendline('/usr/bin/virsh console ' + vmid)
+			child.sendline('\n\n')
+			sleep(3)
+			i = child.expect([pexpect.TIMEOUT, '\~\]\#', 'ogin:'])
+			
+			if i == 0:  # timeout
+				retry_counter = retry_counter + 1
+				continue
+			if i == 1:  # ttyS0 is logged in, do nothing
+				pass
+			if i == 2:  # ttyS0 is waiting at login prompt
+				child.expect('ogin: ')
+				child.sendline(username)
+				child.expect('assword:')
+				child.sendline(password)
+				child.expect('\~\]\# ')
 
-	child.sendline('logout')
-	#sleep(2)
-	child.sendline('\n\n')
+			sleep(3)
+			#To get the guest IP
+			child.sendline('ifconfig | grep 192.168.1. | awk \'{print $2}\'')
+			sleep(3)
+			child.expect('(\d+\.\d+\.\d+\.\d+)')
+			ip = child.match.group()
+
+			child.sendline('logout')
+			#sleep(2)
+			child.sendline('\n\n')
+			break
+		except Exception as e:
+			retry_counter = retry_counter + 1
+			print e
+			print "RETRY: %s" % retry_counter
+
 	#	print ip
 	print "IP Address "+str(ip)
 	return ip
 
 if __name__ == "__main__":
    # stuff only to run when not called via 'import' here
-   getGuestIP('node3', 'VM_Task_20', 'root', 'Teamb@123')
+   getGuestIP('node3', 'VM_Task_9', 'root', 'Teamb@123')
 
 	
 	

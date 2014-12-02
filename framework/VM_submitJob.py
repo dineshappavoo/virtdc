@@ -15,6 +15,7 @@ sys.path.append('/var/lib/virtdc/mail')
 sys.path.append('/var/lib/virtdc/vmonere/host')
 from vm_mail import send_support_mail
 from vmonere_start_monitor import do_prereq_start_workload
+from VM_terminateGuest import vm_terminate_guest
 
 #==============================================================================
 # Variables
@@ -139,9 +140,15 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
 	# Wait for VM to boot up
 	time.sleep(60)
 
-	#Get the IP address of Virtual Machine and update in VM_Info_Updater
+	# Get the IP address of Virtual Machine and update in VM_Info_Updater
 	guest_ip=getGuestIP(host.strip(), vmid.strip(), "root", "Teamb@123")
-	#Making the max cpu as 8 for all VM's
+
+	# If get ip failed, terminate this VM
+	if guest_ip == "":
+		vm_terminate_guest(host.strip(), vmid.strip())
+		return False
+
+	# Making the max cpu as 8 for all VM's
 	addOrUpdateDictionaryOfVM(host, vmid, Guest(guest_ip, vmid, float(1), float(8),float(memory),float(max_memory),float(1), str(datetime.datetime.now())  ))
 	vmsubmission_log.write(str(datetime.datetime.now())+'::Update IP::'+host+' :: '+vmid+' :: Successfully updated the IP\n')
 	
