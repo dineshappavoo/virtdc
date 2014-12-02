@@ -29,7 +29,7 @@ def do_prereq_start_workload(hostName, vmid):
 		scpHostConfig = 'scp -q -o StrictHostKeyChecking=no /var/lib/virtdc/vmonere/dominfo/'+vmid+'.txt root@'+ip+':'+file_path
 		subprocess.Popen(scpHostConfig, shell=True, stderr=subprocess.PIPE)
 
-		start_monitor = 'ssh -n -q -o StrictHostKeyChecking=no root@'+ip+' \"/bin/nohup sh -c \'/bin/python /var/lib/virtdc/vmonere/guest/vmonere_agent.py\' > /dev/null 2>&1 &' + '\"'
+		start_monitor = 'ssh -n -q -o StrictHostKeyChecking=no root@'+ip+' \"/bin/nohup sh -c \'/bin/python /var/lib/virtdc/vmonere/guest/vmonere_sender_socket.py\' > /dev/null 2>&1 &' + '\"'
 		print start_monitor
                 subprocess.Popen(start_monitor, shell=True, stderr=subprocess.PIPE)
 		
@@ -65,6 +65,6 @@ def update_vmid_in_config(vmid):
 
 if __name__ == "__main__":
    # stuff only to run when not called via 'import' here
-   do_prereq_start_workload("node1","VM_Task_100")
+   do_prereq_start_workload("node1","VM_Task_12")
    #update_vmid_in_config("VM_Task_100")
 

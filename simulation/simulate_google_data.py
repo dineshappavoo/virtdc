@@ -3,8 +3,10 @@
 
 import os, sys, subprocess, time, math
 sys.path.append('/var/lib/virtdc/framework')
+sys.path.append('/var/lib/virtdc/virtdc_init')
 from virtdc import create_vm
 from VM_terminationHandler import find_lifetime_and_terminate_vm
+from virtdc_init import virtdc_init
 
 #==============================================================================
 # Variables
@@ -22,14 +24,9 @@ _base_memory_size=2097152       # 2 GB (This includes OS memory)
 
 
 def simulate_google_data():
-	#start domain termination process
-	cmd = "/usr/bin/python /var/lib/virtdc/framework/VM_terminationHandler.py &"
-	#os.system(cmd)
-	termination_process = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
-
-	delete_log_files_cmd = "/usr/bin/python /var/lib/virtdc/vmonere/host/vmonere_exec_log_deleter.py &"
-	#os.system(cmd)
-	delete_log_files_process = subprocess.Popen(delete_log_files_cmd, shell=True, stderr=subprocess.PIPE)
+	
+	#Initite virtdc back ground jobs
+	virtdc_init()
 
 	for file_name in os.listdir(data_folder_path):
 		if file_name.endswith(".csv"):
