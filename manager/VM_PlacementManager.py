@@ -106,8 +106,8 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
 			print new_cpu_value
 			vm_cpu_scaling(host, vmid, new_cpu_value)
 			#update vm_host_dict
-			addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, float(new_cpu_value), value.max_cpu,value.current_memory,value.max_memory,value.io, value.start_time))
-			manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::Scaling ::'+host+' :: '+vmid+' :: Memory scaled from '+str(value.current_cpu)+' to '+str(cpu_usage)+'\n')
+			#addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, float(new_cpu_value), value.max_cpu,value.current_memory,value.max_memory,value.io, value.start_time))
+			manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::CPU::Scaling ::'+host+' :: '+vmid+' :: Memory scaled from '+str(value.current_cpu)+' to '+str(cpu_usage)+'\n')
 		else:
 			print 'Test 3'
 			new_host = obj.is_space_available_for_vm(cpu_usage, mem_usage , io_usage)
@@ -127,7 +127,7 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
 		if( obj.is_mem_available_on_host(host, allotted_memory) ):
 			vm_memory_scaling(host, vmid, float(mem_usage))
 			#update vm_host_dict
-			addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, value.current_cpu, value.max_cpu, float(mem_usage),value.max_memory,value.io, value.start_time))
+			#addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, value.current_cpu, value.max_cpu, float(mem_usage),value.max_memory,value.io, value.start_time))
 	    		manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::Scaling ::'+str(host)+' :: '+str(vmid)+' :: Memory scaled from '+str(allotted_memory)+' to '+str(mem_usage)+'\n')
 		else:
 			new_host = obj.is_space_available_for_vm(cpu_usage, mem_usage , io_usage)
@@ -136,6 +136,7 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
 			else:
 				#Initiate vm migration
 				vm_migrate_guest(host, new_host, vmid)
+				manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::Migration ::'+host+' :: '+vmid+' :: Domain migrated from '+str(host)+' to '+str(new_host)+' for Memory Scaling from'+str(value.current_memory)+' to '+str(memory_usage)+'\n')
 
 
 
@@ -152,5 +153,5 @@ def reactOnHotSpot():
 
 if __name__ == "__main__":
 	# stuff only to run when not called via 'import' here
-	report_usage_to_placement_manager('VM_Task_100', '3.467', '8260', '0.3')
+	report_usage_to_placement_manager('VM_Task_16', '6.467', '8260', '0.3')
 	#process_action_on_current_usage('node1', 'VM_Task_1', Guest("192.168.1.14","Task1", float(1), float(3),float(42424345353),float(424242),float(1), time.time()), '1.0', '424242', '42424345353')

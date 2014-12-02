@@ -69,15 +69,21 @@ def vm_max_memory_scaling(host, vmid, max_mem_size):
         return False
 
 def update_dictionary(host, vmid, mem_size):
+
 	host_vm_dict = getHostVMDict()
     	value = host_vm_dict[host][vmid]
 	old_memory = value.current_memory
 	required_memory = float(mem_size) - float(old_memory)
+	
 	guest = Guest(value.vmip,value.vmid, value.current_cpu, value.max_cpu, float(mem_size), value.max_memory,value.io, value.start_time)
+
+	#Update memory for guest in guest dictionary
 	addOrUpdateDictionaryOfVM(host, vmid, guest)
+
+	#Update memory for guest in host dictionary
 	update_resources_after_mem_scaling(host, vmid, guest, required_memory)
 
 #For Testing
 if __name__ == "__main__":
     # stuff only to run when not called via 'import' here
-    vm_memory_scaling("node1","VM_Task_100","2150000")
+    vm_memory_scaling("node1","VM_Task_11","2130000")

@@ -93,6 +93,8 @@ def show_domain_info(vm_id):
 				print '%s%s' %(str('Maximum Memory [KiB]:').ljust(30),value.max_memory)
 				print '%s%s' %(str('Created Time:').ljust(30),value.start_time)
 				#print '--------------------------------------------'
+			#else : 
+				#print 'Domain Not available'
 
 def show_host_info(host_name):
 	node_dict = GetNodeDict()

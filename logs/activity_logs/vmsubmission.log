@@ -4872,3 +4872,81 @@ Command 'cp /home/vm_img/base_image.img /home/vm_img/VM_Task_100.img' returned n
 2014-12-01 15:54:15.962233::Create VM ::node1 :: VM_Task_19 :: Successfully created the VM
 2014-12-01 15:55:27.119570::Update IP::node1 :: VM_Task_19 :: Successfully updated the IP
 2014-12-01 15:55:28.068885::Run Job::node1 :: VM_Task_19 :: Successfully ran the job
+2014-12-01 17:46:46.474448::Copy Image ::node1 :: VM_Task_100 :: Successfully copied the image
+2014-12-01 17:46:47.433845::Create VM ::node1 :: VM_Task_100 :: Successfully created the VM
+2014-12-01 17:47:58.266178::Update IP::node1 :: VM_Task_100 :: Successfully updated the IP
+2014-12-01 17:47:58.530874::Run Job::node1 :: VM_Task_100 :: Successfully ran the job
+2014-12-01 17:48:07.277035::Copy Image ::node1 :: VM_Task_11 :: Successfully copied the image
+2014-12-01 17:48:09.028256::Create VM ::node1 :: VM_Task_11 :: Successfully created the VM
+2014-12-01 17:49:19.753994::Update IP::node1 :: VM_Task_11 :: Successfully updated the IP
+2014-12-01 17:49:20.091996::Run Job::node1 :: VM_Task_11 :: Successfully ran the job
+2014-12-01 17:49:27.785322::Copy Image ::node1 :: VM_Task_12 :: Successfully copied the image
+2014-12-01 17:49:28.700784::Create VM ::node1 :: VM_Task_12 :: Successfully created the VM
+2014-12-01 17:50:39.556333::Update IP::node1 :: VM_Task_12 :: Successfully updated the IP
+2014-12-01 17:50:39.852038::Run Job::node1 :: VM_Task_12 :: Successfully ran the job
+2014-12-01 17:50:45.564819::Copy Image ::node1 :: VM_Task_13 :: Successfully copied the image
+2014-12-01 17:50:47.474845::Create VM ::node1 :: VM_Task_13 :: Successfully created the VM
+2014-12-01 17:51:58.461583::Update IP::node1 :: VM_Task_13 :: Successfully updated the IP
+2014-12-01 17:51:58.828262::Run Job::node1 :: VM_Task_13 :: Successfully ran the job
+2014-12-01 17:52:21.652612::Copy Image ::node1 :: VM_Task_14 :: Successfully copied the image
+2014-12-01 17:52:22.847425::Create VM ::node1 :: VM_Task_14 :: Successfully created the VM
+2014-12-01 17:53:35.474541::Update IP::node1 :: VM_Task_14 :: Successfully updated the IP
+2014-12-01 17:53:36.196627::Run Job::node1 :: VM_Task_14 :: Successfully ran the job
+2014-12-01 17:55:06.866264::Copy Image ::node3 :: VM_Task_15 :: Successfully copied the image
+2014-12-01 17:55:07.744861::Create VM ::node3 :: VM_Task_15 :: Successfully created the VM
+2014-12-01 17:56:18.854976::Update IP::node3 :: VM_Task_15 :: Successfully updated the IP
+2014-12-01 17:56:19.390907::Run Job::node3 :: VM_Task_15 :: Successfully ran the job
+2014-12-01 17:56:46.143436::Copy Image ::node1 :: VM_Task_16 :: Successfully copied the image
+2014-12-01 17:56:48.383477::Create VM ::node1 :: VM_Task_16 :: Successfully created the VM
+2014-12-01 17:57:59.788717::Update IP::node1 :: VM_Task_16 :: Successfully updated the IP
+2014-12-01 17:58:01.079475::Run Job::node1 :: VM_Task_16 :: Successfully ran the job
+2014-12-01 17:59:33.259266::Copy Image ::node3 :: VM_Task_17 :: Successfully copied the image
+2014-12-01 17:59:34.683238::Create VM ::node3 :: VM_Task_17 :: Successfully created the VM
+2014-12-01 18:00:45.799422::Update IP::node3 :: VM_Task_17 :: Successfully updated the IP
+2014-12-01 18:00:46.924246::Run Job::node3 :: VM_Task_17 :: Successfully ran the job
+2014-12-01 18:01:39.288424::Copy Image ::node1 :: VM_Task_18 :: Successfully copied the image
+2014-12-01 18:01:40.735707::Create VM ::node1 :: VM_Task_18 :: Successfully created the VM
+2014-12-01 18:02:51.705687::Update IP::node1 :: VM_Task_18 :: Successfully updated the IP
+2014-12-01 18:02:51.932168::Run Job::node1 :: VM_Task_18 :: Successfully ran the job
+2014-12-01 18:04:46.949280::Copy Image ::node3 :: VM_Task_19 :: Successfully copied the image
+2014-12-01 18:04:48.067997::Create VM ::node3 :: VM_Task_19 :: Successfully created the VM
+2014-12-01 18:06:42.466345 :: Create Guest :: VM_Task_19 :: Cannot create the guest
+Timeout exceeded in read_nonblocking().
+<pexpect.spawn object at 0x7fcec23013d0>
+version: 2.3 ($Revision: 399 $)
+command: /usr/bin/ssh
+args: ['/usr/bin/ssh', 'node3']
+searcher: searcher_re:
+    0: re.compile("ogin: ")
+buffer (last 100 chars):  
+before (last 100 chars):  
+after: <class 'pexpect.TIMEOUT'>
+match: None
+match_index: None
+exitstatus: None
+flag_eof: False
+pid: 32481
+child_fd: 12
+closed: False
+timeout: 30
+delimiter: <class 'pexpect.EOF'>
+logfile: None
+logfile_read: None
+logfile_send: None
+maxread: 2000
+ignorecase: False
+searchwindowsize: None
+delaybeforesend: 0.05
+delayafterclose: 0.1
+delayafterterminate: 0.1
+2014-12-01 18:07:29.446235::Copy Image ::node1 :: VM_Task_19 :: Successfully copied the image
+2014-12-01 18:07:31.891973::Create VM ::node1 :: VM_Task_19 :: Successfully created the VM
+2014-12-01 18:09:06.730905::Update IP::node1 :: VM_Task_19 :: Successfully updated the IP
+2014-12-01 18:09:06.731823 :: Create Guest :: VM_Task_19 :: Cannot create the guest
+cannot concatenate 'str' and 'NoneType' objects
+2014-12-01 18:11:03.448163::Copy Image ::node3 :: VM_Task_19 :: Successfully copied the image
+2014-12-01 18:11:04.683991 :: Create Guest :: VM_Task_19 :: Cannot create the guest
+Command 'virsh --connect qemu+ssh://node3/system create /var/lib/virtdc/guestconfiguration/VM_Task_19.xml' returned non-zero exit status 1
+2014-12-01 18:12:55.803690::Copy Image ::node3 :: VM_Task_19 :: Successfully copied the image
+2014-12-01 18:12:56.178702 :: Create Guest :: VM_Task_19 :: Cannot create the guest
+Command 'virsh --connect qemu+ssh://node3/system create /var/lib/virtdc/guestconfiguration/VM_Task_19.xml' returned non-zero exit status 1

@@ -14,11 +14,11 @@ import sys, time, subprocess
 
 #==============================================================================
 
-def monitor_cpu(vm_id):
+def domain_monitor(vm_id):
 
 	#startWork = 'ssh -q -o StrictHostKeyChecking=no root@'+ip+' nohup bash /root/setup.sh &'
 	#subprocess.Popen(startWork, shell=True, stderr=subprocess.PIPE)
-	subprocess.Popen(['java', '-jar', '/var/lib/virtdc/vmonere/graph/jars/cpumonitor.jar', vm_id])
+	subprocess.Popen(['java', '-jar', '/var/lib/virtdc/vmonere/graph/jars/vmmonitor.jar', vm_id])
 
 def monitor_memory(vm_id):
 

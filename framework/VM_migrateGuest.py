@@ -4,6 +4,7 @@ import sys, subprocess
 import datetime
 from Host_Info_Tracker import resume_resources_from_guest
 from VM_Info_Updater import addOrUpdateDictionaryOfVM, getHostVMDict
+from VM_decisionMaker import NodeFinder
 #API to migrate the running guest from source host to the destination host
 
 #==============================================================================
@@ -52,19 +53,31 @@ def vm_migrate_guest(source_host, dest_host, vmid):
     except Exception, e:
         print 'Cannot migrate VM '+str(vmid)+' in '+str(source_host)
         vmmigration_log.write(str(datetime.datetime.now()) +'::Migrate Guest ::'+source_host+' :: '+vmid+' :: Cannot migrate the guest\n')
-        vmmigration_log.write(str(e.output) + '\n')
+        vmmigration_log.write(str(e) + '\n')
         return False
 
 
 def vm_migrate_dependency(source_host,dest_host,vmid):
-    #Remove entry from host_vm_dict.pkl for the source_host
-    #Add Entry to the dest_host in node_dict.pkl
-    #Remove the configuration XML
-    host_vm_dict = getHostVMDict()
-    guest = host_vm_dict[source_host][vmid]
-    addOrUpdateDictionaryOfVM(source_host, vmid, None)
-    resume_resources_from_guest(source_host, vmid, guest)
-    addOrUpdateDictionaryOfVM(dest_host, vmid, guest)
+
+	obj=NodeFinder()
+	#Remove entry from host_vm_dict.pkl for the source_host
+	#Add Entry to the dest_host in node_dict.pkl
+	#Remove the configuration XML
+	host_vm_dict = getHostVMDict()
+	guest = host_vm_dict[source_host][vmid]
+
+	#update guest dictionay on source_host
+	addOrUpdateDictionaryOfVM(source_host, vmid, None)
+
+	#Update host dictionary for source host 
+	resume_resources_from_guest(source_host, vmid, guest)
+
+	#update guest dictionay on dest_host
+	addOrUpdateDictionaryOfVM(dest_host, vmid, guest)
+	
+	#Update host dictionary for dest host
+	host = obj.place_job (dest_host, guest.current_cpu,guest.current_memory,guest.io)
+
 
 
 
