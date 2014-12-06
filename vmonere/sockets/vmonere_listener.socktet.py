@@ -57,11 +57,14 @@ def start_server():
 
 			path = '/var/lib/virtdc/vmonere/monitor_logs/'+vmid+'.log'
 			file= open(path, 'a+')
-			usage= str(datetime.datetime.now()) +' \t|\t '+ vmid+' \t|\t '+ str(cpu_usage) + '\t|\t' + str(os_mem_usage) + '\t|\t' + str(task_mem_usage) + '\t|\t' + str(io_usage)
+            time_now = str(datetime.datetime.now())
+			usage=  time_now +' \t|\t '+ vmid+' \t|\t '+ str(cpu_usage) + '\t|\t' + str(os_mem_usage) + '\t|\t' + str(task_mem_usage) + '\t|\t' + str(io_usage)
 			file.write(usage+'\n')
 			file.close()
 
-
+            #To log usage in json file
+            log_usage_json(vmid, time_now, cpu_usage, task_mem_usage, io_usage)
+                
 			#To report current usage to the placement manager
 			domain_reported_count = domain_dict[vmid]
 			if domain_reported_count is None:
@@ -82,13 +85,25 @@ def start_server():
 
 		c.close()                # Close the connection
 
-def report_usage_periodically(vmid):
+def log_usage_json(vmid, time_now, cpu, mem, io):
 	#is_domain_exist = domain_dict[vmid]
-	
-	#if is_domain_exist == True:
-	a=0
-		
-	
+    
+    path = '/var/lib/virtdc/vmonere/monitor_logs/json/' + vmid + '.json'
+
+
+    with open(path) as log_file:
+        dict = json.load(log_file)
+    print log_dict
+
+    dict["time"] = time_now
+    dict["cpu"] = cpu
+    dict["memory"] = mem
+    dict["io"] = io
+    
+
+    with open(path,"w") as f:
+        json.dump(dict,f)
+
 
 if __name__ == "__main__":
    # stuff only to run when not called via 'import' here
