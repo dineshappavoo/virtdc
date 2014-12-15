@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import time
 import sys
@@ -57,7 +57,7 @@ def start_server():
 
 			path = '/var/lib/virtdc/vmonere/monitor_logs/'+vmid+'.log'
 			file= open(path, 'a+')
-            time_now = str(datetime.datetime.now())
+            		time_now = str(datetime.datetime.now())
 			usage=  time_now +' \t|\t '+ vmid+' \t|\t '+ str(cpu_usage) + '\t|\t' + str(os_mem_usage) + '\t|\t' + str(task_mem_usage) + '\t|\t' + str(io_usage)
 			file.write(usage+'\n')
 			file.close()
