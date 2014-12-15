@@ -10,7 +10,7 @@ p4
 F8.0
 sS'avail_io'
 p5
-F1069547520.0
+F1061158912.0
 sS'hostname'
 p6
 S'node1'
@@ -20,7 +20,7 @@ p8
 F32689796.0
 sS'avail_cpu'
 p9
-F6.0
+F4.0
 sS'max_io'
 p10
 F1073741824.0
@@ -30,7 +30,7 @@ S'192.168.1.11'
 p12
 sS'avail_memory'
 p13
-F30527644.0
+F26203340.0
 sbsVnode3
 p14
 (iNode

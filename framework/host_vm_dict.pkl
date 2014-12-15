@@ -2,7 +2,7 @@
 Vnode1
 p1
 (dp2
-S'VM_Task_100'
+S'VM_Task_11'
 p3
 (iGuest
 Guest
@@ -13,7 +13,7 @@ p6
 F8.0
 sS'start_time'
 p7
-S'2014-12-05 18:23:48.213582'
+S'2014-12-14 21:38:41.376424'
 p8
 sS'vmid'
 p9
@@ -26,7 +26,7 @@ p11
 F1.0
 sS'vmip'
 p12
-S'192.168.1.30'
+S'192.168.1.5'
 p13
 sS'current_cpu'
 p14
@@ -34,13 +34,37 @@ F1.0
 sS'current_memory'
 p15
 F2102152.0
-sbssVnode3
+sbsS'VM_Task_100'
 p16
-(dp17
-sVnode2
-p18
-(dp19
-sVnode4
+(iGuest
+Guest
+p17
+(dp18
+g6
+F8.0
+sg7
+S'2014-12-14 21:37:21.209739'
+p19
+sg9
+g16
+sg10
+F2162152.0
+sg11
+F1.0
+sg12
+S'192.168.1.4'
 p20
-(dp21
+sg14
+F1.0
+sg15
+F2102152.0
+sbssVnode3
+p21
+(dp22
+sVnode2
+p23
+(dp24
+sVnode4
+p25
+(dp26
 s.

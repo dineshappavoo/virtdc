@@ -5738,3 +5738,13 @@ Command 'virsh create /var/lib/virtdc/guestconfiguration/VM_Task_100.xml' return
 2014-12-05 18:24:18.005583::Copy Image ::node1 :: VM_Task_11 :: Successfully copied the image
 2014-12-05 18:24:18.307238 :: Create Guest :: VM_Task_11 :: Cannot create the guest
 Command 'virsh create /var/lib/virtdc/guestconfiguration/VM_Task_11.xml' returned non-zero exit status 1
+2014-12-14 21:27:17.728417::Copy Image ::node1 :: VM_Task_100 :: Successfully copied the image
+2014-12-14 21:27:21.190348::Create VM ::node1 :: VM_Task_100 :: Successfully created the VM
+2014-12-14 21:36:07.141333::Copy Image ::node1 :: VM_Task_100 :: Successfully copied the image
+2014-12-14 21:36:10.429369::Create VM ::node1 :: VM_Task_100 :: Successfully created the VM
+2014-12-14 21:37:21.210951::Update IP::node1 :: VM_Task_100 :: Successfully updated the IP
+2014-12-14 21:37:21.535304::Run Job::node1 :: VM_Task_100 :: Successfully ran the job
+2014-12-14 21:37:29.184924::Copy Image ::node1 :: VM_Task_11 :: Successfully copied the image
+2014-12-14 21:37:30.389888::Create VM ::node1 :: VM_Task_11 :: Successfully created the VM
+2014-12-14 21:38:41.377376::Update IP::node1 :: VM_Task_11 :: Successfully updated the IP
+2014-12-14 21:38:41.654622::Run Job::node1 :: VM_Task_11 :: Successfully ran the job
