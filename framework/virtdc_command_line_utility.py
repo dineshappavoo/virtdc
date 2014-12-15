@@ -98,17 +98,21 @@ def show_domain_info(vm_id):
 
 def show_host_info(host_name):
 	node_dict = GetNodeDict()
-	value = node_dict[host_name]
-	print '%s%s' %(str('Host Name:').ljust(30),host_name)
-	print '--------------------------------------------'
-	print '%s%s' %(str('Host IP:').ljust(30),value.ip_address)
-	print '%s%s' %(str('Available CPU [core]:').ljust(30),value.avail_cpu)
-	print '%s%s' %(str('Maximum CPU [core]:').ljust(30),value.max_cpu)
-	print '%s%s' %(str('Available Memory [KiB]:').ljust(30),value.avail_memory)
-	print '%s%s' %(str('Maximum Memory [KiB]:').ljust(30),value.max_memory)
-	print '%s%s' %(str('Available Disk Space [KiB]:').ljust(30),value.avail_io)
-	print '%s%s' %(str('Maximum Disk Space [KiB]:').ljust(30),value.max_io)
-	#print '--------------------------------------------'
+	for node, value in node_dict.iteritems() :
+		if node == host_name:
+			value = node_dict[host_name]
+			print '%s%s' %(str('Host Name:').ljust(30),host_name)
+			print '--------------------------------------------'
+			print '%s%s' %(str('Host IP:').ljust(30),value.ip_address)
+			print '%s%s' %(str('Available CPU [core]:').ljust(30),value.avail_cpu)
+			print '%s%s' %(str('Maximum CPU [core]:').ljust(30),value.max_cpu)
+			print '%s%s' %(str('Available Memory [KiB]:').ljust(30),value.avail_memory)
+			print '%s%s' %(str('Maximum Memory [KiB]:').ljust(30),value.max_memory)
+			print '%s%s' %(str('Available Disk Space [KiB]:').ljust(30),value.avail_io)
+			print '%s%s' %(str('Maximum Disk Space [KiB]:').ljust(30),value.max_io)
+			#print '--------------------------------------------'
+			return True
+	return False
 
 def force_migrate(vmid, source_host, dest_host):
 	return vm_migrate_guest(source_host, dest_host,vmid)

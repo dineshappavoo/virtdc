@@ -123,7 +123,9 @@ def main(argv):
 	elif args.subparser_name == 'hostinfo':
 		#print 'Call vm_hostinfo'
 		host_name = args.hostname
-		show_host_info(host_name)
+		dom_info = show_host_info(host_name)
+		if dom_info == False:
+			print 'Host name not found/not configured to this cluster'
 	# Python argparse Namespace of '-' will be converted to '_'
 	elif args.subparser_name == 'force-migrate':
 		#print 'Call vm_migrate'
