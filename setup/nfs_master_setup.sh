@@ -9,6 +9,8 @@ cat >>/etc/exports <<EOF
 EOF
 exportfs -a
 systemctl stop firewalld
+echo 262144 > /proc/sys/net/core/rmem_default
+echo 262144 > /proc/sys/net/core/rmem_max
 systemctl restart nfs-server.service
 systemctl status nfs-server.service
 mount node1:/home/nfs /home/vm_img

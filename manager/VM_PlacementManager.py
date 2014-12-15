@@ -136,7 +136,7 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
 			else:
 				#Initiate vm migration
 				vm_migrate_guest(host, new_host, vmid)
-				manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::Migration ::'+host+' :: '+vmid+' :: Domain migrated from '+str(host)+' to '+str(new_host)+' for Memory Scaling from'+str(value.current_memory)+' to '+str(memory_usage)+'\n')
+				manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::Migration ::'+host+' :: '+vmid+' :: Domain migrated from '+str(host)+' to '+str(new_host)+' for Memory Scaling from'+str(value.current_memory)+' to '+str(mem_usage)+'\n')
 
 
 

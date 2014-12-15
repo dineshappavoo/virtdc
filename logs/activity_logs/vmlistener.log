@@ -7500,3 +7500,21 @@ global name 'report_usage_to_placement_manager' is not defined
 'VM_Task_13'
 2014-12-01 23:50:57.784146 :: vmonere listener :: VM_Task_13 :: error in listener / reporting to manager 
 'VM_Task_13'
+2014-12-02 10:44:43.675537 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+'VM_Task_100'
+2014-12-02 10:44:54.713612 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+'VM_Task_100'
+2014-12-02 10:45:05.749224 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+'VM_Task_100'
+2014-12-02 10:45:17.106087 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+'VM_Task_100'
+2014-12-02 10:45:28.436319 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+'VM_Task_100'
+2014-12-02 10:45:39.811051 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+'VM_Task_100'
+2014-12-02 10:45:51.163006 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+'VM_Task_100'
+2014-12-02 10:46:02.836006 :: vmonere listener :: VM_Task_100 :: error in listener / reporting to manager 
+'VM_Task_100'
+2014-12-02 10:46:05.044661 :: vmonere listener :: VM_Task_11 :: error in listener / reporting to manager 
+'VM_Task_11'
