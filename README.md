@@ -34,7 +34,7 @@ getip | get domain ip
 monitorgraph | monitor domain usage through vmonere
 
 ##Problems encountered
-![virtdc](documents/images/problems-encountered.png "problems")
+![virtdc](docs/images/problems-encountered.png "problems")
 
 
 ##Project Contributors
