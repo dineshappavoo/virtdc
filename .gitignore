@@ -6,3 +6,5 @@ vmonere/dominfo/*.txt
 vmonere/monitor_logs/*.log
 guestconfiguration/*.xml
 logs/
+dist/
+virtdc.egg-info/
