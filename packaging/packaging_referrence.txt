@@ -59,5 +59,7 @@ Referrence sample code for importing virtdc.py from other files:
     ImportError: cannot import name main
 
 
+To Upload package to PyPi:
 
+python setup.py sdist register upload
 
