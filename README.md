@@ -38,10 +38,3 @@ monitorgraph | monitor domain usage through vmonere
 
 ##Licensing
 virtdc is licensed under MIT License. See LICENSE for full license text.
-##Project Contributors
-
-* Dinesh Appavoo ([@DineshAppavoo](https://twitter.com/DineshAppavoo))
-* Ryan Wang
-* Rahul Nair
-* Qinghao Dai
-* Haan Mo Johng
