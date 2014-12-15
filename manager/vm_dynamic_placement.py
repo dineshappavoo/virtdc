@@ -63,7 +63,7 @@ if __name__ == "__main__":
 
     start_server()
     update_pm_util("node1", 0.85, 0.75, 0.1)
-update_pm_util("node2", 0.85, 0.75, 0.1)
-update_pm_util("node4", 0.6, 0.75, 0.1)
-update_pm_util("node3", 0.6, 0.75, 0.8)
+    update_pm_util("node2", 0.85, 0.75, 0.1)
+    update_pm_util("node4", 0.6, 0.75, 0.1)
+    update_pm_util("node3", 0.6, 0.75, 0.8)
 
