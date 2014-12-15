@@ -83,8 +83,9 @@ def get_io_usage():
 
 	except Exception as e:
 		return float("0.0")
-
-	return io_usage.strip()
+	
+	io_usage = float(io_usage.strip())
+	return io_usage if io_usage < 1.0 else 1.0
 
 
 if __name__ == "__main__":
