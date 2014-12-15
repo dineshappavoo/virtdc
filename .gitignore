@@ -1,6 +1,7 @@
 *.pyc
 *.py~
 *.txt~
+*.csv~
 vmonere/dominfo/*.txt
 vmonere/monitor_logs/*.log
 guestconfiguration/*.xml

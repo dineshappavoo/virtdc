@@ -17,6 +17,9 @@ from Host_Info_Tracker import GetNodeDict
 
 
 node_dict = {}
+PM_HEX = {
+}
+
 
 
 def get_max():
