@@ -36,7 +36,8 @@ monitorgraph | monitor domain usage through vmonere
 ##Problems encountered
 ![virtdc](docs/images/problems-encountered.png "problems")
 
-
+##Licensing
+virtdc is licensed under MIT License. See LICENSE for full license text.
 ##Project Contributors
 
 * Dinesh Appavoo ([@DineshAppavoo](https://twitter.com/DineshAppavoo))
