@@ -37,8 +37,8 @@ setup(
       url='http://dcsolvere.github.io/virtdc/',
       author='Dinesh Appavoo',
       author_email='dinesha.cit@gmail.com',
-      description=('A high-level Python  CLI for virtual machine'
-                   'placement and scaling which provides a way to'
+      description=('A high-level Python  CLI for virtual machine '
+                   'placement and scaling which provides a way to '
                    'create, manage and monitor virtual machines effectively'),
       license='MIT',
       packages=find_packages(exclude=EXCLUDE_FROM_PACKAGES),
