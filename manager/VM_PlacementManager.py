@@ -93,20 +93,18 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
 
 	allotted_memory = float(value.current_memory)
 
+
 	#allotted_memory=value.current_memory + _base_mem_size 
 
 	max_memory = float(value.max_memory)
 
-	#Check CPU usage
-	if(	(cpu_usage>allotted_cpu) and 	(cpu_usage<max_cpu)	):
-		required_cpu_value = float(math.ceil(cpu_usage - allotted_cpu))
-		if (  obj.is_cpu_available_on_host(host, required_cpu_value )  ):
-			print 'Test 2'
-			new_cpu_value = float(value.current_cpu)+float(required_cpu_value)
-			print new_cpu_value
-			vm_cpu_scaling(host, vmid, new_cpu_value)
-			#update vm_host_dict
-			#addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, float(new_cpu_value), value.max_cpu,value.current_memory,value.max_memory,value.io, value.start_time))
+	#Check CPU usage, regarding a 0.1 margin as eligible to scale up
+	if((cpu_usage+0.1 > allotted_cpu) and (cpu_usage < max_cpu)):
+		if ( obj.is_cpu_available_on_host(host, 1) ):
+			#print 'Test 2'
+			new_cpu_value = value.current_cpu + 1
+			print "New CPU: %s" % new_cpu_value
+			vm_cpu_scaling(host, vmid, value.vmip, new_cpu_value)
 			manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::CPU::Scaling ::'+host+' :: '+vmid+' :: Memory scaled from '+str(value.current_cpu)+' to '+str(cpu_usage)+'\n')
 		else:
 			print 'Test 3'
@@ -123,11 +121,9 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
 
 	#Check Memory Usage - Memory scaling will be initiated when usage is lower than usage-scaledown_threshold or greater than usage+scaleup_threshold
 	if(	(	(mem_usage > (allotted_memory + float(mem_scale_up_threshold))) or (mem_usage<(allotted_memory - float(mem_scale_down_threshold))) )and (mem_usage<max_memory)	):		
-		
-		if( obj.is_mem_available_on_host(host, allotted_memory) ):
+		required_extra_memory = mem_usage - allotted_memory
+		if( obj.is_mem_available_on_host(host, required_extra_memory) ):
 			vm_memory_scaling(host, vmid, float(mem_usage))
-			#update vm_host_dict
-			#addOrUpdateDictionaryOfVM(host, vmid, Guest(value.vmip,value.vmid, value.current_cpu, value.max_cpu, float(mem_usage),value.max_memory,value.io, value.start_time))
 	    		manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::Scaling ::'+str(host)+' :: '+str(vmid)+' :: Memory scaled from '+str(allotted_memory)+' to '+str(mem_usage)+'\n')
 		else:
 			new_host = obj.is_space_available_for_vm(cpu_usage, mem_usage , io_usage)

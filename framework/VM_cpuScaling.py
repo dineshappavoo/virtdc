@@ -35,7 +35,7 @@ from Host_Info_Tracker import update_resources_after_cpu_scaling
 #Activity Log
 vmscaling_log = open('/var/lib/virtdc/logs/activity_logs/scaling.log', 'a+')
 
-def vm_cpu_scaling(host, vmid, cpu_count):
+def vm_cpu_scaling(host, vmid, vmip, cpu_count):
 
     #try :
 	print 'START'
@@ -45,6 +45,12 @@ def vm_cpu_scaling(host, vmid, cpu_count):
 	scaling_cmd = scaling_cmd.replace("cpu_count", str(int(cpu_count)));
 	print scaling_cmd
 	cpu_scale = subprocess.check_output(scaling_cmd, shell=True, stderr=subprocess.PIPE)
+	
+	# online cpu hot plug-in for guest OS
+	cpu_activate_cmd = 'ssh -q -o StrictHostKeyChecking=no root@%s "echo 1 > /sys/devices/system/cpu/cpu%s/online"' % (vmip, (cpu_count-1))
+	print cpu_activate_cmd
+	subprocess.check_output(cpu_activate_cmd, shell=True, stderr=subprocess.PIPE)
+
 	print 'Success'
 	#Call to update dictionary
 	update_dictionary(host, vmid, cpu_count)
@@ -69,4 +75,4 @@ def update_dictionary(host, vmid, cpu_count):
 #For Testing
 if __name__ == "__main__":
     # stuff only to run when not called via 'import' here
-    vm_cpu_scaling("node1","VM_Task_100","2")
+    vm_cpu_scaling("node1","VM_Task_100", "192.168.1.24", 2)
