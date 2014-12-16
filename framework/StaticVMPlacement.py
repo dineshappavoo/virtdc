@@ -25,7 +25,8 @@ def loadPickleDictionary() :
 node_dict={}
 node_dict=loadPickleDictionary()
 
-
+def abc():
+    a=0
 
 #Function to place the job in the right node
 def checkPMAvailabilityAndAppend(node,cpu, mem, io) :
@@ -57,4 +58,6 @@ def staticVMPlacement(vmList) :
 
 
 
-print currentPM.hostname
+if __name__ == "__main__":
+    # stuff only to run when not called via 'import' here
+    abc()

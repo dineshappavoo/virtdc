@@ -62,4 +62,9 @@ Referrence sample code for importing virtdc.py from other files:
 To Upload package to PyPi:
 
 python setup.py sdist register upload
+sudo pip install -t /var/lib/virtdc virtdc
+
+
+To remove current installation
+sudo rm -rf /var/lib/virtdc
 
