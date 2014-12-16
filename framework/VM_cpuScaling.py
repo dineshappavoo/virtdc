@@ -47,7 +47,7 @@ def vm_cpu_scaling(host, vmid, vmip, cpu_count):
 	cpu_scale = subprocess.check_output(scaling_cmd, shell=True, stderr=subprocess.PIPE)
 	
 	# online cpu hot plug-in for guest OS
-	cpu_activate_cmd = 'ssh -q -o StrictHostKeyChecking=no root@%s "echo 1 > /sys/devices/system/cpu/cpu%s/online"' % (vmip, (cpu_count-1))
+	cpu_activate_cmd = 'ssh -q -o StrictHostKeyChecking=no root@%s "echo 1 > /sys/devices/system/cpu/cpu%s/online"' % (vmip, int(cpu_count-1))
 	print cpu_activate_cmd
 	subprocess.check_output(cpu_activate_cmd, shell=True, stderr=subprocess.PIPE)
 

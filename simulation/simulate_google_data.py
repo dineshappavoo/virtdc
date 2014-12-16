@@ -76,6 +76,9 @@ def execute_task(file_name):
 
                       
 if __name__ == "__main__":
-   # stuff only to run when not called via 'import' here
-   simulate_google_data()
-
+    # stuff only to run when not called via 'import' here
+    try:
+        simulate_google_data()
+    except KeyboardInterrupt:
+        print "\n[Terminate]: Keyboard interrupted, running termination killing process..."
+        os.system("/var/lib/virtdc/setup/kill_after_terminate.py")
