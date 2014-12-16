@@ -20,10 +20,16 @@ from itertools import permutations
 
 node_dict = {}
 PM_UTIL = {}  # PM utilization map(hexagon) (key: dimension from high util to low, value: residing PMs)
+node_dict = {}
+HIGH = 0.99
+MEDIUM = 0.66
+LOW = 0.33
 
 def get_max():
     node_dict = GetNodeDict()
-    #for node
+    for key, value in node_dict.iteritems() :
+        if max(value.avail_cpu, value.avail_memory, value.avail_io)> HIGH:
+	    print 'HIGH'
 
 
 def start_server():
@@ -66,4 +72,5 @@ if __name__ == "__main__":
     update_pm_util("node2", 0.85, 0.75, 0.1)
     update_pm_util("node4", 0.6, 0.75, 0.1)
     update_pm_util("node3", 0.6, 0.75, 0.8)
+    print "max(0.99, 0.66, 0.33) : ", max(0.99, 0.66, 0.33)
 
