@@ -3,6 +3,7 @@
 #include <time.h>
 #include <unistd.h>
 #include <pthread.h> 
+#include <sys/sysinfo.h> 
 //magic number for 1.0 sec  = 537377990
 //magic number for 0.01 sec = 5373779 	//*60 for 60%
 //100,0000 = 1 sec sleep
@@ -18,6 +19,13 @@ int main(int argc, char *argv[]){
 	int cores=(int)input+1;
 	float cpuUsage=input/cores;
 	pid_t *pids = (pid_t*)malloc(sizeof(pid_t)*cores);
+
+	int noCpu=get_nprocs_conf();
+
+	if(cores>noCpu) {
+		cores=noCpu;
+		cpuUsage=1.0;
+	}
 
 	int i=0;
 	long magicPer01 = 4233779; 
@@ -41,6 +49,7 @@ int main(int argc, char *argv[]){
 	tax_additional[0]=2;
 	tax_additional[1]=4;
 	tax_additional[2]=0;
+
 
 	for(i=0; i<cores; i++){
 		pids[i]=fork();
