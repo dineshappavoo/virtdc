@@ -26,15 +26,12 @@ if "install" in sys.argv:
             break
 
 
-EXCLUDE_FROM_PACKAGES = ['virtdc.simulation',
-                         'virtdc.docs',
-                         'virtdc.data',
-                         'virtdc.packaging']
+EXCLUDE_FROM_PACKAGES = ['virtdc.packaging']
 
 
 setup(
       name='virtdc',
-      version='0.1.2',
+      version='0.1.3',
       url='http://dcsolvere.github.io/virtdc/',
       author='Dinesh Appavoo',
       author_email='dinesha.cit@gmail.com',
@@ -43,13 +40,21 @@ setup(
                    'create, manage and monitor virtual machines effectively'),
       license='MIT',
       packages=find_packages(exclude=EXCLUDE_FROM_PACKAGES),
+      
+      package_data = {
+      # If any package contains *.txt or *.rst files, include them:
+      '': ['*.txt', '*.sh'],
+      # And include any *.msg files found in the 'hello' package, too:
+      'framework': ['*.xml'],
+      },
+      
       include_package_data=True,
 
       extras_require={
       "bcrypt": ["bcrypt"],
       },
       zip_safe=False,
-      scripts=[pjoin('install.sh')],
+      scripts=[pjoin('usr_bin', 'virtdc.py')],
       )
 
 
