@@ -17,10 +17,10 @@ def kill_after_terminate():
         pid = int(pid.strip())
         os.system("/usr/bin/kill -9 %s" % pid)
 
-    os.system("/usr/bin/rm -f /var/lib/virtdc/framework/node_dict.pkl")
-    os.system("/usr/bin/rm -f /var/lib/virtdc/framework/host_vm_dict.pkl")
-    os.chdir("/var/lib/virtdc/framework")
-    os.system("/var/lib/virtdc/framework/Host_Info_Tracker.py")
+    #os.system("/usr/bin/rm -f /var/lib/virtdc/framework/node_dict.pkl")
+    #os.system("/usr/bin/rm -f /var/lib/virtdc/framework/host_vm_dict.pkl")
+    #os.chdir("/var/lib/virtdc/framework")
+    #os.system("/var/lib/virtdc/framework/Host_Info_Tracker.py")
 
 
 if __name__ == "__main__":

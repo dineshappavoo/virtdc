@@ -65,7 +65,7 @@ def addOrUpdateDictionaryOfVM(hostName,vmid, guest) :
 def pickleNodeVMDictionary(dictionary) :
 	lock = LockFile("/var/lib/virtdc/framework/host_vm_dict.pkl")
 	try:
-		lock.acquire(timeout=5)    # wait up to 5 seconds
+		lock.acquire(timeout=300)    # wait up to 5 minutes
 	except LockTimeout:
 		lock.break_lock()
 		lock.acquire()

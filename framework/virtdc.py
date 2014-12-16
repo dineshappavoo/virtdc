@@ -3,7 +3,9 @@ import argparse
 import sys
 from VM_submitJob import vm_submitjob
 #from VM_terminateGuest import vm_terminate_guest
-from virtdc_command_line_utility import get_host_name, list_host_and_domain, show_domain_info, show_host_info, force_migrate, terminate_guest, monitorgraph, list_host_domain_information, get_ip
+from virtdc_command_line_utility import get_host_name, list_host_and_domain, show_domain_info, \
+    show_host_info, force_migrate, terminate_guest, monitorgraph, list_host_domain_information, \
+    load_balance, consolidate, get_ip
 
 #API - virtdc command line tool
 
@@ -61,10 +63,9 @@ def main(argv):
 	removehost_parser.add_argument('hostname', action = 'store', help ='get the host')
 
 	loadbalance_parser = subparsers.add_parser('loadbalance',help='loadbalance host')
-	loadbalance_parser.add_argument('hostname', action = 'store', help ='get the host')
+	#loadbalance_parser.add_argument('hostname', action = 'store', help ='get the host')
 
 	consolidate_parser = subparsers.add_parser('consolidate',help='consolidate host')
-	removehost_parser.add_argument('hostname', action = 'store', help ='get the host')
 
 	addhost_parser = subparsers.add_parser('addhost',help='add new host')
 	addhost_parser.add_argument('hostname', action = 'store', help ='get the host')
@@ -137,9 +138,17 @@ def main(argv):
 	elif args.subparser_name == 'removehost':
 		print 'Call host_removehost'
 	elif args.subparser_name == 'loadbalance':
-		print 'Call vm_loadbalance'
+		result = load_balance()
+		if result is True:
+			print 'load balance completes'
+		else:
+			print 'load balance failed!'
 	elif args.subparser_name == 'consolidate':
-		print 'Call vm_consolidate'
+		result = consolidate()
+		if result is True:
+                        print 'consolidate completes'
+                else:
+                        print 'consolidate failed!'
 	elif args.subparser_name == 'addhost':
 		print 'Call vm_addhost'
 		#Add entry to nodeinfo XML and then run Host_Info_Tracker.py
