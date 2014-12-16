@@ -2,7 +2,7 @@
 import subprocess
 
 def exec_log_deleter():
-	cmd='./vmonere_log_deleter.sh &'
+	cmd='/var/lib/virtdc/vmonere/host/vmonere_log_deleter.sh &'
 	check=subprocess.Popen(cmd, shell=True, stderr=subprocess.STDOUT)
 	return
 
