@@ -4,6 +4,7 @@
 import os
 import sys
 
+from os.path import join as pjoin, splitext, split as psplit
 from setuptools import setup, find_packages
 from distutils.sysconfig import get_python_lib
 
@@ -33,7 +34,7 @@ EXCLUDE_FROM_PACKAGES = ['virtdc.simulation',
 
 setup(
       name='virtdc',
-      version='0.1.0',
+      version='0.1.2',
       url='http://dcsolvere.github.io/virtdc/',
       author='Dinesh Appavoo',
       author_email='dinesha.cit@gmail.com',
@@ -48,6 +49,7 @@ setup(
       "bcrypt": ["bcrypt"],
       },
       zip_safe=False,
+      scripts=[pjoin('install.sh')],
       )
 
 
