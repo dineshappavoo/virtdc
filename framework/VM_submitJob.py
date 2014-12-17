@@ -113,8 +113,7 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
 	#xmlstring=xmlstring.replace("vm_uuid", uuid);
 	xmlstring=xmlstring.replace("max_memory", str(int(max_memory)));
 	xmlstring=xmlstring.replace("current_memory", str(int(memory)));
-	xmlstring=xmlstring.replace("current_cpu", "1");
-	#xmlstring=xmlstring.replace("max_cpu", str(int(cpu)));
+	xmlstring=xmlstring.replace("current_cpu", str(int(cpu)));
 	xmlstring=xmlstring.replace("max_cpu", "8");
 	xmlstring=xmlstring.replace("image_path", image_path);	
 

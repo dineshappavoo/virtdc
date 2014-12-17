@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys, time, subprocess, math, pickle
 from Guest import Guest
-from VM_Info_Updater import getHostVMDict
+from VM_Info_Updater import getHostVMDict, pickleNodeVMDictionary
 from Host_Info_Tracker import GetNodeDict
 from VM_migrateGuest import vm_migrate_guest
 from VM_terminateGuest import vm_terminate_guest
@@ -133,12 +133,12 @@ def load_balance():
 	avg_cpu = int(math.ceil(used_cpu_count/len(node_list)))
 
 	pickle_dict = {}
-	lock = LockFile("/var/lib/virtdc/framework/host_vm_dict.pkl")
-	try:
-		lock.acquire(timeout=30)    # wait up to 30 seconds
-	except LockTimeout:
-		lock.break_lock()
-		lock.acquire()
+	#lock = LockFile("/var/lib/virtdc/framework/host_vm_dict.pkl")
+	#try:
+	#	lock.acquire(timeout=30)    # wait up to 30 seconds
+	#except LockTimeout:
+	#	lock.break_lock()
+	#	lock.acquire()
 	while(len(vm_obj_list) > 0):
 		max_cpu_vm = None
 
@@ -168,9 +168,10 @@ def load_balance():
 
 		vm_obj_list.remove(max_cpu_vm)
 	
-	with open('/var/lib/virtdc/framework/host_vm_dict.pkl','w') as host_vm_pickle_out:
-    		pickle.dump(pickle_dict, host_vm_pickle_out)
-	lock.release()
+	#with open('/var/lib/virtdc/framework/host_vm_dict.pkl','w') as host_vm_pickle_out:
+    	#	pickle.dump(pickle_dict, host_vm_pickle_out)
+	#lock.release()
+	pickleNodeVMDictionary(pickle_dict)
 
 	return True
 

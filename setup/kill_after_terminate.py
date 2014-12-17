@@ -12,15 +12,15 @@ def kill_after_terminate():
     kill_array.append(proc_to_kill_3)
     
     for name in kill_array:
-        cmd = "/usr/bin/ps -ef | /usr/bin/grep %s | /usr/bin/head -1 | /usr/bin/awk '{print $2}'" % name
+        cmd = "/usr/bin/ps -ef | /usr/bin/grep %s | grep -v 'grep' | /usr/bin/head -1 | /usr/bin/awk '{print $2}'" % name
         pid = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
         pid = int(pid.strip())
         os.system("/usr/bin/kill -9 %s" % pid)
 
-    #os.system("/usr/bin/rm -f /var/lib/virtdc/framework/node_dict.pkl")
-    #os.system("/usr/bin/rm -f /var/lib/virtdc/framework/host_vm_dict.pkl")
-    #os.chdir("/var/lib/virtdc/framework")
-    #os.system("/var/lib/virtdc/framework/Host_Info_Tracker.py")
+    os.system("/usr/bin/rm -f /var/lib/virtdc/framework/node_dict.pkl")
+    os.system("/usr/bin/rm -f /var/lib/virtdc/framework/host_vm_dict.pkl")
+    os.chdir("/var/lib/virtdc/framework")
+    os.system("/var/lib/virtdc/framework/Host_Info_Tracker.py")
 
 
 if __name__ == "__main__":

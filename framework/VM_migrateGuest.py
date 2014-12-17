@@ -38,6 +38,8 @@ vmmigration_log = open('/var/lib/virtdc/logs/activity_logs/vmmigration.log', 'a+
 def vm_migrate_guest(source_host, dest_host, vmid):
 
     try :
+	if (source_host == dest_host):
+		return False
         #Initiate the module for live migration
 	#migration_cmd = '''virsh migrate --live hm1 qemu+ssh://node3/system'''
 	migration_cmd = "ssh -q -o StrictHostKeyChecking=no root@source_host \"virsh migrate vm_id qemu+ssh://dest_host/system\""
