@@ -144,6 +144,8 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
 
 	# If get ip failed, terminate this VM
 	if guest_ip == "":
+                print 'Issue in retrieving public IP of domain : Terminating the domain!'
+    		vmsubmission_log.write(str(datetime.datetime.now()) +'::Issue in retrieving public IP of domain : Terminating the domain - '+vmid+'\n')
 		vm_terminate_guest(host.strip(), vmid.strip())
 		return False
 
