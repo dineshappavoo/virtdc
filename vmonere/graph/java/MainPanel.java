@@ -30,8 +30,8 @@ import javax.swing.SwingUtilities;
  * @author Rahul
  */
 public class MainPanel extends JPanel {
-	private static final String DOMAIN_PATH = "/var/lib/virtdc/vmonere/monitor_logs/domain";
-	private static final String HOST_PATH = "/var/lib/virtdc/vmonere/monitor_logs/host";
+	private static final String DOMAIN_PATH = "/var/lib/virtdc/vmonere/monitor_logs/domain/";
+	private static final String HOST_PATH = "/var/lib/virtdc/vmonere/monitor_logs/host/";
 	private static final long serialVersionUID = 1L;
 	private static String vmid;
 	private static MemoryMonitoringGraph memoryChart;
