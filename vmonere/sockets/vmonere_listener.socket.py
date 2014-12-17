@@ -65,8 +65,9 @@ def start_server():
 			report_usage_to_placement_manager(vmid, cpu_usage, task_mem_usage, io_usage)		# Report the usage every 30 seconds [6 * 5s interval]
 
 			'''
-            		#To log usage in json file
-            		log_usage_json(vmid, time_now, cpu_usage, task_mem_usage, io_usage)
+            #To log usage in json file
+            log_usage_json(vmid, time_now, cpu_usage, task_mem_usage, io_usage)
+            '''
                 
 			#To report current usage to the placement manager
 			domain_reported_count = domain_dict[vmid]
@@ -77,7 +78,7 @@ def start_server():
 				domain_dict[vmid] = 0
 			else:
 				domain_dict[vmid] = (domain_reported_count + 1)
-			'''
+			
 
 
 		except Exception as e:
