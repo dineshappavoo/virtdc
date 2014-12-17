@@ -50,6 +50,20 @@ def get_cpu_usage():
         return cpu_usage
 
 @timeout()
+def get_host_cpu_usage():
+	
+	try:
+		cmd = " ps aux | grep cpuSim | awk \'{s+=$3} END {print s}\'"
+		cpu_usage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+		cpu_usage = float(cpu_usage.strip()) / 100
+		if cpu_usage == float(0): return float("0.0")
+
+	except Exception as e:
+		return float("0.0")
+
+        return cpu_usage
+
+@timeout()
 def get_os_mem_usage():
 	try:
 		cmd=" free -m | grep \'+\' | awk \'{print $3}\'"

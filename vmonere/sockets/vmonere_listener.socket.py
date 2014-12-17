@@ -58,7 +58,7 @@ def start_server():
 			path = '/var/lib/virtdc/vmonere/monitor_logs/domain/'+vmid+'.log'
 			file= open(path, 'a+')
             		time_now = str(datetime.datetime.now())
-			usage=  time_now +' \t|\t '+ vmid+' \t|\t '+ str(cpu_usage) + '\t|\t' + str(os_mem_usage) + '\t|\t' + str(task_mem_usage) + '\t|\t' + str(io_usage)
+			usage=  time_now +' \t|\t '+ vmid+' \t|\t '+ str(cpu_usage) +  '\t|\t' + str(task_mem_usage) + '\t|\t' + str(io_usage) + '\t|\t' + str(os_mem_usage) 
 			file.write(usage+'\n')
 			file.close()
 

@@ -5,11 +5,13 @@ def kill_after_terminate():
     proc_to_kill_1 = "VM_terminationHandler"
     proc_to_kill_2 = "vmonere_listener.socket"
     proc_to_kill_3 = "vmonere_log_deleter"
+    proc_to_kill_4 = "vmonere_host_listener.socket"
 
     kill_array = list()
     kill_array.append(proc_to_kill_1)
     kill_array.append(proc_to_kill_2)
     kill_array.append(proc_to_kill_3)
+    kill_array.append(proc_to_kill_4)
     
     for name in kill_array:
         cmd = "/usr/bin/ps -ef | /usr/bin/grep %s | grep -v 'grep' | /usr/bin/head -1 | /usr/bin/awk '{print $2}'" % name

@@ -22,7 +22,7 @@ import socket               # Import socket module
 #==============================================================================
 
 #This file must be placed in the guest
-host_config_path = '''/var/lib/virtdc/vmonere/guest/host_config.txt'''
+host_config_path = '''/var/lib/virtdc/vmonere/host/host_config.txt'''
 
 
 def start_client_socket(host, usage):
@@ -51,7 +51,7 @@ def get_host_ip():
 			time.sleep(10)		
 
 
-	host_ip_cmd = '''/bin/cat host_config_file | /bin/grep \'host_ip\' | /bin/awk '{print$3}' '''
+	host_ip_cmd = '''/bin/cat host_config_file | /bin/grep \'node_ip\' | /bin/awk '{print$3}' '''
 	host_ip_cmd = host_ip_cmd.replace("host_config_file",str(host_config_path).strip())
 
 	host_ip = subprocess.check_output(host_ip_cmd, shell=True, stderr=subprocess.PIPE)
@@ -59,7 +59,7 @@ def get_host_ip():
 	return host_ip
 
 def get_hostname():
-	hostname_cmd = '''/bin/cat host_config_file | /bin/grep \'hostname\' | /bin/awk '{print$3}' '''
+	hostname_cmd = '''/bin/cat host_config_file | /bin/grep \'host\' | /bin/awk '{print$3}' '''
 	hostname_cmd = hostname_cmd.replace("host_config_file",str(host_config_path).strip())
 
 	hostname = subprocess.check_output(hostname_cmd, shell=True, stderr=subprocess.PIPE)
