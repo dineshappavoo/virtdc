@@ -99,13 +99,14 @@ def get_io_usage():
 		return float("0.0")
 	
 	io_usage = float(io_usage.strip())
-	return io_usage if io_usage < 1.0 else 1.0
+	return io_usage if io_usage < 100.0 else 100.0
 
 
 if __name__ == "__main__":
    # stuff only to run when not called via 'import' here
 	a=0
 	print get_cpu_usage()
+	print get_io_usage()
 
 
 

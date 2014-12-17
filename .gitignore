@@ -3,6 +3,7 @@
 *.txt~
 *.csv~
 vmonere/dominfo/*.txt
+vmonere/monitor_logs/domain/*.log
 vmonere/monitor_logs/*.log
 guestconfiguration/*.xml
 logs/

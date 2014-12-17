@@ -39,9 +39,10 @@ def slicing_ip(data, key):
 def get_cpu_usage():
 	
 	try:
-		cmd = " ps aux | grep cpuSim | awk \'{s+=$3} END {print s}\'"
+		#cmd = " ps aux | grep cpuSim | awk \'{s+=$3} END {print s}\'"
+		cmd = " cat /proc/loadavg | awk \'{print $1}\'"
 		cpu_usage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
-		cpu_usage = float(cpu_usage.strip()) / 100
+		cpu_usage = float(cpu_usage.strip())
 		if cpu_usage == float(0): return float("0.0")
 
 	except Exception as e:
@@ -53,9 +54,10 @@ def get_cpu_usage():
 def get_host_cpu_usage():
 	
 	try:
-		cmd = " ps aux | grep cpuSim | awk \'{s+=$3} END {print s}\'"
-		cpu_usage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
-		cpu_usage = float(cpu_usage.strip()) / 100
+		#cmd = " ps aux | grep cpuSim | awk \'{s+=$3} END {print s}\'"
+                cmd = " cat /proc/loadavg | awk \'{print $1}\'"
+                cpu_usage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+                cpu_usage = float(cpu_usage.strip())
 		if cpu_usage == float(0): return float("0.0")
 
 	except Exception as e:
@@ -77,17 +79,17 @@ def get_os_mem_usage():
 
         return mem_usage
 
-@timeout()
-def get_task_mem_usage():
-	try:
-		cmd = " cat /proc/`cat /root/memory.pid`/status | grep VmSize | awk '{print $2}'"
-		mem_usage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
-		if mem_usage =='': return float("0.0")
-
-	except Exception as e:
-		return float("0.0")
-	
-	return mem_usage if mem_usage.strip() != '' else 0
+#@timeout()
+#def get_task_mem_usage():
+#	try:
+#		cmd = " cat /proc/`cat /root/memory.pid`/status | grep VmSize | awk '{print $2}'"
+#		mem_usage = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+#		if mem_usage =='': return float("0.0")
+#
+#	except Exception as e:
+#		return float("0.0")
+#	
+#	return mem_usage if mem_usage.strip() != '' else 0
 
 @timeout()
 def get_io_usage():
@@ -100,14 +102,14 @@ def get_io_usage():
 		return float("0.0")
 	
 	io_usage = float(io_usage.strip())
-	return io_usage if io_usage < 1.0 else 1.0
+	return io_usage if io_usage < 100.0 else 100.0
 
 
 if __name__ == "__main__":
    # stuff only to run when not called via 'import' here
 	a=0
 	print get_cpu_usage()
-
+	print get_io_usage()
 
 
 	
