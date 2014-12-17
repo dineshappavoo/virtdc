@@ -8,3 +8,4 @@ guestconfiguration/*.xml
 logs/
 dist/
 virtdc.egg-info/
+*~
