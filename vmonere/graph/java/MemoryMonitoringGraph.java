@@ -95,7 +95,7 @@ public class MemoryMonitoringGraph extends JPanel {
 		try {
 			if ((currentLine = br.readLine()) != null && !currentLine.trim().equals("")) {
 				String[] currentValues = currentLine.split("\\|");
-				float memValue = Float.valueOf(currentValues[4].trim());
+				float memValue = Float.valueOf(currentValues[3].trim());
 				if(memValue<0)
 				{
 					memValue = 0;

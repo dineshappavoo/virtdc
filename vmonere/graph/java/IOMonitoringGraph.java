@@ -97,7 +97,7 @@ public class IOMonitoringGraph extends JPanel {
 		try {
 			if ((currentLine = br.readLine()) != null && !currentLine.trim().equals("")) {
 				String[] currentValues = currentLine.split("\\|");
-				float ioValue = Float.valueOf(currentValues[5].trim());
+				float ioValue = Float.valueOf(currentValues[4].trim());
 				if(ioValue<0)
 				{
 					ioValue = 0;
