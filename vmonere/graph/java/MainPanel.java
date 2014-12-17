@@ -164,9 +164,9 @@ public class MainPanel extends JPanel {
 		JPanel hostOnePanel = new JPanel();
 		hostOnePanel.setSize(500, 200);
 		try {
-			getHostMemGraph("Node_1", 1);
-			getHostCPUGraph("Node_1", 1);
-			getHostIOGraph("Node_1", 1);
+			getHostMemGraph("node1", 1);
+			getHostCPUGraph("node1", 1);
+			getHostIOGraph("node1", 1);
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
@@ -189,9 +189,9 @@ public class MainPanel extends JPanel {
 		JPanel hostTwoPanel = new JPanel();
 		hostTwoPanel.setSize(500, 200);
 		try {
-			getHostMemGraph("Node_2", 2);
-			getHostCPUGraph("Node_2", 2);
-			getHostIOGraph("Node_2", 2);
+			getHostMemGraph("node2", 2);
+			getHostCPUGraph("node2", 2);
+			getHostIOGraph("node2", 2);
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
@@ -214,9 +214,9 @@ public class MainPanel extends JPanel {
 		JPanel hostThreePanel = new JPanel();
 		hostThreePanel.setSize(500, 200);
 		try {
-			getHostMemGraph("Node_3", 3);
-			getHostCPUGraph("Node_3", 3);
-			getHostIOGraph("Node_3", 3);
+			getHostMemGraph("node3", 3);
+			getHostCPUGraph("node3", 3);
+			getHostIOGraph("node3", 3);
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
@@ -239,9 +239,9 @@ public class MainPanel extends JPanel {
 		JPanel hostFourPanel = new JPanel();
 		hostFourPanel.setSize(500, 200);
 		try {
-			getHostMemGraph("Node_4", 4);
-			getHostCPUGraph("Node_4", 4);
-			getHostIOGraph("Node_4", 4);
+			getHostMemGraph("node4", 4);
+			getHostCPUGraph("node4", 4);
+			getHostIOGraph("node4", 4);
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
