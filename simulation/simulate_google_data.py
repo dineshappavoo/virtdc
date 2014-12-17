@@ -3,10 +3,12 @@
 
 import os, sys, subprocess, time, math
 sys.path.append('/var/lib/virtdc/framework')
+sys.path.append('/var/lib/virtdc/vmonere/host')
 sys.path.append('/var/lib/virtdc/virtdc_init')
 from virtdc import create_vm
 from VM_terminationHandler import find_lifetime_and_terminate_vm
 from virtdc_init import virtdc_init
+from start_host_monitor_process import start_host_monitor
 
 #==============================================================================
 # Variables
@@ -23,10 +25,14 @@ data_folder_path='/var/lib/virtdc/data/vms'
 _base_memory_size=2097152       # 2 GB (This includes OS memory)
 
 
+
 def simulate_google_data():
 	
 	#Initite virtdc back ground jobs
 	virtdc_init()
+
+	#Initiate host monitoring
+	start_host_monitor()
 
 	for file_name in os.listdir(data_folder_path):
 		if file_name.endswith(".csv"):

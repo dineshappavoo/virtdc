@@ -3,3 +3,9 @@
 2014-12-16 23:35:39.812010::Migrate Guest ::node1 :: VM_Task_11 :: Successfully migrated the guest
 2014-12-17 00:32:56.822785::Migrate Guest ::node1 :: VM_Task_11 :: Successfully migrated the guest
 2014-12-17 00:33:12.684056::Migrate Guest ::node1 :: VM_Task_12 :: Successfully migrated the guest
+2014-12-17 13:40:22.573982::Migrate Guest ::node1 :: VM_Task_11 :: Successfully migrated the guest
+2014-12-17 13:40:26.086137::Migrate Guest ::node1 :: VM_Task_13 :: Successfully migrated the guest
+2014-12-17 13:40:30.182075::Migrate Guest ::node1 :: VM_Task_12 :: Successfully migrated the guest
+2014-12-17 14:13:12.626969::Migrate Guest ::node1 :: VM_Task_11 :: Successfully migrated the guest
+2014-12-17 14:13:18.507719::Migrate Guest ::node1 :: VM_Task_12 :: Successfully migrated the guest
+2014-12-17 14:13:23.026185::Migrate Guest ::node1 :: VM_Task_13 :: Successfully migrated the guest

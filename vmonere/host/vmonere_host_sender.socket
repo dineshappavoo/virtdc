@@ -5,7 +5,7 @@ import os.path
 import time
 import sys
 
-from vmonere_utility import get_cpu_usage, get_os_mem_usage, get_task_mem_usage, get_io_usage
+from vmonere_utility import get_cpu_usage, get_os_mem_usage, get_io_usage
 
 import socket               # Import socket module
 

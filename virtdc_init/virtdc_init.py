@@ -25,7 +25,7 @@ def virtdc_init():
 	vmonere_domain_socket_listener = subprocess.Popen(vmonere_domain_socket_listener_cmd, shell=True, stderr=subprocess.PIPE)
 
 	#initiate the vmonere host socket listener
-	vmonere_host_socket_listener_cmd = "/usr/bin/python /var/lib/virtdc/vmonere/sockets/vmonere_host_listener.socket.py &"
+	vmonere_host_socket_listener_cmd = "/usr/bin/python /var/lib/virtdc/vmonere/sockets/vmonere_host_listener.socket &"
 	vmonere_host_socket_listener = subprocess.Popen(vmonere_host_socket_listener_cmd, shell=True, stderr=subprocess.PIPE)
 
 	delete_log_files_cmd = "/usr/bin/python /var/lib/virtdc/vmonere/host/vmonere_exec_log_deleter.py"

@@ -11,6 +11,10 @@ import libvirt
 import sys
 
 sys.path.append('/var/lib/virtdc/vmonere/host')
+sys.path.append('/var/lib/virtdc/simulation')
+
+#from simulate_google_data import simulate_google_data
+
 from vmonere_monitorgraph import domain_monitor
 
 #==============================================================================
@@ -182,6 +186,12 @@ def get_ip(vm_id):
 
 def monitorgraph():
 	domain_monitor()
+
+def simulate_data():
+	print 'Test1'
+	#simulate_google_data()
+	#simulate_data = "/usr/bin/python /var/lib/virtdc/simulation/simulate_google_data.py"
+	#simulate_data_process = subprocess.check_output(simulate_data, shell=True, stderr=subprocess.PIPE)
 	
 
 if __name__ == "__main__":
