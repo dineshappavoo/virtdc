@@ -1,3 +1,4 @@
+echo 'now running install.sh'
 su -
 sudo alias virtdc=/var/lib/virtdc/usr_bin/virtdc.py
 sudo cp /var/lib/virtdc/usr_bin/virtdc.py /usr/bin/virtdc
