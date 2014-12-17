@@ -81,7 +81,7 @@ public class MainPanel extends JPanel {
 		vmPanel = new JPanel();
 		JPanel northPanel = new JPanel();
 		try {
-			getMemGraph(null);
+			getMemGraph(null, 100000);
 			getCPUGraph(null);
 			getIOGraph(null);
 		} catch (Exception e1) {
@@ -121,7 +121,7 @@ public class MainPanel extends JPanel {
 						((Container)((Container) getComponent(1)).getComponent(1)).repaint();
 						JPanel northPanel = new JPanel(new BorderLayout());
 						northPanel.setSize(new java.awt.Dimension(600,500));
-						getMemGraph(vmid);
+						getMemGraph(vmid, 100000);
 						getCPUGraph(vmid);
 						getIOGraph(vmid);
 						northPanel.add(memoryChart, BorderLayout.NORTH);
@@ -164,7 +164,7 @@ public class MainPanel extends JPanel {
 		JPanel hostOnePanel = new JPanel();
 		hostOnePanel.setSize(500, 200);
 		try {
-			getHostMemGraph("node1", 1);
+			getHostMemGraph("node1", 1, 33554440);
 			getHostCPUGraph("node1", 1);
 			getHostIOGraph("node1", 1);
 		} catch (Exception e1) {
@@ -189,7 +189,7 @@ public class MainPanel extends JPanel {
 		JPanel hostTwoPanel = new JPanel();
 		hostTwoPanel.setSize(500, 200);
 		try {
-			getHostMemGraph("node2", 2);
+			getHostMemGraph("node2", 2, 33554440);
 			getHostCPUGraph("node2", 2);
 			getHostIOGraph("node2", 2);
 		} catch (Exception e1) {
@@ -214,7 +214,7 @@ public class MainPanel extends JPanel {
 		JPanel hostThreePanel = new JPanel();
 		hostThreePanel.setSize(500, 200);
 		try {
-			getHostMemGraph("node3", 3);
+			getHostMemGraph("node3", 3, 33554440);
 			getHostCPUGraph("node3", 3);
 			getHostIOGraph("node3", 3);
 		} catch (Exception e1) {
@@ -239,7 +239,7 @@ public class MainPanel extends JPanel {
 		JPanel hostFourPanel = new JPanel();
 		hostFourPanel.setSize(500, 200);
 		try {
-			getHostMemGraph("node4", 4);
+			getHostMemGraph("node4", 4, 33554440);
 			getHostCPUGraph("node4", 4);
 			getHostIOGraph("node4", 4);
 		} catch (Exception e1) {
@@ -277,7 +277,7 @@ public class MainPanel extends JPanel {
 	 * @throws IOException 
 	 * @throws ParseException 
 	 */
-	public static void getMemGraph(String args) throws IOException, ParseException  {
+	public static void getMemGraph(String args, int maxRange) throws IOException, ParseException  {
 		if(args==null) return;
 		vmid = args;
 		FileInputStream in;
@@ -300,7 +300,7 @@ public class MainPanel extends JPanel {
 			long diffSeconds = diff / 1000;
 			if (diffSeconds < 10) break;
 		}
-		memoryChart = new MemoryMonitoringGraph("VM Monitoring", vmid+"-"+"Memory", vmid, br, 400, 200);
+		memoryChart = new MemoryMonitoringGraph("VM Monitoring", vmid+"-"+"Memory", vmid, br, 400, 200, maxRange);
 		memoryChart.setVisible(true);
 		memoryChart.start();
 
@@ -386,7 +386,7 @@ public class MainPanel extends JPanel {
 	 * @throws IOException 
 	 * @throws ParseException 
 	 */
-	public static void getHostMemGraph(String args, Integer hostNumber ) throws IOException, ParseException  {
+	public static void getHostMemGraph(String args, Integer hostNumber, int maxRange ) throws IOException, ParseException  {
 		if(args==null) return;
 		String hostId = args;
 		FileInputStream in;
@@ -411,19 +411,19 @@ public class MainPanel extends JPanel {
 
 		}
 		switch(hostNumber) {
-		case 1 : hostOneMemoryChart = new MemoryMonitoringGraph("", hostId+"-"+"Memory", hostId, br, 200, 150);
+		case 1 : hostOneMemoryChart = new MemoryMonitoringGraph("", hostId+"-"+"Memory", hostId, br, 200, 150, maxRange);
 		hostOneMemoryChart.setVisible(true);
 		hostOneMemoryChart.start();
 		break;
-		case 2 : hostTwoMemoryChart = new MemoryMonitoringGraph("", hostId+"-"+"Memory", hostId, br, 200, 150);
+		case 2 : hostTwoMemoryChart = new MemoryMonitoringGraph("", hostId+"-"+"Memory", hostId, br, 200, 150, maxRange);
 		hostTwoMemoryChart.setVisible(true);
 		hostTwoMemoryChart.start();
 		break;
-		case 3 : hostThreeMemoryChart = new MemoryMonitoringGraph("", hostId+"-"+"Memory", hostId, br, 200, 150);
+		case 3 : hostThreeMemoryChart = new MemoryMonitoringGraph("", hostId+"-"+"Memory", hostId, br, 200, 150, maxRange);
 		hostThreeMemoryChart.setVisible(true);
 		hostThreeMemoryChart.start();
 		break;
-		case 4 : hostFourMemoryChart = new MemoryMonitoringGraph("", hostId+"-"+"Memory", hostId, br, 200, 150);
+		case 4 : hostFourMemoryChart = new MemoryMonitoringGraph("", hostId+"-"+"Memory", hostId, br, 200, 150, maxRange);
 		hostFourMemoryChart.setVisible(true);
 		hostFourMemoryChart.start();
 		break;

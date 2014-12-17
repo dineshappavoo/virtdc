@@ -31,12 +31,12 @@ public class MemoryMonitoringGraph extends JPanel {
 	public  BufferedReader br;
 	public static String vmid;
 	private Timer timer; 
-	public MemoryMonitoringGraph(String applicationTitle, String chartTitle, String args, BufferedReader bReader, int chartWidth, int chartHeight) {
+	public MemoryMonitoringGraph(String applicationTitle, String chartTitle, String args, BufferedReader bReader, int chartWidth, int chartHeight, final int maxRange) {
 		super(new BorderLayout());
 		br= bReader;
 		vmid = args;
 		final DynamicTimeSeriesCollection dataset = createDataset();
-		JFreeChart chart = createChart(dataset, chartTitle);
+		JFreeChart chart = createChart(dataset, chartTitle, maxRange);
 		ChartPanel chartPanel = new ChartPanel(chart);
 		chartPanel.setPreferredSize(new java.awt.Dimension(chartWidth, chartHeight));
 		chartPanel.repaint();
@@ -46,7 +46,7 @@ public class MemoryMonitoringGraph extends JPanel {
 			float[] newData = new float[1];
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				newData[0] = fetchMemData();
+				newData[0] = fetchMemData(maxRange);
 				dataset.advanceTime();
 				dataset.appendData(newData);
 			}
@@ -70,7 +70,7 @@ public class MemoryMonitoringGraph extends JPanel {
 	/**
 	 * Creates the continuously updating graph
 	 */
-	private JFreeChart createChart(final XYDataset dataset, String title) {
+	private JFreeChart createChart(final XYDataset dataset, String title, int maxRange) {
 
 		final JFreeChart result = ChartFactory.createTimeSeriesChart(
 				title, "", "Value", dataset, true, true, false);
@@ -82,7 +82,7 @@ public class MemoryMonitoringGraph extends JPanel {
 		domain.setAutoRange(true);
 		domain.setVisible(false);
 		ValueAxis range = plot.getRangeAxis();
-		range.setRange(0, 100000);
+		range.setRange(0, maxRange);
 		return result;
 	}
 
@@ -90,7 +90,7 @@ public class MemoryMonitoringGraph extends JPanel {
 	 * Fetches the Memory data from the log file
 	 * @return
 	 */
-	private float fetchMemData() {
+	private float fetchMemData(int maxRange) {
 		String currentLine;
 		try {
 			if ((currentLine = br.readLine()) != null && !currentLine.trim().equals("")) {
@@ -100,9 +100,9 @@ public class MemoryMonitoringGraph extends JPanel {
 				{
 					memValue = 0;
 				}
-				else if (memValue>100000)
+				else if (memValue>maxRange)
 				{
-					memValue = 100000;
+					memValue = maxRange;
 				}
 				return memValue;
 			}
