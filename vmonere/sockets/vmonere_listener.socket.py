@@ -55,7 +55,7 @@ def start_server():
 			io_usage = guest_usage[4].strip() if len(guest_usage[4].strip()) != 0 else 0
 
 
-			path = '/var/lib/virtdc/vmonere/monitor_logs/'+vmid+'.log'
+			path = '/var/lib/virtdc/vmonere/monitor_logs/domain/'+vmid+'.log'
 			file= open(path, 'a+')
             		time_now = str(datetime.datetime.now())
 			usage=  time_now +' \t|\t '+ vmid+' \t|\t '+ str(cpu_usage) + '\t|\t' + str(os_mem_usage) + '\t|\t' + str(task_mem_usage) + '\t|\t' + str(io_usage)
@@ -93,7 +93,7 @@ def start_server():
 def log_usage_json(vmid, time_now, cpu, mem, io):
 	#is_domain_exist = domain_dict[vmid]
     
-    path = '/var/lib/virtdc/vmonere/monitor_logs/json/' + vmid + '.json'
+    path = '/var/lib/virtdc/vmonere/monitor_logs/domain/json/' + vmid + '.json'
 
 
     with open(path) as log_file:

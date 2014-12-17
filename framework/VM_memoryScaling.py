@@ -42,11 +42,11 @@ def vm_memory_scaling(host, vmid, mem_size):
 	scaling_cmd = '''ssh -q -o StrictHostKeyChecking=no root@host_node "virsh setmem vm_id mem_size"'''
 	scaling_cmd = scaling_cmd.replace("vm_id", vmid.strip());
 	scaling_cmd = scaling_cmd.replace("host_node", host.strip());
-	scaling_cmd = scaling_cmd.replace("mem_size", mem_size.strip());
+	scaling_cmd = scaling_cmd.replace("mem_size", str(int(mem_size)));
 	mem_scale = subprocess.check_output(scaling_cmd, shell=True, stderr=subprocess.PIPE)
 	#call to update dictionary
 	update_dictionary(host, vmid, mem_size)
-	vmscaling_log.write(str(datetime.datetime.now()) +'""MEMORY :: Scale Guest ::'+host+' :: '+vmid+' :: Successful\n')
+	vmscaling_log.write(str(datetime.datetime.now()) +'::MEMORY :: Scale Guest ::'+str(host)+' :: '+str(vmid)+' :: Successful\n')
         return True
     except:
         print 'Cannot scale memory in VM '+str(vmid)+' in '+str(host)

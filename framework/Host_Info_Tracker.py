@@ -37,7 +37,7 @@ def loadPickleDictionary(path = None) :
 			dictionary = pickle.load(pickle_in)
 			return dictionary
 	except:
-		print 'Cannot open node_dict.pkl file'
+		#print 'Cannot open node_dict.pkl file'
 		return None
 
 

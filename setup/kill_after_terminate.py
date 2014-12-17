@@ -14,6 +14,10 @@ def kill_after_terminate():
     for name in kill_array:
         cmd = "/usr/bin/ps -ef | /usr/bin/grep %s | grep -v 'grep' | /usr/bin/head -1 | /usr/bin/awk '{print $2}'" % name
         pid = subprocess.check_output(cmd, shell=True, stderr=subprocess.PIPE)
+
+	if pid == "":
+		continue
+
         pid = int(pid.strip())
         os.system("/usr/bin/kill -9 %s" % pid)
 

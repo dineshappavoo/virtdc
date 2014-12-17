@@ -87,7 +87,7 @@ def main(argv):
 	addsupportmail_parser.add_argument('mailid', action = 'store', help ='get the mail address')
 
 	monitorcpu_parser = subparsers.add_parser('monitorgraph',help='monitor domain usage')
-	monitorcpu_parser.add_argument('vmid', action = 'store', help ='get the domain id')
+	#monitorcpu_parser.add_argument('vmid', action = 'store', help ='get the domain id')
 
 	args = parser.parse_args()
 
@@ -156,10 +156,9 @@ def main(argv):
 		
 	elif args.subparser_name == 'monitorgraph':
 		#print 'Call vm_monitorgraph'
-		vmid = args.vmid
-		monitorgraph(vmid)
+		#vmid = args.vmid
+		monitorgraph()
 	elif args.subparser_name == 'getip':
-		#print 'Call vm_monitorgraph'
 		vmid = args.vmid
 		ip_addr = get_ip(vmid)
 		if ip_addr is None:

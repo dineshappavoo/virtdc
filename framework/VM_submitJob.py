@@ -40,7 +40,7 @@ _master="node1"
 _imageCopyCmd="scp"
 _cloneCmd="virsh --connect qemu+ssh://"
 
-_base_memory_size=2097152       # 2 GB (This includes OS memory)
+_base_memory_size = 2097152       # 2 GB (This includes OS memory)
 
 #===============================================================================
 
@@ -54,6 +54,7 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
 	vmsubmission_log = open('/var/lib/virtdc/logs/activity_logs/vmsubmission.log', 'a+')
 
 	obj=NodeFinder()
+	
 	#memory=float(_base_memory_size) + float(memory)
 	#print "Memory "+str(memory)
     
@@ -68,7 +69,7 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
 	print 'io"', io
 
     	if host is None:
-    		print "Cant create new"
+    		print "Cant create new domain. Space not available."
     		#print subprocess.call("date")
 		#print 'VMID "', vmid
 		#print 'CPU "', cpu
@@ -150,7 +151,7 @@ def vm_submitjob(vmid,cpu,memory, max_memory, io):
 		return False
 
 	# Making the max cpu as 8 for all VM's
-	addOrUpdateDictionaryOfVM(host, vmid, Guest(guest_ip, vmid, float(1), float(8),float(memory),float(max_memory),float(1), str(datetime.datetime.now())  ))
+	addOrUpdateDictionaryOfVM(host, vmid, Guest(guest_ip, vmid, float(cpu), float(8),float(memory),float(max_memory),float(1), str(datetime.datetime.now())  ))
 	vmsubmission_log.write(str(datetime.datetime.now())+'::Update IP::'+host+' :: '+vmid+' :: Successfully updated the IP\n')
 	
 	# copy host_config.txt file to guest

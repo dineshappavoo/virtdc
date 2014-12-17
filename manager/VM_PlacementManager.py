@@ -61,7 +61,7 @@ def report_usage_to_placement_manager(vmid, cpu_usage, mem_usage, io_usage):
 	try:
 		host = get_host_name(vmid)
 		domain_object = get_domain_object(vmid)
-		print domain_object
+		#print domain_object
 		process_action_on_current_usage(host, vmid, domain_object, float(cpu_usage), float(mem_usage), float(io_usage))	
 
 	except Exception as e:
@@ -70,7 +70,6 @@ def report_usage_to_placement_manager(vmid, cpu_usage, mem_usage, io_usage):
 
 #Process current usage and take action based on SLA
 def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_usage):
-
 	node_dict = GetNodeDict()
 
 	#for key, value in node_dict.iteritems() :
@@ -78,24 +77,20 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
 
 	#Log activity
 	manager_activity_log = open('/var/lib/virtdc/logs/activity_logs/manager.log', 'a+')
-
 	manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::'+host+' :: '+vmid+' :: Alotted Memory '+str(value.current_memory)+' :: Current Memory '+str(mem_usage)+'\n')
 	manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::CPU::'+host+' :: '+vmid+' :: Alotted CPU '+str(value.current_cpu)+' :: Current CPU '+str(cpu_usage)+'\n')
 
 	obj=NodeFinder()
 	max_cpu = value.max_cpu
-	print 'Max CPU '+str(max_cpu)
+
+	#print 'Max CPU '+str(max_cpu)
 	allotted_cpu = float(value.current_cpu)
-	print allotted_cpu
+	#print 'Allocate CPU : '+str(allotted_cpu)
 
 	#Base OS should not go below the minimum memory
 	mem_usage = float(mem_usage) + float(_base_mem_size)
 
 	allotted_memory = float(value.current_memory)
-
-
-	#allotted_memory=value.current_memory + _base_mem_size 
-
 	max_memory = float(value.max_memory)
 
 	#Check CPU usage, regarding a 0.1 margin as eligible to scale up
@@ -114,14 +109,22 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
 			else:
 				print 'Dest Node : '+new_host
 				#Initiate vm migration
-				vm_migrate_guest(host, new_host, vmid)
-				manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::CPU::Migration ::'+host+' :: '+vmid+' :: Domain migrated from '+str(host)+' to '+str(new_host)+' for CPU Scaling from'+str(value.current_cpu)+' to '+str(cpu_usage)+'\n')
+				migrate_flag = vm_migrate_guest(host, new_host, vmid)
+				if (migrate_flag):
+					manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::CPU::Migration ::'+host+' :: '+vmid+' :: Domain migrated from '+str(host)+' to '+str(new_host)+' for CPU Scaling from'+str(value.current_cpu)+' to '+str(cpu_usage)+'\n')
+				else:
+					manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::CPU::Migration ::'+host+' :: '+vmid+' :: Cannot migrate from '+str(host)+' to '+str(new_host)+' for CPU Scaling from'+str(value.current_cpu)+' to '+str(cpu_usage)+'\n')
+
 
 	#if(	(cpu_usage>current_cpu) and 	(cpu_usage<max_cpu)	):  -- CPU scaling down is not implemented
-
-	#Check Memory Usage - Memory scaling will be initiated when usage is lower than usage-scaledown_threshold or greater than usage+scaleup_threshold
-	if(	(	(mem_usage > (allotted_memory + float(mem_scale_up_threshold))) or (mem_usage<(allotted_memory - float(mem_scale_down_threshold))) )and (mem_usage<max_memory)	):		
+	#Check Memory Usage - Memory scale up will be initiated when usage is greater than usage+scaleup_threshold
+	#print "MEM USAGE: " + str(mem_usage)
+	#print "Alloc mem: " + str(allotted_memory)
+	#print "threadhold: " + str(float(mem_scale_up_threshold))
+	#print "Max mem: " + str(max_memory)
+	if(((mem_usage > (allotted_memory + float(mem_scale_up_threshold))))and (mem_usage<max_memory)):		
 		required_extra_memory = mem_usage - allotted_memory
+		print "Required Mem: " + str(required_extra_memory)
 		if( obj.is_mem_available_on_host(host, required_extra_memory) ):
 			vm_memory_scaling(host, vmid, float(mem_usage))
 	    		manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::Scaling ::'+str(host)+' :: '+str(vmid)+' :: Memory scaled from '+str(allotted_memory)+' to '+str(mem_usage)+'\n')
@@ -131,8 +134,17 @@ def process_action_on_current_usage(host, vmid, value, cpu_usage, mem_usage, io_
     				print "Cant migrate Guest"
 			else:
 				#Initiate vm migration
-				vm_migrate_guest(host, new_host, vmid)
-				manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::Migration ::'+host+' :: '+vmid+' :: Domain migrated from '+str(host)+' to '+str(new_host)+' for Memory Scaling from'+str(value.current_memory)+' to '+str(mem_usage)+'\n')
+				migrate_flag = vm_migrate_guest(host, new_host, vmid)
+				if (migrate_flag):
+					manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::Migration ::'+host+' :: '+vmid+' :: Domain migrated from '+str(host)+' to '+str(new_host)+' for Memory Scaling from'+str(value.current_memory)+' to '+str(mem_usage)+'\n')
+				else:
+					manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::Migration ::'+host+' :: '+vmid+' :: Cannot migrate from '+str(host)+' to '+str(new_host)+' for Memory Scaling from'+str(value.current_memory)+' to '+str(mem_usage)+'\n')
+
+	#To scale down memory - Memory scale down will be initiated when usage is lower than usage-scaledown_threshold or
+	elif((mem_usage<(allotted_memory - float(mem_scale_down_threshold)))and (mem_usage<max_memory)	):		
+		vm_memory_scaling(host, vmid, float(mem_usage))
+		manager_activity_log.write(str(datetime.datetime.now())+'::PLACEMENT MANAGER::MEMORY::Scaling ::'+str(host)+' :: '+str(vmid)+' :: Memory scaled from '+str(allotted_memory)+' to '+str(mem_usage)+'\n')
+		
 
 
 
@@ -149,5 +161,5 @@ def reactOnHotSpot():
 
 if __name__ == "__main__":
 	# stuff only to run when not called via 'import' here
-	report_usage_to_placement_manager('VM_Task_16', '6.467', '8260', '0.3')
+	report_usage_to_placement_manager('VM_Task_11', '2.0', '15382', '0.3')
 	#process_action_on_current_usage('node1', 'VM_Task_1', Guest("192.168.1.14","Task1", float(1), float(3),float(42424345353),float(424242),float(1), time.time()), '1.0', '424242', '42424345353')

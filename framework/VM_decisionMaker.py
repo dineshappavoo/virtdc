@@ -73,9 +73,9 @@ class NodeFinder:
         	node_dict={}
         	node_dict=GetNodeDict()
         	for key, value in node_dict.iteritems() :
-			if key is host:
-            			if ( float(memory) <= float(value.avail_memory) ):
-                		 return True
+			if key == host:
+           			if ( float(memory) < float(value.avail_memory) ):
+           				return True
         	return False
 
     
@@ -124,3 +124,10 @@ class NodeFinder:
 #code to print the dictionary elements again
 #for key, value in node_dict.iteritems() :
 #    print key, value.max_cpu, value.max_memory, value.max_io, value.avail_cpu, value.avail_memory, value.avail_io
+
+if __name__ == "__main__":
+	# stuff only to run when not called via 'import' here
+	obj=NodeFinder()
+	flag = obj.is_mem_available_on_host("node1", 10381.0)
+	print "Flag "+ str(flag)
+

@@ -54,6 +54,7 @@ def vm_migrate_guest(source_host, dest_host, vmid):
         return True
     except Exception, e:
         print 'Cannot migrate VM '+str(vmid)+' in '+str(source_host)
+	print e
         vmmigration_log.write(str(datetime.datetime.now()) +'::Migrate Guest ::'+source_host+' :: '+vmid+' :: Cannot migrate the guest\n')
         vmmigration_log.write(str(e) + '\n')
         return False

@@ -47,7 +47,7 @@ def execute_task(file_name):
     current_mem_cmd = 'head -1 '+data_folder_path+'/'+file_name
     current_mem_val = subprocess.check_output(current_mem_cmd, shell=True, stderr=subprocess.PIPE)
     task_spec = current_mem_val.split()
-    current_mem_val = task_spec[2] #Takes the memory value first time interval
+    current_mem_val = task_spec[2] #Takes the memory value of first time interval
     current_mem_val = int(_base_memory_size) + int(float(current_mem_val))
     print 'Current memory value '+str(current_mem_val)
 
