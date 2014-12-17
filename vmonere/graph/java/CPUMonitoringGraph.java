@@ -1,5 +1,6 @@
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -13,6 +14,7 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.ValueAxis;
 import org.jfree.chart.plot.XYPlot;
+import org.jfree.chart.renderer.xy.XYAreaRenderer;
 import org.jfree.data.time.DynamicTimeSeriesCollection;
 import org.jfree.data.time.Second;
 import org.jfree.data.xy.XYDataset;
@@ -30,14 +32,14 @@ public class CPUMonitoringGraph extends JPanel {
 	public  BufferedReader br;
 	public static String vmid;
 	private Timer timer; 
-	public CPUMonitoringGraph(String applicationTitle, String chartTitle, String args, BufferedReader bReader) {
+	public CPUMonitoringGraph(String applicationTitle, String chartTitle, String args, BufferedReader bReader, int chartWidth, int chartHeight) {
 		super(new BorderLayout());
 		br= bReader;
 		vmid = args;
 		final DynamicTimeSeriesCollection dataset = createDataset();
 		JFreeChart chart = createChart(dataset, chartTitle);
 		ChartPanel chartPanel = new ChartPanel(chart);
-		chartPanel.setPreferredSize(new java.awt.Dimension(500, 270));
+		chartPanel.setPreferredSize(new java.awt.Dimension(chartWidth, chartHeight));
 		chartPanel.repaint();
 		add(chartPanel, BorderLayout.CENTER);
 		timer = new Timer(FAST, new ActionListener() {
@@ -77,13 +79,14 @@ public class CPUMonitoringGraph extends JPanel {
 				title, "", "Value", dataset, true, true, false);
 		final XYPlot plot = result.getXYPlot();
 		plot.setDomainGridlinesVisible(false);
+		plot.setRenderer(new XYAreaRenderer());
+		plot.getRenderer().setSeriesPaint(0, Color.BLUE);
 		ValueAxis domain = plot.getDomainAxis();
 		domain.setAutoRange(true);
 		domain.setVisible(false);
 		ValueAxis range = plot.getRangeAxis();
 		range.setRange(0, 8);
 		return result;
-
 	}
 	
 	/**
