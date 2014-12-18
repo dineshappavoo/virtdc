@@ -31,7 +31,7 @@ EXCLUDE_FROM_PACKAGES = ['virtdc.packaging']
 
 setup(
       name='virtdc',
-      version='0.1.1',
+      version='0.1.2',
       url='http://dcsolvere.github.io/virtdc/',
       author='Dinesh Appavoo',
       author_email='dinesha.cit@gmail.com',
