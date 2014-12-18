@@ -24,12 +24,13 @@ from email.mime.text import MIMEText
 #	$virsh migrate web1 qemu+ssh://desthost/system
 #-------------------------------------------------------------------------------
 
-#Activity Log
-vmmail_log = open('/var/lib/virtdc/logs/activity_logs/vmmail.log', 'a+')
+
 to_address = ''
 
 def send_support_mail(subject, content):
 	try:
+        #Activity Log
+        vmmail_log = open('/var/lib/virtdc/logs/activity_logs/vmmail.log', 'a+')
 		# Create a text/plain message
 		msg = MIMEText(content)
 
