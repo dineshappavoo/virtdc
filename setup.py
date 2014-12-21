@@ -82,18 +82,10 @@ setup(
       # installed, specify them here.  If using Python 2.6 or less, then these
       # have to be included in MANIFEST.in as well.
       package_data={
-      'framework': ['*.xml','*.pkl'],
-      'setup': ['*.sh'],
-      'simulation': ['*.c','*.sh'],
-      'simulation': ['*.c','*.sh'],
-      'jars': ['*.jar'],
-      'java': ['*.java'],
       'guest': ['*.txt'],
       'hostinfo': ['*.txt'],
-      'monitor': ['*.sh'],
-      'sockets': ['*.socket'],
       'usr_bin': ['*'],
-      '': ['*.rst'],
+      '': ['*.rst','*.socket','*.jar','*.java','*.c','*.sh','*.xml','*.pkl'],
 
       },
       
