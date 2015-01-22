@@ -2,7 +2,7 @@ virtdc
 =======================
 [![Build Status](https://drone.io/github.com/dcsolvere/virtdc/status.png)](https://drone.io/github.com/dcsolvere/virtdc/latest)
 
-Statically place and schedule and dynamically scale and migrate Vitual Machines (VMs) to optimize resource utilization by using efficient VM algorithms while meeting the SLAs of users in cloud
+virtdc is CLI to statically place and schedule and dynamically scale and migrate Vitual Machines (VMs) to optimize resource utilization by using efficient VM algorithms while meeting the SLAs of users in cloud
 
 
 ##Virtdc Command Line Interface
