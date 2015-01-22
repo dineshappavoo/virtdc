@@ -21,9 +21,7 @@ setup(
       description=('A high-level Python  CLI for virtual machine '
                    'placement and scaling which provides a way to '
                    'create, manage and monitor virtual machines effectively'),
-      long_description=('A high-level Python  CLI for virtual machine '
-                        'placement and scaling which provides a way to '
-                        'create, manage and monitor virtual machines effectively'),
+      long_description=open("README.rst").read(),
       
       # The project's main homepage.
       url='http://dcsolvere.github.io/virtdc/',
