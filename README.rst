@@ -1,5 +1,5 @@
 virtdc : virtual machine management CLI
-====================================
+=======================================
 
 .. image:: https://drone.io/github.com/dcsolvere/virtdc/status.png
    :target: https://drone.io/github.com/dcsolvere/virtdc
