@@ -45,8 +45,8 @@ def send_support_mail(subject, content):
         # Send the message via our own SMTP server, but don't include the
         # envelope header.
         
-        username = 'dinesha.cit'
-        password = 'nyad20486oel@india'
+        username = ''
+        password = ''
         
         #start smtp server by this command 'python -m smtpd -n -c DebuggingServer localhost:1025'
         
